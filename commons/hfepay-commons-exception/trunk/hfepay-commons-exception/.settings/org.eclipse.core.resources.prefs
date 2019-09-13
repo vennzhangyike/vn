@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+encoding//src/main/java=UTF-8
+encoding//src/main/resources=UTF-8
+encoding//src/main/resources/com/hfepay/common/exception/exception-mapping.properties=UTF-8
+encoding//src/main/resources/com/hfepay/common/exception/msg/error.properties=UTF-8
+encoding//src/main/resources/com/hfepay/common/exception/msg/error_zh_CN.properties=UTF-8
+encoding//src/test/java=UTF-8
+encoding//src/test/resources=UTF-8
+encoding/<project>=UTF-8

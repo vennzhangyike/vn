@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="MerchantPayway">
+	<resultMap id="BaseResultMap" type="com.hfepay.scancode.commons.entity.MerchantPayway">
+        <result property="id" column="A_ID"/>
+        <result property="channelNo" column="A_channel_no"/>
+        <result property="agentNo" column="A_agent_no"/>
+        <result property="merchantNo" column="A_MERCHANT_NO"/>
+        <result property="payCode" column="A_PAY_CODE"/>
+        <result property="t0Rate" column="A_T0_RATE"/>
+        <result property="t1Rate" column="A_T1_RATE"/>
+        <result property="rate" column="A_RATE"/>
+        <result property="rateAmount" column="A_RATE_AMOUNT"/>
+        <result property="recordStatus" column="A_RECORD_STATUS"/>
+        <result property="status" column="A_STATUS"/>
+        <result property="acceptStatus" column="A_ACCEPT_STATUS"/>
+        <result property="createTime" column="A_CREATE_TIME"/>
+        <result property="updateTime" column="A_UPDATE_TIME"/>
+        <result property="operator" column="A_OPERATOR"/>
+        <result property="remark" column="A_REMARK"/>
+        <result property="temp1" column="A_TEMP_1"/>
+        <result property="temp2" column="A_TEMP_2"/>
+	</resultMap>
+	
+	<resultMap id="BaseResultMapVo" type="com.hfepay.scancode.commons.vo.MerchantPaywayVo" extends="BaseResultMap">
+		<result property="operatorName" column="operator_name"/>
+		<result property="merchantName" column="merchant_name"/>
+		<result property="payName" column="pay_name"/>
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+	    <![CDATA[
+		A.ID as A_ID,A.channel_no as A_channel_no,A.agent_no as A_agent_no,A.MERCHANT_NO as A_MERCHANT_NO,A.PAY_CODE as A_PAY_CODE,A.T0_RATE as A_T0_RATE,A.T1_RATE as A_T1_RATE,A.RATE as A_RATE,A.RATE_AMOUNT as A_RATE_AMOUNT,A.RECORD_STATUS as A_RECORD_STATUS,A.STATUS as A_STATUS,A.ACCEPT_STATUS as A_ACCEPT_STATUS,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.OPERATOR as A_OPERATOR,A.REMARK as A_REMARK,A.TEMP_1 as A_TEMP_1,A.TEMP_2 as A_TEMP_2
+	    ]]>
+	</sql>
+
+	<sql id="channel_filter">
+	    <if test="params.nodeSeq != null" >
+        	EXISTS (
+				SELECT
+					n.current_node
+				FROM
+					t_node_relation n
+				WHERE
+				 <if test="params.identityFlag != null" >
+					 n.identity_flag = '${params.identityFlag}' and
+				</if>
+					 n.node_seq like CONCAT('${params.nodeSeq}','%') and A.merchant_no = n.current_node)
+				<if test="@com.hfepay.commons.base.collection.Collections@isNotEmpty(conditions)"> AND </if> 
+      	</if>
+	</sql>
+	
+	<select id="findByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultMap="BaseResultMapVo" >
+    select
+    <include refid="Base_Column_List" />,C.merchant_name,D.para_name as pay_name
+     from t_merchant_payway A
+     left join t_merchant_info C on A.merchant_no = C.merchant_no
+     left join t_mapping_dicion D on A.pay_code = D.para_val
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+      	<include refid="channel_filter" />
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+    <if test="hasOrderBy" >
+      order by
+      <foreach collection="orderBys" item="orderBy" separator="," > ${orderBy} </foreach>
+    </if>
+  </select>
+  <select resultMap="BaseResultMapVo" parameterType="java.lang.String" id="findById" >
+    select 
+    <include refid="Base_Column_List" />,B.short_name as operator_name,C.merchant_name,D.para_name as pay_name
+    from t_merchant_payway A left join t_sys_admin B on A.operator = B.id 
+    left join t_merchant_info C on A.merchant_no = C.merchant_no
+     left join t_mapping_dicion D on A.pay_code = D.para_val
+    where A.ID = #{id}
+  </select>
+  <delete parameterType="java.lang.String" id="deleteById" >
+    delete from t_merchant_payway
+    where ID = #{id}
+  </delete>
+  <delete id="deleteByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" >
+    delete A from t_merchant_payway A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.hfepay.scancode.commons.entity.MerchantPayway" >
+    insert into t_merchant_payway (
+        	ID,
+        	channel_no,
+        	agent_no,
+        	MERCHANT_NO,
+        	PAY_CODE,
+        	T0_RATE,
+        	T1_RATE,
+        	RATE,
+        	RATE_AMOUNT,
+        	RECORD_STATUS,
+        	STATUS,
+        	ACCEPT_STATUS,
+        	CREATE_TIME,
+        	UPDATE_TIME,
+        	OPERATOR,
+        	REMARK,
+        	TEMP_1,
+        	TEMP_2
+        )
+    values (
+        	#{id},
+        	#{channelNo},
+        	#{agentNo},
+        	#{merchantNo},
+        	#{payCode},
+        	#{t0Rate},
+        	#{t1Rate},
+        	#{rate},
+        	#{rateAmount},
+        	#{recordStatus},
+        	#{status},
+        	#{acceptStatus},
+        	#{createTime},
+        	#{updateTime},
+        	#{operator},
+        	#{remark},
+        	#{temp1},
+        	#{temp2}
+    )
+  </insert>
+  <select id="countByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultType="java.lang.Integer" >
+    select count(*) from t_merchant_payway A
+    left join t_merchant_info C on A.merchant_no = C.merchant_no
+     left join t_mapping_dicion D on A.pay_code = D.para_val
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+      	<include refid="channel_filter" />
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </select>
+  <update id="updateByCriteria" parameterType="map" >
+    update t_merchant_payway A
+    <set >
+        	<if test="record.id != null and record.id != '' " >
+        		A.ID = #{record.id},
+      		</if>
+        	<if test="record.merchantNo != null and record.merchantNo != '' " >
+        		A.MERCHANT_NO = #{record.merchantNo},
+      		</if>
+        	<if test="record.payCode != null and record.payCode != '' " >
+        		A.PAY_CODE = #{record.payCode},
+      		</if>
+        	<if test="record.t0Rate != null" >
+        		A.T0_RATE = #{record.t0Rate},
+      		</if>
+        	<if test="record.t1Rate != null" >
+        		A.T1_RATE = #{record.t1Rate},
+      		</if>
+        	<if test="record.rate != null" >
+        		A.RATE = #{record.rate},
+      		</if>
+        	<if test="record.rateAmount != null" >
+        		A.RATE_AMOUNT = #{record.rateAmount},
+      		</if>
+        	<if test="record.recordStatus != null and record.recordStatus != '' " >
+        		A.RECORD_STATUS = #{record.recordStatus},
+      		</if>
+        	<if test="record.status != null and record.status != '' " >
+        		A.STATUS = #{record.status},
+      		</if>
+      		<if test="record.acceptStatus != null and record.acceptStatus != '' " >
+        		A.ACCEPT_STATUS = #{record.acceptStatus},
+      		</if>
+        	<if test="record.createTime != null and record.createTime != '' " >
+        		A.CREATE_TIME = #{record.createTime},
+      		</if>
+        	<if test="record.updateTime != null and record.updateTime != '' " >
+        		A.UPDATE_TIME = #{record.updateTime},
+      		</if>
+        	<if test="record.operator != null and record.operator != '' " >
+        		A.OPERATOR = #{record.operator},
+      		</if>
+        	<if test="record.remark != null and record.remark != '' " >
+        		A.REMARK = #{record.remark},
+      		</if>
+        	<if test="record.temp1 != null and record.temp1 != '' " >
+        		A.TEMP_1 = #{record.temp1},
+      		</if>
+        	<if test="record.temp2 != null and record.temp2 != '' " >
+        		A.TEMP_2 = #{record.temp2},
+      		</if>
+    </set>
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </update>
+  <update id="update" parameterType="com.hfepay.scancode.commons.entity.MerchantPayway" >
+    update t_merchant_payway A
+    <set >
+        	<if test="id != null and id != '' " >
+        		A.ID = #{id},
+      		</if>
+        	<if test="merchantNo != null and merchantNo != '' " >
+        		A.MERCHANT_NO = #{merchantNo},
+      		</if>
+        	<if test="payCode != null and payCode != '' " >
+        		A.PAY_CODE = #{payCode},
+      		</if>
+        	<if test="t0Rate != null" >
+        		A.T0_RATE = #{t0Rate},
+      		</if>
+        	<if test="t1Rate != null" >
+        		A.T1_RATE = #{t1Rate},
+      		</if>
+        	<if test="rate != null" >
+        		A.RATE = #{rate},
+      		</if>
+        	<if test="rateAmount != null" >
+        		A.RATE_AMOUNT = #{rateAmount},
+      		</if>
+        	<if test="recordStatus != null and recordStatus != '' " >
+        		A.RECORD_STATUS = #{recordStatus},
+      		</if>
+        	<if test="status != null and status != '' " >
+        		A.STATUS = #{status},
+      		</if>
+      		<if test="acceptStatus != null and acceptStatus != '' " >
+        		A.ACCEPT_STATUS = #{acceptStatus},
+      		</if>
+        	<if test="createTime != null and createTime != '' " >
+        		A.CREATE_TIME = #{createTime},
+      		</if>
+        	<if test="updateTime != null and updateTime != '' " >
+        		A.UPDATE_TIME = #{updateTime},
+      		</if>
+        	<if test="operator != null and operator != '' " >
+        		A.OPERATOR = #{operator},
+      		</if>
+        	<if test="remark != null and remark != '' " >
+        		A.REMARK = #{remark},
+      		</if>
+        	<if test="temp1 != null and temp1 != '' " >
+        		A.TEMP_1 = #{temp1},
+      		</if>
+        	<if test="temp2 != null and temp2 != '' " >
+        		A.TEMP_2 = #{temp2},
+      		</if>
+    </set>
+    where A.ID = #{id}
+  </update>
+  
+	<update id="updateStatus">
+    update t_merchant_payway
+		set `STATUS` = #{status}
+		where ID=#{id}
+  </update>
+  
+	<update id="updateRateAmount">
+    update t_merchant_payway A
+		set RATE_AMOUNT = #{rateAmount}
+		WHERE
+			EXISTS (
+				SELECT
+					1
+				FROM
+					t_merchant_info B
+				WHERE
+					A.merchant_no = B.merchant_no
+				AND B.channel_no = #{channelNo}
+			)
+  </update>
+  
+  <select id="findMerchantPayWayByAgentNo" parameterType="java.lang.String" resultType="java.util.Map" >
+    select MIN(mp.t1_rate)m_t1_rate,MIN(mp.T0_RATE)m_t0_rate,MIN(mp.RATE)m_rate,
+		(select min(tmp.t1_rate) from t_merchant_payway_tmp tmp 
+		where tmp.MERCHANT_NO in(select m.merchant_no from t_merchant_info m where m.agent_no = #{agentNo}) and tmp.PAY_CODE = #{payCode} 
+		and tmp.UPDATE_TIME   >=   str_to_date(SYSDATE(),'%Y-%m-%d'))tmp_t1_rate,
+		(select min(tmp.t0_rate) from t_merchant_payway_tmp tmp 
+		where tmp.MERCHANT_NO in(select m.merchant_no from t_merchant_info m where m.agent_no = #{agentNo}) and tmp.PAY_CODE = #{payCode} 
+		and tmp.UPDATE_TIME   >=   str_to_date(SYSDATE(),'%Y-%m-%d'))tmp_t0_rate,
+		(select min(tmp.rate) from t_merchant_payway_tmp tmp 
+		where tmp.MERCHANT_NO in(select m.merchant_no from t_merchant_info m where m.agent_no = #{agentNo}) and tmp.PAY_CODE = #{payCode} 
+		and tmp.UPDATE_TIME   >=   str_to_date(SYSDATE(),'%Y-%m-%d'))tmp_rate
+	from t_merchant_payway mp
+	where mp.MERCHANT_NO in(select m.merchant_no from t_merchant_info m where m.agent_no = #{agentNo} and m.record_status = 'Y') and mp.PAY_CODE = #{payCode} and mp.record_status = 'Y'
+  </select>
+</mapper>
+

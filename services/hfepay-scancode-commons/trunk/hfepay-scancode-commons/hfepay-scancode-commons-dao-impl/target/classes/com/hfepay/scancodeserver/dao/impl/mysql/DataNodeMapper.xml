@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="DataNode">
+	<resultMap id="BaseResultMap" type="com.hfepay.scancode.commons.entity.DataNode">
+		<result property="id" column="A_id" />
+		<result property="parentNode" column="A_parent_node" />
+		<result property="currentNode" column="A_current_node" />
+		<result property="currentNodeLevel" column="A_current_node_level" />
+		<result property="identityFlag" column="A_identity_flag" />
+		<result property="operator" column="A_operator" />
+		<result property="createTime" column="A_create_time" />
+		<result property="updateTime" column="A_update_time" />
+	</resultMap>
+
+	<sql id="Base_Column_List">
+	    <![CDATA[
+		A.id as A_id,A.parent_node as A_parent_node,A.current_node as A_current_node,A.current_node_level as A_current_node_level,A.identity_flag as A_identity_flag,A.operator as A_operator,A.create_time as A_create_time,A.update_time as A_update_time
+	    ]]>
+	</sql>
+
+	<select id="findByCriteria" parameterType="com.hfepay.commons.criteria.Criteria"
+		resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from t_data_node A
+		<if test="_parameter != null and _parameter != '' ">
+			<where>
+				<include refid="Global.Where_Clause" />
+			</where>
+		</if>
+		<if test="hasOrderBy">
+			order by
+			<foreach collection="orderBys" item="orderBy" separator=",">
+				${orderBy} </foreach>
+		</if>
+	</select>
+	<select resultMap="BaseResultMap" parameterType="java.lang.String"
+		id="findById">
+		select
+		<include refid="Base_Column_List" />
+		from t_data_node A
+		where A.id = #{id}
+	</select>
+	<delete parameterType="java.lang.String" id="deleteById">
+		delete from t_data_node
+		where id = #{id}
+	</delete>
+	<delete id="deleteByCriteria" parameterType="com.hfepay.commons.criteria.Criteria">
+		delete A from t_data_node A
+		<if test="_parameter != null and _parameter != '' ">
+			<where>
+				<include refid="Global.Where_Clause" />
+			</where>
+		</if>
+	</delete>
+	<insert id="insert" parameterType="com.hfepay.scancode.commons.entity.DataNode">
+		insert into t_data_node (
+		id,
+		parent_node,
+		current_node,
+		current_node_level,
+		identity_flag,
+		operator,
+		create_time,
+		update_time
+		)
+		values (
+		#{id},
+		#{parentNode},
+		#{currentNode},
+		#{currentNodeLevel},
+		#{identityFlag},
+		#{operator},
+		#{createTime},
+		#{updateTime}
+		)
+	</insert>
+	<select id="countByCriteria" parameterType="com.hfepay.commons.criteria.Criteria"
+		resultType="java.lang.Integer">
+		select count(*) from t_data_node A
+		<if test="_parameter != null and _parameter != '' ">
+			<where>
+				<include refid="Global.Where_Clause" />
+			</where>
+		</if>
+	</select>
+	<update id="updateByCriteria" parameterType="map">
+		update t_data_node A
+		<set>
+			<if test="record.id != null and record.id != '' ">
+				A.id = #{record.id},
+			</if>
+			<if test="record.parentNode != null and record.parentNode != '' ">
+				A.parent_node = #{record.parentNode},
+			</if>
+			<if test="record.currentNode != null and record.currentNode != '' ">
+				A.current_node = #{record.currentNode},
+			</if>
+			<if
+				test="record.currentNodeLevel != null and record.currentNodeLevel != '' ">
+				A.current_node_level = #{record.currentNodeLevel},
+			</if>
+			<if test="record.identityFlag != null and record.identityFlag != '' ">
+				A.identity_flag = #{record.identityFlag},
+			</if>
+			<if test="record.operator != null and record.operator != '' ">
+				A.operator = #{record.operator},
+			</if>
+			<if test="record.createTime != null and record.createTime != '' ">
+				A.create_time = #{record.createTime},
+			</if>
+			<if test="record.updateTime != null and record.updateTime != '' ">
+				A.update_time = #{record.updateTime},
+			</if>
+		</set>
+		<if test="_parameter != null and _parameter != '' ">
+			<where>
+				<include refid="Global.Where_Clause" />
+			</where>
+		</if>
+	</update>
+	<update id="update" parameterType="com.hfepay.scancode.commons.entity.DataNode">
+		update t_data_node A
+		<set>
+			<if test="id != null and id != '' ">
+				A.id = #{id},
+			</if>
+			<if test="parentNode != null and parentNode != '' ">
+				A.parent_node = #{parentNode},
+			</if>
+			<if test="currentNode != null and currentNode != '' ">
+				A.current_node = #{currentNode},
+			</if>
+			<if test="currentNodeLevel != null and currentNodeLevel != '' ">
+				A.current_node_level = #{currentNodeLevel},
+			</if>
+			<if test="identityFlag != null and identityFlag != '' ">
+				A.identity_flag = #{identityFlag},
+			</if>
+			<if test="operator != null and operator != '' ">
+				A.operator = #{operator},
+			</if>
+			<if test="createTime != null and createTime != '' ">
+				A.create_time = #{createTime},
+			</if>
+			<if test="updateTime != null and updateTime != '' ">
+				A.update_time = #{updateTime},
+			</if>
+		</set>
+		where A.id = #{id}
+	</update>
+
+
+	<insert id="batchInsert" parameterType="java.util.List">
+		insert into t_data_node (
+		id,
+		parent_node,
+		current_node,
+		current_node_level,
+		identity_flag,
+		operator,
+		create_time,
+		update_time
+		)
+		values
+		<foreach collection="list" item="item" index="index"
+			separator=",">
+			(
+			#{item.id},
+			#{item.parentNode},
+			#{item.currentNode},
+			#{item.currentNodeLevel},
+			#{item.identityFlag},
+			#{item.operator},
+			#{item.createTime},
+			#{item.updateTime}
+			)
+		</foreach>
+	</insert>
+
+	<delete parameterType="java.lang.String" id="deleteByCurrentNode">
+		delete from t_data_node
+		where current_node = #{currentNode}
+	</delete>
+
+	<select resultMap="BaseResultMap" parameterType="java.lang.String" id="findByCurrentNode">
+		select 		
+			id,
+			parent_node,
+			current_node,
+			current_node_level,
+			identity_flag,
+			operator,
+			create_time,
+			update_time 
+		from t_data_node where current_node=#{currentNode} and parent_node not in (select current_node from t_data_node where current_node_level=0)
+	</select>
+	
+	
+	<select resultMap="BaseResultMap" parameterType="java.lang.String" id="findParents">
+	select DISTINCT current_node,current_node_level,identity_flag from t_data_node where current_node in 
+			(select parent_node from t_data_node where current_node=#{agentNo} union all select #{agentNo} )
+	ORDER BY current_node_level
+	</select>
+	
+
+</mapper>
+

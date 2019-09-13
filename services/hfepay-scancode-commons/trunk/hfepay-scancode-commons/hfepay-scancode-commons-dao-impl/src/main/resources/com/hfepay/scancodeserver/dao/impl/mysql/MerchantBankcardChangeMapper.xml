@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="MerchantBankcardChange">
+	<resultMap id="BaseResultMap" type="com.hfepay.scancode.commons.entity.MerchantBankcardChange">
+        <result property="id" column="A_ID"/>
+        <result property="channelNo" column="A_channel_no"/>
+        <result property="agentNo" column="A_agent_no"/>
+        <result property="merchantNo" column="A_MERCHANT_NO"/>
+        <result property="idCard" column="A_ID_CARD"/>
+        <result property="name" column="A_NAME"/>
+        <result property="bankCode" column="A_BANK_CODE"/>
+        <result property="bankName" column="A_BANK_NAME"/>
+        <result property="bankCard" column="A_BANK_CARD"/>
+        <result property="mobile" column="A_MOBILE"/>
+        <result property="isRealAccount" column="A_IS_REAL_ACCOUNT"/>
+        <result property="status" column="A_STATUS"/>
+        <result property="createTime" column="A_CREATE_TIME"/>
+        <result property="updateTime" column="A_UPDATE_TIME"/>
+        <result property="operator" column="A_OPERATOR"/>
+        <result property="remark" column="A_REMARK"/>
+        <result property="temp1" column="A_TEMP_1"/>
+        <result property="temp2" column="A_TEMP_2"/>
+        <result property="accountType" column="A_account_type"/>
+	</resultMap>
+	
+	<resultMap id="BaseResultMapVo" type="com.hfepay.scancode.commons.vo.MerchantBankcardChangeVo" extends="BaseResultMap">
+		<result property="operatorName" column="operator_name"/>
+		<result property="merchantName" column="merchant_name"/>
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+	    <![CDATA[
+		A.ID as A_ID,A.channel_no as A_channel_no,A.agent_no as A_agent_no,A.MERCHANT_NO as A_MERCHANT_NO,A.ID_CARD as A_ID_CARD,A.NAME as A_NAME,A.BANK_CODE as A_BANK_CODE,A.BANK_NAME as A_BANK_NAME,A.BANK_CARD as A_BANK_CARD,A.MOBILE as A_MOBILE,A.IS_REAL_ACCOUNT as A_IS_REAL_ACCOUNT,A.STATUS as A_STATUS,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.OPERATOR as A_OPERATOR,A.REMARK as A_REMARK,A.TEMP_1 as A_TEMP_1,A.TEMP_2 as A_TEMP_2,A.account_type as A_account_type
+	    ]]>
+	</sql>
+
+	<select id="findByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultMap="BaseResultMapVo" >
+    select
+    <include refid="Base_Column_List" />,C.merchant_name
+     from t_merchant_bankcard_change A
+     left join t_merchant_info C on A.merchant_no = C.merchant_no
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+    <if test="hasOrderBy" >
+      order by
+      <foreach collection="orderBys" item="orderBy" separator="," > ${orderBy} </foreach>
+    </if>
+  </select>  
+  
+  <select id="findAuditMerchantBankcard" parameterType="com.hfepay.commons.criteria.Criteria" resultMap="BaseResultMapVo" >
+    select
+    <include refid="Base_Column_List" />,C.merchant_name
+     from (
+     select * from t_merchant_bankcard_change A 
+		where NOT EXISTS (
+					SELECT
+						1
+					FROM
+						t_merchant_bankcard_change B
+					WHERE
+						B.MERCHANT_NO = A.MERCHANT_NO
+					AND B.create_time > A.create_time
+				)
+		and A.`STATUS` = '3') A
+     left join t_merchant_info C on A.merchant_no = C.merchant_no
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+    <if test="hasOrderBy" >
+      order by
+      <foreach collection="orderBys" item="orderBy" separator="," > ${orderBy} </foreach>
+    </if>
+  </select>
+  <select id="countAuditMerchantBankcard" parameterType="com.hfepay.commons.criteria.Criteria" resultType="java.lang.Integer" >
+    select count(*)  from (
+     select * from t_merchant_bankcard_change A 
+		where NOT EXISTS (
+					SELECT
+						1
+					FROM
+						t_merchant_bankcard_change B
+					WHERE
+						B.MERCHANT_NO = A.MERCHANT_NO
+					AND B.create_time > A.create_time
+				)
+		and A.`STATUS` = '3') A
+     left join t_merchant_info C on A.merchant_no = C.merchant_no
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </select>
+  
+  <select resultMap="BaseResultMapVo" parameterType="java.lang.String" id="findById" >
+    select 
+    <include refid="Base_Column_List" />,B.short_name as operator_name,C.merchant_name
+    from t_merchant_bankcard_change A
+    left join t_sys_admin B on A.operator = B.id 
+    left join t_merchant_info C on A.merchant_no = C.merchant_no
+    where A.ID = #{id}
+  </select>
+  <delete parameterType="java.lang.String" id="deleteById" >
+    delete from t_merchant_bankcard_change
+    where ID = #{id}
+  </delete>
+  <delete id="deleteByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" >
+    delete A from t_merchant_bankcard_change A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.hfepay.scancode.commons.entity.MerchantBankcardChange" >
+    insert into t_merchant_bankcard_change (
+        	ID,
+        	channel_no,
+        	agent_no,
+        	MERCHANT_NO,
+        	ID_CARD,
+        	NAME,
+        	BANK_CODE,
+        	BANK_NAME,
+        	BANK_CARD,
+        	MOBILE,
+        	IS_REAL_ACCOUNT,
+        	STATUS,
+        	CREATE_TIME,
+        	UPDATE_TIME,
+        	OPERATOR,
+        	REMARK,
+        	TEMP_1,
+        	TEMP_2,
+        	account_type
+        )
+    values (UUID(),
+   			#{channelNo},
+        	#{agentNo},
+        	#{merchantNo},
+        	#{idCard},
+        	#{name},
+        	#{bankCode},
+        	#{bankName},
+        	#{bankCard},
+        	#{mobile},
+        	#{isRealAccount},
+        	#{status},
+        	#{createTime},
+        	#{updateTime},
+        	#{operator},
+        	#{remark},
+        	#{temp1},
+        	#{temp2},
+        	#{accountType}
+    )
+  </insert>
+  <select id="countByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultType="java.lang.Integer" >
+    select count(*) from t_merchant_bankcard_change A
+    left join t_merchant_info C on A.merchant_no = C.merchant_no
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </select>
+  <update id="updateByCriteria" parameterType="map" >
+    update t_merchant_bankcard_change A
+    <set >
+        	<if test="record.id != null and record.id != '' " >
+        		A.ID = #{record.id},
+      		</if>
+        	<if test="record.merchantNo != null and record.merchantNo != '' " >
+        		A.MERCHANT_NO = #{record.merchantNo},
+      		</if>
+        	<if test="record.idCard != null and record.idCard != '' " >
+        		A.ID_CARD = #{record.idCard},
+      		</if>
+        	<if test="record.name != null and record.name != '' " >
+        		A.NAME = #{record.name},
+      		</if>
+        	<if test="record.bankCode != null and record.bankCode != '' " >
+        		A.BANK_CODE = #{record.bankCode},
+      		</if>
+        	<if test="record.bankName != null and record.bankName != '' " >
+        		A.BANK_NAME = #{record.bankName},
+      		</if>
+        	<if test="record.bankCard != null and record.bankCard != '' " >
+        		A.BANK_CARD = #{record.bankCard},
+      		</if>
+        	<if test="record.mobile != null and record.mobile != '' " >
+        		A.MOBILE = #{record.mobile},
+      		</if>
+        	<if test="record.isRealAccount != null and record.isRealAccount != '' " >
+        		A.IS_REAL_ACCOUNT = #{record.isRealAccount},
+      		</if>
+        	<if test="record.status != null and record.status != '' " >
+        		A.STATUS = #{record.status},
+      		</if>
+        	<if test="record.createTime != null and record.createTime != '' " >
+        		A.CREATE_TIME = #{record.createTime},
+      		</if>
+        	<if test="record.updateTime != null and record.updateTime != '' " >
+        		A.UPDATE_TIME = #{record.updateTime},
+      		</if>
+        	<if test="record.operator != null and record.operator != '' " >
+        		A.OPERATOR = #{record.operator},
+      		</if>
+        	<if test="record.remark != null and record.remark != '' " >
+        		A.REMARK = #{record.remark},
+      		</if>
+        	<if test="record.temp1 != null and record.temp1 != '' " >
+        		A.TEMP_1 = #{record.temp1},
+      		</if>
+        	<if test="record.temp2 != null and record.temp2 != '' " >
+        		A.TEMP_2 = #{record.temp2},
+      		</if>
+        	<if test="record.accountType != null and record.accountType != '' " >
+        		A.account_type = #{record.accountType},
+      		</if>
+    </set>
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </update>
+  <update id="update" parameterType="com.hfepay.scancode.commons.entity.MerchantBankcardChange" >
+    update t_merchant_bankcard_change A
+    <set >
+        	<if test="id != null and id != '' " >
+        		A.ID = #{id},
+      		</if>
+        	<if test="merchantNo != null and merchantNo != '' " >
+        		A.MERCHANT_NO = #{merchantNo},
+      		</if>
+        	<if test="idCard != null and idCard != '' " >
+        		A.ID_CARD = #{idCard},
+      		</if>
+        	<if test="name != null and name != '' " >
+        		A.NAME = #{name},
+      		</if>
+        	<if test="bankCode != null and bankCode != '' " >
+        		A.BANK_CODE = #{bankCode},
+      		</if>
+        	<if test="bankName != null and bankName != '' " >
+        		A.BANK_NAME = #{bankName},
+      		</if>
+        	<if test="bankCard != null and bankCard != '' " >
+        		A.BANK_CARD = #{bankCard},
+      		</if>
+        	<if test="mobile != null and mobile != '' " >
+        		A.MOBILE = #{mobile},
+      		</if>
+        	<if test="isRealAccount != null and isRealAccount != '' " >
+        		A.IS_REAL_ACCOUNT = #{isRealAccount},
+      		</if>
+        	<if test="status != null and status != '' " >
+        		A.STATUS = #{status},
+      		</if>
+        	<if test="createTime != null and createTime != '' " >
+        		A.CREATE_TIME = #{createTime},
+      		</if>
+        	<if test="updateTime != null and updateTime != '' " >
+        		A.UPDATE_TIME = #{updateTime},
+      		</if>
+        	<if test="operator != null and operator != '' " >
+        		A.OPERATOR = #{operator},
+      		</if>
+        	<if test="remark != null and remark != '' " >
+        		A.REMARK = #{remark},
+      		</if>
+        	<if test="temp1 != null and temp1 != '' " >
+        		A.TEMP_1 = #{temp1},
+      		</if>
+        	<if test="temp2 != null and temp2 != '' " >
+        		A.TEMP_2 = #{temp2},
+      		</if>
+        	<if test="accountType != null and accountType != '' " >
+        		A.account_type = #{accountType},
+      		</if>
+    </set>
+    where A.ID = #{id}
+  </update>
+  
+	<update id="updateStatus">
+    update t_merchant_bankcard_change
+		set `STATUS` = #{status}
+		where ID=#{id}
+  </update>
+</mapper>
+

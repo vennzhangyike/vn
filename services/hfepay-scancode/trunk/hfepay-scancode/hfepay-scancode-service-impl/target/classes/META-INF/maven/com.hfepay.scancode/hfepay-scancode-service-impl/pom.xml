@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.hfepay.scancode</groupId>
+    <artifactId>hfepay-scancode</artifactId>
+    <version>1.0.0</version>
+  </parent>
+  <groupId>com.hfepay.scancode</groupId>
+  <artifactId>hfepay-scancode-service-impl</artifactId>
+  <name>service impl</name>
+  <url>http://maven.apache.org</url>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  <dependencies>
+  	<dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.hfepay.scancode</groupId>
+      <artifactId>hfepay-scancode-service</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>com.hfepay.scancode.api</groupId>
+      <artifactId>hfepay-scancode-api-service</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+    <dependency>
+		<groupId>com.hfepay.scancode.pay</groupId>
+		<artifactId>hfepay-scancode-pay-service</artifactId>
+		<version>1.0.0</version>
+	</dependency>	
+    <dependency>
+      <groupId>com.hfepay.scancode.commons</groupId>
+      <artifactId>hfepay-scancode-commons-dao-impl</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+    <dependency>
+		<groupId>com.alibaba</groupId>
+		<artifactId>fastjson</artifactId>
+		<version>1.1.32</version>
+	</dependency>
+	<dependency>
+			<groupId>com.hfepay.commons</groupId>
+			<artifactId>hfepay-commons-excelutils</artifactId>
+			<version>1.0.0</version>
+	</dependency>
+	<dependency>
+		<groupId>com.hfepay.commons</groupId>
+		<artifactId>hfepay-commons-sms</artifactId>
+		<version>1.0.0</version>
+	</dependency>
+	<dependency>
+		<groupId>com.hfepay.commons</groupId>
+		<artifactId>hfepay-commons-timer</artifactId>
+		<version>1.0.0</version>
+	</dependency>
+	<!-- 图片上传压缩 -->
+	<dependency>
+	    <groupId>net.coobird</groupId>
+	    <artifactId>thumbnailator</artifactId>
+	    <version>0.4.8</version>
+	</dependency>
+	<dependency>
+	    <groupId>com.google.zxing</groupId>
+	    <artifactId>core</artifactId>
+	    <version>3.1.0</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>commons-codec</groupId>
+	    <artifactId>commons-codec</artifactId>
+	    <version>1.8</version>
+	</dependency>
+  </dependencies>
+</project>

@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="MerchantAuthDetail">
+	<resultMap id="BaseResultMap" type="com.hfepay.scancode.commons.entity.MerchantAuthDetail">
+        <result property="id" column="A_id"/>
+        <result property="channelNo" column="A_channel_no"/>
+        <result property="agentNo" column="A_agent_no"/>
+        <result property="merchantNo" column="A_merchant_no"/>
+        <result property="authInterface" column="A_auth_interface"/>
+        <result property="authParams" column="A_auth_params"/>
+        <result property="returnAuthCode" column="A_return_auth_code"/>
+        <result property="returnAuthMsg" column="A_return_auth_msg"/>
+        <result property="createTime" column="A_create_time"/>
+        <result property="remark" column="A_remark"/>
+        <result property="temp1" column="A_temp_1"/>
+        <result property="temp2" column="A_temp_2"/>
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+	    <![CDATA[
+		A.id as A_id,A.channel_no as A_channel_no,A.agent_no as A_agent_no,A.merchant_no as A_merchant_no,A.auth_interface as A_auth_interface,A.auth_params as A_auth_params,A.return_auth_code as A_return_auth_code,A.return_auth_msg as A_return_auth_msg,A.create_time as A_create_time,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	    ]]>
+	</sql>
+	
+	<sql id="channel_filter">
+	    <if test="params.nodeSeq != null" >
+        	EXISTS (
+				SELECT
+					n.current_node
+				FROM
+					t_node_relation n
+				WHERE
+				 <if test="params.identityFlag != null" >
+					 n.identity_flag = '${params.identityFlag}' and
+				</if>
+					 n.node_seq like CONCAT('${params.nodeSeq}','%') and A.merchant_no = n.current_node)
+				<if test="@com.hfepay.commons.base.collection.Collections@isNotEmpty(conditions)"> AND </if> 
+      	</if>
+	</sql>
+
+	<select id="findByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+     from t_merchant_auth_detail A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="channel_filter" />
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+    <if test="hasOrderBy" >
+      order by
+      <foreach collection="orderBys" item="orderBy" separator="," > ${orderBy} </foreach>
+    </if>
+  </select>
+  <select resultMap="BaseResultMap" parameterType="java.lang.String" id="findById" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_merchant_auth_detail A
+    where A.id = #{id}
+  </select>
+  <delete parameterType="java.lang.String" id="deleteById" >
+    delete from t_merchant_auth_detail
+    where id = #{id}
+  </delete>
+  <delete id="deleteByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" >
+    delete A from t_merchant_auth_detail A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.hfepay.scancode.commons.entity.MerchantAuthDetail" >
+    insert into t_merchant_auth_detail (
+        	id,
+        	channel_no,
+        	agent_no,
+        	merchant_no,
+        	auth_interface,
+        	auth_params,
+        	return_auth_code,
+        	return_auth_msg,
+        	create_time,
+        	remark,
+        	temp_1,
+        	temp_2
+        )
+    values (UUID(),
+        	#{channelNo},
+        	#{agentNo},
+        	#{merchantNo},
+        	#{authInterface},
+        	#{authParams},
+        	#{returnAuthCode},
+        	#{returnAuthMsg},
+        	#{createTime},
+        	#{remark},
+        	#{temp1},
+        	#{temp2}
+    )
+  </insert>
+  <select id="countByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultType="java.lang.Integer" >
+    select count(*) from t_merchant_auth_detail A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="channel_filter" />
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </select>
+  <update id="updateByCriteria" parameterType="map" >
+    update t_merchant_auth_detail A
+    <set >
+        	<if test="record.id != null and record.id != '' " >
+        		A.id = #{record.id},
+      		</if>
+        	<if test="record.channelNo != null and record.channelNo != '' " >
+        		A.channel_no = #{record.channelNo},
+      		</if>
+        	<if test="record.agentNo != null and record.agentNo != '' " >
+        		A.agent_no = #{record.agentNo},
+      		</if>
+        	<if test="record.merchantNo != null and record.merchantNo != '' " >
+        		A.merchant_no = #{record.merchantNo},
+      		</if>
+        	<if test="record.authInterface != null and record.authInterface != '' " >
+        		A.auth_interface = #{record.authInterface},
+      		</if>
+        	<if test="record.authParams != null and record.authParams != '' " >
+        		A.auth_params = #{record.authParams},
+      		</if>
+        	<if test="record.returnAuthCode != null and record.returnAuthCode != '' " >
+        		A.return_auth_code = #{record.returnAuthCode},
+      		</if>
+        	<if test="record.returnAuthMsg != null and record.returnAuthMsg != '' " >
+        		A.return_auth_msg = #{record.returnAuthMsg},
+      		</if>
+        	<if test="record.createTime != null and record.createTime != '' " >
+        		A.create_time = #{record.createTime},
+      		</if>
+        	<if test="record.remark != null and record.remark != '' " >
+        		A.remark = #{record.remark},
+      		</if>
+        	<if test="record.temp1 != null and record.temp1 != '' " >
+        		A.temp_1 = #{record.temp1},
+      		</if>
+        	<if test="record.temp2 != null and record.temp2 != '' " >
+        		A.temp_2 = #{record.temp2},
+      		</if>
+    </set>
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </update>
+  <update id="update" parameterType="com.hfepay.scancode.commons.entity.MerchantAuthDetail" >
+    update t_merchant_auth_detail A
+    <set >
+        	<if test="id != null and id != '' " >
+        		A.id = #{id},
+      		</if>
+        	<if test="channelNo != null and channelNo != '' " >
+        		A.channel_no = #{channelNo},
+      		</if>
+        	<if test="agentNo != null and agentNo != '' " >
+        		A.agent_no = #{agentNo},
+      		</if>
+        	<if test="merchantNo != null and merchantNo != '' " >
+        		A.merchant_no = #{merchantNo},
+      		</if>
+        	<if test="authInterface != null and authInterface != '' " >
+        		A.auth_interface = #{authInterface},
+      		</if>
+        	<if test="authParams != null and authParams != '' " >
+        		A.auth_params = #{authParams},
+      		</if>
+        	<if test="returnAuthCode != null and returnAuthCode != '' " >
+        		A.return_auth_code = #{returnAuthCode},
+      		</if>
+        	<if test="returnAuthMsg != null and returnAuthMsg != '' " >
+        		A.return_auth_msg = #{returnAuthMsg},
+      		</if>
+        	<if test="createTime != null and createTime != '' " >
+        		A.create_time = #{createTime},
+      		</if>
+        	<if test="remark != null and remark != '' " >
+        		A.remark = #{remark},
+      		</if>
+        	<if test="temp1 != null and temp1 != '' " >
+        		A.temp_1 = #{temp1},
+      		</if>
+        	<if test="temp2 != null and temp2 != '' " >
+        		A.temp_2 = #{temp2},
+      		</if>
+    </set>
+    where A.id = #{id}
+  </update>
+  
+  <select resultMap="BaseResultMap" parameterType="com.hfepay.scancode.commons.condition.MerchantAuthDetailCondition" id="getAuthDetail" >
+   select sum(number) as A_temp_1, return_auth_code as A_return_auth_code from (
+		select count(id) as number,case return_auth_code when '000000' then '000000' else '000001' end as return_auth_code 
+		from t_merchant_auth_detail A
+		<where>
+    		<if test="id != null and id != '' " >
+        		 and A.id = #{id}
+      		</if>
+        	<if test="channelNo != null and channelNo != '' " >
+        		and A.channel_no = #{channelNo}
+      		</if>
+        	<if test="agentNo != null and agentNo != '' " >
+        		and A.agent_no = #{agentNo}
+      		</if>
+        	<if test="merchantNo != null and merchantNo != '' " >
+        		and A.merchant_no = #{merchantNo}
+      		</if>
+        	<if test="authInterface != null and authInterface != '' " >
+        		and A.auth_interface = #{authInterface}
+      		</if>
+        	<if test="authParams != null and authParams != '' " >
+        		and A.auth_params = #{authParams}
+      		</if>
+        	<if test="returnAuthCode != null and returnAuthCode != '' " >
+        		and A.return_auth_code = #{returnAuthCode}
+      		</if>
+        	<if test="returnAuthMsg != null and returnAuthMsg != '' " >
+        		and A.return_auth_msg = #{returnAuthMsg}
+      		</if>
+        	<if test="createTime != null and createTime != '' " >
+        		and A.create_time = #{createTime}
+      		</if>
+        	<if test="remark != null and remark != '' " >
+        		and A.remark = #{remark}
+      		</if>
+        	<if test="temp1 != null and temp1 != '' " >
+        		and A.temp_1 = #{temp1}
+      		</if>
+        	<if test="temp2 != null and temp2 != '' " >
+        		and A.temp_2 = #{temp2}
+      		</if>
+      		<if test="nodeSeq != null" >
+	        	and EXISTS (
+					SELECT
+						n.current_node
+					FROM
+						t_node_relation n
+					WHERE
+						 n.node_seq like CONCAT('${nodeSeq}','%') and A.merchant_no = n.current_node)
+      		</if>
+    </where>
+		GROUP BY return_auth_code
+	) b GROUP BY return_auth_code
+  </select>
+</mapper>
+

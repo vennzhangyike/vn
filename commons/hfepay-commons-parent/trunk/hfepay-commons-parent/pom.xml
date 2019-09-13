@@ -1,0 +1,350 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.hfepay.commons</groupId>
+	<artifactId>hfepay-commons-parent</artifactId>
+	<version>1.0.0</version>
+	<name>hfepay-common-parent</name>
+	<packaging>pom</packaging>
+	<organization>
+		<name>hfepay</name>
+		<url>http://www.hfepay.com</url>
+	</organization>
+ 
+	  <repositories>   
+        <repository>   
+            <snapshots>   
+                <enabled>true</enabled>   
+            </snapshots>   
+            <id>central</id>   
+            <name>Central Repository</name>   
+            <url>http://repo.maven.apache.org/maven2</url> 
+        </repository>   
+    </repositories>   
+    <pluginRepositories>   
+        <pluginRepository>   
+            <id>central</id>   
+            <name>Central Repository</name>   
+            <url>http://repo.maven.apache.org/maven2</url>
+        </pluginRepository>   
+    </pluginRepositories>
+ 
+	<!-- <scm>
+		<connection>scm:svn:https://www.hfepay.com/svn/common_code/bob-commons-parent/tags/</connection>
+		<developerConnection>scm:svn:https://www.hfepay.com/svn/common_code/bob-commons-parent/trunk</developerConnection>
+		<url>https://www.hfepay.com/svn/common_code/hfepay-commons-parent/tags/</url>
+	</scm> -->
+	<!-- <distributionManagement>    
+       <repository>    
+           <id>nexus-releases</id>    
+           <url>http://172.16.2.200:8081/nexus/content/repositories/releases/</url>    
+       </repository>    
+           
+       <snapshotRepository>    
+           <id>nexus-snapshot</id>    
+           <url>http://172.16.2.200:8081/nexus/content/repositories/snapshots/</url>    
+       </snapshotRepository>    
+  	</distributionManagement> -->
+	<properties>
+		<!-- 主要依赖库的版本定义 -->		
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<!-- Commons -->
+		<alibaba.fastjson.version>1.1.33</alibaba.fastjson.version>
+		<google.code.gson.version>2.2.4</google.code.gson.version>
+		<junit.version>4.9</junit.version>
+		<commons.beanutils.version>1.9.1</commons.beanutils.version>
+		<commons.lang.version>2.5</commons.lang.version>
+		<commons.lang3.version>3.2.1</commons.lang3.version>
+		<commons.collections.version>3.2.1</commons.collections.version>
+		<commons.collection4.version>4.0.1</commons.collection4.version>
+		<commons.io.version>2.4</commons.io.version>
+		<commons.logging.version>1.1.1</commons.logging.version>
+		<commons.fileupload.version>1.3.1</commons.fileupload.version>
+		<jodatime.version>2.3</jodatime.version>
+		<jsonlib.version>2.4</jsonlib.version>
+		<thumbnailator.version>0.4.7</thumbnailator.version>
+		<apache.httpclient.version>4.1.3</apache.httpclient.version>
+		<commons.httpclient.version>3.1</commons.httpclient.version>
+		<xercesimpl.version>2.9.1</xercesimpl.version>
+		<toplink.essentials.version>1.0</toplink.essentials.version>
+		<org.json.version>chargebee-1.0</org.json.version>
+		<aspectjweaver.version>1.7.4</aspectjweaver.version>
+		<commons.email>1.4</commons.email>
+		
+		<!-- Log -->
+		<logback.classic.version>1.0.13</logback.classic.version>
+		<logback.core.version>1.0.13</logback.core.version>
+		<slf4j.version>1.7.21</slf4j.version>
+		
+		<!-- JMS -->
+		<rocket.jms.version>3.0.4-open</rocket.jms.version>
+		<geronimo.jms.version>1.1.1</geronimo.jms.version>
+		
+		<!-- MBG -->
+		<maven.plugin.api.version>2.0</maven.plugin.api.version>
+		<mybatis.generator.core.version>1.3.1</mybatis.generator.core.version>
+		<maven.project.version>2.1.0</maven.project.version>
+		<eclipse.core.contenttype.version>3.4.100.v20100505-1235</eclipse.core.contenttype.version>
+		<eclipse.core.jobs.version>3.5.0.v20100515</eclipse.core.jobs.version>
+		<eclipse.core.resources.version>3.6.0.v20100526-0737</eclipse.core.resources.version>
+		<eclipse.core.runtime.version>3.6.0.v20100505</eclipse.core.runtime.version>
+		<eclipse.equinox.common.version>3.6.0.v20100503</eclipse.equinox.common.version>
+		<eclipse.equinox.preferences.version>3.3.0.v20100503</eclipse.equinox.preferences.version>
+		<eclipse.jdt.core.version>3.6.0.v_A58</eclipse.jdt.core.version>
+		<eclipse.osgi.version>3.6.0.v20100517</eclipse.osgi.version>
+		
+		<!-- Spring  -->
+		<spring3.version>4.2.5.RELEASE</spring3.version>
+		<org.aspectj.version>1.6.9</org.aspectj.version>
+		<spring.session.data.redis.version>1.2.0.RELEASE</spring.session.data.redis.version>
+		<simple.spring.memcached.spring-cache.version>3.4.0</simple.spring.memcached.spring-cache.version>
+		<simple.spring.memcached.spymemcached-provider.version>3.4.0</simple.spring.memcached.spymemcached-provider.version>
+		
+		<!-- AOP  -->
+		<aspectjrt.version>1.7.0</aspectjrt.version>
+		<cglib.version>2.2.2</cglib.version>
+
+		<!-- mybatis -->
+		<mybatis.version>3.2.4</mybatis.version>
+		<mybaits.spring.version>1.2.1</mybaits.spring.version>
+				
+		<!-- Zookeeper  -->
+		<zookeeper.version>3.4.7</zookeeper.version>
+		<zkclient.version>0.2</zkclient.version>
+		
+		<!-- Dubbo  -->
+		<dubbo.version>2.5.3</dubbo.version>
+		<dubbo.extension.version>3.0.0</dubbo.extension.version>
+		<druid.version>0.2.8</druid.version>
+		
+		<!-- J2EE -->
+		<servlet.version>3.1.0</servlet.version>
+		<jsp.version>2.2</jsp.version>
+		<jsoup.version>1.7.3</jsoup.version>
+		<json.simple.version>1.1</json.simple.version>
+		<json.lib.version>2.4</json.lib.version>
+		
+		<taglibs.statndard.version>1.1.2</taglibs.statndard.version>
+		<servlet.jstl.version>1.2</servlet.jstl.version>
+		<servlet.servlet-api.version>2.5</servlet.servlet-api.version>
+		<jsp.jsp-api.version>2.1</jsp.jsp-api.version>
+		
+		<!-- memcached-->
+		<googlecode.xmemcached.version>1.4.3</googlecode.xmemcached.version>
+		<google.code.simple-spring-memcached.version>3.3.0</google.code.simple-spring-memcached.version>
+		<google.code.xmemcached-provider.version>3.3.0</google.code.xmemcached-provider.version>
+		<danga.memcached.version>2.6.6</danga.memcached.version>
+		
+		<!-- validator -->
+		<hibernate.hibernate-validator.version>5.0.1.Final</hibernate.hibernate-validator.version>
+		
+		<!-- db driver -->
+		<mysql.connector-java.version>5.1.27</mysql.connector-java.version>
+		<oracle.ojdbc6.version>11.2.0.1.0</oracle.ojdbc6.version>
+		
+		<!-- H2 database -->
+		<h2.version>1.3.175</h2.version>
+		
+		<!-- test -->
+		<mockito.core.version>1.9.5</mockito.core.version>
+		
+		<!-- commons-codec -->
+		<commons.codec.version>1.4</commons.codec.version>
+		
+		<!-- commons-dbcp -->
+		<commons.dbcp.version>20030825.184428</commons.dbcp.version>
+		<commons.pool.version>20030825.183949</commons.pool.version>
+		
+		<!-- commons-pool -->
+		<commons.object.pool.version>1.5.4</commons.object.pool.version>
+		
+		<!-- jxl -->
+		<jxls.version>1.0.5</jxls.version>
+		<jxl.version>2.6.12</jxl.version>
+		
+		<!-- jackson -->
+		<jackson.core.version>2.3.0-rc1</jackson.core.version>
+		<jackson.databind.version>2.3.0-rc1</jackson.databind.version>
+		<jackson.annotations.version>2.3.0-rc1</jackson.annotations.version>
+		<codehaus.jackson.jackson-xc.version>1.9.7</codehaus.jackson.jackson-xc.version>
+		<codehaus.jackson.mapper-asl.version>1.9.11</codehaus.jackson.mapper-asl.version>
+		<codehaus.jackson.core-asl.version>1.9.11</codehaus.jackson.core-asl.version>
+		
+		<!-- ant -->
+		<ant.version>1.6.5</ant.version>
+		
+		<google.guava.version>14.0.1</google.guava.version>
+		
+		<!-- dom4j -->
+		<dom4j.version>1.6.1</dom4j.version>
+		
+		<!-- mongodb -->
+		<spring.data.mongodb.version>1.3.4.RELEASE</spring.data.mongodb.version>
+		<mongodb.java.driver.version>2.11.4</mongodb.java.driver.version>
+		
+		<!-- quartz -->
+		<quartz.version>2.2.1</quartz.version>
+		<quartz.jobs.version>2.2.1</quartz.jobs.version>
+		
+		<!-- mail -->
+		<javax.mail.version>1.5.5</javax.mail.version>
+		<javax.activation.version>1.1.1</javax.activation.version>
+		
+		<!-- excel -->
+		<net.sf.jxls.jxls-core.version>0.9.6</net.sf.jxls.jxls-core.version>
+		<net.sf.jxls.jxls-reader.version>0.9.6</net.sf.jxls.jxls-reader.version>
+		<jxl.jexcelapi.version>2.6.12</jxl.jexcelapi.version>
+		
+		
+		<freemarker.version>2.3.8</freemarker.version>
+		<!-- ************************黄金分割点**************************** -->
+		
+		<!-- 内部组件版本声明 -->
+		<!-- 公共组件版本声明 -->
+		
+	
+		
+		<!-- Components版本声明 -->
+		
+		<!-- 服务组件版本声明 -->
+		
+		
+		<!-- 上一版本信息 -->
+		
+		<!-- SNAPSHOT 信息 end  -->
+		
+		<!-- cas -->
+		
+	</properties>
+	
+	<dependencies>
+	    <dependency>
+	        <groupId>org.slf4j</groupId>
+	        <artifactId>slf4j-api</artifactId>
+	    </dependency>
+	    <dependency>
+	        <groupId>org.slf4j</groupId>
+	        <artifactId>jcl-over-slf4j</artifactId>
+	    </dependency>
+	    <dependency>
+	        <groupId>ch.qos.logback</groupId>
+	        <artifactId>logback-classic</artifactId>
+	    </dependency>
+	</dependencies>
+	
+	<dependencyManagement> 
+	    <dependencies>
+	        <dependency>
+	            <groupId>org.slf4j</groupId>
+	            <artifactId>slf4j-api</artifactId>
+	            <version>1.7.5</version>
+	        </dependency>
+	        <dependency>
+	            <groupId>org.slf4j</groupId>
+	            <artifactId>jcl-over-slf4j</artifactId>
+	            <version>1.7.5</version>
+	        </dependency>
+	        <dependency>
+	            <groupId>ch.qos.logback</groupId>
+	            <artifactId>logback-classic</artifactId>
+	            <version>1.0.13</version>
+	            <scope>runtime</scope> 
+	        </dependency>
+	        <dependency>
+	            <groupId>commons-logging</groupId>
+	            <artifactId>commons-logging</artifactId>
+	            <version>1.1.3</version>
+	            <scope>provided</scope> 
+	        </dependency>
+	    </dependencies>
+	</dependencyManagement>
+
+	<!-- 编译打包之后绑定源码 -->
+	<build>
+        <plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+            <plugin>  
+		        <groupId>org.apache.maven.plugins</groupId>  
+		        <artifactId>maven-source-plugin</artifactId>  
+		        <version>2.1.2</version>  
+		        <executions>  
+		          <execution>  
+		            <id>attach-sources</id>  
+		            <phase>verify</phase>  
+		            <goals>  
+		              <goal>jar-no-fork</goal>  
+		            </goals>  
+		          </execution>  
+		        </executions>  
+		    </plugin>
+        	<plugin>
+	            <groupId>org.apache.maven.plugins</groupId>
+	            <artifactId>maven-war-plugin</artifactId>
+	            <version>2.6</version>
+	            <configuration>
+	                <failOnMissingWebXml>false</failOnMissingWebXml>
+	            </configuration>
+        	</plugin>
+        	<plugin>   
+        		<groupId>org.apache.maven.plugins</groupId>   
+        		<artifactId>maven-surefire-plugin</artifactId>   
+        		<version>2.4.2</version>   
+        		<configuration>   
+          			<skipTests>true</skipTests>   
+        		</configuration>   
+      		</plugin>   
+      		<plugin>
+		        <groupId>org.apache.maven.plugins</groupId>
+		        <artifactId>maven-plugin-plugin</artifactId>
+		        <version>3.4</version>
+		        <configuration>
+		          <goalPrefix>plugin</goalPrefix>
+		          <outputDirectory>target/dir</outputDirectory>
+		        </configuration>
+	      </plugin>
+        </plugins>
+        <pluginManagement>
+        	<plugins>
+        		<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+        		<plugin>
+        			<groupId>org.eclipse.m2e</groupId>
+        			<artifactId>lifecycle-mapping</artifactId>
+        			<version>1.0.0</version>
+        			<configuration>
+        				<lifecycleMappingMetadata>
+        					<pluginExecutions>
+        						<pluginExecution>
+        							<pluginExecutionFilter>
+        								<groupId>
+        									org.apache.maven.plugins
+        								</groupId>
+        								<artifactId>
+        									maven-plugin-plugin
+        								</artifactId>
+        								<versionRange>
+        									[3.4,)
+        								</versionRange>
+        								<goals>
+        									<goal>descriptor</goal>
+        								</goals>
+        							</pluginExecutionFilter>
+        							<action>
+        								<ignore></ignore>
+        							</action>
+        						</pluginExecution>
+        					</pluginExecutions>
+        				</lifecycleMappingMetadata>
+        			</configuration>
+        		</plugin>
+        	</plugins>
+        </pluginManagement>
+	</build>
+</project>

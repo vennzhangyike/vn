@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="ProfitDetail">
+	<resultMap id="BaseResultMap" type="com.hfepay.scancode.commons.entity.ProfitDetail">
+        <result property="id" column="A_id"/>
+        <result property="identityNo" column="A_identity_no"/>
+        <result property="profit" column="A_profit"/>
+        <result property="payCode" column="A_pay_code"/>
+        <result property="tradeType" column="A_trade_type"/>
+        <result property="merchantNo" column="A_merchant_no"/>
+        <result property="profitType" column="A_profit_type"/>
+        <result property="profitBase" column="A_profit_base"/>
+        <result property="childLevelNo" column="A_child_level_no"/>
+        <result property="rate" column="A_rate"/>
+        <result property="rateDiff" column="A_rate_diff"/>
+        <result property="createTime" column="A_create_time"/>
+	</resultMap>
+	
+	<resultMap id="BaseResultMapVO" type="com.hfepay.scancode.commons.vo.ProfitDetailVO" extends="BaseResultMap">
+        <result property="organName" column="A_organ_name"/>
+        <result property="merchantName" column="A_merchant_name"/>
+        <result property="transDate" column="A_trans_date"/>
+    </resultMap>    
+	
+	<sql id="Base_Column_List">
+	    <![CDATA[
+		A.id as A_id,A.identity_no as A_identity_no,A.profit as A_profit,A.pay_code as A_pay_code,A.trade_type as A_trade_type,A.merchant_no as A_merchant_no,A.profit_type as A_profit_type,A.profit_base as A_profit_base,A.child_level_no as A_child_level_no,A.rate as A_rate,A.rate_diff as A_rate_diff,A.create_time as A_create_time
+	    ]]>
+	</sql>
+
+	<select id="findByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultMap="BaseResultMapVO" >
+    select
+    <include refid="Base_Column_List" />,DATE_ADD(create_time,INTERVAL -1 day) as A_trans_date
+     from t_profit_detail A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+    <if test="hasOrderBy" >
+      order by
+      <foreach collection="orderBys" item="orderBy" separator="," > ${orderBy} </foreach>
+    </if>
+  </select>
+  <select resultMap="BaseResultMap" parameterType="java.lang.String" id="findById" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_profit_detail A
+    where A.id = #{id}
+  </select>
+  <delete parameterType="java.lang.String" id="deleteById" >
+    delete from t_profit_detail
+    where id = #{id}
+  </delete>
+  <delete id="deleteByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" >
+    delete A from t_profit_detail A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.hfepay.scancode.commons.entity.ProfitDetail" >
+    insert into t_profit_detail (
+        	id,
+        	identity_no,
+        	profit,
+        	pay_code,
+        	trade_type,
+        	merchant_no,
+        	profit_type,
+        	profit_base,
+        	child_level_no,
+        	rate,
+        	rate_diff,
+        	create_time
+        )
+    values (
+        #{id},
+        #{identityNo},
+        #{profit},
+        #{payCode},
+        #{tradeType},
+        #{merchantNo},
+        #{profitType},
+        #{profitBase},
+        #{childLevelNo},
+        #{rate},
+        #{rateDiff},
+        #{createTime}
+    )
+  </insert>
+  <select id="countByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultType="java.lang.Integer" >
+    select count(*) from t_profit_detail A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </select>
+  <update id="updateByCriteria" parameterType="map" >
+    update t_profit_detail A
+    <set >
+        	<if test="record.id != null and record.id != '' " >
+        		A.id = #{record.id},
+      		</if>
+        	<if test="record.identityNo != null and record.identityNo != '' " >
+        		A.identity_no = #{record.identityNo},
+      		</if>
+        	<if test="record.profit != null and record.profit != '' " >
+        		A.profit = #{record.profit},
+      		</if>
+        	<if test="record.payCode != null and record.payCode != '' " >
+        		A.pay_code = #{record.payCode},
+      		</if>
+        	<if test="record.tradeType != null and record.tradeType != '' " >
+        		A.trade_type = #{record.tradeType},
+      		</if>
+        	<if test="record.merchantNo != null and record.merchantNo != '' " >
+        		A.merchant_no = #{record.merchantNo},
+      		</if>
+        	<if test="record.profitType != null and record.profitType != '' " >
+        		A.profit_type = #{record.profitType},
+      		</if>
+        	<if test="record.profitBase != null and record.profitBase != '' " >
+        		A.profit_base = #{record.profitBase},
+      		</if>
+        	<if test="record.childLevelNo != null and record.childLevelNo != '' " >
+        		A.child_level_no = #{record.childLevelNo},
+      		</if>
+        	<if test="record.rate != null and record.rate != '' " >
+        		A.rate = #{record.rate},
+      		</if>
+        	<if test="record.rateDiff != null and record.rateDiff != '' " >
+        		A.rate_diff = #{record.rateDiff},
+      		</if>
+        	<if test="record.createTime != null and record.createTime != '' " >
+        		A.create_time = #{record.createTime},
+      		</if>
+    </set>
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </update>
+  <update id="update" parameterType="com.hfepay.scancode.commons.entity.ProfitDetail" >
+    update t_profit_detail A
+    <set >
+        	<if test="id != null and id != '' " >
+        		A.id = #{id},
+      		</if>
+        	<if test="identityNo != null and identityNo != '' " >
+        		A.identity_no = #{identityNo},
+      		</if>
+        	<if test="profit != null and profit != '' " >
+        		A.profit = #{profit},
+      		</if>
+        	<if test="payCode != null and payCode != '' " >
+        		A.pay_code = #{payCode},
+      		</if>
+        	<if test="tradeType != null and tradeType != '' " >
+        		A.trade_type = #{tradeType},
+      		</if>
+        	<if test="merchantNo != null and merchantNo != '' " >
+        		A.merchant_no = #{merchantNo},
+      		</if>
+        	<if test="profitType != null and profitType != '' " >
+        		A.profit_type = #{profitType},
+      		</if>
+        	<if test="profitBase != null and profitBase != '' " >
+        		A.profit_base = #{profitBase},
+      		</if>
+        	<if test="childLevelNo != null and childLevelNo != '' " >
+        		A.child_level_no = #{childLevelNo},
+      		</if>
+        	<if test="rate != null and rate != '' " >
+        		A.rate = #{rate},
+      		</if>
+        	<if test="rateDiff != null and rateDiff != '' " >
+        		A.rate_diff = #{rateDiff},
+      		</if>
+        	<if test="createTime != null and createTime != '' " >
+        		A.create_time = #{createTime},
+      		</if>
+    </set>
+    where A.id = #{id}
+  </update>
+  
+  <insert id="insertBatch" parameterType="com.hfepay.scancode.commons.entity.ProfitDetail" >
+  insert into t_profit_detail (
+        	id,
+        	identity_no,
+        	profit,
+        	pay_code,
+        	trade_type,
+        	merchant_no,
+        	profit_type,
+        	profit_base,
+        	child_level_no,
+        	rate,
+        	rate_diff,
+        	create_time
+        )
+    values 
+    <foreach collection="list" item="item" index="index" separator="," >  
+    (
+        #{item.id},
+        #{item.identityNo},
+        #{item.profit},
+        #{item.payCode},
+        #{item.tradeType},
+        #{item.merchantNo},
+        #{item.profitType},
+        #{item.profitBase},
+        #{item.childLevelNo},
+        #{item.rate},
+        #{item.rateDiff},
+        #{item.createTime}
+    )
+    </foreach> 
+  </insert>
+  
+</mapper>
+

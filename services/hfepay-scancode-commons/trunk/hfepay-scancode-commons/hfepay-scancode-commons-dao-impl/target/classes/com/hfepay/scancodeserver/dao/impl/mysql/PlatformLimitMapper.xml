@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="PlatformLimit">
+	<resultMap id="BaseResultMap" type="com.hfepay.scancode.commons.entity.PlatformLimit">
+        <result property="id" column="A_id"/>
+        <result property="limitPayCode" column="A_limit_pay_code"/>
+        <result property="limitType" column="A_limit_type"/>
+        <result property="dayTransLimit" column="A_day_trans_limit"/>
+        <result property="dayWithdrawalsLimit" column="A_day_withdrawals_limit"/>
+        <result property="singleTransLimit" column="A_single_trans_limit"/>
+        <result property="singleWithdrawalsLimit" column="A_single_withdrawals_limit"/>
+        <result property="status" column="A_status"/>
+        <result property="recordStatus" column="A_record_status"/>
+        <result property="createTime" column="A_create_time"/>
+        <result property="updateTime" column="A_update_time"/>
+        <result property="operator" column="A_operator"/>
+        <result property="remark" column="A_remark"/>
+        <result property="temp1" column="A_temp_1"/>
+        <result property="temp2" column="A_temp_2"/>
+	</resultMap>
+	
+	<resultMap id="BaseResultMapVo" type="com.hfepay.scancode.commons.vo.PlatformLimitVo" extends="BaseResultMap">
+		<result property="operatorName" column="operator_name"/>
+		<result property="paraName" column="para_name"/>
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+	    <![CDATA[
+		A.id as A_id,A.limit_pay_code as A_limit_pay_code,A.limit_type as A_limit_type,A.day_trans_limit as A_day_trans_limit,A.day_withdrawals_limit as A_day_withdrawals_limit,A.single_trans_limit as A_single_trans_limit,A.single_withdrawals_limit as A_single_withdrawals_limit,A.status as A_status,A.record_status as A_record_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	    ]]>
+	</sql>
+
+	<select id="findByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultMap="BaseResultMapVo" >
+    select
+    <include refid="Base_Column_List" />,B.para_name as paraName
+     from t_platform_limit A left join t_mapping_dicion B on A.limit_pay_code = B.para_val 
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+    <if test="hasOrderBy" >
+      order by
+      <foreach collection="orderBys" item="orderBy" separator="," > ${orderBy} </foreach>
+    </if>
+  </select>
+  <select resultMap="BaseResultMapVo" parameterType="java.lang.String" id="findById" >
+    select 
+    <include refid="Base_Column_List" />,B.para_name as paraName
+    from t_platform_limit A left join t_mapping_dicion B on A.limit_pay_code = B.para_val 
+    where A.id = #{id}
+  </select>
+  <delete parameterType="java.lang.String" id="deleteById" >
+    delete from t_platform_limit
+    where id = #{id}
+  </delete>
+  <delete id="deleteByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" >
+    delete A from t_platform_limit A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.hfepay.scancode.commons.entity.PlatformLimit" >
+    insert into t_platform_limit (
+        	id,
+        	limit_pay_code,
+        	limit_type,
+        	day_trans_limit,
+        	day_withdrawals_limit,
+        	single_trans_limit,
+        	single_withdrawals_limit,
+        	status,
+        	record_status,
+        	create_time,
+        	update_time,
+        	operator,
+        	remark,
+        	temp_1,
+        	temp_2
+        )
+    values (
+        	#{id},
+        	#{limitPayCode},
+        	#{limitType},
+        	#{dayTransLimit},
+        	#{dayWithdrawalsLimit},
+        	#{singleTransLimit},
+        	#{singleWithdrawalsLimit},
+        	#{status},
+        	#{recordStatus},
+        	#{createTime},
+        	#{updateTime},
+        	#{operator},
+        	#{remark},
+        	#{temp1},
+        	#{temp2}
+    )
+  </insert>
+  <select id="countByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultType="java.lang.Integer" >
+    select count(*) from t_platform_limit A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </select>
+  <update id="updateByCriteria" parameterType="map" >
+    update t_platform_limit A
+    <set >
+        	<if test="record.id != null and record.id != '' " >
+        		A.id = #{record.id},
+      		</if>
+        	<if test="record.limitPayCode != null and record.limitPayCode != '' " >
+        		A.limit_pay_code = #{record.limitPayCode},
+      		</if>
+        	<if test="record.limitType != null and record.limitType != '' " >
+        		A.limit_type = #{record.limitType},
+      		</if>
+        	<if test="record.dayTransLimit != null" >
+        		A.day_trans_limit = #{record.dayTransLimit},
+      		</if>
+        	<if test="record.dayWithdrawalsLimit != null" >
+        		A.day_withdrawals_limit = #{record.dayWithdrawalsLimit},
+      		</if>
+        	<if test="record.singleTransLimit != null" >
+        		A.single_trans_limit = #{record.singleTransLimit},
+      		</if>
+        	<if test="record.singleWithdrawalsLimit != null" >
+        		A.single_withdrawals_limit = #{record.singleWithdrawalsLimit},
+      		</if>
+        	<if test="record.status != null and record.status != '' " >
+        		A.status = #{record.status},
+      		</if>
+        	<if test="record.recordStatus != null and record.recordStatus != '' " >
+        		A.record_status = #{record.recordStatus},
+      		</if>
+        	<if test="record.createTime != null and record.createTime != '' " >
+        		A.create_time = #{record.createTime},
+      		</if>
+        	<if test="record.updateTime != null and record.updateTime != '' " >
+        		A.update_time = #{record.updateTime},
+      		</if>
+        	<if test="record.operator != null and record.operator != '' " >
+        		A.operator = #{record.operator},
+      		</if>
+        	<if test="record.remark != null and record.remark != '' " >
+        		A.remark = #{record.remark},
+      		</if>
+        	<if test="record.temp1 != null and record.temp1 != '' " >
+        		A.temp_1 = #{record.temp1},
+      		</if>
+        	<if test="record.temp2 != null and record.temp2 != '' " >
+        		A.temp_2 = #{record.temp2},
+      		</if>
+    </set>
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </update>
+  <update id="update" parameterType="com.hfepay.scancode.commons.entity.PlatformLimit" >
+    update t_platform_limit A
+    <set >
+        	<if test="id != null and id != '' " >
+        		A.id = #{id},
+      		</if>
+        	<if test="limitPayCode != null and limitPayCode != '' " >
+        		A.limit_pay_code = #{limitPayCode},
+      		</if>
+        	<if test="limitType != null and limitType != '' " >
+        		A.limit_type = #{limitType},
+      		</if>
+        	<if test="dayTransLimit != null" >
+        		A.day_trans_limit = #{dayTransLimit},
+      		</if>
+        	<if test="dayWithdrawalsLimit != null" >
+        		A.day_withdrawals_limit = #{dayWithdrawalsLimit},
+      		</if>
+        	<if test="singleTransLimit != null" >
+        		A.single_trans_limit = #{singleTransLimit},
+      		</if>
+        	<if test="singleWithdrawalsLimit != null" >
+        		A.single_withdrawals_limit = #{singleWithdrawalsLimit},
+      		</if>
+        	<if test="status != null and status != '' " >
+        		A.status = #{status},
+      		</if>
+        	<if test="recordStatus != null and recordStatus != '' " >
+        		A.record_status = #{recordStatus},
+      		</if>
+        	<if test="createTime != null and createTime != '' " >
+        		A.create_time = #{createTime},
+      		</if>
+        	<if test="updateTime != null and updateTime != '' " >
+        		A.update_time = #{updateTime},
+      		</if>
+        	<if test="operator != null and operator != '' " >
+        		A.operator = #{operator},
+      		</if>
+        	<if test="remark != null and remark != '' " >
+        		A.remark = #{remark},
+      		</if>
+        	<if test="temp1 != null and temp1 != '' " >
+        		A.temp_1 = #{temp1},
+      		</if>
+        	<if test="temp2 != null and temp2 != '' " >
+        		A.temp_2 = #{temp2},
+      		</if>
+    </set>
+    where A.id = #{id}
+  </update>
+  
+	<update id="updateStatus">
+    update t_platform_limit
+		set `STATUS` = #{status}
+		where id=#{id}
+  </update>
+</mapper>
+

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="MessagePushLog">
+	<resultMap id="BaseResultMap" type="com.hfepay.scancode.commons.entity.MessagePushLog">
+        <result property="id" column="A_id"/>
+        <result property="channelNo" column="A_channel_no"/>
+        <result property="agentNo" column="A_agent_no"/>
+        <result property="merchantNo" column="A_merchant_no"/>
+        <result property="messageType" column="A_message_type"/>
+        <result property="messageContent" column="A_message_content"/>
+        <result property="pushRule" column="A_push_rule"/>
+        <result property="pushTime" column="A_push_time"/>
+        <result property="pushWay" column="A_push_way"/>
+        <result property="pushDate" column="A_push_date"/>
+        <result property="pushResult" column="A_push_result"/>
+        <result property="remark" column="A_remark"/>
+        <result property="temp1" column="A_temp_1"/>
+        <result property="temp2" column="A_temp_2"/>
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+	    <![CDATA[
+		A.id as A_id,A.channel_no as A_channel_no,A.agent_no as A_agent_no,A.merchant_no as A_merchant_no,A.message_type as A_message_type,A.message_content as A_message_content,A.push_rule as A_push_rule,A.push_time as A_push_time,A.push_way as A_push_way,A.push_date as A_push_date,A.push_result as A_push_result,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	    ]]>
+	</sql>
+
+	<select id="findByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+     from t_message_push_log A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+    <if test="hasOrderBy" >
+      order by
+      <foreach collection="orderBys" item="orderBy" separator="," > ${orderBy} </foreach>
+    </if>
+  </select>
+  <select resultMap="BaseResultMap" parameterType="java.lang.String" id="findById" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_message_push_log A
+    where A.id = #{id}
+  </select>
+  <delete parameterType="java.lang.String" id="deleteById" >
+    delete from t_message_push_log
+    where id = #{id}
+  </delete>
+  <delete id="deleteByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" >
+    delete A from t_message_push_log A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.hfepay.scancode.commons.entity.MessagePushLog" >
+    insert into t_message_push_log (
+        	id,
+        	channel_no,
+        	agent_no,
+        	merchant_no,
+        	message_type,
+        	message_content,
+        	push_rule,
+        	push_time,
+        	push_way,
+        	push_date,
+        	push_result,
+        	remark,
+        	temp_1,
+        	temp_2
+        )
+    values (UUID(),
+        	#{channelNo},
+        	#{agentNo},
+        	#{merchantNo},
+        	#{messageType},
+        	#{messageContent},
+        	#{pushRule},
+        	#{pushTime},
+        	#{pushWay},
+        	#{pushDate},
+        	#{pushResult},
+        	#{remark},
+        	#{temp1},
+        	#{temp2}
+    )
+  </insert>
+  <select id="countByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultType="java.lang.Integer" >
+    select count(*) from t_message_push_log A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </select>
+  <update id="updateByCriteria" parameterType="map" >
+    update t_message_push_log A
+    <set >
+        	<if test="record.id != null and record.id != '' " >
+        		A.id = #{record.id},
+      		</if>
+        	<if test="record.channelNo != null and record.channelNo != '' " >
+        		A.channel_no = #{record.channelNo},
+      		</if>
+        	<if test="record.agentNo != null and record.agentNo != '' " >
+        		A.agent_no = #{record.agentNo},
+      		</if>
+        	<if test="record.merchantNo != null and record.merchantNo != '' " >
+        		A.merchant_no = #{record.merchantNo},
+      		</if>
+        	<if test="record.messageType != null and record.messageType != '' " >
+        		A.message_type = #{record.messageType},
+      		</if>
+        	<if test="record.messageContent != null and record.messageContent != '' " >
+        		A.message_content = #{record.messageContent},
+      		</if>
+        	<if test="record.pushRule != null and record.pushRule != '' " >
+        		A.push_rule = #{record.pushRule},
+      		</if>
+        	<if test="record.pushTime != null and record.pushTime != '' " >
+        		A.push_time = #{record.pushTime},
+      		</if>
+        	<if test="record.pushWay != null and record.pushWay != '' " >
+        		A.push_way = #{record.pushWay},
+      		</if>
+        	<if test="record.pushDate != null and record.pushDate != '' " >
+        		A.push_date = #{record.pushDate},
+      		</if>
+        	<if test="record.pushResult != null and record.pushResult != '' " >
+        		A.push_result = #{record.pushResult},
+      		</if>
+        	<if test="record.remark != null and record.remark != '' " >
+        		A.remark = #{record.remark},
+      		</if>
+        	<if test="record.temp1 != null and record.temp1 != '' " >
+        		A.temp_1 = #{record.temp1},
+      		</if>
+        	<if test="record.temp2 != null and record.temp2 != '' " >
+        		A.temp_2 = #{record.temp2},
+      		</if>
+    </set>
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </update>
+  <update id="update" parameterType="com.hfepay.scancode.commons.entity.MessagePushLog" >
+    update t_message_push_log A
+    <set >
+        	<if test="id != null and id != '' " >
+        		A.id = #{id},
+      		</if>
+        	<if test="channelNo != null and channelNo != '' " >
+        		A.channel_no = #{channelNo},
+      		</if>
+        	<if test="agentNo != null and agentNo != '' " >
+        		A.agent_no = #{agentNo},
+      		</if>
+        	<if test="merchantNo != null and merchantNo != '' " >
+        		A.merchant_no = #{merchantNo},
+      		</if>
+        	<if test="messageType != null and messageType != '' " >
+        		A.message_type = #{messageType},
+      		</if>
+        	<if test="messageContent != null and messageContent != '' " >
+        		A.message_content = #{messageContent},
+      		</if>
+        	<if test="pushRule != null and pushRule != '' " >
+        		A.push_rule = #{pushRule},
+      		</if>
+        	<if test="pushTime != null and pushTime != '' " >
+        		A.push_time = #{pushTime},
+      		</if>
+        	<if test="pushWay != null and pushWay != '' " >
+        		A.push_way = #{pushWay},
+      		</if>
+        	<if test="pushDate != null and pushDate != '' " >
+        		A.push_date = #{pushDate},
+      		</if>
+        	<if test="pushResult != null and pushResult != '' " >
+        		A.push_result = #{pushResult},
+      		</if>
+        	<if test="remark != null and remark != '' " >
+        		A.remark = #{remark},
+      		</if>
+        	<if test="temp1 != null and temp1 != '' " >
+        		A.temp_1 = #{temp1},
+      		</if>
+        	<if test="temp2 != null and temp2 != '' " >
+        		A.temp_2 = #{temp2},
+      		</if>
+    </set>
+    where A.id = #{id}
+  </update>
+  
+</mapper>
+

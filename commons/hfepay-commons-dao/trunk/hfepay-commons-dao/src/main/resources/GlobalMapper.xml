@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Global">
+  <sql id="Where_Clause">
+    <!--
+      WARNING - @全局SQL
+    -->
+      <if test="@com.hfepay.commons.base.collection.Collections@isNotEmpty(conditions)">
+      <foreach open="(" close=")" collection="conditions" item="condition">
+        <if test="condition.group">
+           ${condition.logic} 
+          <foreach close=")" collection="condition.all" item="criterion" open="(">
+            <choose>
+              <when test="criterion.between">
+                 ${criterion.expression} #{criterion.value.start} and #{criterion.value.end} 
+              </when>
+              <when test="criterion.list">
+                 ${criterion.expression} 
+                <foreach close=")" collection="criterion.value" item="inItem" open="(" separator=",">
+                  #{inItem}
+                </foreach>
+              </when>
+              <when test="criterion.none">
+                 ${criterion.expression} 
+              </when>
+              <otherwise>
+                 ${criterion.expression} #{criterion.value} 
+                 <if test="criterion.operator == @com.hfepay.commons.criteria.Operator@LIKE">
+                 	<if test="@com.hfepay.commons.utils.Databases@isOracle()">
+                 	escape '\' 
+                 	</if>
+                 </if>
+              </otherwise>
+            </choose>
+          </foreach>
+        </if>
+        <if test="condition.group == false">
+          <choose>
+            <when test="condition.between">
+              ${condition.expression} #{condition.value.start} and #{condition.value.end}
+            </when>
+            <when test="condition.list">
+              ${condition.expression}
+              <foreach close=")" collection="condition.value" item="inItem" open="(" separator=",">
+                #{inItem}
+              </foreach>
+            </when>
+            <when test="condition.none">
+              ${condition.expression} 
+            </when>
+            <otherwise>
+               ${condition.expression} #{condition.value} 
+               <if test="condition.operator == @com.hfepay.commons.criteria.Operator@LIKE">
+                 	<if test="@com.hfepay.commons.utils.Databases@isOracle()">
+                 	escape '\' 
+                 	</if>
+               </if>
+            </otherwise>
+          </choose>
+        </if>
+      </foreach>
+      </if>
+      <if test="params != null">
+      	<if test="params.recordStatus != null">
+      		AND A.RECORD_STATUS = #{params.recordStatus,jdbcType=CHAR}
+      	</if>
+      </if>
+  </sql>
+</mapper>

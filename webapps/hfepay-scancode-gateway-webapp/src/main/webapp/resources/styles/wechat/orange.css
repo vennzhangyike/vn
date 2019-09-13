@@ -1,0 +1,12 @@
+/* The skin of orange */
+.my_info{background:url("../../images/wechat/center_bg_orange.jpg");background-size:100% 100%}
+.applyBg{background:#fff9f0 url("../../images/wechat/register_bg_orange.jpg") no-repeat 0 0}
+.weui-btn_primary, .keypad .col .enter{background-color:rgba(254,155,32,1)}
+.weui-btn_primary:not(.weui-btn_disabled):active {background-color:rgba(254,155,32,.8)}
+.apply .apply_tips{background:rgba(254,155,32,.1)}
+.apply .apply_tips i{background:rgba(254,155,32,.6)}
+.money_c{border:solid 1px rgba(254,155,32,1)}
+.jrsr{border:3px rgba(254,155,32,.6) solid}
+.weui-dialog__btn, .toolbar .picker-button, .sh_code h2 span, .jrsr p, .balance_sr .balance_info p, .balance_ktxye h3 {color:rgba(254,155,32,.8)}
+.sm-tab .weui-navbar__item.weui-bar__item--on{color:rgba(254,155,32,.8);border-bottom:solid 2px rgba(254,155,32,1);background-color:#fff}
+.swskFull{background-color:#fef1d6}

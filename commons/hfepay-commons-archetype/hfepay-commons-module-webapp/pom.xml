@@ -1,0 +1,30 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+	<groupId>com.hfepay.commons</groupId>
+	<artifactId>hfepay-commons-parent</artifactId>
+	<version>1.0.0</version>
+  </parent>
+  <groupId>com.hfepay.common</groupId>
+  <artifactId>hfepay-commons-module-webapp</artifactId>
+  <version>1.0.0</version>
+  <packaging>pom</packaging>
+
+  <name>webapp</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  
+  <modules>
+  	<module>hfepay-commons-module-webapp-dao</module>
+  	<module>hfepay-commons-module-webapp-dao-impl</module>
+  	<module>hfepay-commons-module-webapp-entity</module>
+  	<module>hfepay-commons-module-webapp-service</module>
+  	<module>hfepay-commons-module-webapp-service-impl</module>
+  	<module>hfepay-commons-module-webapp-web</module>
+  </modules>
+
+</project>

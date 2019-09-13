@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="AgreementInfo">
+	<resultMap id="BaseResultMap" type="com.hfepay.scancode.commons.entity.AgreementInfo">
+        <result property="id" column="A_ID"/>
+        <result property="agreementNo" column="A_AGREEMENT_NO"/>
+        <result property="organNo" column="A_organ_no"/>
+        <result property="agreementtype" column="A_AGREEMENT_type"/>
+        <result property="agreementcontent" column="A_AGREEMENT_content"/>
+        <result property="startDate" column="A_START_DATE"/>
+        <result property="endDate" column="A_END_DATE"/>
+        <result property="status" column="A_STATUS"/>
+        <result property="createTime" column="A_CREATE_TIME"/>
+        <result property="updateTime" column="A_UPDATE_TIME"/>
+        <result property="operater" column="A_OPERATER"/>
+        <result property="remark" column="A_REMARK"/>
+        <result property="temp1" column="A_TEMP_1"/>
+        <result property="temp2" column="A_TEMP_2"/>
+        <result property="temp3" column="A_TEMP_3"/>
+        <result property="temp4" column="A_TEMP_4"/>
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+	    <![CDATA[
+		A.ID as A_ID,A.AGREEMENT_NO as A_AGREEMENT_NO,A.organ_no as A_organ_no,A.AGREEMENT_type as A_AGREEMENT_type,A.AGREEMENT_content as A_AGREEMENT_content,A.START_DATE as A_START_DATE,A.END_DATE as A_END_DATE,A.STATUS as A_STATUS,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.OPERATER as A_OPERATER,A.REMARK as A_REMARK,A.TEMP_1 as A_TEMP_1,A.TEMP_2 as A_TEMP_2,A.TEMP_3 as A_TEMP_3,A.TEMP_4 as A_TEMP_4
+	    ]]>
+	</sql>
+
+	<select id="findByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+     from t_agreement_info A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+    <if test="hasOrderBy" >
+      order by
+      <foreach collection="orderBys" item="orderBy" separator="," > ${orderBy} </foreach>
+    </if>
+  </select>
+  <select resultMap="BaseResultMap" parameterType="java.lang.String" id="findById" >
+    select 
+    <include refid="Base_Column_List" />,B.user_name as operator_name
+    from t_agreement_info A left join t_sys_admin B on A.operator_id = B.id 
+    where A.ID = #{id}
+  </select>
+  <delete parameterType="java.lang.String" id="deleteById" >
+    delete from t_agreement_info
+    where ID = #{id}
+  </delete>
+  <delete id="deleteByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" >
+    delete A from t_agreement_info A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.hfepay.scancode.commons.entity.AgreementInfo" >
+    insert into t_agreement_info (
+        	ID,
+        	AGREEMENT_NO,
+        	organ_no,
+        	AGREEMENT_type,
+        	AGREEMENT_content,
+        	START_DATE,
+        	END_DATE,
+        	STATUS,
+        	CREATE_TIME,
+        	UPDATE_TIME,
+        	OPERATER,
+        	REMARK,
+        	TEMP_1,
+        	TEMP_2,
+        	TEMP_3,
+        	TEMP_4
+        )
+    values (
+        	#{id},
+        	#{agreementNo},
+        	#{organNo},
+        	#{agreementtype},
+        	#{agreementcontent},
+        	#{startDate},
+        	#{endDate},
+        	#{status},
+        	#{createTime},
+        	#{updateTime},
+        	#{operater},
+        	#{remark},
+        	#{temp1},
+        	#{temp2},
+        	#{temp3},
+        	#{temp4}
+    )
+  </insert>
+  <select id="countByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultType="java.lang.Integer" >
+    select count(*) from t_agreement_info A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </select>
+  <update id="updateByCriteria" parameterType="map" >
+    update t_agreement_info A
+    <set >
+        	<if test="record.id != null and record.id != '' " >
+        		A.ID = #{record.id},
+      		</if>
+        	<if test="record.agreementNo != null and record.agreementNo != '' " >
+        		A.AGREEMENT_NO = #{record.agreementNo},
+      		</if>
+        	<if test="record.organNo != null and record.organNo != '' " >
+        		A.organ_no = #{record.organNo},
+      		</if>
+        	<if test="record.agreementtype != null and record.agreementtype != '' " >
+        		A.AGREEMENT_type = #{record.agreementtype},
+      		</if>
+        	<if test="record.agreementcontent != null and record.agreementcontent != '' " >
+        		A.AGREEMENT_content = #{record.agreementcontent},
+      		</if>
+        	<if test="record.startDate != null and record.startDate != '' " >
+        		A.START_DATE = #{record.startDate},
+      		</if>
+        	<if test="record.endDate != null and record.endDate != '' " >
+        		A.END_DATE = #{record.endDate},
+      		</if>
+        	<if test="record.status != null and record.status != '' " >
+        		A.STATUS = #{record.status},
+      		</if>
+        	<if test="record.createTime != null and record.createTime != '' " >
+        		A.CREATE_TIME = #{record.createTime},
+      		</if>
+        	<if test="record.updateTime != null and record.updateTime != '' " >
+        		A.UPDATE_TIME = #{record.updateTime},
+      		</if>
+        	<if test="record.operater != null and record.operater != '' " >
+        		A.OPERATER = #{record.operater},
+      		</if>
+        	<if test="record.remark != null and record.remark != '' " >
+        		A.REMARK = #{record.remark},
+      		</if>
+        	<if test="record.temp1 != null and record.temp1 != '' " >
+        		A.TEMP_1 = #{record.temp1},
+      		</if>
+        	<if test="record.temp2 != null and record.temp2 != '' " >
+        		A.TEMP_2 = #{record.temp2},
+      		</if>
+        	<if test="record.temp3 != null and record.temp3 != '' " >
+        		A.TEMP_3 = #{record.temp3},
+      		</if>
+        	<if test="record.temp4 != null and record.temp4 != '' " >
+        		A.TEMP_4 = #{record.temp4},
+      		</if>
+    </set>
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </update>
+  <update id="update" parameterType="com.hfepay.scancode.commons.entity.AgreementInfo" >
+    update t_agreement_info A
+    <set >
+        	<if test="id != null and id != '' " >
+        		A.ID = #{id},
+      		</if>
+        	<if test="agreementNo != null and agreementNo != '' " >
+        		A.AGREEMENT_NO = #{agreementNo},
+      		</if>
+        	<if test="organNo != null and organNo != '' " >
+        		A.organ_no = #{organNo},
+      		</if>
+        	<if test="agreementtype != null and agreementtype != '' " >
+        		A.AGREEMENT_type = #{agreementtype},
+      		</if>
+        	<if test="agreementcontent != null and agreementcontent != '' " >
+        		A.AGREEMENT_content = #{agreementcontent},
+      		</if>
+        	<if test="startDate != null and startDate != '' " >
+        		A.START_DATE = #{startDate},
+      		</if>
+        	<if test="endDate != null and endDate != '' " >
+        		A.END_DATE = #{endDate},
+      		</if>
+        	<if test="status != null and status != '' " >
+        		A.STATUS = #{status},
+      		</if>
+        	<if test="createTime != null and createTime != '' " >
+        		A.CREATE_TIME = #{createTime},
+      		</if>
+        	<if test="updateTime != null and updateTime != '' " >
+        		A.UPDATE_TIME = #{updateTime},
+      		</if>
+        	<if test="operater != null and operater != '' " >
+        		A.OPERATER = #{operater},
+      		</if>
+        	<if test="remark != null and remark != '' " >
+        		A.REMARK = #{remark},
+      		</if>
+        	<if test="temp1 != null and temp1 != '' " >
+        		A.TEMP_1 = #{temp1},
+      		</if>
+        	<if test="temp2 != null and temp2 != '' " >
+        		A.TEMP_2 = #{temp2},
+      		</if>
+        	<if test="temp3 != null and temp3 != '' " >
+        		A.TEMP_3 = #{temp3},
+      		</if>
+        	<if test="temp4 != null and temp4 != '' " >
+        		A.TEMP_4 = #{temp4},
+      		</if>
+    </set>
+    where A.ID = #{id}
+  </update>
+  
+	<update id="updateStatus">
+    update t_agreement_info
+		set `STATUS` = #{status}
+		where ID=#{id}
+  </update>
+</mapper>
+

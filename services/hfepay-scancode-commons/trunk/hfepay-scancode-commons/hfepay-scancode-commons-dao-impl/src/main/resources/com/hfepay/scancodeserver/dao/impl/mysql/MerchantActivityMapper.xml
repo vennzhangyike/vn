@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="MerchantActivity">
+	<resultMap id="BaseResultMap" type="com.hfepay.scancode.commons.entity.MerchantActivity">
+        <result property="id" column="A_ID"/>
+        <result property="channelNo" column="A_CHANNEL_NO"/>
+        <result property="agentNo" column="A_AGENT_NO"/>
+        <result property="merchantNo" column="A_MERCHANT_NO"/>
+        <result property="activityId" column="A_ACTIVITY_ID"/>
+        <result property="activityBeginTime" column="A_ACTIVITY_BEGIN_TIME"/>
+        <result property="activityEndTime" column="A_ACTIVITY_END_TIME"/>
+        <result property="activityType" column="A_ACTIVITY_TYPE"/>
+        <result property="activityContent" column="A_ACTIVITY_CONTENT"/>
+        <result property="status" column="A_STATUS"/>
+        <result property="recordStatus" column="A_RECORD_STATUS"/>
+        <result property="createTime" column="A_CREATE_TIME"/>
+        <result property="updateTime" column="A_UPDATE_TIME"/>
+        <result property="operator" column="A_OPERATOR"/>
+        <result property="remark" column="A_REMARK"/>
+        <result property="temp1" column="A_TEMP_1"/>
+        <result property="temp2" column="A_TEMP_2"/>
+        <result property="temp3" column="A_TEMP_3"/>
+        <result property="temp4" column="A_TEMP_4"/>
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+	    <![CDATA[
+		A.ID as A_ID,A.CHANNEL_NO as A_CHANNEL_NO,A.AGENT_NO as A_AGENT_NO,A.MERCHANT_NO as A_MERCHANT_NO,A.ACTIVITY_ID as A_ACTIVITY_ID,A.ACTIVITY_BEGIN_TIME as A_ACTIVITY_BEGIN_TIME,A.ACTIVITY_END_TIME as A_ACTIVITY_END_TIME,A.ACTIVITY_TYPE as A_ACTIVITY_TYPE,A.ACTIVITY_CONTENT as A_ACTIVITY_CONTENT,A.STATUS as A_STATUS,A.RECORD_STATUS as A_RECORD_STATUS,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.OPERATOR as A_OPERATOR,A.REMARK as A_REMARK,A.TEMP_1 as A_TEMP_1,A.TEMP_2 as A_TEMP_2,A.TEMP_3 as A_TEMP_3,A.TEMP_4 as A_TEMP_4
+	    ]]>
+	</sql>
+
+	<sql id="channel_filter">
+	    <if test="params.nodeSeq != null" >
+        	EXISTS (
+				SELECT
+					n.current_node
+				FROM
+					t_node_relation n
+				WHERE
+				 <if test="params.identityFlag != null" >
+					 n.identity_flag = '${params.identityFlag}' and
+				</if>
+					 n.node_seq like CONCAT('${params.nodeSeq}','%') and A.merchant_no = n.current_node)
+				<if test="@com.hfepay.commons.base.collection.Collections@isNotEmpty(conditions)"> AND </if> 
+      	</if>
+	</sql>
+
+	<select id="findByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+     from t_merchant_activity A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="channel_filter" />
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+    <if test="hasOrderBy" >
+      order by
+      <foreach collection="orderBys" item="orderBy" separator="," > ${orderBy} </foreach>
+    </if>
+  </select>
+  <select resultMap="BaseResultMap" parameterType="java.lang.String" id="findById" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_merchant_activity A 
+    where A.ID = #{id}
+  </select>
+  
+  <select resultMap="BaseResultMap" parameterType="java.lang.String" id="findByActivityId" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_merchant_activity A 
+    where A.activity_id = #{activityId}
+  </select>
+  
+  <delete parameterType="java.lang.String" id="deleteById" >
+    delete from t_merchant_activity
+    where ID = #{id}
+  </delete>
+  <delete id="deleteByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" >
+    delete A from t_merchant_activity A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.hfepay.scancode.commons.entity.MerchantActivity" >
+    insert into t_merchant_activity (
+        	ID,
+        	CHANNEL_NO,
+        	AGENT_NO,
+        	MERCHANT_NO,
+        	ACTIVITY_ID,
+        	ACTIVITY_BEGIN_TIME,
+        	ACTIVITY_END_TIME,
+        	ACTIVITY_TYPE,
+        	ACTIVITY_CONTENT,
+        	STATUS,
+        	RECORD_STATUS,
+        	CREATE_TIME,
+        	UPDATE_TIME,
+        	OPERATOR,
+        	REMARK,
+        	TEMP_1,
+        	TEMP_2,
+        	TEMP_3,
+        	TEMP_4
+        )
+    values (
+        	#{id},
+        	#{channelNo},
+        	#{agentNo},
+        	#{merchantNo},
+        	#{activityId},
+        	#{activityBeginTime},
+        	#{activityEndTime},
+        	#{activityType},
+        	#{activityContent},
+        	#{status},
+        	#{recordStatus},
+        	#{createTime},
+        	#{updateTime},
+        	#{operator},
+        	#{remark},
+        	#{temp1},
+        	#{temp2},
+        	#{temp3},
+        	#{temp4}
+    )
+  </insert>
+  <select id="countByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultType="java.lang.Integer" >
+    select count(*) from t_merchant_activity A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+      	<include refid="channel_filter" />
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </select>
+  <update id="updateByCriteria" parameterType="map" >
+    update t_merchant_activity A
+    <set >
+        	<if test="record.id != null and record.id != '' " >
+        		A.ID = #{record.id},
+      		</if>
+        	<if test="record.channelNo != null and record.channelNo != '' " >
+        		A.CHANNEL_NO = #{record.channelNo},
+      		</if>
+        	<if test="record.agentNo != null and record.agentNo != '' " >
+        		A.AGENT_NO = #{record.agentNo},
+      		</if>
+        	<if test="record.merchantNo != null and record.merchantNo != '' " >
+        		A.MERCHANT_NO = #{record.merchantNo},
+      		</if>
+        	<if test="record.activityId != null and record.activityId != '' " >
+        		A.ACTIVITY_ID = #{record.activityId},
+      		</if>
+        	<if test="record.activityBeginTime != null and record.activityBeginTime != '' " >
+        		A.ACTIVITY_BEGIN_TIME = #{record.activityBeginTime},
+      		</if>
+        	<if test="record.activityEndTime != null and record.activityEndTime != '' " >
+        		A.ACTIVITY_END_TIME = #{record.activityEndTime},
+      		</if>
+        	<if test="record.activityType != null and record.activityType != '' " >
+        		A.ACTIVITY_TYPE = #{record.activityType},
+      		</if>
+        	<if test="record.activityContent != null and record.activityContent != '' " >
+        		A.ACTIVITY_CONTENT = #{record.activityContent},
+      		</if>
+        	<if test="record.status != null and record.status != '' " >
+        		A.STATUS = #{record.status},
+      		</if>
+        	<if test="record.recordStatus != null and record.recordStatus != '' " >
+        		A.RECORD_STATUS = #{record.recordStatus},
+      		</if>
+        	<if test="record.createTime != null and record.createTime != '' " >
+        		A.CREATE_TIME = #{record.createTime},
+      		</if>
+        	<if test="record.updateTime != null and record.updateTime != '' " >
+        		A.UPDATE_TIME = #{record.updateTime},
+      		</if>
+        	<if test="record.operator != null and record.operator != '' " >
+        		A.OPERATOR = #{record.operator},
+      		</if>
+        	<if test="record.remark != null and record.remark != '' " >
+        		A.REMARK = #{record.remark},
+      		</if>
+        	<if test="record.temp1 != null and record.temp1 != '' " >
+        		A.TEMP_1 = #{record.temp1},
+      		</if>
+        	<if test="record.temp2 != null and record.temp2 != '' " >
+        		A.TEMP_2 = #{record.temp2},
+      		</if>
+        	<if test="record.temp3 != null and record.temp3 != '' " >
+        		A.TEMP_3 = #{record.temp3},
+      		</if>
+        	<if test="record.temp4 != null and record.temp4 != '' " >
+        		A.TEMP_4 = #{record.temp4},
+      		</if>
+    </set>
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </update>
+  <update id="update" parameterType="com.hfepay.scancode.commons.entity.MerchantActivity" >
+    update t_merchant_activity A
+    <set >
+        	<if test="id != null and id != '' " >
+        		A.ID = #{id},
+      		</if>
+        	<if test="channelNo != null and channelNo != '' " >
+        		A.CHANNEL_NO = #{channelNo},
+      		</if>
+        	<if test="agentNo != null and agentNo != '' " >
+        		A.AGENT_NO = #{agentNo},
+      		</if>
+        	<if test="merchantNo != null and merchantNo != '' " >
+        		A.MERCHANT_NO = #{merchantNo},
+      		</if>
+        	<if test="activityId != null and activityId != '' " >
+        		A.ACTIVITY_ID = #{activityId},
+      		</if>
+        	<if test="activityBeginTime != null and activityBeginTime != '' " >
+        		A.ACTIVITY_BEGIN_TIME = #{activityBeginTime},
+      		</if>
+        	<if test="activityEndTime != null and activityEndTime != '' " >
+        		A.ACTIVITY_END_TIME = #{activityEndTime},
+      		</if>
+        	<if test="activityType != null and activityType != '' " >
+        		A.ACTIVITY_TYPE = #{activityType},
+      		</if>
+        	<if test="activityContent != null and activityContent != '' " >
+        		A.ACTIVITY_CONTENT = #{activityContent},
+      		</if>
+        	<if test="status != null and status != '' " >
+        		A.STATUS = #{status},
+      		</if>
+        	<if test="recordStatus != null and recordStatus != '' " >
+        		A.RECORD_STATUS = #{recordStatus},
+      		</if>
+        	<if test="createTime != null and createTime != '' " >
+        		A.CREATE_TIME = #{createTime},
+      		</if>
+        	<if test="updateTime != null and updateTime != '' " >
+        		A.UPDATE_TIME = #{updateTime},
+      		</if>
+        	<if test="operator != null and operator != '' " >
+        		A.OPERATOR = #{operator},
+      		</if>
+        	<if test="remark != null and remark != '' " >
+        		A.REMARK = #{remark},
+      		</if>
+        	<if test="temp1 != null and temp1 != '' " >
+        		A.TEMP_1 = #{temp1},
+      		</if>
+        	<if test="temp2 != null and temp2 != '' " >
+        		A.TEMP_2 = #{temp2},
+      		</if>
+        	<if test="temp3 != null and temp3 != '' " >
+        		A.TEMP_3 = #{temp3},
+      		</if>
+        	<if test="temp4 != null and temp4 != '' " >
+        		A.TEMP_4 = #{temp4},
+      		</if>
+    </set>
+    where A.ID = #{id}
+  </update>
+  
+	<update id="updateStatus">
+    update t_merchant_activity
+		set `STATUS` = #{status}
+		where ID=#{id}
+  </update>
+  
+  <select resultMap="BaseResultMap" parameterType="java.util.Map" id="findByMerchantNoAndStatus" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_merchant_activity A 
+    where A.merchant_no = #{merchantNo} and A.status = #{status}
+  </select>
+</mapper>
+

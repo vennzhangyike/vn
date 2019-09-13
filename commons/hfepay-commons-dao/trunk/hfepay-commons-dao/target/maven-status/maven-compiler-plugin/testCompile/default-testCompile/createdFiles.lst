@@ -1,0 +1,4 @@
+com\hfepay\commons\entity\DemoEntity.class
+com\hfepay\commons\service\DemoServiceTest.class
+com\hfepay\commons\dao\DemoDao.class
+com\hfepay\commons\dao\impl\DemoDaoImpl.class

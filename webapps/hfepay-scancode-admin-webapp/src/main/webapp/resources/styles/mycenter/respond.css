@@ -1,0 +1,190 @@
+
+@media only screen and (min-width: 1600px) {
+
+.indexUlDiv2{position: relative;}
+.continueA{position: absolute; right: 0; top: 30px; width: 120px; padding-left: 0; text-align: center; height: 88px; line-height: 88px; border-left: 1px solid #e7e7e7;clear: none;/*position: relative; top: 0*/}
+
+/*my data table*/
+.nanTableTh th,.ucenterTableSub th,.ucenterTableSub td{padding-left: 30px;}
+.ucenterTableSub .setDataTd a{margin-right: 20px;}
+
+.zhuanzhangimg{left: 800px;}
+.juhebiUl li span{padding-left: 90px;}
+.juhebiUl .labelLeft{width: 320px;}
+
+.exportForm .inputText{width: 200px;}
+.exportForm .selectStyle{width: 210px;}
+.newWorkForm .inputText{width: 460px;}
+
+.applyStyle{float: left; width: 640px;}
+.applyForm{float: left;}
+
+/*.companyVertifyStateUl{width: 550px; float: left; padding: 0;}*/
+.companyVertifyStateUl .labelRight{width: 400px;}
+.companyVertifyStateUl li{height: auto;}
+
+}
+
+@media only screen and (min-width: 1360px) and (max-width: 1600px) {
+
+.nanTableTh th,.ucenterTableSub th,.ucenterTableSub td{padding-left: 15px;}
+
+/*.companyVertifyStateUl{width: 500px; float: left; padding: 0;}*/
+.companyVertifyStateUl .labelLeft{width: 140px;}
+
+.companyVertifyStateUl.centerFormUl .labelLeft,.personVertifyStateUl .labelLeft{width: 140px;}
+.indexUlDiv2 dt a{display: inline-block; max-width: 200px;white-space: nowrap; overflow: hidden;}
+.companyVertifyStateUl .labelRight{width: 300px;}
+.companyVertifyStateUl li{height: auto;}
+
+}
+
+@media only screen and (min-width: 1266px) and (max-width: 1360px) {
+
+/*index*/
+.ucenterIndexUl1 .indexMyDiv1 dl{float: left; padding: 10px 30px 0 25px;}
+.ucenterIndexUl1 .indexMyDiv1 dd span{font-size: 22px;}
+.ucenterIndexUl1 .indexMyDiv2 dd i{padding: 0 16px 4px 10px;}
+.ucenterIndexUl1 .indexMyDiv2 dd font{font-size: 14px;}
+.ucenterIndexUl1 .indexMyDiv2{padding-right: 10px;}
+
+.ucenterIndexUl2 .indexUlDiv2{padding: 30px 10px 30px 15px; }
+.indexUlDiv2 dl{float: left; padding-left: 15px;}
+.indexUlDiv2 dt a{font-size: 15px; display: inline-block; max-width: 180px;white-space: nowrap; overflow: hidden;}
+
+
+/*my data table*/
+.ucenterTableSub .setDataTd a{margin-right: 10px;}
+.nanTableTh th,.ucenterTableSub th,.ucenterTableSub td{padding-left: 10px;}
+
+/*vertify*/
+.useDescribe{font-size: 13px;}
+.companyVertifyStateUl .labelRight{width: 260px;}
+
+
+.collectLi .collectDiv{padding: 30px 10px;}
+.collectImg{position: absolute; top: 0; left: 0;}
+.collectImg img{width: 80px; height: 80px;}
+.collectInfo h3{font-size: 14px}
+.collectMain{padding-left: 90px;}
+.ipDiv{font-size: 12px;}
+
+.exportForm .inputText{width: 130px;}
+.exportForm .selectStyle{width: 140px;}
+.workTableDetail td{font-size: 12px;}
+.ucenterTable td, .ucenterTable th{padding-left: 15px;}
+
+.centerFormUl .smsLine .inputText{width: 110px;}
+.smsLine #endTime,.smsLine #startTime{width: 150px;}
+
+}
+
+
+@media only screen and (max-width:1266px) {
+
+/*index*/
+.ucenterIndexUl1 .indexMyLi1{float: left; width: 50%; padding: 28px 0;}
+.ucenterIndexUl1 .indexMyDiv1 dl{padding-top: 0;}
+.ucenterIndexUl1 .indexMyDiv .czfp{padding-top: 0; padding-left: 86px; clear: both;}
+.ucenterIndexUl1 .indexMyDiv .czfp a{color: #03c5ff; margin-left: 10px;}
+.ucenterIndexUl1 .indexMyDiv2 dd i{padding: 0 16px 4px 10px;}
+.ucenterIndexUl1 .indexMyDiv2 dd font{font-size: 14px;}
+.ucenterIndexUl1 .indexMyDiv2{padding-right: 10px;}
+
+.ucenterIndexUl2 .indexUlDiv2{padding: 30px 10px 30px 15px; }
+.indexUlDiv2 dl{float: left; padding-left: 15px;}
+.indexUlDiv2 dt a{font-size: 14px; display: inline-block; width: 160px; overflow: hidden;white-space: nowrap;}
+.continueA{padding-left: 95px;}
+.lastData{text-align: center; text-indent: -2px;}
+
+/*my data table*/
+.nanTableTh th,.ucenterTableSub th,.ucenterTableSub td{padding-left: 10px;}
+.ucenterTableSub .setDataTd a{margin-right: 10px;}
+.buyDataLi .packageUl li{font-size: 12px;}
+
+/*vertify*/
+.useDescribe{line-height: 18px; width: 500px;font-size: 13px;}
+.useDescribe p{padding-bottom: 8px;}
+.companyVertifyStateUl .labelRight{width: 250px;}
+
+
+/*collect*/
+.collectLi .collectDiv{height: 180px;padding: 15px 20px;}
+.collectInfo{width: 100%; height: 100%; position: relative; overflow: hidden;}
+.collectImg{width: 100%; height: 80px; text-align: center;}
+.collectImg img{width: 80px; height: 80px;}
+.collectMain{padding-left: 0; padding-top: 80px; text-align: center;}
+.collectInfo h3{font-size: 16px;line-height: 20px; height: 20px; margin: 10px 0; overflow: hidden;}
+.collectInfo h3 a{color: #606060;display:inline-block;}
+.collectPrice,.collectFree{line-height: 24px; height: 24px; overflow: hidden;}
+.collectPrice b{color: #fe514a;font-size: 16px; padding-right: 2px;}
+.collectOther{line-height: 20px; padding-top: 3px;}
+.collectOther i.iconfont{font-size: 20px; position: relative; top: 3px; padding-right: 3px; display: inline-block; width: 20px;}
+.ipDiv{font-size: 12px;}
+
+.juhebiUl .labelLeft{width: 180px;}
+.juhebiUl li span{padding-left: 10px;}
+
+.exportDiv label{width: 90px;}
+.exportForm .inputText{width: 110px;}
+.exportForm .selectStyle{width: 120px;}
+.newWorkForm .inputText{width: 300px;}
+.workTableDetail td{font-size: 12px;}
+.ucenterTable td, .ucenterTable th{padding-left: 10px;}
+.tableDl textarea.inputText{width: 420px;}
+
+}
+
+
+@media only screen and (max-width:1366px) {
+	body{font-size: 12px;}
+	.noLogs, .noPriceContent h4,.centerlayerDiv .layerTitle, .buyDataContent .buyTitle{font-size: 14px;}
+	.centerBtn,.addSomeBtn{font-size: 12px;}
+	.ucenterIndexUl1 .indexMyDiv1 dd span{font-size: 22px;}
+	.ucenterIndexUl1 .indexMyDiv1 dd .moneyDeci{font-size: 16px;}
+	.purchaseTabUl li a{font-size: 14px;}
+	.ucenterTableSub .setDataTd .centerIcon{padding: 2px 10px;}
+	.collectInfo h3,.certifyMainContent .centerFormUl .vertifyLiTitle{font-size: 14px;}
+	.ipConfigTitle{font-size: 14px;}
+	.payQuestion .layerContent p{font-size: 18px;}
+	.companyVertifyStateUl .labelLeft,.personVertifyStateUl .labelLeft{width: 140px;}
+.certifyMainContent .centerFormUl .labelLeft{width: 140px;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

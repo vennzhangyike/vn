@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.hfepay.scancode.api</groupId>
+    <artifactId>hfepay-scancode-api</artifactId>
+    <version>1.0.0</version>
+  </parent>
+  <groupId>com.hfepay.scancode.api</groupId>
+  <artifactId>hfepay-scancode-api-service-impl</artifactId>
+  <name>service impl</name>
+  <url>http://maven.apache.org</url>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  <dependencies>
+  	<dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.hfepay.scancode.api</groupId>
+      <artifactId>hfepay-scancode-api-service</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.hfepay.commons</groupId>
+      <artifactId>hfepay-commons-web</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.hfepay.scancode.api</groupId>
+      <artifactId>hfepay-scancode-api-dao-impl</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+    
+    <dependency>
+		<groupId>commons-httpclient</groupId>
+		<artifactId>commons-httpclient</artifactId>
+		<version>3.1</version>
+		<exclusions>
+		<exclusion>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+		</exclusion>
+	</exclusions>
+	</dependency>
+    
+    <dependency>
+		<groupId>org.apache.commons</groupId>
+		<artifactId>commons-lang3</artifactId>
+		<version>3.1</version>
+	</dependency>
+	
+	<dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+	  <artifactId>httpclient</artifactId>
+	  <version>4.5.2</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>com.alibaba</groupId>
+		<artifactId>fastjson</artifactId>
+		<version>1.1.33</version>
+	</dependency>
+    <dependency>
+		<groupId>com.hfepay.commons</groupId>
+		<artifactId>hfepay-commons-cache</artifactId>
+		<version>1.0.0</version>
+	</dependency>
+    <dependency>
+			<groupId>com.thoughtworks.xstream</groupId>
+			<artifactId>xstream</artifactId>
+			<version>1.4.8</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.bouncycastle</groupId>
+			<artifactId>bcprov-jdk16</artifactId>
+			<version>1.46</version>
+		</dependency>
+     <dependency>
+	<groupId>com.hfepay.commons</groupId>
+	<artifactId>hfepay-commons-web</artifactId>
+	<version>1.0.0</version>
+	<exclusions>
+		<exclusion>
+			<groupId>commons-httpclient</groupId>
+			<artifactId>commons-httpclient</artifactId>
+		</exclusion>
+		<exclusion>
+			<groupId>org.apache.httpcomponents</groupId>
+	  		<artifactId>httpcomponents-client</artifactId>
+		</exclusion>
+	</exclusions>
+	</dependency>
+  </dependencies>
+</project>

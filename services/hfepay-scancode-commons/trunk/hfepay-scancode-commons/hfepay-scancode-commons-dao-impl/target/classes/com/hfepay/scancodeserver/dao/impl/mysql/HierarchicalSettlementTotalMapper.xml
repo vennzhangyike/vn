@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="HierarchicalSettlementTotal">
+	<resultMap id="BaseResultMap" type="com.hfepay.scancode.commons.entity.HierarchicalSettlementTotal">
+        <result property="id" column="A_id"/>
+        <result property="batchNo" column="A_batch_no"/>
+        <result property="channelNo" column="A_channel_no"/>
+        <result property="agentNo" column="A_agent_no"/>
+        <result property="agentLevel" column="A_agent_level"/>
+        <result property="parentNo" column="A_parent_no"/>
+        <result property="tranTotalAmount" column="A_tran_total_amount"/>
+        <result property="tranProfit" column="A_tran_profit"/>
+        <result property="outTotalAmount" column="A_out_total_amount"/>
+        <result property="outProfit" column="A_out_profit"/>
+        <result property="totalProfit" column="A_total_profit"/>
+        <result property="settleDate" column="A_settle_date"/>
+        <result property="createTime" column="A_create_time"/>
+        <result property="remark" column="A_remark"/>
+	</resultMap>
+	
+	<resultMap id="HierarchicalStaticMap" type="com.hfepay.scancode.commons.entity.HierarchicalStatic">
+        <result property="id" column="A_id"/>
+        <result property="organNo" column="A_organ_no"/>
+        <result property="totalProfit" column="A_total_profit"/>
+        <result property="totalActualAmount" column="A_total_actual_amount"/>
+        <result property="balance" column="A_balance"/>
+	</resultMap>
+	
+	<resultMap id="BaseResultMapVo" type="com.hfepay.scancode.commons.vo.HierarchicalSettlementTotalVo" extends="BaseResultMap">
+		<result property="channelName" column="channel_name"/>
+		<result property="agentName" column="agent_name"/>
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+	    <![CDATA[
+		A.id as A_id,A.batch_no as A_batch_no,A.channel_no as A_channel_no,A.agent_no as A_agent_no,A.agent_level as A_agent_level,A.parent_no as A_parent_no,A.tran_total_amount as A_tran_total_amount,A.tran_profit as A_tran_profit,A.out_total_amount as A_out_total_amount,A.out_profit as A_out_profit,A.total_profit as A_total_profit,A.settle_date as A_settle_date,A.create_time as A_create_time,A.remark as A_remark
+	    ]]>
+	</sql>
+	
+	<sql id="channel_filter">
+	    <if test="params.nodeSeq != null" >
+        	EXISTS (
+				SELECT
+					n.current_node
+				FROM
+					t_node_relation n
+				WHERE 1=1
+				<if test="params.nodeSeq == 'system'" >
+					 and n.node_seq like '%'
+				</if>
+				<if test="params.nodeSeq != 'system'" >
+					 and n.node_seq like CONCAT('${params.nodeSeq}','%') 
+				</if>
+				<if test="params.identityFlag != null and params.identityFlag == '1'.toString()" >
+				 	and A.channel_no = n.current_node
+				</if>
+				<if test="params.identityFlag != null and params.identityFlag == '2'.toString()" >
+				 	and A.agent_no = n.current_node
+				</if>
+					 )
+				<if test="@com.hfepay.commons.base.collection.Collections@isNotEmpty(conditions)"> AND </if> 
+      	</if>
+	</sql>
+	
+	
+	<sql id="channel_filter_static">
+	    <if test="params.nodeSeq != null" >
+        	EXISTS (
+				SELECT
+					n.current_node
+				FROM
+					t_node_relation n
+				WHERE 1=1
+				<if test="params.nodeSeq == 'system'" >
+					 and n.node_seq like '%'
+				</if>
+				<if test="params.nodeSeq != 'system'" >
+					 and n.node_seq like CONCAT('${params.nodeSeq}','%') 
+				</if>
+					 and A.organ_no = n.current_node
+					 )
+				<if test="@com.hfepay.commons.base.collection.Collections@isNotEmpty(conditions)"> AND </if> 
+      	</if>
+	</sql>
+	
+	<select id="findByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+     from t_hierarchical_settlement_total A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+       	<include refid="channel_filter" />
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+    <if test="hasOrderBy" >
+      order by
+      <foreach collection="orderBys" item="orderBy" separator="," > ${orderBy} </foreach>
+    </if>
+  </select>
+  
+  <select id="findHierarchicalStatic" parameterType="com.hfepay.commons.criteria.Criteria" resultMap="HierarchicalStaticMap" >
+    select organ_no as A_organ_no,total_profit as A_total_profit,total_actual_amount as A_total_actual_amount,(total_profit-total_actual_amount) as A_balance from (
+	select A.*,IFNULL((select sum(IFNULL(B.actual_amount,0)) from t_organ_withdrawals B where A.organ_no = B.organ_no),0)  as total_actual_amount  from (
+	select agent_no organ_no,sum(IFNULL(total_profit,0)) as total_profit from t_hierarchical_settlement_total where agent_no is not null group by agent_no
+	UNION
+	select channel_no organ_no,sum(IFNULL(total_profit,0)) as total_profit from t_hierarchical_settlement_total group by channel_no
+	) A )A 
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+      	<include refid="channel_filter_static" />
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+    <if test="hasOrderBy" >
+      order by
+      <foreach collection="orderBys" item="orderBy" separator="," > ${orderBy} </foreach>
+    </if>
+  </select>
+  
+  <select id="countHierarchicalStatic" parameterType="com.hfepay.commons.criteria.Criteria" resultType="java.lang.Integer" >
+    select count(*) from (
+	select A.*,IFNULL((select sum(IFNULL(B.actual_amount,0)) from t_organ_withdrawals B where A.organ_no = B.organ_no),0)  as total_actual_amount  from (
+	select agent_no organ_no,sum(IFNULL(total_profit,0)) as total_profit from t_hierarchical_settlement_total where agent_no is not null group by agent_no
+	UNION
+	select channel_no organ_no,sum(IFNULL(total_profit,0)) as total_profit from t_hierarchical_settlement_total group by channel_no
+	) A )A 
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+      	<include refid="channel_filter_static" />
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </select> 
+  
+  <select resultMap="BaseResultMap" parameterType="java.lang.String" id="findById" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_hierarchical_settlement_total A
+    where A.id = #{id}
+  </select>
+  <delete parameterType="java.lang.String" id="deleteById" >
+    delete from t_hierarchical_settlement_total
+    where id = #{id}
+  </delete>
+  <delete id="deleteByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" >
+    delete A from t_hierarchical_settlement_total A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.hfepay.scancode.commons.entity.HierarchicalSettlementTotal" >
+    insert into t_hierarchical_settlement_total (
+        	id,
+        	batch_no,
+        	channel_no,
+        	agent_no,
+        	agent_level,
+        	parent_no,
+        	tran_total_amount,
+        	tran_profit,
+        	out_total_amount,
+        	out_profit,
+        	total_profit,
+        	settle_date,
+        	create_time,
+        	remark
+        )
+    values (
+        #{id},
+        #{batchNo},
+        #{channelNo},
+        #{agentNo},
+        #{agentLevel},
+        #{parentNo},
+        #{tranTotalAmount},
+        #{tranProfit},
+        #{outTotalAmount},
+        #{outProfit},
+        #{totalProfit},
+        #{settleDate},
+        #{createTime},
+        #{remark}
+    )
+  </insert>
+  <select id="countByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultType="java.lang.Integer" >
+    select count(*) from t_hierarchical_settlement_total A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+      	<include refid="channel_filter" />
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </select>
+  <update id="updateByCriteria" parameterType="map" >
+    update t_hierarchical_settlement_total A
+    <set >
+        	<if test="record.id != null and record.id != '' " >
+        		A.id = #{record.id},
+      		</if>
+        	<if test="record.batchNo != null and record.batchNo != '' " >
+        		A.batch_no = #{record.batchNo},
+      		</if>
+        	<if test="record.channelNo != null and record.channelNo != '' " >
+        		A.channel_no = #{record.channelNo},
+      		</if>
+        	<if test="record.agentNo != null and record.agentNo != '' " >
+        		A.agent_no = #{record.agentNo},
+      		</if>
+        	<if test="record.agentLevel != null and record.agentLevel != '' " >
+        		A.agent_level = #{record.agentLevel},
+      		</if>
+        	<if test="record.parentNo != null and record.parentNo != '' " >
+        		A.parent_no = #{record.parentNo},
+      		</if>
+        	<if test="record.tranTotalAmount != null" >
+        		A.tran_total_amount = #{record.tranTotalAmount},
+      		</if>
+        	<if test="record.tranProfit != null" >
+        		A.tran_profit = #{record.tranProfit},
+      		</if>
+        	<if test="record.outTotalAmount != null" >
+        		A.out_total_amount = #{record.outTotalAmount},
+      		</if>
+        	<if test="record.outProfit != null" >
+        		A.out_profit = #{record.outProfit},
+      		</if>
+        	<if test="record.totalProfit != null" >
+        		A.total_profit = #{record.totalProfit},
+      		</if>
+        	<if test="record.settleDate != null and record.settleDate != '' " >
+        		A.settle_date = #{record.settleDate},
+      		</if>
+        	<if test="record.createTime != null and record.createTime != '' " >
+        		A.create_time = #{record.createTime},
+      		</if>
+        	<if test="record.remark != null and record.remark != '' " >
+        		A.remark = #{record.remark},
+      		</if>
+    </set>
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </update>
+  <update id="update" parameterType="com.hfepay.scancode.commons.entity.HierarchicalSettlementTotal" >
+    update t_hierarchical_settlement_total A
+    <set >
+        	<if test="id != null and id != '' " >
+        		A.id = #{id},
+      		</if>
+        	<if test="batchNo != null and batchNo != '' " >
+        		A.batch_no = #{batchNo},
+      		</if>
+        	<if test="channelNo != null and channelNo != '' " >
+        		A.channel_no = #{channelNo},
+      		</if>
+        	<if test="agentNo != null and agentNo != '' " >
+        		A.agent_no = #{agentNo},
+      		</if>
+        	<if test="agentLevel != null and agentLevel != '' " >
+        		A.agent_level = #{agentLevel},
+      		</if>
+        	<if test="parentNo != null and parentNo != '' " >
+        		A.parent_no = #{parentNo},
+      		</if>
+        	<if test="tranTotalAmount != null" >
+        		A.tran_total_amount = #{tranTotalAmount},
+      		</if>
+        	<if test="tranProfit != null" >
+        		A.tran_profit = #{tranProfit},
+      		</if>
+        	<if test="outTotalAmount != null" >
+        		A.out_total_amount = #{outTotalAmount},
+      		</if>
+        	<if test="outProfit != null" >
+        		A.out_profit = #{outProfit},
+      		</if>
+        	<if test="totalProfit != null" >
+        		A.total_profit = #{totalProfit},
+      		</if>
+        	<if test="settleDate != null and settleDate != '' " >
+        		A.settle_date = #{settleDate},
+      		</if>
+        	<if test="createTime != null and createTime != '' " >
+        		A.create_time = #{createTime},
+      		</if>
+        	<if test="remark != null and remark != '' " >
+        		A.remark = #{remark},
+      		</if>
+    </set>
+    where A.id = #{id}
+  </update>
+  
+  
+   <insert id="inserBatch" parameterType="com.hfepay.scancode.commons.entity.HierarchicalSettlementTotal" >
+    insert into t_hierarchical_settlement_total (
+        	id,
+        	batch_no,
+        	channel_no,
+        	agent_no,
+        	agent_level,
+        	parent_no,
+        	tran_total_amount,
+        	tran_profit,
+        	out_total_amount,
+        	out_profit,
+        	total_profit,
+        	settle_date,
+        	create_time,
+        	remark
+        )
+    values 
+     <foreach collection="list" item="item" index="index" separator="," >  
+	    (
+        #{item.id},
+        #{item.batchNo},
+        #{item.channelNo},
+        #{item.agentNo},
+        #{item.agentLevel},
+        #{item.parentNo},
+        #{item.tranTotalAmount},
+        #{item.tranProfit},
+        #{item.outTotalAmount},
+        #{item.outProfit},
+        #{item.totalProfit},
+        #{item.settleDate},
+        #{item.createTime},
+        #{item.remark}
+    )
+     </foreach> 
+  </insert>
+  
+     <select id="getAmtStatic" parameterType="com.hfepay.scancode.commons.condition.HierarchicalSettlementTotalCondition" resultMap="BaseResultMap" >
+	   SELECT
+			ifnull(sum(tran_total_amount),0) A_tran_total_amount,
+			ifnull(sum(tran_profit),0) A_tran_profit,
+			ifnull(sum(out_total_amount),0) A_out_total_amount,
+			ifnull(sum(out_profit),0) A_out_profit,
+			ifnull(sum(total_profit),0) A_total_profit
+		FROM
+		t_hierarchical_settlement_total A where 1=1
+      <if test="id != null and id != '' " >
+        		and A.id = #{id}
+      		</if>
+        	<if test="batchNo != null and batchNo != '' " >
+        		and A.batch_no = #{batchNo}
+      		</if>
+        	<if test="channelNo != null and channelNo != '' " >
+        		and A.channel_no = #{channelNo}
+      		</if>
+        	<if test="agentNo != null and agentNo != '' " >
+        		and A.agent_no = #{agentNo}
+      		</if>
+        	<if test="agentLevel != null and agentLevel != '' " >
+        		and A.agent_level = #{agentLevel}
+      		</if>
+        	<if test="parentNo != null and parentNo != '' " >
+        		and A.parent_no = #{parentNo}
+      		</if>
+        	<if test="tranTotalAmount != null" >
+        		and A.tran_total_amount = #{tranTotalAmount}
+      		</if>
+        	<if test="tranProfit != null" >
+        		and A.tran_profit = #{tranProfit}
+      		</if>
+        	<if test="outTotalAmount != null" >
+        		and A.out_total_amount = #{outTotalAmount}
+      		</if>
+        	<if test="outProfit != null" >
+        		and A.out_profit = #{outProfit}
+      		</if>
+        	<if test="totalProfit != null" >
+        		and A.total_profit = #{totalProfit}
+      		</if>
+        	<if test="settleDate != null and settleDate != '' " >
+        		and A.settle_date = #{settleDate}
+      		</if>
+        	<if test="createTime != null and createTime != '' " >
+        		and A.create_time = #{createTime}
+      		</if>
+        	<if test="remark != null and remark != '' " >
+        		and A.remark = #{remark}
+      		</if>
+      		<if test="nodeSeq != null and nodeSeq != '' " >
+        	 and EXISTS (
+				SELECT
+					n.current_node
+				FROM
+					t_node_relation n
+				WHERE 1=1
+				<if test="nodeSeq == 'system'" >
+					 and n.node_seq like '%'
+				</if>
+				<if test="nodeSeq != 'system'" >
+					 and n.node_seq like CONCAT('${nodeSeq}','%') 
+				</if>
+				<if test="identityFlag!=null and identityFlag == '1'.toString()" >
+				 	and A.channel_no = n.current_node
+				</if>
+				<if test="identityFlag!=null and identityFlag == '2'.toString()" >
+				 	and A.agent_no = n.current_node
+				</if>
+				)
+      	</if>
+  </select>
+</mapper>
+

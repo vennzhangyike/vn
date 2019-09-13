@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="hfepay-scancode-channel-webapp">
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <dependent-module archiveName="hfepay-commons-exception-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/hfepay-commons-exception/hfepay-commons-exception">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="hfepay-commons-base-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/hfepay-commons-base/hfepay-commons-base">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="hfepay-commons-dao-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/hfepay-commons-dao/hfepay-commons-dao">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="hfepay-commons-web-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/hfepay-commons-web/hfepay-commons-web">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="hfepay-commons-excelutils-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/hfepay-commons-excelutils/hfepay-commons-excelutils">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="hfepay-commons-cache-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/hfepay-commons-cache/hfepay-commons-cache">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="hfepay-scancode-pay-service-impl-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/hfepay-scancode-pay-service-impl/hfepay-scancode-pay-service-impl">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="hfepay-scancode-pay-service-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/hfepay-scancode-pay-service/hfepay-scancode-pay-service">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="hfepay-scancode-commons-entity-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/hfepay-scancode-commons-entity/hfepay-scancode-commons-entity">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="hfepay-scancode-commons-interface-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/hfepay-scancode-commons-interface/hfepay-scancode-commons-interface">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="hfepay-scancode-commons-dao-impl-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/hfepay-scancode-commons-dao-impl/hfepay-scancode-commons-dao-impl">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="hfepay-scancode-commons-dao-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/hfepay-scancode-commons-dao/hfepay-scancode-commons-dao">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="hfepay-scancode-service-impl-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/hfepay-scancode-service-impl/hfepay-scancode-service-impl">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="hfepay-scancode-service-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/hfepay-scancode-service/hfepay-scancode-service">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="hfepay-scancode-api-service-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/hfepay-scancode-api-service/hfepay-scancode-api-service">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="hfepay-scancode-api-entity-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/hfepay-scancode-api-entity/hfepay-scancode-api-entity">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="hfepay-commons-sms-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/hfepay-commons-sms/hfepay-commons-sms">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="hfepay-commons-timer-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/hfepay-commons-timer/hfepay-commons-timer">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="java-output-path" value="/hfepay-scancode-channel-webapp/target/classes"/>
+        <property name="component.exclusion.patterns" value="resources/scripts/**/*.js"/>
+        <property name="context-root" value="/"/>
+    </wb-module>
+</project-modules>

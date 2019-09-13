@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="TempProfit">
+	<resultMap id="BaseResultMap" type="com.hfepay.scancode.commons.entity.TempProfit">
+        <result property="id" column="A_id"/>
+        <result property="identityNo" column="A_identity_no"/>
+        <result property="profit" column="A_profit"/>
+        <result property="payCode" column="A_pay_code"/>
+        <result property="tradeType" column="A_trade_type"/>
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+	    <![CDATA[
+		A.id as A_id,A.identity_no as A_identity_no,A.profit as A_profit,A.pay_code as A_pay_code,A.trade_type as A_trade_type
+	    ]]>
+	</sql>
+
+	<select id="findByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+     from t_temp_profit A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+    <if test="hasOrderBy" >
+      order by
+      <foreach collection="orderBys" item="orderBy" separator="," > ${orderBy} </foreach>
+    </if>
+  </select>
+  <select resultMap="BaseResultMap" parameterType="java.lang.String" id="findById" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_temp_profit A
+    where A.id = #{id}
+  </select>
+  <delete parameterType="java.lang.String" id="deleteById" >
+    delete from t_temp_profit
+    where id = #{id}
+  </delete>
+  <delete id="deleteByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" >
+    delete A from t_temp_profit A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.hfepay.scancode.commons.entity.TempProfit" >
+    insert into t_temp_profit (
+        	id,
+        	identity_no,
+        	profit,
+        	pay_code,
+        	trade_type
+        )
+    values (
+        #{id},
+        #{identityNo},
+        #{profit},
+        #{payCode},
+        #{tradeType}
+    )
+  </insert>
+  <select id="countByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultType="java.lang.Integer" >
+    select count(*) from t_temp_profit A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </select>
+  <update id="updateByCriteria" parameterType="map" >
+    update t_temp_profit A
+    <set >
+        	<if test="record.id != null and record.id != '' " >
+        		A.id = #{record.id},
+      		</if>
+        	<if test="record.identityNo != null and record.identityNo != '' " >
+        		A.identity_no = #{record.identityNo},
+      		</if>
+        	<if test="record.profit != null and record.profit != '' " >
+        		A.profit = #{record.profit},
+      		</if>
+        	<if test="record.payCode != null and record.payCode != '' " >
+        		A.pay_code = #{record.payCode},
+      		</if>
+      		<if test="record.tradeType != null and record.tradeType != '' " >
+        		A.trade_type = #{record.tradeType},
+      		</if>
+    </set>
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </update>
+  <update id="update" parameterType="com.hfepay.scancode.commons.entity.TempProfit" >
+    update t_temp_profit A
+    <set >
+        	<if test="id != null and id != '' " >
+        		A.id = #{id},
+      		</if>
+        	<if test="identityNo != null and identityNo != '' " >
+        		A.identity_no = #{identityNo},
+      		</if>
+        	<if test="profit != null and profit != '' " >
+        		A.profit = #{profit},
+      		</if>
+        	<if test="payCode != null and payCode != '' " >
+        		A.pay_code = #{payCode},
+      		</if>
+      		<if test="tradeType != null and tradeType != '' " >
+        		A.trade_type = #{tradeType},
+      		</if>
+    </set>
+    where A.id = #{id}
+  </update>
+  
+  
+  <insert id="insertBatch" parameterType="com.hfepay.scancode.commons.entity.TempProfit" >
+  insert into t_temp_profit (
+        	id,
+        	identity_no,
+        	profit,
+        	pay_code,
+        	trade_type
+        )
+    values 
+     <foreach collection="list" item="item" index="index" separator="," >  
+	    (
+	        #{item.id},
+	        #{item.identityNo},
+	        #{item.profit},
+	        #{item.payCode},
+	        #{item.tradeType}
+	    )
+     </foreach> 
+  </insert>
+  
+  <select id="getTotalProfitByIdentity"  resultMap="BaseResultMap">
+  	 select sum(profit) as profit,identity_no,pay_code,trade_type
+    from t_temp_profit A group by identity_no,pay_code,trade_type
+  </select>
+  
+   <select id="getTotalProfit"  resultMap="BaseResultMap">
+  	 select sum(profit) as profit,pay_code,trade_type
+    from t_temp_profit A group by pay_code,trade_type
+  </select>
+  
+  <update id="clearTempData">
+  	truncate table t_temp_profit
+  </update>
+  
+  <select id="getWithDrawType"  resultMap="BaseResultMap">
+   select pay_code
+    from t_temp_profit A where A.trade_type='01' group by pay_code
+  </select>
+  
+</mapper>
+

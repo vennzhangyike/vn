@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="AgentBase">
+	<resultMap id="BaseResultMap" type="com.hfepay.scancode.commons.entity.AgentBase">
+        <result property="id" column="A_ID"/>
+        <result property="agentNo" column="A_AGENT_NO"/>
+        <result property="agentName" column="A_AGENT_NAME"/>
+        <result property="channelNo" column="A_CHANNEL_NO"/>
+        <result property="agentPreCode" column="A_AGENT_PRE_CODE"/>
+        <result property="agentType" column="A_AGENT_TYPE"/>
+        <result property="name" column="A_NAME"/>
+        <result property="mobile" column="A_MOBILE"/>
+        <result property="parentNo" column="A_PARENT_NO"/>
+        <result property="agentLevel" column="A_AGENT_LEVEL"/>
+        <result property="qrTotal" column="A_QR_TOTAL"/>
+        <result property="useTotal" column="A_USE_TOTAL"/>
+        <result property="lessTotal" column="A_LESS_TOTAL"/>
+        <result property="agentFlag" column="A_AGENT_FLAG"/>
+        <result property="status" column="A_STATUS"/>
+        <result property="recordStatus" column="A_RECORD_STATUS"/>
+        <result property="createTime" column="A_CREATE_TIME"/>
+        <result property="updateTime" column="A_UPDATE_TIME"/>
+        <result property="operator" column="A_OPERATOR"/>
+        <result property="remark" column="A_REMARK"/>
+        <result property="temp1" column="A_TEMP_1"/>
+        <result property="temp2" column="A_TEMP_2"/>
+        <result property="temp3" column="A_TEMP_3"/>
+        <result property="temp4" column="A_TEMP_4"/>
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+	    <![CDATA[
+		A.ID as A_ID,A.AGENT_NO as A_AGENT_NO,A.AGENT_NAME as A_AGENT_NAME,A.CHANNEL_NO as A_CHANNEL_NO,A.AGENT_PRE_CODE as A_AGENT_PRE_CODE,A.AGENT_TYPE as A_AGENT_TYPE,A.NAME as A_NAME,A.MOBILE as A_MOBILE,A.PARENT_NO as A_PARENT_NO,A.AGENT_LEVEL as A_AGENT_LEVEL,A.QR_TOTAL as A_QR_TOTAL,A.USE_TOTAL as A_USE_TOTAL,A.LESS_TOTAL as A_LESS_TOTAL,A.AGENT_FLAG as A_AGENT_FLAG,A.STATUS as A_STATUS,A.RECORD_STATUS as A_RECORD_STATUS,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.OPERATOR as A_OPERATOR,A.REMARK as A_REMARK,A.TEMP_1 as A_TEMP_1,A.TEMP_2 as A_TEMP_2,A.TEMP_3 as A_TEMP_3,A.TEMP_4 as A_TEMP_4
+	    ]]>
+	</sql>
+	
+	<sql id="channel_filter">
+	    <if test="params.nodeSeq != null" >
+        	EXISTS (
+				SELECT
+					n.current_node
+				FROM
+					t_node_relation n
+				WHERE
+				 <if test="params.identityFlag != null" >
+					 n.identity_flag = '${params.identityFlag}' and
+				</if>
+				<if test="params.nodeSeq == 'system'" >
+					 n.node_seq like '%' and
+				</if>
+				<if test="params.nodeSeq != 'system'" >
+					 n.node_seq like CONCAT('${params.nodeSeq}','%') and 
+				</if>
+					 A.AGENT_NO = n.current_node)
+				<if test="@com.hfepay.commons.base.collection.Collections@isNotEmpty(conditions)"> AND </if> 
+      	</if>
+	</sql>
+	
+	<select id="findByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+     from t_agent_base A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+      	<include refid="channel_filter" />
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+    <if test="hasOrderBy" >
+      order by
+      <foreach collection="orderBys" item="orderBy" separator="," > ${orderBy} </foreach>
+    </if>
+  </select>
+  <select resultMap="BaseResultMap" parameterType="java.lang.String" id="findById" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_agent_base A
+    where A.ID = #{id}
+  </select>
+  <delete parameterType="java.lang.String" id="deleteById" >
+    delete from t_agent_base
+    where ID = #{id}
+  </delete>
+  <delete id="deleteByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" >
+    delete A from t_agent_base A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.hfepay.scancode.commons.entity.AgentBase" >
+    insert into t_agent_base (
+        	ID,
+        	AGENT_NO,
+        	AGENT_NAME,
+        	CHANNEL_NO,
+        	AGENT_PRE_CODE,
+        	AGENT_TYPE,
+        	NAME,
+        	MOBILE,
+        	PARENT_NO,
+        	AGENT_LEVEL,
+        	QR_TOTAL,
+        	USE_TOTAL,
+        	LESS_TOTAL,
+        	AGENT_FLAG,
+        	STATUS,
+        	RECORD_STATUS,
+        	CREATE_TIME,
+        	UPDATE_TIME,
+        	OPERATOR,
+        	REMARK,
+        	TEMP_1,
+        	TEMP_2,
+        	TEMP_3,
+        	TEMP_4
+        )
+    values (
+        	#{id},
+        	#{agentNo},
+        	#{agentName},
+        	#{channelNo},
+        	#{agentPreCode},
+        	#{agentType},
+        	#{name},
+        	#{mobile},
+        	#{parentNo},
+        	#{agentLevel},
+        	#{qrTotal},
+        	#{useTotal},
+        	#{lessTotal},
+        	#{agentFlag},
+        	#{status},
+        	#{recordStatus},
+        	#{createTime},
+        	#{updateTime},
+        	#{operator},
+        	#{remark},
+        	#{temp1},
+        	#{temp2},
+        	#{temp3},
+        	#{temp4}
+    )
+  </insert>
+  <select id="countByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultType="java.lang.Integer" >
+    select count(*) from t_agent_base A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+      	<include refid="channel_filter" />
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </select>
+  <update id="updateByCriteria" parameterType="map" >
+    update t_agent_base A
+    <set >
+        	<if test="record.id != null and record.id != '' " >
+        		A.ID = #{record.id},
+      		</if>
+        	<if test="record.agentNo != null and record.agentNo != '' " >
+        		A.AGENT_NO = #{record.agentNo},
+      		</if>
+        	<if test="record.agentName != null and record.agentName != '' " >
+        		A.AGENT_NAME = #{record.agentName},
+      		</if>
+        	<if test="record.channelNo != null and record.channelNo != '' " >
+        		A.CHANNEL_NO = #{record.channelNo},
+      		</if>
+        	<if test="record.agentPreCode != null and record.agentPreCode != '' " >
+        		A.AGENT_PRE_CODE = #{record.agentPreCode},
+      		</if>
+        	<if test="record.agentType != null and record.agentType != '' " >
+        		A.AGENT_TYPE = #{record.agentType},
+      		</if>
+        	<if test="record.name != null and record.name != '' " >
+        		A.NAME = #{record.name},
+      		</if>
+        	<if test="record.mobile != null and record.mobile != '' " >
+        		A.MOBILE = #{record.mobile},
+      		</if>
+        	<if test="record.parentNo != null and record.parentNo != '' " >
+        		A.PARENT_NO = #{record.parentNo},
+      		</if>
+        	<if test="record.agentLevel != null and record.agentLevel != '' " >
+        		A.AGENT_LEVEL = #{record.agentLevel},
+      		</if>
+        	<if test="record.qrTotal != null" >
+        		A.QR_TOTAL = #{record.qrTotal},
+      		</if>
+        	<if test="record.useTotal != null" >
+        		A.USE_TOTAL = #{record.useTotal},
+      		</if>
+        	<if test="record.lessTotal != null" >
+        		A.LESS_TOTAL = #{record.lessTotal},
+      		</if>
+      		<if test="record.agentFlag != null and record.agentFlag != '' " >
+        		A.AGENT_FLAG = #{record.agentFlag},
+      		</if>
+        	<if test="record.status != null and record.status != '' " >
+        		A.STATUS = #{record.status},
+      		</if>
+        	<if test="record.recordStatus != null and record.recordStatus != '' " >
+        		A.RECORD_STATUS = #{record.recordStatus},
+      		</if>
+        	<if test="record.createTime != null and record.createTime != '' " >
+        		A.CREATE_TIME = #{record.createTime},
+      		</if>
+        	<if test="record.updateTime != null and record.updateTime != '' " >
+        		A.UPDATE_TIME = #{record.updateTime},
+      		</if>
+        	<if test="record.operator != null and record.operator != '' " >
+        		A.OPERATOR = #{record.operator},
+      		</if>
+        	<if test="record.remark != null and record.remark != '' " >
+        		A.REMARK = #{record.remark},
+      		</if>
+        	<if test="record.temp1 != null and record.temp1 != '' " >
+        		A.TEMP_1 = #{record.temp1},
+      		</if>
+        	<if test="record.temp2 != null and record.temp2 != '' " >
+        		A.TEMP_2 = #{record.temp2},
+      		</if>
+        	<if test="record.temp3 != null and record.temp3 != '' " >
+        		A.TEMP_3 = #{record.temp3},
+      		</if>
+        	<if test="record.temp4 != null and record.temp4 != '' " >
+        		A.TEMP_4 = #{record.temp4},
+      		</if>
+    </set>
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </update>
+  <update id="update" parameterType="com.hfepay.scancode.commons.entity.AgentBase" >
+    update t_agent_base A
+    <set >
+        	<if test="id != null and id != '' " >
+        		A.ID = #{id},
+      		</if>
+        	<if test="agentNo != null and agentNo != '' " >
+        		A.AGENT_NO = #{agentNo},
+      		</if>
+        	<if test="agentName != null and agentName != '' " >
+        		A.AGENT_NAME = #{agentName},
+      		</if>
+        	<if test="channelNo != null and channelNo != '' " >
+        		A.CHANNEL_NO = #{channelNo},
+      		</if>
+        	<if test="agentPreCode != null and agentPreCode != '' " >
+        		A.AGENT_PRE_CODE = #{agentPreCode},
+      		</if>
+        	<if test="agentType != null and agentType != '' " >
+        		A.AGENT_TYPE = #{agentType},
+      		</if>
+        	<if test="name != null and name != '' " >
+        		A.NAME = #{name},
+      		</if>
+        	<if test="mobile != null and mobile != '' " >
+        		A.MOBILE = #{mobile},
+      		</if>
+        	<if test="parentNo != null and parentNo != '' " >
+        		A.PARENT_NO = #{parentNo},
+      		</if>
+        	<if test="agentLevel != null and agentLevel != '' " >
+        		A.AGENT_LEVEL = #{agentLevel},
+      		</if>
+        	<if test="qrTotal != null" >
+        		A.QR_TOTAL = #{qrTotal},
+      		</if>
+        	<if test="useTotal != null" >
+        		A.USE_TOTAL = #{useTotal},
+      		</if>
+        	<if test="lessTotal != null" >
+        		A.LESS_TOTAL = #{lessTotal},
+      		</if>
+      		<if test="agentFlag != null and agentFlag != '' " >
+        		A.AGENT_FLAG = #{agentFlag},
+      		</if>
+        	<if test="status != null and status != '' " >
+        		A.STATUS = #{status},
+      		</if>
+        	<if test="recordStatus != null and recordStatus != '' " >
+        		A.RECORD_STATUS = #{recordStatus},
+      		</if>
+        	<if test="createTime != null and createTime != '' " >
+        		A.CREATE_TIME = #{createTime},
+      		</if>
+        	<if test="updateTime != null and updateTime != '' " >
+        		A.UPDATE_TIME = #{updateTime},
+      		</if>
+        	<if test="operator != null and operator != '' " >
+        		A.OPERATOR = #{operator},
+      		</if>
+        	<if test="remark != null and remark != '' " >
+        		A.REMARK = #{remark},
+      		</if>
+        	<if test="temp1 != null and temp1 != '' " >
+        		A.TEMP_1 = #{temp1},
+      		</if>
+        	<if test="temp2 != null and temp2 != '' " >
+        		A.TEMP_2 = #{temp2},
+      		</if>
+        	<if test="temp3 != null and temp3 != '' " >
+        		A.TEMP_3 = #{temp3},
+      		</if>
+        	<if test="temp4 != null and temp4 != '' " >
+        		A.TEMP_4 = #{temp4},
+      		</if>
+    </set>
+    where A.ID = #{id}
+  </update>
+  
+	<update id="updateStatus">
+    update t_agent_base
+		set `STATUS` = #{status}
+		where ID=#{id}
+  </update>
+  
+  	<update id="updateUsedTimes">
+     update t_agent_base
+		set USE_TOTAL=USE_TOTAL+1,LESS_TOTAL=LESS_TOTAL-1
+		where AGENT_NO=#{agentNo}
+  </update>
+</mapper>
+

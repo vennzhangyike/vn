@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="NodeRelation">
+	<resultMap id="BaseResultMap" type="com.hfepay.scancode.commons.entity.NodeRelation">
+        <result property="id" column="A_id"/>
+        <result property="currentNode" column="A_current_node"/>
+        <result property="parentNode" column="A_parent_node"/>
+        <result property="currentNodeLevel" column="A_current_node_level"/>
+        <result property="identityFlag" column="A_identity_flag"/>
+        <result property="nodeSeq" column="A_node_seq"/>
+        <result property="nextNodeSeq" column="A_next_node_seq"/>
+        <result property="operator" column="A_operator"/>
+        <result property="createTime" column="A_create_time"/>
+        <result property="updateTime" column="A_update_time"/>
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+	    <![CDATA[
+		A.id as A_id,A.current_node as A_current_node,A.parent_node as A_parent_node,A.current_node_level as A_current_node_level,A.identity_flag as A_identity_flag,A.node_seq as A_node_seq,A.next_node_seq as A_next_node_seq,A.operator as A_operator,A.create_time as A_create_time,A.update_time as A_update_time
+	    ]]>
+	</sql>
+
+	<select id="findByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+     from t_node_relation A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+    <if test="hasOrderBy" >
+      order by
+      <foreach collection="orderBys" item="orderBy" separator="," > ${orderBy} </foreach>
+    </if>
+  </select>
+  <select resultMap="BaseResultMap" parameterType="java.lang.String" id="findById" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_node_relation A
+    where A.id = #{id}
+  </select>
+  <delete parameterType="java.lang.String" id="deleteById" >
+    delete from t_node_relation
+    where id = #{id}
+  </delete>
+  <delete id="deleteByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" >
+    delete A from t_node_relation A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.hfepay.scancode.commons.entity.NodeRelation" >
+    insert into t_node_relation (
+        	id,
+        	current_node,
+        	parent_node,
+        	current_node_level,
+        	identity_flag,
+        	node_seq,
+        	next_node_seq,
+        	operator,
+        	create_time,
+        	update_time
+        )
+    values (
+        #{id},
+        #{currentNode},
+        #{parentNode},
+        #{currentNodeLevel},
+        #{identityFlag},
+        #{nodeSeq},
+        #{nextNodeSeq},
+        #{operator},
+        #{createTime},
+        #{updateTime}
+    )
+  </insert>
+  <select id="countByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultType="java.lang.Integer" >
+    select count(*) from t_node_relation A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </select>
+  <update id="updateByCriteria" parameterType="map" >
+    update t_node_relation A
+    <set >
+        	<if test="record.id != null and record.id != '' " >
+        		A.id = #{record.id},
+      		</if>
+        	<if test="record.currentNode != null and record.currentNode != '' " >
+        		A.current_node = #{record.currentNode},
+      		</if>
+        	<if test="record.parentNode != null and record.parentNode != '' " >
+        		A.parent_node = #{record.parentNode},
+      		</if>
+        	<if test="record.currentNodeLevel != null and record.currentNodeLevel != '' " >
+        		A.current_node_level = #{record.currentNodeLevel},
+      		</if>
+        	<if test="record.identityFlag != null and record.identityFlag != '' " >
+        		A.identity_flag = #{record.identityFlag},
+      		</if>
+        	<if test="record.nodeSeq != null and record.nodeSeq != '' " >
+        		A.node_seq = #{record.nodeSeq},
+      		</if>
+        	<if test="record.nextNodeSeq != null and record.nextNodeSeq != '' " >
+        		A.next_node_seq = #{record.nextNodeSeq},
+      		</if>
+        	<if test="record.operator != null and record.operator != '' " >
+        		A.operator = #{record.operator},
+      		</if>
+        	<if test="record.createTime != null and record.createTime != '' " >
+        		A.create_time = #{record.createTime},
+      		</if>
+        	<if test="record.updateTime != null and record.updateTime != '' " >
+        		A.update_time = #{record.updateTime},
+      		</if>
+    </set>
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </update>
+  <update id="update" parameterType="com.hfepay.scancode.commons.entity.NodeRelation" >
+    update t_node_relation A
+    <set >
+        	<if test="id != null and id != '' " >
+        		A.id = #{id},
+      		</if>
+        	<if test="currentNode != null and currentNode != '' " >
+        		A.current_node = #{currentNode},
+      		</if>
+        	<if test="parentNode != null and parentNode != '' " >
+        		A.parent_node = #{parentNode},
+      		</if>
+        	<if test="currentNodeLevel != null and currentNodeLevel != '' " >
+        		A.current_node_level = #{currentNodeLevel},
+      		</if>
+        	<if test="identityFlag != null and identityFlag != '' " >
+        		A.identity_flag = #{identityFlag},
+      		</if>
+        	<if test="nodeSeq != null and nodeSeq != '' " >
+        		A.node_seq = #{nodeSeq},
+      		</if>
+        	<if test="nextNodeSeq != null and nextNodeSeq != '' " >
+        		A.next_node_seq = #{nextNodeSeq},
+      		</if>
+        	<if test="operator != null and operator != '' " >
+        		A.operator = #{operator},
+      		</if>
+        	<if test="createTime != null and createTime != '' " >
+        		A.create_time = #{createTime},
+      		</if>
+        	<if test="updateTime != null and updateTime != '' " >
+        		A.update_time = #{updateTime},
+      		</if>
+    </set>
+    where A.id = #{id}
+  </update>
+  
+  <delete parameterType="java.lang.String" id="deleteByCurrentNode">
+		delete from t_node_relation
+		where current_node = #{currentNode}
+	</delete>
+	
+	<select id="getParentsByCurrentNode" parameterType="map" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+     from t_node_relation A
+    <where >
+    	A.identity_flag !='0'
+    	<if test="parentsSeq != null and parentsSeq != '' " >
+    	 and node_seq in
+    	(
+    	 <foreach collection="parentsSeq" item="item" index="index" separator="," > 
+    			#{item}
+    	 </foreach>
+	    )
+    	</if>
+    	<if test="excludeIdentityFlag != null and excludeIdentityFlag != '' " >
+    		and identity_flag != #{excludeIdentityFlag}
+    	</if>
+    </where>
+    ORDER BY current_node_level
+  </select>
+  
+  <select id="getChildrenByCurrentNode" parameterType="map" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+     from t_node_relation A
+    <where >
+    	<if test="nodeSeq != null and nodeSeq != '' " >
+    		node_seq like CONCAT(#{nodeSeq},'%')
+    	</if>
+    	<if test="excludeIdentityFlag != null and excludeIdentityFlag != '' " >
+    		and identity_flag != #{excludeIdentityFlag}
+    	</if>
+    	<if test="seqLength != null" >
+    		and length(node_seq) = #{seqLength}
+    	</if>
+    	<if test="include != null and include != '' " >
+    		and node_seq !=#{nodeSeq}
+    	</if>
+    </where>
+  </select>
+  
+  <insert id="insertBatch" parameterType="com.hfepay.scancode.commons.entity.NodeRelation" >
+  insert into t_node_relation (
+        	id,
+        	current_node,
+        	parent_node,
+        	current_node_level,
+        	identity_flag,
+        	node_seq,
+        	next_node_seq,
+        	operator,
+        	create_time,
+        	update_time
+        )
+    values 
+    <foreach collection="list" item="item" index="index" separator="," >  
+    (
+        #{item.id},
+        #{item.currentNode},
+        #{item.parentNode},
+        #{item.currentNodeLevel},
+        #{item.identityFlag},
+        #{item.nodeSeq},
+        #{item.nextNodeSeq},
+        #{item.operator},
+        #{item.createTime},
+        #{item.updateTime}
+    )
+    </foreach> 
+  </insert>
+  
+ <update id="updateNextSeqByCurrentNode"  parameterType="map" >
+   update t_node_relation set next_node_seq = #{nextNodeSeq} where current_node=#{currentNode}
+  </update>
+</mapper>
+

@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="UserSms">
+	<resultMap id="BaseResultMap" type="com.hfepay.scancode.commons.entity.UserSms">
+        <result property="id" column="A_id"/>
+        <result property="channelNo" column="A_channel_no"/>
+        <result property="agentNo" column="A_agent_no"/>
+        <result property="merchantNo" column="A_merchant_no"/>
+        <result property="phone" column="A_phone"/>
+        <result property="content" column="A_content"/>
+        <result property="sendResult" column="A_send_result"/>
+        <result property="createTime" column="A_create_time"/>
+        <result property="remark" column="A_remark"/>
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+	    <![CDATA[
+		A.id as A_id,A.channel_no as A_channel_no,A.agent_no as A_agent_no,A.merchant_no as A_merchant_no,A.phone as A_phone,A.content as A_content,A.send_result as A_send_result,A.create_time as A_create_time,A.remark as A_remark
+	    ]]>
+	</sql>
+	
+	<sql id="channel_filter">
+	    <if test="params.nodeSeq != null" >
+        	EXISTS (
+				SELECT
+					n.current_node
+				FROM
+					t_node_relation n
+				WHERE 1=1
+				<if test="params.identityFlag != null and params.identityFlag == '1'.toString()" >
+				 	and A.channel_no = n.current_node and n.identity_flag = '1'
+				</if>
+				<if test="params.identityFlag != null and params.identityFlag == '2'.toString()" >
+				 	and A.agent_no = n.current_node and n.identity_flag = '2'
+				</if>
+				<if test="params.identityFlag != null and params.identityFlag == '3'.toString()" >
+				 	and A.merchant_no = n.current_node and n.identity_flag = '3'
+				</if>
+					and n.node_seq like CONCAT('${params.nodeSeq}','%') )
+				<if test="@com.hfepay.commons.base.collection.Collections@isNotEmpty(conditions)"> AND </if> 
+      	</if>
+	</sql>
+
+	<select id="findByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+     from t_user_sms A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+      	<include refid="channel_filter" />
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+    <if test="hasOrderBy" >
+      order by
+      <foreach collection="orderBys" item="orderBy" separator="," > ${orderBy} </foreach>
+    </if>
+  </select>
+  <select resultMap="BaseResultMap" parameterType="java.lang.String" id="findById" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_user_sms A
+    where A.id = #{id}
+  </select>
+  <delete parameterType="java.lang.String" id="deleteById" >
+    delete from t_user_sms
+    where id = #{id}
+  </delete>
+  <delete id="deleteByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" >
+    delete A from t_user_sms A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.hfepay.scancode.commons.entity.UserSms" >
+    insert into t_user_sms (
+        	id,
+        	channel_no,
+        	agent_no,
+        	merchant_no,
+        	phone,
+        	content,
+        	send_result,
+        	create_time,
+        	remark
+        )
+    values (UUID(),
+        	#{channelNo},
+        	#{agentNo},
+        	#{merchantNo},
+        	#{phone},
+        	#{content},
+        	#{sendResult},
+        	#{createTime},
+        	#{remark}
+    )
+  </insert>
+  <select id="countByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultType="java.lang.Integer" >
+    select count(*) from t_user_sms A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+      	<include refid="channel_filter" />
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </select>
+  <update id="updateByCriteria" parameterType="map" >
+    update t_user_sms A
+    <set >
+        	<if test="record.id != null and record.id != '' " >
+        		A.id = #{record.id},
+      		</if>
+        	<if test="record.channelNo != null and record.channelNo != '' " >
+        		A.channel_no = #{record.channelNo},
+      		</if>
+        	<if test="record.agentNo != null and record.agentNo != '' " >
+        		A.agent_no = #{record.agentNo},
+      		</if>
+        	<if test="record.merchantNo != null and record.merchantNo != '' " >
+        		A.merchant_no = #{record.merchantNo},
+      		</if>
+        	<if test="record.phone != null and record.phone != '' " >
+        		A.phone = #{record.phone},
+      		</if>
+        	<if test="record.content != null and record.content != '' " >
+        		A.content = #{record.content},
+      		</if>
+        	<if test="record.sendResult != null and record.sendResult != '' " >
+        		A.send_result = #{record.sendResult},
+      		</if>
+        	<if test="record.createTime != null and record.createTime != '' " >
+        		A.create_time = #{record.createTime},
+      		</if>
+        	<if test="record.remark != null and record.remark != '' " >
+        		A.remark = #{record.remark},
+      		</if>
+    </set>
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </update>
+  <update id="update" parameterType="com.hfepay.scancode.commons.entity.UserSms" >
+    update t_user_sms A
+    <set >
+        	<if test="id != null and id != '' " >
+        		A.id = #{id},
+      		</if>
+        	<if test="channelNo != null and channelNo != '' " >
+        		A.channel_no = #{channelNo},
+      		</if>
+        	<if test="agentNo != null and agentNo != '' " >
+        		A.agent_no = #{agentNo},
+      		</if>
+        	<if test="merchantNo != null and merchantNo != '' " >
+        		A.merchant_no = #{merchantNo},
+      		</if>
+        	<if test="phone != null and phone != '' " >
+        		A.phone = #{phone},
+      		</if>
+        	<if test="content != null and content != '' " >
+        		A.content = #{content},
+      		</if>
+        	<if test="sendResult != null and sendResult != '' " >
+        		A.send_result = #{sendResult},
+      		</if>
+        	<if test="createTime != null and createTime != '' " >
+        		A.create_time = #{createTime},
+      		</if>
+        	<if test="remark != null and remark != '' " >
+        		A.remark = #{remark},
+      		</if>
+    </set>
+    where A.id = #{id}
+  </update>
+  
+  <select id="getSmsCountDetail" parameterType="com.hfepay.scancode.commons.condition.UserSmsCondition" resultMap="BaseResultMap" >
+    select count(id) as A_remark,send_result as A_send_result from t_user_sms A
+    <where>
+    		<if test="id != null and id != '' " >
+        		and A.id = #{id}
+      		</if>
+        	<if test="channelNo != null and channelNo != '' " >
+        		and A.channel_no = #{channelNo}
+      		</if>
+        	<if test="agentNo != null and agentNo != '' " >
+        		and A.agent_no = #{agentNo}
+      		</if>
+        	<if test="merchantNo != null and merchantNo != '' " >
+        		and A.merchant_no = #{merchantNo}
+      		</if>
+        	<if test="phone != null and phone != '' " >
+        		and A.phone = #{phone}
+      		</if>
+        	<if test="content != null and content != '' " >
+        		and A.content = #{content}
+      		</if>
+        	<if test="sendResult != null and sendResult != '' " >
+        		and A.send_result = #{sendResult}
+      		</if>
+        	<if test="createTime != null and createTime != '' " >
+        		and A.create_time = #{createTime}
+      		</if>
+        	<if test="remark != null and remark != '' " >
+        		and A.remark = #{remark}
+      		</if>
+      		<if test="nodeSeq != null" >
+        	and EXISTS (
+				SELECT
+					n.current_node
+				FROM
+					t_node_relation n
+				WHERE 1=1
+				<if test="identityFlag != null and identityFlag == '1'.toString()" >
+				 	and A.channel_no = n.current_node and n.identity_flag = '1'
+				</if>
+				<if test="identityFlag != null and identityFlag == '2'.toString()" >
+				 	and A.agent_no = n.current_node and n.identity_flag = '2'
+				</if>
+				<if test="identityFlag != null and identityFlag == '3'.toString()" >
+				 	and A.merchant_no = n.current_node and n.identity_flag = '3'
+				</if>
+					and n.node_seq like CONCAT('${nodeSeq}','%') )
+      	</if>
+     </where> 	
+     group by A.send_result	
+  </select>
+</mapper>
+

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd 
+    http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd"
+	default-lazy-init="true">
+
+	<description>服务配置 </description>
+    <!-- consumer application name -->
+    <dubbo:application name="hfepay-scancode-gateway-webapp"  />
+    <dubbo:consumer timeout="30000" filter="InvocationRpcFilter"></dubbo:consumer>
+    <dubbo:registry address="zookeeper://${zookeeper.addr}" />
+   
+   <dubbo:reference id="scanCodeService" interface="com.hfepay.scancode.service.payway.ScanCodeService" check="false" retries="0"/>
+	<dubbo:reference id="adminService" interface="com.hfepay.scancode.service.channel.ChannelAdminService"  check="false" retries="0"/>
+	<!-- 商户信息 -->
+	<dubbo:reference id="merchantInfoService" interface="com.hfepay.scancode.service.operator.MerchantInfoService" check="false" retries="0"/>
+	<!-- 流水查询-->
+	<dubbo:reference id="orderPayService" interface="com.hfepay.scancode.service.order.OrderPayService" check="false"  retries="0"/>
+	
+	<dubbo:reference id="merchantWalletService" interface="com.hfepay.scancode.service.operator.MerchantWalletService" check="false" retries="0" />
+	
+	<dubbo:reference id="merchantBankcardService" interface="com.hfepay.scancode.service.operator.MerchantBankcardService" check="false"  retries="0" />
+	<!-- 门店信息 -->
+	<dubbo:reference id="merchantStoreService" interface="com.hfepay.scancode.service.operator.MerchantStoreService" check="false" retries="0" />
+	
+	<dubbo:reference id="platformQrcodeService" interface="com.hfepay.scancode.service.operator.PlatformQrcodeService" check="false"  retries="0"/>
+	
+	<dubbo:reference id="channelExpandService" interface="com.hfepay.scancode.service.operator.ChannelExpandService" check="false"  retries="0"/>
+	
+	<dubbo:reference id="channelBaseService" interface="com.hfepay.scancode.service.operator.ChannelBaseService" check="false"  retries="0"/>
+	
+	<dubbo:reference id="agentBaseService" interface="com.hfepay.scancode.service.operator.AgentBaseService" check="false"  retries="0"/>
+	
+	<dubbo:reference id="callBackService" interface="com.hfepay.scancode.service.payway.CallBackService"  check="false"  retries="0"/>
+	
+	<dubbo:reference id="remitBankInfoService" interface="com.hfepay.scancode.service.operator.RemitBankInfoService"  check="false"  retries="0"/>
+
+	<dubbo:reference id="idCreateService" interface="com.hfepay.scancode.service.operator.IdCreateService"  check="false"  retries="0"/>
+	
+	<dubbo:reference id="merchantBusinessService" interface="com.hfepay.scancode.api.service.MerchantBusinessService"  check="false"  retries="0"/>
+	
+	<!-- 商户费率信息 -->
+	<dubbo:reference id="merchantPaywayService" interface="com.hfepay.scancode.service.operator.MerchantPaywayService" check="false"/>
+	<!-- 代理商费率信息 -->
+	<dubbo:reference id="agentPaywayService" interface="com.hfepay.scancode.service.operator.AgentPaywayService" check="false"/>
+	
+	<dubbo:reference id="channelPaywayService" interface="com.hfepay.scancode.service.operator.ChannelPaywayService" check="false"/>
+	
+	<dubbo:reference id="apiChannelWxParamsService" interface="com.hfepay.scancode.api.service.ApiChannelWxParamsService" check="false"/>
+	
+	<dubbo:reference id="apiMappingDicionService" interface="com.hfepay.scancode.api.service.ApiMappingDicionService"  check="false"/>
+
+	<dubbo:reference id="merchantQrcodeService" interface="com.hfepay.scancode.service.operator.MerchantQrcodeService"  check="false"/>
+	
+	<dubbo:reference id="merchantCashierService" interface="com.hfepay.scancode.service.operator.MerchantCashierService"  check="false"/>
+	
+	<dubbo:reference id="merchantCashierQrService" interface="com.hfepay.scancode.service.operator.MerchantCashierQrService"  check="false"/>
+	
+	<!-- 作为定时任务的调试用 -->
+	<dubbo:reference id="profitService" interface="com.hfepay.scancode.service.order.ProfitService"  check="false"/>
+	
+	<dubbo:reference id="apiLogApiService" interface="com.hfepay.scancode.api.service.ApiLogService"  check="false"/>
+	
+	<!-- 电子协议 -->
+	<dubbo:reference id="agreementInfoService" interface="com.hfepay.scancode.service.operator.AgreementInfoService" check="false"/>
+	
+	<!-- 提现  -->
+	<dubbo:reference id="withdrawalsService" interface="com.hfepay.scancode.service.order.WithdrawalsService" check="false"/>
+	
+	<!-- 平台限额  -->
+	<dubbo:reference id="platformLimitService" interface="com.hfepay.scancode.service.operator.PlatformLimitService" check="false"/>
+	
+	<!-- 参数配置 -->
+	<dubbo:reference id="paramsInfoService" interface="com.hfepay.scancode.service.operator.ParamsInfoService" check="false"/>
+	
+	<!-- 广告 -->
+	<dubbo:reference id="adviertisementInfoService" interface="com.hfepay.scancode.service.operator.AdviertisementInfoService" check="false"/>
+	<!-- 查询 -->
+	<dubbo:reference id="orderPaymentService" interface="com.hfepay.scancode.service.order.OrderPaymentService" check="false" />
+	<dubbo:reference id="merchantActivityService" interface="com.hfepay.scancode.service.operator.MerchantActivityService" check="false" />
+	<dubbo:reference id="payScanCodeService" interface="com.hfepay.pay.service.PayScanCodeService" check="false" retries="0"/>
+	<dubbo:reference id="payScanPayService"  interface="com.hfepay.pay.service.PayScanPayService" check="false" retries="0" />
+	<dubbo:reference id="payCallBackOperatorService" interface="com.hfepay.pay.service.PayCallBackOperatorService"  check="false"/>
+	
+	<!-- 机构限额管理 -->
+	<dubbo:reference id="organLimitService" interface="com.hfepay.scancode.service.operator.OrganLimitService" check="false" />
+	
+	<dubbo:reference id="payService"  interface="com.hfepay.pay.service.PayService" check="false" retries="0" />
+	<dubbo:reference id="withdrawService"  interface="com.hfepay.pay.service.WithdrawService" check="false" retries="0" />
+	
+</beans>

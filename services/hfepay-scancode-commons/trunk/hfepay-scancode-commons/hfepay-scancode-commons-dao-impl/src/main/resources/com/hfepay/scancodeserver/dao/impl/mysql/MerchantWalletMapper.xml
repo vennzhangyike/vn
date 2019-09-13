@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="MerchantWallet">
+	<resultMap id="BaseResultMap" type="com.hfepay.scancode.commons.entity.MerchantWallet">
+        <result property="id" column="A_ID"/>
+        <result property="merchantNo" column="A_MERCHANT_NO"/>
+        <result property="balance" column="A_BALANCE"/>
+        <result property="freezesAmt" column="A_FREEZES_AMT"/>
+        <result property="status" column="A_STATUS"/>
+        <result property="createTime" column="A_CREATE_TIME"/>
+        <result property="updateTime" column="A_UPDATE_TIME"/>
+        <result property="operator" column="A_OPERATOR"/>
+        <result property="remark" column="A_REMARK"/>
+        <result property="temp1" column="A_TEMP_1"/>
+        <result property="temp2" column="A_TEMP_2"/>
+	</resultMap>
+	
+	<resultMap id="BaseResultMapVo" type="com.hfepay.scancode.commons.vo.MerchantWalletVo" extends="BaseResultMap">
+		<result property="operatorName" column="operator_name"/>
+		<result property="merchantName" column="merchant_name"/>
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+	    <![CDATA[
+		A.ID as A_ID,A.MERCHANT_NO as A_MERCHANT_NO,A.BALANCE as A_BALANCE,A.FREEZES_AMT as A_FREEZES_AMT,A.STATUS as A_STATUS,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.OPERATOR as A_OPERATOR,A.REMARK as A_REMARK,A.TEMP_1 as A_TEMP_1,A.TEMP_2 as A_TEMP_2
+	    ]]>
+	</sql>
+
+	<select id="findByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultMap="BaseResultMapVo" >
+    select
+    <include refid="Base_Column_List" />,C.merchant_name
+     from t_merchant_wallet A
+    left join t_merchant_info C on A.merchant_no = C.merchant_no
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+    <if test="hasOrderBy" >
+      order by
+      <foreach collection="orderBys" item="orderBy" separator="," > ${orderBy} </foreach>
+    </if>
+  </select>
+  <select resultMap="BaseResultMapVo" parameterType="java.lang.String" id="findById" >
+    select 
+    <include refid="Base_Column_List" />,B.short_name as operator_name,C.merchant_name
+    from t_merchant_wallet A 
+    left join t_sys_admin B on A.operator = B.id 
+    left join t_merchant_info C on A.merchant_no = C.merchant_no
+  </select>
+  <delete parameterType="java.lang.String" id="deleteById" >
+    delete from t_merchant_wallet
+    where ID = #{id}
+  </delete>
+  <delete id="deleteByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" >
+    delete A from t_merchant_wallet A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.hfepay.scancode.commons.entity.MerchantWallet" >
+    insert into t_merchant_wallet (
+        	ID,
+        	MERCHANT_NO,
+        	BALANCE,
+        	FREEZES_AMT,
+        	STATUS,
+        	CREATE_TIME,
+        	UPDATE_TIME,
+        	OPERATOR,
+        	REMARK,
+        	TEMP_1,
+        	TEMP_2
+        )
+    values (
+        	#{id},
+        	#{merchantNo},
+        	#{balance},
+        	#{freezesAmt},
+        	#{status},
+        	#{createTime},
+        	#{updateTime},
+        	#{operator},
+        	#{remark},
+        	#{temp1},
+        	#{temp2}
+    )
+  </insert>
+  <select id="countByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultType="java.lang.Integer" >
+    select count(*) from t_merchant_wallet A
+    left join t_merchant_info C on A.merchant_no = C.merchant_no
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </select>
+  <update id="updateByCriteria" parameterType="map" >
+    update t_merchant_wallet A
+    <set >
+        	<if test="record.id != null and record.id != '' " >
+        		A.ID = #{record.id},
+      		</if>
+        	<if test="record.merchantNo != null and record.merchantNo != '' " >
+        		A.MERCHANT_NO = #{record.merchantNo},
+      		</if>
+        	<if test="record.balance != null and record.balance != '' " >
+        		A.BALANCE = #{record.balance},
+      		</if>
+        	<if test="record.freezesAmt != null and record.freezesAmt != '' " >
+        		A.FREEZES_AMT = #{record.freezesAmt},
+      		</if>
+        	<if test="record.status != null and record.status != '' " >
+        		A.STATUS = #{record.status},
+      		</if>
+        	<if test="record.createTime != null and record.createTime != '' " >
+        		A.CREATE_TIME = #{record.createTime},
+      		</if>
+        	<if test="record.updateTime != null and record.updateTime != '' " >
+        		A.UPDATE_TIME = #{record.updateTime},
+      		</if>
+        	<if test="record.operator != null and record.operator != '' " >
+        		A.OPERATOR = #{record.operator},
+      		</if>
+        	<if test="record.remark != null and record.remark != '' " >
+        		A.REMARK = #{record.remark},
+      		</if>
+        	<if test="record.temp1 != null and record.temp1 != '' " >
+        		A.TEMP_1 = #{record.temp1},
+      		</if>
+        	<if test="record.temp2 != null and record.temp2 != '' " >
+        		A.TEMP_2 = #{record.temp2},
+      		</if>
+    </set>
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </update>
+  <update id="update" parameterType="com.hfepay.scancode.commons.entity.MerchantWallet" >
+    update t_merchant_wallet A
+    <set >
+        	<if test="id != null and id != '' " >
+        		A.ID = #{id},
+      		</if>
+        	<if test="merchantNo != null and merchantNo != '' " >
+        		A.MERCHANT_NO = #{merchantNo},
+      		</if>
+        	<if test="balance != null and balance != '' " >
+        		A.BALANCE = #{balance},
+      		</if>
+        	<if test="freezesAmt != null and freezesAmt != '' " >
+        		A.FREEZES_AMT = #{freezesAmt},
+      		</if>
+        	<if test="status != null and status != '' " >
+        		A.STATUS = #{status},
+      		</if>
+        	<if test="createTime != null and createTime != '' " >
+        		A.CREATE_TIME = #{createTime},
+      		</if>
+        	<if test="updateTime != null and updateTime != '' " >
+        		A.UPDATE_TIME = #{updateTime},
+      		</if>
+        	<if test="operator != null and operator != '' " >
+        		A.OPERATOR = #{operator},
+      		</if>
+        	<if test="remark != null and remark != '' " >
+        		A.REMARK = #{remark},
+      		</if>
+        	<if test="temp1 != null and temp1 != '' " >
+        		A.TEMP_1 = #{temp1},
+      		</if>
+        	<if test="temp2 != null and temp2 != '' " >
+        		A.TEMP_2 = #{temp2},
+      		</if>
+    </set>
+    where A.ID = #{id}
+  </update>
+  
+	<update id="updateStatus">
+    update t_merchant_wallet
+		set `STATUS` = #{status}
+		where ID=#{id}
+  </update>
+  
+    <update id="updateByMerchantNo" parameterType="com.hfepay.scancode.commons.entity.MerchantWallet" >
+    update t_merchant_wallet A
+    <set >
+        	<if test="id != null and id != '' " >
+        		A.ID = #{id},
+      		</if>
+        	<if test="merchantNo != null and merchantNo != '' " >
+        		A.MERCHANT_NO = #{merchantNo},
+      		</if>
+        	<if test="merchantName != null and merchantName != '' " >
+        		A.MERCHANT_NAME = #{merchantName},
+      		</if>
+        	<if test="balance != null and balance != '' " >
+        		A.BALANCE = #{balance},
+      		</if>
+        	<if test="freezesAmt != null and freezesAmt != '' " >
+        		A.FREEZES_AMT = #{freezesAmt},
+      		</if>
+        	<if test="status != null and status != '' " >
+        		A.STATUS = #{status},
+      		</if>
+        	<if test="createTime != null and createTime != '' " >
+        		A.CREATE_TIME = #{createTime},
+      		</if>
+        	<if test="updateTime != null and updateTime != '' " >
+        		A.UPDATE_TIME = #{updateTime},
+      		</if>
+        	<if test="operator != null and operator != '' " >
+        		A.OPERATOR = #{operator},
+      		</if>
+        	<if test="remark != null and remark != '' " >
+        		A.REMARK = #{remark},
+      		</if>
+        	<if test="temp1 != null and temp1 != '' " >
+        		A.TEMP_1 = #{temp1},
+      		</if>
+        	<if test="temp2 != null and temp2 != '' " >
+        		A.TEMP_2 = #{temp2},
+      		</if>
+    </set>
+   A.MERCHANT_NO = #{merchantNo}
+  </update>
+  
+  
+   <update id="updateBalanceByMerchantNo" parameterType="com.hfepay.scancode.commons.entity.MerchantWallet" >
+    update t_merchant_wallet A
+    <set >
+        	<if test="balance != null and balance != '' " >
+        		A.BALANCE = A.BALANCE - #{balance},
+      		</if>
+        	<!-- <if test="freezesAmt != null and freezesAmt != '' " >
+        		A.FREEZES_AMT = A.FREEZES_AMT+#{freezesAmt},
+      		</if> -->
+    </set>
+   where A.MERCHANT_NO = #{merchantNo}
+  </update>
+</mapper>
+

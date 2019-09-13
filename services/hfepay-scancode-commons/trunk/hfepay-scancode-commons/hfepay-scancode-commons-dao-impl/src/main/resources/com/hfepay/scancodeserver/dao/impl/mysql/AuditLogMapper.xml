@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="AuditLog">
+	<resultMap id="BaseResultMap" type="com.hfepay.scancode.commons.entity.AuditLog">
+        <result property="id" column="A_ID"/>
+        <result property="auditId" column="A_AUDIT_ID"/>
+        <result property="auditType" column="A_AUDIT_TYPE"/>
+        <result property="merchantNo" column="A_MERCHANT_NO"/>
+        <result property="auditStatus" column="A_AUDIT_STATUS"/>
+        <result property="reason" column="A_REASON"/>
+        <result property="operatorOrganizations" column="A_OPERATOR_ORGANIZATIONS"/>
+        <result property="createTime" column="A_CREATE_TIME"/>
+        <result property="operator" column="A_OPERATOR"/>
+        <result property="remark" column="A_REMARK"/>
+        <result property="temp1" column="A_TEMP_1"/>
+        <result property="temp2" column="A_TEMP_2"/>
+	</resultMap>
+	
+	<resultMap id="BaseResultMapVo" type="com.hfepay.scancode.commons.vo.AuditLogVo" extends="BaseResultMap">
+		<result property="operatorName" column="operator_name"/>
+		<result property="merchantName" column="merchant_name"/>
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+	    <![CDATA[
+		A.ID as A_ID,A.AUDIT_ID as A_AUDIT_ID,A.AUDIT_TYPE as A_AUDIT_TYPE,A.MERCHANT_NO as A_MERCHANT_NO,A.AUDIT_STATUS as A_AUDIT_STATUS,A.REASON as A_REASON,A.OPERATOR_ORGANIZATIONS as A_OPERATOR_ORGANIZATIONS,A.CREATE_TIME as A_CREATE_TIME,A.OPERATOR as A_OPERATOR,A.REMARK as A_REMARK,A.TEMP_1 as A_TEMP_1,A.TEMP_2 as A_TEMP_2
+	    ]]>
+	</sql>
+
+	<select id="findByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultMap="BaseResultMapVo" >
+    select
+    <include refid="Base_Column_List" />,C.merchant_name
+     from t_audit_log A
+     left join t_merchant_info C on A.merchant_no = C.merchant_no
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+    <if test="hasOrderBy" >
+      order by
+      <foreach collection="orderBys" item="orderBy" separator="," > ${orderBy} </foreach>
+    </if>
+  </select>
+  <select resultMap="BaseResultMapVo" parameterType="java.lang.String" id="findById" >
+    select 
+    <include refid="Base_Column_List" />,B.short_name as operator_name,C.merchant_name
+    from t_audit_log A  
+    left join t_sys_admin B on A.operator = B.id 
+    left join t_merchant_info C on A.merchant_no = C.merchant_no
+    where A.ID = #{id}
+  </select>
+  <delete parameterType="java.lang.String" id="deleteById" >
+    delete from t_audit_log
+    where ID = #{id}
+  </delete>
+  <delete id="deleteByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" >
+    delete A from t_audit_log A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.hfepay.scancode.commons.entity.AuditLog" >
+    insert into t_audit_log (
+        	ID,
+        	AUDIT_ID,
+        	AUDIT_TYPE,
+        	MERCHANT_NO,
+        	AUDIT_STATUS,
+        	REASON,
+        	OPERATOR_ORGANIZATIONS,
+        	CREATE_TIME,
+        	OPERATOR,
+        	REMARK,
+        	TEMP_1,
+        	TEMP_2
+        )
+    values (
+        	#{id},
+        	#{auditId},
+        	#{auditType},
+        	#{merchantNo},
+        	#{auditStatus},
+        	#{reason},
+        	#{operatorOrganizations},
+        	#{createTime},
+        	#{operator},
+        	#{remark},
+        	#{temp1},
+        	#{temp2}
+    )
+  </insert>
+  <select id="countByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultType="java.lang.Integer" >
+    select count(*) from t_audit_log A
+    left join t_merchant_info C on A.merchant_no = C.merchant_no
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </select>
+  <update id="updateByCriteria" parameterType="map" >
+    update t_audit_log A
+    <set >
+        	<if test="record.id != null and record.id != '' " >
+        		A.ID = #{record.id},
+      		</if>
+        	<if test="record.auditId != null and record.auditId != '' " >
+        		A.AUDIT_ID = #{record.auditId},
+      		</if>
+        	<if test="record.auditType != null and record.auditType != '' " >
+        		A.AUDIT_TYPE = #{record.auditType},
+      		</if>
+        	<if test="record.merchantNo != null and record.merchantNo != '' " >
+        		A.MERCHANT_NO = #{record.merchantNo},
+      		</if>
+        	<if test="record.auditStatus != null and record.auditStatus != '' " >
+        		A.AUDIT_STATUS = #{record.auditStatus},
+      		</if>
+        	<if test="record.reason != null and record.reason != '' " >
+        		A.REASON = #{record.reason},
+      		</if>
+        	<if test="record.operatorOrganizations != null and record.operatorOrganizations != '' " >
+        		A.OPERATOR_ORGANIZATIONS = #{record.operatorOrganizations},
+      		</if>
+        	<if test="record.createTime != null and record.createTime != '' " >
+        		A.CREATE_TIME = #{record.createTime},
+      		</if>
+        	<if test="record.operator != null and record.operator != '' " >
+        		A.OPERATOR = #{record.operator},
+      		</if>
+        	<if test="record.remark != null and record.remark != '' " >
+        		A.REMARK = #{record.remark},
+      		</if>
+        	<if test="record.temp1 != null and record.temp1 != '' " >
+        		A.TEMP_1 = #{record.temp1},
+      		</if>
+        	<if test="record.temp2 != null and record.temp2 != '' " >
+        		A.TEMP_2 = #{record.temp2},
+      		</if>
+    </set>
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </update>
+  <update id="update" parameterType="com.hfepay.scancode.commons.entity.AuditLog" >
+    update t_audit_log A
+    <set >
+        	<if test="id != null and id != '' " >
+        		A.ID = #{id},
+      		</if>
+        	<if test="auditId != null and auditId != '' " >
+        		A.AUDIT_ID = #{auditId},
+      		</if>
+        	<if test="auditType != null and auditType != '' " >
+        		A.AUDIT_TYPE = #{auditType},
+      		</if>
+        	<if test="merchantNo != null and merchantNo != '' " >
+        		A.MERCHANT_NO = #{merchantNo},
+      		</if>
+        	<if test="auditStatus != null and auditStatus != '' " >
+        		A.AUDIT_STATUS = #{auditStatus},
+      		</if>
+        	<if test="reason != null and reason != '' " >
+        		A.REASON = #{reason},
+      		</if>
+        	<if test="operatorOrganizations != null and operatorOrganizations != '' " >
+        		A.OPERATOR_ORGANIZATIONS = #{operatorOrganizations},
+      		</if>
+        	<if test="createTime != null and createTime != '' " >
+        		A.CREATE_TIME = #{createTime},
+      		</if>
+        	<if test="operator != null and operator != '' " >
+        		A.OPERATOR = #{operator},
+      		</if>
+        	<if test="remark != null and remark != '' " >
+        		A.REMARK = #{remark},
+      		</if>
+        	<if test="temp1 != null and temp1 != '' " >
+        		A.TEMP_1 = #{temp1},
+      		</if>
+        	<if test="temp2 != null and temp2 != '' " >
+        		A.TEMP_2 = #{temp2},
+      		</if>
+    </set>
+    where A.ID = #{id}
+  </update>
+  
+</mapper>
+

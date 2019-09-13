@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="Province">
+	<resultMap id="BaseResultMap" type="com.hfepay.scancode.commons.entity.Province">
+        <result property="pid" column="A_pid"/>
+        <result property="pname" column="A_pname"/>
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+	    <![CDATA[
+		A.pid as A_pid,A.pname as A_pname
+	    ]]>
+	</sql>
+
+	<select id="findByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+     from t_province A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+    <if test="hasOrderBy" >
+      order by
+      <foreach collection="orderBys" item="orderBy" separator="," > ${orderBy} </foreach>
+    </if>
+  </select>
+  <select resultMap="BaseResultMap" parameterType="java.lang.Integer" id="findById" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_province A
+    where A.pid = #{pid}
+  </select>
+  <delete parameterType="java.lang.Integer" id="deleteById" >
+    delete from t_province
+    where pid = #{pid}
+  </delete>
+  <delete id="deleteByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" >
+    delete A from t_province A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </delete>
+   <!-- <insert id="insert"  useGeneratedKeys="true" parameterType="com.hfepay.system.entity.SysArea" >
+  		<selectKey resultType="int" keyProperty="id" order="AFTER">  
+	        SELECT  
+	        LAST_INSERT_ID()  
+	    </selectKey>  
+	    insert into t_province (
+        	pname
+        )
+    values (
+        	#{pname}
+    )
+  </insert> -->
+  <select id="countByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultType="java.lang.Integer" >
+    select count(*) from t_province A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </select>
+  <update id="updateByCriteria" parameterType="map" >
+    update t_province A
+    <set >
+        	<if test="record.pid != null and record.pid != '' " >
+        		A.pid = #{record.pid},
+      		</if>
+        	<if test="record.pname != null and record.pname != '' " >
+        		A.pname = #{record.pname},
+      		</if>
+    </set>
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </update>
+  <update id="update" parameterType="com.hfepay.scancode.commons.entity.Province" >
+    update t_province A
+    <set >
+        	<if test="pid != null and pid != '' " >
+        		A.pid = #{pid},
+      		</if>
+        	<if test="pname != null and pname != '' " >
+        		A.pname = #{pname},
+      		</if>
+    </set>
+    where A.pid = #{pid}
+  </update>
+  
+</mapper>
+

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="HfepayCategory">
+	<resultMap id="BaseResultMap" type="com.hfepay.scancode.commons.entity.HfepayCategory">
+        <result property="id" column="A_ID"/>
+        <result property="code" column="A_CODE"/>
+        <result property="payType" column="A_PAY_TYPE"/>
+        <result property="name" column="A_NAME"/>
+        <result property="parentId" column="A_PARENT_ID"/>
+        <result property="level" column="A_LEVEL"/>
+        <result property="certType" column="A_CERT_TYPE"/>
+        <result property="categoryNo" column="A_CATEGORY_NO"/>
+        <result property="mappingCategoryNo" column="A_MAPPING_CATEGORY_NO"/>
+        <result property="status" column="A_STATUS"/>
+        <result property="recordStatus" column="A_RECORD_STATUS"/>
+        <result property="createTime" column="A_CREATE_TIME"/>
+        <result property="updateTime" column="A_UPDATE_TIME"/>
+        <result property="operater" column="A_OPERATER"/>
+        <result property="remark" column="A_REMARK"/>
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+	    <![CDATA[
+		A.ID as A_ID,A.CODE as A_CODE,A.PAY_TYPE as A_PAY_TYPE,A.NAME as A_NAME,A.PARENT_ID as A_PARENT_ID,A.LEVEL as A_LEVEL,A.CERT_TYPE as A_CERT_TYPE,A.CATEGORY_NO as A_CATEGORY_NO,A.MAPPING_CATEGORY_NO as A_MAPPING_CATEGORY_NO,A.STATUS as A_STATUS,A.RECORD_STATUS as A_RECORD_STATUS,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.OPERATER as A_OPERATER,A.REMARK as A_REMARK
+	    ]]>
+	</sql>
+
+	<select id="findByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+     from t_hfepay_category A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+    <if test="hasOrderBy" >
+      order by
+      <foreach collection="orderBys" item="orderBy" separator="," > ${orderBy} </foreach>
+    </if>
+  </select>
+  <select resultMap="BaseResultMap" parameterType="java.lang.String" id="findById" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_hfepay_category A
+    where A.ID = #{id}
+  </select>
+  <delete parameterType="java.lang.String" id="deleteById" >
+    delete from t_hfepay_category
+    where ID = #{id}
+  </delete>
+  <delete id="deleteByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" >
+    delete A from t_hfepay_category A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.hfepay.scancode.commons.entity.HfepayCategory" >
+    insert into t_hfepay_category (
+        	ID,
+        	CODE,
+        	PAY_TYPE,
+        	NAME,
+        	PARENT_ID,
+        	LEVEL,
+        	CERT_TYPE,
+        	CATEGORY_NO,
+        	MAPPING_CATEGORY_NO,
+        	STATUS,
+        	RECORD_STATUS,
+        	CREATE_TIME,
+        	UPDATE_TIME,
+        	OPERATER,
+        	REMARK
+        )
+    values (UUID(),
+        	#{code},
+        	#{payType},
+        	#{name},
+        	#{parentId},
+        	#{level},
+        	#{certType},
+        	#{categoryNo},
+        	#{mappingCategoryNo},
+        	#{status},
+        	#{recordStatus},
+        	#{createTime},
+        	#{updateTime},
+        	#{operater},
+        	#{remark}
+    )
+  </insert>
+  <select id="countByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultType="java.lang.Integer" >
+    select count(*) from t_hfepay_category A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </select>
+  <update id="updateByCriteria" parameterType="map" >
+    update t_hfepay_category A
+    <set >
+        	<if test="record.id != null and record.id != '' " >
+        		A.ID = #{record.id},
+      		</if>
+        	<if test="record.code != null and record.code != '' " >
+        		A.CODE = #{record.code},
+      		</if>
+        	<if test="record.payType != null and record.payType != '' " >
+        		A.PAY_TYPE = #{record.payType},
+      		</if>
+        	<if test="record.name != null and record.name != '' " >
+        		A.NAME = #{record.name},
+      		</if>
+        	<if test="record.parentId != null and record.parentId != '' " >
+        		A.PARENT_ID = #{record.parentId},
+      		</if>
+        	<if test="record.level != null and record.level != '' " >
+        		A.LEVEL = #{record.level},
+      		</if>
+        	<if test="record.certType != null and record.certType != '' " >
+        		A.CERT_TYPE = #{record.certType},
+      		</if>
+        	<if test="record.categoryNo != null and record.categoryNo != '' " >
+        		A.CATEGORY_NO = #{record.categoryNo},
+      		</if>
+        	<if test="record.mappingCategoryNo != null and record.mappingCategoryNo != '' " >
+        		A.MAPPING_CATEGORY_NO = #{record.mappingCategoryNo},
+      		</if>
+        	<if test="record.status != null and record.status != '' " >
+        		A.STATUS = #{record.status},
+      		</if>
+        	<if test="record.recordStatus != null and record.recordStatus != '' " >
+        		A.RECORD_STATUS = #{record.recordStatus},
+      		</if>
+        	<if test="record.createTime != null and record.createTime != '' " >
+        		A.CREATE_TIME = #{record.createTime},
+      		</if>
+        	<if test="record.updateTime != null and record.updateTime != '' " >
+        		A.UPDATE_TIME = #{record.updateTime},
+      		</if>
+        	<if test="record.operater != null and record.operater != '' " >
+        		A.OPERATER = #{record.operater},
+      		</if>
+        	<if test="record.remark != null and record.remark != '' " >
+        		A.REMARK = #{record.remark},
+      		</if>
+    </set>
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </update>
+  <update id="update" parameterType="com.hfepay.scancode.commons.entity.HfepayCategory" >
+    update t_hfepay_category A
+    <set >
+        	<if test="id != null and id != '' " >
+        		A.ID = #{id},
+      		</if>
+        	<if test="code != null and code != '' " >
+        		A.CODE = #{code},
+      		</if>
+        	<if test="payType != null and payType != '' " >
+        		A.PAY_TYPE = #{payType},
+      		</if>
+        	<if test="name != null and name != '' " >
+        		A.NAME = #{name},
+      		</if>
+        	<if test="parentId != null and parentId != '' " >
+        		A.PARENT_ID = #{parentId},
+      		</if>
+        	<if test="level != null and level != '' " >
+        		A.LEVEL = #{level},
+      		</if>
+        	<if test="certType != null and certType != '' " >
+        		A.CERT_TYPE = #{certType},
+      		</if>
+        	<if test="categoryNo != null and categoryNo != '' " >
+        		A.CATEGORY_NO = #{categoryNo},
+      		</if>
+        	<if test="mappingCategoryNo != null and mappingCategoryNo != '' " >
+        		A.MAPPING_CATEGORY_NO = #{mappingCategoryNo},
+      		</if>
+        	<if test="status != null and status != '' " >
+        		A.STATUS = #{status},
+      		</if>
+        	<if test="recordStatus != null and recordStatus != '' " >
+        		A.RECORD_STATUS = #{recordStatus},
+      		</if>
+        	<if test="createTime != null and createTime != '' " >
+        		A.CREATE_TIME = #{createTime},
+      		</if>
+        	<if test="updateTime != null and updateTime != '' " >
+        		A.UPDATE_TIME = #{updateTime},
+      		</if>
+        	<if test="operater != null and operater != '' " >
+        		A.OPERATER = #{operater},
+      		</if>
+        	<if test="remark != null and remark != '' " >
+        		A.REMARK = #{remark},
+      		</if>
+    </set>
+    where A.ID = #{id}
+  </update>
+  
+	<update id="updateStatus">
+    update t_hfepay_category
+		set `STATUS` = #{status}
+		where ID=#{id}
+  </update>
+</mapper>
+

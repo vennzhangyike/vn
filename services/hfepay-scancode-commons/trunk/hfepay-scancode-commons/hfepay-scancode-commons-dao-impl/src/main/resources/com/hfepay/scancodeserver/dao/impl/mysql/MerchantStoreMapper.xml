@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="MerchantStore">
+	<resultMap id="BaseResultMap" type="com.hfepay.scancode.commons.entity.MerchantStore">
+        <result property="id" column="A_id"/>
+        <result property="channelNo" column="A_channel_no"/>
+        <result property="agentNo" column="A_agent_no"/>
+        <result property="merchantNo" column="A_merchant_no"/>
+        <result property="storeNo" column="A_store_no"/>
+        <result property="storeName" column="A_store_name"/>
+        <result property="storeType" column="A_store_type"/>
+        <result property="servicePhone" column="A_service_phone"/>
+        <result property="serviceBegin" column="A_service_begin"/>
+        <result property="serviceEnd" column="A_service_end"/>
+        <result property="storeAddress" column="A_store_address"/>
+        <result property="storeAddressImg" column="A_store_address_img"/>
+        <result property="storeDesc" column="A_store_desc"/>
+        <result property="licenseName" column="A_license_name"/>
+        <result property="name" column="A_name"/>
+        <result property="idCard" column="A_id_card"/>
+        <result property="idcardImg1" column="A_idcard_img_1"/>
+        <result property="idcardImg2" column="A_idcard_img_2"/>
+        <result property="idcardImg3" column="A_idcard_img_3"/>
+        <result property="merchantLicense" column="A_merchant_license"/>
+        <result property="merchantLicenseImg" column="A_merchant_license_img"/>
+        <result property="storePhotosImg" column="A_store_photos_img"/>
+        <result property="groupPhotoImg" column="A_group_photo_img"/>
+        <result property="storeImg" column="A_store_img"/>
+        <result property="isPhoto" column="A_is_photo"/>
+        <result property="operator" column="A_operator"/>
+        <result property="createTime" column="A_create_time"/>
+        <result property="auditOperator" column="A_audit_operator"/>
+        <result property="auditDate" column="A_audit_date"/>
+        <result property="auditReson" column="A_audit_reson"/>
+        <result property="storeStatus" column="A_store_status"/>
+        <result property="recordStatus" column="A_record_status"/>
+        <result property="remark" column="A_remark"/>
+        <result property="temp1" column="A_temp_1"/>
+        <result property="temp2" column="A_temp_2"/>
+        <result property="temp3" column="A_temp_3"/>
+        <result property="temp4" column="A_temp_4"/>
+	</resultMap>
+	
+	<resultMap id="BaseResultMapVo" type="com.hfepay.scancode.commons.vo.MerchantStoreVo" extends="BaseResultMap">
+		<result property="operatorName" column="operator_name"/>
+		<result property="merchantName" column="merchant_name"/>
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+	    <![CDATA[
+		A.id as A_id,A.channel_no as A_channel_no,A.agent_no as A_agent_no,A.merchant_no as A_merchant_no,A.store_no as A_store_no,A.store_name as A_store_name,A.store_type as A_store_type,A.service_phone as A_service_phone,A.service_begin as A_service_begin,A.service_end as A_service_end,A.store_address as A_store_address,A.store_address_img as A_store_address_img,A.store_desc as A_store_desc,A.license_name as A_license_name,A.name as A_name,A.id_card as A_id_card,A.idcard_img_1 as A_idcard_img_1,A.idcard_img_2 as A_idcard_img_2,A.idcard_img_3 as A_idcard_img_3,A.merchant_license as A_merchant_license,A.merchant_license_img as A_merchant_license_img,A.store_photos_img as A_store_photos_img,A.group_photo_img as A_group_photo_img,A.store_img as A_store_img,A.is_photo as A_is_photo,A.operator as A_operator,A.create_time as A_create_time,A.audit_operator as A_audit_operator,A.audit_date as A_audit_date,A.audit_reson as A_audit_reson,A.store_status as A_store_status,A.RECORD_STATUS as A_RECORD_STATUS,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2,A.temp_3 as A_temp_3,A.temp_4 as A_temp_4
+	    ]]>
+	</sql>
+
+	<sql id="channel_filter">
+	    <if test="params.nodeSeq != null" >
+        	EXISTS (
+				SELECT
+					n.current_node
+				FROM
+					t_node_relation n
+				WHERE
+				 <if test="params.identityFlag != null" >
+					 n.identity_flag = '${params.identityFlag}' and
+				</if>
+					 n.node_seq like CONCAT('${params.nodeSeq}','%') and A.merchant_no = n.current_node)
+				<if test="@com.hfepay.commons.base.collection.Collections@isNotEmpty(conditions)"> AND </if> 
+      	</if>
+	</sql>
+	
+	<select id="findByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultMap="BaseResultMapVo" >
+    select
+    <include refid="Base_Column_List" />,C.merchant_name
+     from t_merchant_store A
+     left join t_merchant_info C on A.merchant_no = C.merchant_no
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+      	<include refid="channel_filter" />
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+    <if test="hasOrderBy" >
+      order by
+      <foreach collection="orderBys" item="orderBy" separator="," > ${orderBy} </foreach>
+    </if>
+  </select>
+  <select resultMap="BaseResultMapVo" parameterType="java.lang.String" id="findById" >
+    select 
+    <include refid="Base_Column_List" />,B.short_name as operator_name,C.merchant_name
+    from t_merchant_store A left join t_sys_admin B on A.operator = B.id 
+    left join t_merchant_info C on A.merchant_no = C.merchant_no
+    where A.id = #{id}
+  </select>
+  <delete parameterType="java.lang.String" id="deleteById" >
+    delete from t_merchant_store
+    where id = #{id}
+  </delete>
+  <delete id="deleteByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" >
+    delete A from t_merchant_store A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.hfepay.scancode.commons.entity.MerchantStore" >
+    insert into t_merchant_store (
+        	id,
+        	channel_no,
+        	agent_no,
+        	merchant_no,
+        	store_no,
+        	store_name,
+        	store_type,
+        	service_phone,
+        	service_begin,
+        	service_end,
+        	store_address,
+        	store_address_img,
+        	store_desc,
+        	license_name,
+        	name,
+        	id_card,
+        	idcard_img_1,
+        	idcard_img_2,
+        	idcard_img_3,
+        	merchant_license,
+        	merchant_license_img,
+        	store_photos_img,
+        	group_photo_img,
+        	store_img,
+        	is_photo,
+        	operator,
+        	create_time,
+        	audit_operator,
+        	audit_date,
+        	audit_reson,
+        	store_status,
+        	record_status,
+        	remark,
+        	temp_1,
+        	temp_2,
+        	temp_3,
+        	temp_4
+        )
+    values (
+        	#{id},
+        	#{channelNo},
+        	#{agentNo},
+        	#{merchantNo},
+        	#{storeNo},
+        	#{storeName},
+        	#{storeType},
+        	#{servicePhone},
+        	#{serviceBegin},
+        	#{serviceEnd},
+        	#{storeAddress},
+        	#{storeAddressImg},
+        	#{storeDesc},
+        	#{licenseName},
+        	#{name},
+        	#{idCard},
+        	#{idcardImg1},
+        	#{idcardImg2},
+        	#{idcardImg3},
+        	#{merchantLicense},
+        	#{merchantLicenseImg},
+        	#{storePhotosImg},
+        	#{groupPhotoImg},
+        	#{storeImg},
+        	#{isPhoto},
+        	#{operator},
+        	#{createTime},
+        	#{auditOperator},
+        	#{auditDate},
+        	#{auditReson},
+        	#{storeStatus},
+        	#{recordStatus},
+        	#{remark},
+        	#{temp1},
+        	#{temp2},
+        	#{temp3},
+        	#{temp4}
+    )
+  </insert>
+  <select id="countByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultType="java.lang.Integer" >
+    select count(*) from t_merchant_store A
+    left join t_merchant_info C on A.merchant_no = C.merchant_no
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+      	<include refid="channel_filter" />
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </select>
+  <update id="updateByCriteria" parameterType="map" >
+    update t_merchant_store A
+    <set >
+        	<if test="record.id != null and record.id != '' " >
+        		A.id = #{record.id},
+      		</if>
+        	<if test="record.merchantNo != null and record.merchantNo != '' " >
+        		A.merchant_no = #{record.merchantNo},
+      		</if>
+        	<if test="record.storeNo != null and record.storeNo != '' " >
+        		A.store_no = #{record.storeNo},
+      		</if>
+        	<if test="record.storeName != null and record.storeName != '' " >
+        		A.store_name = #{record.storeName},
+      		</if>
+        	<if test="record.storeType != null and record.storeType != '' " >
+        		A.store_type = #{record.storeType},
+      		</if>
+        	<if test="record.servicePhone != null and record.servicePhone != '' " >
+        		A.service_phone = #{record.servicePhone},
+      		</if>
+        	<if test="record.serviceBegin != null and record.serviceBegin != '' " >
+        		A.service_begin = #{record.serviceBegin},
+      		</if>
+        	<if test="record.serviceEnd != null and record.serviceEnd != '' " >
+        		A.service_end = #{record.serviceEnd},
+      		</if>
+        	<if test="record.storeAddress != null and record.storeAddress != '' " >
+        		A.store_address = #{record.storeAddress},
+      		</if>
+        	<if test="record.storeAddressImg != null and record.storeAddressImg != '' " >
+        		A.store_address_img = #{record.storeAddressImg},
+      		</if>
+        	<if test="record.storeDesc != null and record.storeDesc != '' " >
+        		A.store_desc = #{record.storeDesc},
+      		</if>
+        	<if test="record.licenseName != null and record.licenseName != '' " >
+        		A.license_name = #{record.licenseName},
+      		</if>
+        	<if test="record.name != null and record.name != '' " >
+        		A.name = #{record.name},
+      		</if>
+        	<if test="record.idCard != null and record.idCard != '' " >
+        		A.id_card = #{record.idCard},
+      		</if>
+        	<if test="record.idcardImg1 != null and record.idcardImg1 != '' " >
+        		A.idcard_img_1 = #{record.idcardImg1},
+      		</if>
+        	<if test="record.idcardImg2 != null and record.idcardImg2 != '' " >
+        		A.idcard_img_2 = #{record.idcardImg2},
+      		</if>
+        	<if test="record.idcardImg3 != null and record.idcardImg3 != '' " >
+        		A.idcard_img_3 = #{record.idcardImg3},
+      		</if>
+        	<if test="record.merchantLicense != null and record.merchantLicense != '' " >
+        		A.merchant_license = #{record.merchantLicense},
+      		</if>
+        	<if test="record.merchantLicenseImg != null and record.merchantLicenseImg != '' " >
+        		A.merchant_license_img = #{record.merchantLicenseImg},
+      		</if>
+        	<if test="record.storePhotosImg != null and record.storePhotosImg != '' " >
+        		A.store_photos_img = #{record.storePhotosImg},
+      		</if>
+        	<if test="record.groupPhotoImg != null and record.groupPhotoImg != '' " >
+        		A.group_photo_img = #{record.groupPhotoImg},
+      		</if>
+        	<if test="record.storeImg != null and record.storeImg != '' " >
+        		A.store_img = #{record.storeImg},
+      		</if>
+        	<if test="record.isPhoto != null and record.isPhoto != '' " >
+        		A.is_photo = #{record.isPhoto},
+      		</if>
+        	<if test="record.operator != null and record.operator != '' " >
+        		A.operator = #{record.operator},
+      		</if>
+        	<if test="record.createTime != null and record.createTime != '' " >
+        		A.create_time = #{record.createTime},
+      		</if>
+        	<if test="record.auditOperator != null and record.auditOperator != '' " >
+        		A.audit_operator = #{record.auditOperator},
+      		</if>
+        	<if test="record.auditDate != null and record.auditDate != '' " >
+        		A.audit_date = #{record.auditDate},
+      		</if>
+        	<if test="record.auditReson != null and record.auditReson != '' " >
+        		A.audit_reson = #{record.auditReson},
+      		</if>
+        	<if test="record.storeStatus != null and record.storeStatus != '' " >
+        		A.store_status = #{record.storeStatus},
+      		</if>
+      		<if test="record.recordStatus != null and record.recordStatus != '' " >
+        		A.RECORD_STATUS = #{record.recordStatus},
+      		</if>
+        	<if test="record.remark != null and record.remark != '' " >
+        		A.remark = #{record.remark},
+      		</if>
+        	<if test="record.temp1 != null and record.temp1 != '' " >
+        		A.temp_1 = #{record.temp1},
+      		</if>
+        	<if test="record.temp2 != null and record.temp2 != '' " >
+        		A.temp_2 = #{record.temp2},
+      		</if>
+        	<if test="record.temp3 != null and record.temp3 != '' " >
+        		A.temp_3 = #{record.temp3},
+      		</if>
+        	<if test="record.temp4 != null and record.temp4 != '' " >
+        		A.temp_4 = #{record.temp4},
+      		</if>
+    </set>
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </update>
+  <update id="update" parameterType="com.hfepay.scancode.commons.entity.MerchantStore" >
+    update t_merchant_store A
+    <set >
+        	<if test="id != null and id != '' " >
+        		A.id = #{id},
+      		</if>
+        	<if test="merchantNo != null and merchantNo != '' " >
+        		A.merchant_no = #{merchantNo},
+      		</if>
+        	<if test="storeNo != null and storeNo != '' " >
+        		A.store_no = #{storeNo},
+      		</if>
+        	<if test="storeName != null and storeName != '' " >
+        		A.store_name = #{storeName},
+      		</if>
+        	<if test="storeType != null and storeType != '' " >
+        		A.store_type = #{storeType},
+      		</if>
+        	<if test="servicePhone != null and servicePhone != '' " >
+        		A.service_phone = #{servicePhone},
+      		</if>
+        	<if test="serviceBegin != null and serviceBegin != '' " >
+        		A.service_begin = #{serviceBegin},
+      		</if>
+        	<if test="serviceEnd != null and serviceEnd != '' " >
+        		A.service_end = #{serviceEnd},
+      		</if>
+        	<if test="storeAddress != null and storeAddress != '' " >
+        		A.store_address = #{storeAddress},
+      		</if>
+        	<if test="storeAddressImg != null and storeAddressImg != '' " >
+        		A.store_address_img = #{storeAddressImg},
+      		</if>
+        	<if test="storeDesc != null and storeDesc != '' " >
+        		A.store_desc = #{storeDesc},
+      		</if>
+        	<if test="licenseName != null and licenseName != '' " >
+        		A.license_name = #{licenseName},
+      		</if>
+        	<if test="name != null and name != '' " >
+        		A.name = #{name},
+      		</if>
+        	<if test="idCard != null and idCard != '' " >
+        		A.id_card = #{idCard},
+      		</if>
+        	<if test="idcardImg1 != null and idcardImg1 != '' " >
+        		A.idcard_img_1 = #{idcardImg1},
+      		</if>
+        	<if test="idcardImg2 != null and idcardImg2 != '' " >
+        		A.idcard_img_2 = #{idcardImg2},
+      		</if>
+        	<if test="idcardImg3 != null and idcardImg3 != '' " >
+        		A.idcard_img_3 = #{idcardImg3},
+      		</if>
+        	<if test="merchantLicense != null and merchantLicense != '' " >
+        		A.merchant_license = #{merchantLicense},
+      		</if>
+        	<if test="merchantLicenseImg != null and merchantLicenseImg != '' " >
+        		A.merchant_license_img = #{merchantLicenseImg},
+      		</if>
+        	<if test="storePhotosImg != null and storePhotosImg != '' " >
+        		A.store_photos_img = #{storePhotosImg},
+      		</if>
+        	<if test="groupPhotoImg != null and groupPhotoImg != '' " >
+        		A.group_photo_img = #{groupPhotoImg},
+      		</if>
+        	<if test="storeImg != null and storeImg != '' " >
+        		A.store_img = #{storeImg},
+      		</if>
+        	<if test="isPhoto != null and isPhoto != '' " >
+        		A.is_photo = #{isPhoto},
+      		</if>
+        	<if test="operator != null and operator != '' " >
+        		A.operator = #{operator},
+      		</if>
+        	<if test="createTime != null and createTime != '' " >
+        		A.create_time = #{createTime},
+      		</if>
+        	<if test="auditOperator != null and auditOperator != '' " >
+        		A.audit_operator = #{auditOperator},
+      		</if>
+        	<if test="auditDate != null and auditDate != '' " >
+        		A.audit_date = #{auditDate},
+      		</if>
+        	<if test="auditReson != null and auditReson != '' " >
+        		A.audit_reson = #{auditReson},
+      		</if>
+        	<if test="storeStatus != null and storeStatus != '' " >
+        		A.store_status = #{storeStatus},
+      		</if>
+      		<if test="recordStatus != null and recordStatus != '' " >
+        		A.RECORD_STATUS = #{recordStatus},
+      		</if>
+        	<if test="remark != null and remark != '' " >
+        		A.remark = #{remark},
+      		</if>
+        	<if test="temp1 != null and temp1 != '' " >
+        		A.temp_1 = #{temp1},
+      		</if>
+        	<if test="temp2 != null and temp2 != '' " >
+        		A.temp_2 = #{temp2},
+      		</if>
+        	<if test="temp3 != null and temp3 != '' " >
+        		A.temp_3 = #{temp3},
+      		</if>
+        	<if test="temp4 != null and temp4 != '' " >
+        		A.temp_4 = #{temp4},
+      		</if>
+    </set>
+    where A.id = #{id}
+  </update>
+  
+  
+    <update id="updateByMerchantNo" parameterType="com.hfepay.scancode.commons.entity.MerchantStore" >
+    update t_merchant_store A
+    <set >
+        	<if test="id != null and id != '' " >
+        		A.id = #{id},
+      		</if>
+        	<if test="merchantNo != null and merchantNo != '' " >
+        		A.merchant_no = #{merchantNo},
+      		</if>
+        	<if test="storeNo != null and storeNo != '' " >
+        		A.store_no = #{storeNo},
+      		</if>
+        	<if test="storeName != null and storeName != '' " >
+        		A.store_name = #{storeName},
+      		</if>
+        	<if test="storeType != null and storeType != '' " >
+        		A.store_type = #{storeType},
+      		</if>
+        	<if test="servicePhone != null and servicePhone != '' " >
+        		A.service_phone = #{servicePhone},
+      		</if>
+        	<if test="serviceBegin != null and serviceBegin != '' " >
+        		A.service_begin = #{serviceBegin},
+      		</if>
+        	<if test="serviceEnd != null and serviceEnd != '' " >
+        		A.service_end = #{serviceEnd},
+      		</if>
+        	<if test="storeAddress != null and storeAddress != '' " >
+        		A.store_address = #{storeAddress},
+      		</if>
+        	<if test="storeAddressImg != null and storeAddressImg != '' " >
+        		A.store_address_img = #{storeAddressImg},
+      		</if>
+        	<if test="storeDesc != null and storeDesc != '' " >
+        		A.store_desc = #{storeDesc},
+      		</if>
+        	<if test="licenseName != null and licenseName != '' " >
+        		A.license_name = #{licenseName},
+      		</if>
+        	<if test="name != null and name != '' " >
+        		A.name = #{name},
+      		</if>
+        	<if test="idCard != null and idCard != '' " >
+        		A.id_card = #{idCard},
+      		</if>
+        	<if test="idcardImg1 != null and idcardImg1 != '' " >
+        		A.idcard_img_1 = #{idcardImg1},
+      		</if>
+        	<if test="idcardImg2 != null and idcardImg2 != '' " >
+        		A.idcard_img_2 = #{idcardImg2},
+      		</if>
+        	<if test="idcardImg3 != null and idcardImg3 != '' " >
+        		A.idcard_img_3 = #{idcardImg3},
+      		</if>
+        	<if test="merchantLicense != null and merchantLicense != '' " >
+        		A.merchant_license = #{merchantLicense},
+      		</if>
+        	<if test="merchantLicenseImg != null and merchantLicenseImg != '' " >
+        		A.merchant_license_img = #{merchantLicenseImg},
+      		</if>
+        	<if test="storePhotosImg != null and storePhotosImg != '' " >
+        		A.store_photos_img = #{storePhotosImg},
+      		</if>
+        	<if test="groupPhotoImg != null and groupPhotoImg != '' " >
+        		A.group_photo_img = #{groupPhotoImg},
+      		</if>
+        	<if test="storeImg != null and storeImg != '' " >
+        		A.store_img = #{storeImg},
+      		</if>
+        	<if test="isPhoto != null and isPhoto != '' " >
+        		A.is_photo = #{isPhoto},
+      		</if>
+        	<if test="operator != null and operator != '' " >
+        		A.operator = #{operator},
+      		</if>
+        	<if test="createTime != null and createTime != '' " >
+        		A.create_time = #{createTime},
+      		</if>
+        	<if test="auditOperator != null and auditOperator != '' " >
+        		A.audit_operator = #{auditOperator},
+      		</if>
+        	<if test="auditDate != null and auditDate != '' " >
+        		A.audit_date = #{auditDate},
+      		</if>
+        	<if test="auditReson != null and auditReson != '' " >
+        		A.audit_reson = #{auditReson},
+      		</if>
+        	<if test="storeStatus != null and storeStatus != '' " >
+        		A.store_status = #{storeStatus},
+      		</if>
+      		<if test="recordStatus != null and recordStatus != '' " >
+        		A.RECORD_STATUS = #{recordStatus},
+      		</if>
+        	<if test="remark != null and remark != '' " >
+        		A.remark = #{remark},
+      		</if>
+        	<if test="temp1 != null and temp1 != '' " >
+        		A.temp_1 = #{temp1},
+      		</if>
+        	<if test="temp2 != null and temp2 != '' " >
+        		A.temp_2 = #{temp2},
+      		</if>
+        	<if test="temp3 != null and temp3 != '' " >
+        		A.temp_3 = #{temp3},
+      		</if>
+        	<if test="temp4 != null and temp4 != '' " >
+        		A.temp_4 = #{temp4},
+      		</if>
+    </set>
+    where A.merchant_no = #{merchantNo}
+  </update>
+  
+  
+  
+  <select id="findAllMerchantStore" parameterType="com.hfepay.commons.criteria.Criteria" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+     from t_merchant_store A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+    <if test="hasOrderBy" >
+      order by
+      <foreach collection="orderBys" item="orderBy" separator="," > ${orderBy} </foreach>
+    </if>
+  </select>
+  
+</mapper>
+

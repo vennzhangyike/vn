@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="MappingDicion">
+	<resultMap id="BaseResultMap" type="com.hfepay.scancode.commons.entity.MappingDicion">
+        <result property="id" column="A_ID"/>
+        <result property="name" column="A_NAME"/>
+        <result property="keyNo" column="A_KEY_NO"/>
+        <result property="paraName" column="A_PARA_NAME"/>
+        <result property="paraVal" column="A_PARA_VAL"/>
+        <result property="recordStatus" column="A_RECORD_STATUS"/>
+        <result property="createTime" column="A_CREATE_TIME"/>
+        <result property="updateTime" column="A_UPDATE_TIME"/>
+        <result property="operator" column="A_OPERATOR"/>
+        <result property="remark" column="A_REMARK"/>
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+	    <![CDATA[
+		A.ID as A_ID,A.NAME as A_NAME,A.KEY_NO as A_KEY_NO,A.PARA_NAME as A_PARA_NAME,A.PARA_VAL as A_PARA_VAL,A.RECORD_STATUS as A_RECORD_STATUS,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.OPERATOR as A_OPERATOR,A.REMARK as A_REMARK
+	    ]]>
+	</sql>
+
+	<select id="findByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+     from t_mapping_dicion A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+    <if test="hasOrderBy" >
+      order by
+      <foreach collection="orderBys" item="orderBy" separator="," > ${orderBy} </foreach>
+    </if>
+  </select>
+  <select resultMap="BaseResultMap" parameterType="java.lang.String" id="findById" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_mapping_dicion A
+    where A.ID = #{id}
+  </select>
+  <delete parameterType="java.lang.String" id="deleteById" >
+    delete from t_mapping_dicion
+    where ID = #{id}
+  </delete>
+  <delete id="deleteByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" >
+    delete A from t_mapping_dicion A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.hfepay.scancode.commons.entity.MappingDicion" >
+    insert into t_mapping_dicion (
+        	ID,
+        	NAME,
+        	KEY_NO,
+        	PARA_NAME,
+        	PARA_VAL,
+        	RECORD_STATUS,
+        	CREATE_TIME,
+        	UPDATE_TIME,
+        	OPERATOR,
+        	REMARK
+        )
+    values (UUID(),
+        	#{name},
+        	#{keyNo},
+        	#{paraName},
+        	#{paraVal},
+        	#{recordStatus},
+        	#{createTime},
+        	#{updateTime},
+        	#{operator},
+        	#{remark}
+    )
+  </insert>
+  <select id="countByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultType="java.lang.Integer" >
+    select count(*) from t_mapping_dicion A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </select>
+  <update id="updateByCriteria" parameterType="map" >
+    update t_mapping_dicion A
+    <set >
+        	<if test="record.id != null and record.id != '' " >
+        		A.ID = #{record.id},
+      		</if>
+        	<if test="record.name != null and record.name != '' " >
+        		A.NAME = #{record.name},
+      		</if>
+        	<if test="record.keyNo != null and record.keyNo != '' " >
+        		A.KEY_NO = #{record.keyNo},
+      		</if>
+        	<if test="record.paraName != null and record.paraName != '' " >
+        		A.PARA_NAME = #{record.paraName},
+      		</if>
+        	<if test="record.paraVal != null and record.paraVal != '' " >
+        		A.PARA_VAL = #{record.paraVal},
+      		</if>
+        	<if test="record.recordStatus != null and record.recordStatus != '' " >
+        		A.RECORD_STATUS = #{record.recordStatus},
+      		</if>
+        	<if test="record.createTime != null and record.createTime != '' " >
+        		A.CREATE_TIME = #{record.createTime},
+      		</if>
+        	<if test="record.updateTime != null and record.updateTime != '' " >
+        		A.UPDATE_TIME = #{record.updateTime},
+      		</if>
+        	<if test="record.operator != null and record.operator != '' " >
+        		A.OPERATOR = #{record.operator},
+      		</if>
+        	<if test="record.remark != null and record.remark != '' " >
+        		A.REMARK = #{record.remark},
+      		</if>
+    </set>
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </update>
+  <update id="update" parameterType="com.hfepay.scancode.commons.entity.MappingDicion" >
+    update t_mapping_dicion A
+    <set >
+        	<if test="id != null and id != '' " >
+        		A.ID = #{id},
+      		</if>
+        	<if test="name != null and name != '' " >
+        		A.NAME = #{name},
+      		</if>
+        	<if test="keyNo != null and keyNo != '' " >
+        		A.KEY_NO = #{keyNo},
+      		</if>
+        	<if test="paraName != null and paraName != '' " >
+        		A.PARA_NAME = #{paraName},
+      		</if>
+        	<if test="paraVal != null and paraVal != '' " >
+        		A.PARA_VAL = #{paraVal},
+      		</if>
+        	<if test="recordStatus != null and recordStatus != '' " >
+        		A.RECORD_STATUS = #{recordStatus},
+      		</if>
+        	<if test="createTime != null and createTime != '' " >
+        		A.CREATE_TIME = #{createTime},
+      		</if>
+        	<if test="updateTime != null and updateTime != '' " >
+        		A.UPDATE_TIME = #{updateTime},
+      		</if>
+        	<if test="operator != null and operator != '' " >
+        		A.OPERATOR = #{operator},
+      		</if>
+        	<if test="remark != null and remark != '' " >
+        		A.REMARK = #{remark},
+      		</if>
+    </set>
+    where A.ID = #{id}
+  </update>
+  
+</mapper>
+

@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="MessagePushRule">
+	<resultMap id="BaseResultMap" type="com.hfepay.scancode.commons.entity.MessagePushRule">
+        <result property="id" column="A_id"/>
+        <result property="channelNo" column="A_channel_no"/>
+        <result property="agentNo" column="A_agent_no"/>
+        <result property="messageType" column="A_message_type"/>
+        <result property="messageContent" column="A_message_content"/>
+        <result property="pushRule" column="A_push_rule"/>
+        <result property="pushTime" column="A_push_time"/>
+        <result property="pushAuxiliaryRule" column="A_push_auxiliary_rule"/>
+        <result property="pushWay" column="A_push_way"/>
+        <result property="firstPushDate" column="A_first_push_date"/>
+        <result property="nextPushDate" column="A_next_push_date"/>
+        <result property="status" column="A_status"/>
+        <result property="recordStatus" column="A_record_status"/>
+        <result property="createTime" column="A_create_time"/>
+        <result property="updateTime" column="A_update_time"/>
+        <result property="operator" column="A_operator"/>
+        <result property="remark" column="A_remark"/>
+        <result property="temp1" column="A_temp_1"/>
+        <result property="temp2" column="A_temp_2"/>
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+	    <![CDATA[
+		A.id as A_id,A.channel_no as A_channel_no,A.agent_no as A_agent_no,A.message_type as A_message_type,A.message_content as A_message_content,A.push_rule as A_push_rule,A.push_time as A_push_time,A.push_auxiliary_rule as A_push_auxiliary_rule,A.push_way as A_push_way,A.first_push_date as A_first_push_date,A.next_push_date as A_next_push_date,A.status as A_status,A.record_status as A_record_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	    ]]>
+	</sql>
+
+	<select id="findByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+     from t_message_push_rule A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+    <if test="hasOrderBy" >
+      order by
+      <foreach collection="orderBys" item="orderBy" separator="," > ${orderBy} </foreach>
+    </if>
+  </select>
+  <select resultMap="BaseResultMap" parameterType="java.lang.String" id="findById" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_message_push_rule A
+    where A.id = #{id}
+  </select>
+  <delete parameterType="java.lang.String" id="deleteById" >
+    delete from t_message_push_rule
+    where id = #{id}
+  </delete>
+  <delete id="deleteByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" >
+    delete A from t_message_push_rule A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.hfepay.scancode.commons.entity.MessagePushRule" >
+    insert into t_message_push_rule (
+        	id,
+        	channel_no,
+        	agent_no,
+        	message_type,
+        	message_content,
+        	push_rule,
+        	push_time,
+        	push_auxiliary_rule,
+        	push_way,
+        	first_push_date,
+        	next_push_date,
+        	status,
+        	record_status,
+        	create_time,
+        	update_time,
+        	operator,
+        	remark,
+        	temp_1,
+        	temp_2
+        )
+    values (UUID(),
+        	#{channelNo},
+        	#{agentNo},
+        	#{messageType},
+        	#{messageContent},
+        	#{pushRule},
+        	#{pushTime},
+        	#{pushAuxiliaryRule},
+        	#{pushWay},
+        	#{firstPushDate},
+        	#{nextPushDate},
+        	#{status},
+        	#{recordStatus},
+        	#{createTime},
+        	#{updateTime},
+        	#{operator},
+        	#{remark},
+        	#{temp1},
+        	#{temp2}
+    )
+  </insert>
+  <select id="countByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultType="java.lang.Integer" >
+    select count(*) from t_message_push_rule A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </select>
+  <update id="updateByCriteria" parameterType="map" >
+    update t_message_push_rule A
+    <set >
+        	<if test="record.id != null and record.id != '' " >
+        		A.id = #{record.id},
+      		</if>
+        	<if test="record.channelNo != null and record.channelNo != '' " >
+        		A.channel_no = #{record.channelNo},
+      		</if>
+        	<if test="record.agentNo != null and record.agentNo != '' " >
+        		A.agent_no = #{record.agentNo},
+      		</if>
+        	<if test="record.messageType != null and record.messageType != '' " >
+        		A.message_type = #{record.messageType},
+      		</if>
+        	<if test="record.messageContent != null and record.messageContent != '' " >
+        		A.message_content = #{record.messageContent},
+      		</if>
+        	<if test="record.pushRule != null and record.pushRule != '' " >
+        		A.push_rule = #{record.pushRule},
+      		</if>
+        	<if test="record.pushTime != null and record.pushTime != '' " >
+        		A.push_time = #{record.pushTime},
+      		</if>
+        	<if test="record.pushAuxiliaryRule != null and record.pushAuxiliaryRule != '' " >
+        		A.push_auxiliary_rule = #{record.pushAuxiliaryRule},
+      		</if>
+        	<if test="record.pushWay != null and record.pushWay != '' " >
+        		A.push_way = #{record.pushWay},
+      		</if>
+        	<if test="record.firstPushDate != null and record.firstPushDate != '' " >
+        		A.first_push_date = #{record.firstPushDate},
+      		</if>
+        	<if test="record.nextPushDate != null and record.nextPushDate != '' " >
+        		A.next_push_date = #{record.nextPushDate},
+      		</if>
+        	<if test="record.status != null and record.status != '' " >
+        		A.status = #{record.status},
+      		</if>
+        	<if test="record.recordStatus != null and record.recordStatus != '' " >
+        		A.record_status = #{record.recordStatus},
+      		</if>
+        	<if test="record.createTime != null and record.createTime != '' " >
+        		A.create_time = #{record.createTime},
+      		</if>
+        	<if test="record.updateTime != null and record.updateTime != '' " >
+        		A.update_time = #{record.updateTime},
+      		</if>
+        	<if test="record.operator != null and record.operator != '' " >
+        		A.operator = #{record.operator},
+      		</if>
+        	<if test="record.remark != null and record.remark != '' " >
+        		A.remark = #{record.remark},
+      		</if>
+        	<if test="record.temp1 != null and record.temp1 != '' " >
+        		A.temp_1 = #{record.temp1},
+      		</if>
+        	<if test="record.temp2 != null and record.temp2 != '' " >
+        		A.temp_2 = #{record.temp2},
+      		</if>
+    </set>
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </update>
+  <update id="update" parameterType="com.hfepay.scancode.commons.entity.MessagePushRule" >
+    update t_message_push_rule A
+    <set >
+        	<if test="id != null and id != '' " >
+        		A.id = #{id},
+      		</if>
+        	<if test="channelNo != null and channelNo != '' " >
+        		A.channel_no = #{channelNo},
+      		</if>
+        	<if test="agentNo != null and agentNo != '' " >
+        		A.agent_no = #{agentNo},
+      		</if>
+        	<if test="messageType != null and messageType != '' " >
+        		A.message_type = #{messageType},
+      		</if>
+        	<if test="messageContent != null and messageContent != '' " >
+        		A.message_content = #{messageContent},
+      		</if>
+        	<if test="pushRule != null and pushRule != '' " >
+        		A.push_rule = #{pushRule},
+      		</if>
+        	<if test="pushTime != null and pushTime != '' " >
+        		A.push_time = #{pushTime},
+      		</if>
+        	<if test="pushAuxiliaryRule != null and pushAuxiliaryRule != '' " >
+        		A.push_auxiliary_rule = #{pushAuxiliaryRule},
+      		</if>
+        	<if test="pushWay != null and pushWay != '' " >
+        		A.push_way = #{pushWay},
+      		</if>
+        	<if test="firstPushDate != null and firstPushDate != '' " >
+        		A.first_push_date = #{firstPushDate},
+      		</if>
+        	<if test="nextPushDate != null and nextPushDate != '' " >
+        		A.next_push_date = #{nextPushDate},
+      		</if>
+        	<if test="status != null and status != '' " >
+        		A.status = #{status},
+      		</if>
+        	<if test="recordStatus != null and recordStatus != '' " >
+        		A.record_status = #{recordStatus},
+      		</if>
+        	<if test="createTime != null and createTime != '' " >
+        		A.create_time = #{createTime},
+      		</if>
+        	<if test="updateTime != null and updateTime != '' " >
+        		A.update_time = #{updateTime},
+      		</if>
+        	<if test="operator != null and operator != '' " >
+        		A.operator = #{operator},
+      		</if>
+        	<if test="remark != null and remark != '' " >
+        		A.remark = #{remark},
+      		</if>
+        	<if test="temp1 != null" >
+        		A.temp_1 = #{temp1},
+      		</if>
+        	<if test="temp2 != null and temp2 != '' " >
+        		A.temp_2 = #{temp2},
+      		</if>
+    </set>
+    where A.id = #{id}
+  </update>
+  
+	<update id="updateStatus">
+    update t_message_push_rule
+		set `STATUS` = #{status}
+		where id=#{id}
+  </update>
+</mapper>
+

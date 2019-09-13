@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="OrganProfit">
+	<resultMap id="BaseResultMap" type="com.hfepay.scancode.commons.entity.OrganProfit">
+        <result property="id" column="A_id"/>
+        <result property="organNo" column="A_organ_no"/>
+        <result property="organLevel" column="A_organ_level"/>
+        <result property="payCode" column="A_pay_code"/>
+        <result property="type" column="A_type"/>
+        <result property="amount" column="A_amount"/>
+        <result property="rateType" column="A_rate_type"/>
+        <result property="rate" column="A_rate"/>
+        <result property="fixedAmount" column="A_fixed_amount"/>
+        <result property="profitAmount" column="A_profit_amount"/>
+        <result property="costAmount" column="A_cost_amount"/>
+        <result property="settleStatus" column="A_settle_status"/>
+        <result property="settleDate" column="A_settle_date"/>
+        <result property="transDate" column="A_trans_date"/>
+        <result property="remark" column="A_remark"/>
+        <result property="temp1" column="A_temp_1"/>
+        <result property="temp2" column="A_temp_2"/>
+	</resultMap>
+	
+	<resultMap id="BaseResultMapVo" type="com.hfepay.scancode.commons.vo.OrganProfitVO" extends="BaseResultMap">
+        <result property="orgName" column="orgName"/>
+        <result property="identityFlag" column="identityFlag"/>
+    </resultMap>
+	
+	<resultMap id="BaseResultDTO" type="com.hfepay.scancode.commons.dto.HierarchicalSettlementTotalDTO">
+		<result property="channelNo" column="channelNo"/>
+        <result property="agentNo" column="agentNo"/>
+        <result property="agentLevel" column="agentLevel"/>
+        <result property="parentNo" column="parentNo"/>
+        <result property="totalAmount" column="totalAmount"/>
+        <result property="totalProfit" column="totalProfit"/>
+        <result property="tradeType" column="tradeType"/>
+        <result property="organNo" column="organNo"/>
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+	    <![CDATA[
+		A.id as A_id,A.organ_no as A_organ_no,A.organ_level as A_organ_level,A.pay_code as A_pay_code,A.type as A_type,A.amount as A_amount,A.rate_type as A_rate_type,A.rate as A_rate,A.fixed_amount as A_fixed_amount,A.profit_amount as A_profit_amount,A.cost_amount as A_cost_amount,A.settle_status as A_settle_status,A.settle_date as A_settle_date,A.trans_date as A_trans_date,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	    ]]>
+	</sql>
+
+	<select id="findByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultMap="BaseResultMapVo" >
+    select
+    <include refid="Base_Column_List" />,m.ORG_NAME AS orgName,m.identity_flag as identityFlag
+     from t_organ_profit A
+     LEFT JOIN
+     ( 
+		select b.AGENT_NO,b.AGENT_NAME as ORG_NAME,'2' as identity_flag from t_agent_base b 
+		union select c.channel_no,c.channel_name,'1' as identity_flag from t_channel_base c
+		union select '@@@@@@@DDDXXXX','平台','0' as identity_flag
+	 ) m on A.organ_no=m.AGENT_NO
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+    <if test="hasOrderBy" >
+      order by
+      <foreach collection="orderBys" item="orderBy" separator="," > ${orderBy} </foreach>
+    </if>
+  </select>
+  <select resultMap="BaseResultMap" parameterType="java.lang.String" id="findById" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_organ_profit A
+    where A.id = #{id}
+  </select>
+  <delete parameterType="java.lang.String" id="deleteById" >
+    delete from t_organ_profit
+    where id = #{id}
+  </delete>
+  <delete id="deleteByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" >
+    delete A from t_organ_profit A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.hfepay.scancode.commons.entity.OrganProfit" >
+    insert into t_organ_profit (
+        	id,
+        	organ_no,
+        	organ_level,
+        	pay_code,
+        	type,
+        	amount,
+        	rate_type,
+        	rate,
+        	fixed_amount,
+        	profit_amount,
+        	cost_amount,
+        	settle_status,
+        	settle_date,
+        	trans_date,
+        	remark,
+        	temp_1,
+        	temp_2
+        )
+    values (
+        #{id},
+        #{organNo},
+        #{organLevel},
+        #{payCode},
+        #{type},
+        #{amount},
+        #{rateType},
+        #{rate},
+        #{fixedAmount},
+        #{profitAmount},
+        #{costAmount},
+        #{settleStatus},
+        #{settleDate},
+        #{transDate},
+        #{remark},
+        #{temp1},
+        #{temp2}
+    )
+  </insert>
+  <select id="countByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultType="java.lang.Integer" >
+    select count(*) from t_organ_profit A
+    LEFT JOIN
+     ( 
+		select b.AGENT_NO,b.AGENT_NAME as ORG_NAME,'2' as identity_flag from t_agent_base b 
+		union select c.channel_no,c.channel_name,'1' as identity_flag from t_channel_base c
+		union select '@@@@@@@DDDXXXX','平台','0' as identity_flag
+	 ) m on A.organ_no=m.AGENT_NO
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </select>
+  <update id="updateByCriteria" parameterType="map" >
+    update t_organ_profit A
+    <set >
+        	<if test="record.id != null and record.id != '' " >
+        		A.id = #{record.id},
+      		</if>
+        	<if test="record.organNo != null and record.organNo != '' " >
+        		A.organ_no = #{record.organNo},
+      		</if>
+        	<if test="record.organLevel != null and record.organLevel != '' " >
+        		A.organ_level = #{record.organLevel},
+      		</if>
+        	<if test="record.payCode != null and record.payCode != '' " >
+        		A.pay_code = #{record.payCode},
+      		</if>
+        	<if test="record.type != null and record.type != '' " >
+        		A.type = #{record.type},
+      		</if>
+        	<if test="record.amount != null and record.amount != '' " >
+        		A.amount = #{record.amount},
+      		</if>
+        	<if test="record.rateType != null and record.rateType != '' " >
+        		A.rate_type = #{record.rateType},
+      		</if>
+        	<if test="record.rate != null and record.rate != '' " >
+        		A.rate = #{record.rate},
+      		</if>
+        	<if test="record.fixedAmount != null and record.fixedAmount != '' " >
+        		A.fixed_amount = #{record.fixedAmount},
+      		</if>
+        	<if test="record.profitAmount != null and record.profitAmount != '' " >
+        		A.profit_amount = #{record.profitAmount},
+      		</if>
+        	<if test="record.costAmount != null and record.costAmount != '' " >
+        		A.cost_amount = #{record.costAmount},
+      		</if>
+        	<if test="record.settleStatus != null and record.settleStatus != '' " >
+        		A.settle_status = #{record.settleStatus},
+      		</if>
+        	<if test="record.settleDate != null and record.settleDate != '' " >
+        		A.settle_date = #{record.settleDate},
+      		</if>
+        	<if test="record.transDate != null and record.transDate != '' " >
+        		A.trans_date = #{record.transDate},
+      		</if>
+        	<if test="record.remark != null and record.remark != '' " >
+        		A.remark = #{record.remark},
+      		</if>
+        	<if test="record.temp1 != null and record.temp1 != '' " >
+        		A.temp_1 = #{record.temp1},
+      		</if>
+        	<if test="record.temp2 != null and record.temp2 != '' " >
+        		A.temp_2 = #{record.temp2},
+      		</if>
+    </set>
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </update>
+  <update id="update" parameterType="com.hfepay.scancode.commons.entity.OrganProfit" >
+    update t_organ_profit A
+    <set >
+        	<if test="id != null and id != '' " >
+        		A.id = #{id},
+      		</if>
+        	<if test="organNo != null and organNo != '' " >
+        		A.organ_no = #{organNo},
+      		</if>
+        	<if test="organLevel != null and organLevel != '' " >
+        		A.organ_level = #{organLevel},
+      		</if>
+        	<if test="payCode != null and payCode != '' " >
+        		A.pay_code = #{payCode},
+      		</if>
+        	<if test="type != null and type != '' " >
+        		A.type = #{type},
+      		</if>
+        	<if test="amount != null and amount != '' " >
+        		A.amount = #{amount},
+      		</if>
+        	<if test="rateType != null and rateType != '' " >
+        		A.rate_type = #{rateType},
+      		</if>
+        	<if test="rate != null and rate != '' " >
+        		A.rate = #{rate},
+      		</if>
+        	<if test="fixedAmount != null and fixedAmount != '' " >
+        		A.fixed_amount = #{fixedAmount},
+      		</if>
+        	<if test="profitAmount != null and profitAmount != '' " >
+        		A.profit_amount = #{profitAmount},
+      		</if>
+        	<if test="costAmount != null and costAmount != '' " >
+        		A.cost_amount = #{costAmount},
+      		</if>
+        	<if test="settleStatus != null and settleStatus != '' " >
+        		A.settle_status = #{settleStatus},
+      		</if>
+        	<if test="settleDate != null and settleDate != '' " >
+        		A.settle_date = #{settleDate},
+      		</if>
+        	<if test="transDate != null and transDate != '' " >
+        		A.trans_date = #{transDate},
+      		</if>
+        	<if test="remark != null and remark != '' " >
+        		A.remark = #{remark},
+      		</if>
+        	<if test="temp1 != null and temp1 != '' " >
+        		A.temp_1 = #{temp1},
+      		</if>
+        	<if test="temp2 != null and temp2 != '' " >
+        		A.temp_2 = #{temp2},
+      		</if>
+    </set>
+    where A.id = #{id}
+  </update>
+  
+  
+  <insert id="insertBatch" parameterType="com.hfepay.scancode.commons.entity.OrganProfit" >
+    insert into t_organ_profit (
+        	id,
+        	organ_no,
+        	organ_level,
+        	pay_code,
+        	type,
+        	amount,
+        	rate_type,
+        	rate,
+        	fixed_amount,
+        	profit_amount,
+        	cost_amount,
+        	settle_status,
+        	settle_date,
+        	trans_date,
+        	remark,
+        	temp_1,
+        	temp_2
+        )
+    values 
+     <foreach collection="list" item="item" index="index" separator="," >  
+	    (
+	        #{item.id},
+	        #{item.organNo},
+	        #{item.organLevel},
+	        #{item.payCode},
+	        #{item.type},
+	        #{item.amount},
+	        #{item.rateType},
+	        #{item.rate},
+	        #{item.fixedAmount},
+	        #{item.profitAmount},
+	        #{item.costAmount},
+	        #{item.settleStatus},
+	        #{item.settleDate},
+	        #{item.transDate},
+	        #{item.remark},
+	        #{item.temp1},
+	        #{item.temp2}
+	    )
+     </foreach> 
+  </insert>
+  
+  <update id="updateMoney" parameterType="com.hfepay.scancode.commons.condition.OrganProfitCondition" >
+  	update t_organ_profit set profit_amount=profit_amount + #{profitAmount} 
+  	where 
+  	trans_date=#{transDate} and pay_code=#{payCode} and organ_no=#{organNo} and type=#{type}
+  </update>
+  
+  <select resultMap="BaseResultDTO" parameterType="java.lang.String" id="queryTotalProfit" >
+    select CHANNEL_NO as channelNo,AGENT_NO as agentNo,AGENT_LEVEL as agentLevel,
+    `organ_no` as organNo,type as tradeType,PARENT_NO as parentNo,
+	amount as totalAmount,profit as totalProfit
+	 from 
+	(
+	select `organ_no` ,type, sum(amount) as amount,sum(profit_amount) as profit from t_organ_profit 
+	where settle_date=#{date} and settle_status='0' GROUP BY type,organ_no
+	) a
+	LEFT JOIN 
+	(
+	SELECT AGENT_NO as identity,PARENT_NO as PARENT_NO,'1' as flag,CHANNEL_NO,AGENT_NO,AGENT_LEVEL  from t_agent_base
+	UNION all
+	select channel_no as identity,'' as PARENT_NO,'0' as flag,channel_no,null,null  from t_channel_base
+	) b 
+	on a.organ_no=b.identity where identity is not null ORDER BY organ_no
+  </select>
+</mapper>
+

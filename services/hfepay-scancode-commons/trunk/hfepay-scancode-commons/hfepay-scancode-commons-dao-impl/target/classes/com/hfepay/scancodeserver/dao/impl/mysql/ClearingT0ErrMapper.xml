@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="ClearingT0Err">
+	<resultMap id="BaseResultMap" type="com.hfepay.scancode.commons.entity.ClearingT0Err">
+        <result property="id" column="A_id"/>
+        <result property="batchNo" column="A_batch_no"/>
+        <result property="tradeNo" column="A_trade_no"/>
+        <result property="hfTradeNo" column="A_hf_trade_no"/>
+        <result property="hfMerchantNo" column="A_hf_merchant_no"/>
+        <result property="channelNo" column="A_channel_no"/>
+        <result property="agentNo" column="A_agent_no"/>
+        <result property="merchantNo" column="A_merchant_no"/>
+        <result property="transAmt" column="A_trans_amt"/>
+        <result property="arrivalAmt" column="A_arrival_amt"/>
+        <result property="checkFlag" column="A_check_flag"/>
+        <result property="processingStatus" column="A_processing_status"/>
+        <result property="clearDate" column="A_clear_date"/>
+        <result property="tradeDate" column="A_trade_date"/>
+        <result property="temp1" column="A_temp_1"/>
+        <result property="temp2" column="A_temp_2"/>
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+	    <![CDATA[
+		A.id as A_id,A.batch_no as A_batch_no,A.trade_no as A_trade_no,A.hf_trade_no as A_hf_trade_no,A.hf_merchant_no as A_hf_merchant_no,A.channel_no as A_channel_no,A.agent_no as A_agent_no,A.merchant_no as A_merchant_no,A.trans_amt as A_trans_amt,A.arrival_amt as A_arrival_amt,A.check_flag as A_check_flag,A.processing_status as A_processing_status,A.clear_date as A_clear_date,A.trade_date as A_trade_date,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	    ]]>
+	</sql>
+
+	<select id="findByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+     from t_clearing_t0_err A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+    <if test="hasOrderBy" >
+      order by
+      <foreach collection="orderBys" item="orderBy" separator="," > ${orderBy} </foreach>
+    </if>
+  </select>
+  <select resultMap="BaseResultMap" parameterType="java.lang.String" id="findById" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_clearing_t0_err A
+    where A.id = #{id}
+  </select>
+  <delete parameterType="java.lang.String" id="deleteById" >
+    delete from t_clearing_t0_err
+    where id = #{id}
+  </delete>
+  <delete id="deleteByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" >
+    delete A from t_clearing_t0_err A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.hfepay.scancode.commons.entity.ClearingT0Err" >
+    insert into t_clearing_t0_err (
+        	id,
+        	batch_no,
+        	trade_no,
+        	hf_trade_no,
+        	hf_merchant_no,
+        	channel_no,
+        	agent_no,
+        	merchant_no,
+        	trans_amt,
+        	arrival_amt,
+        	check_flag,
+        	processing_status,
+        	clear_date,
+        	trade_date,
+        	temp_1,
+        	temp_2
+        )
+    values (UUID(),
+        	#{batchNo},
+        	#{tradeNo},
+        	#{hfTradeNo},
+        	#{hfMerchantNo},
+        	#{channelNo},
+        	#{agentNo},
+        	#{merchantNo},
+        	#{transAmt},
+        	#{arrivalAmt},
+        	#{checkFlag},
+        	#{processingStatus},
+        	#{clearDate},
+        	#{tradeDate},
+        	#{temp1},
+        	#{temp2}
+    )
+  </insert>
+  <select id="countByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultType="java.lang.Integer" >
+    select count(*) from t_clearing_t0_err A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </select>
+  <update id="updateByCriteria" parameterType="map" >
+    update t_clearing_t0_err A
+    <set >
+        	<if test="record.id != null and record.id != '' " >
+        		A.id = #{record.id},
+      		</if>
+        	<if test="record.batchNo != null and record.batchNo != '' " >
+        		A.batch_no = #{record.batchNo},
+      		</if>
+        	<if test="record.tradeNo != null and record.tradeNo != '' " >
+        		A.trade_no = #{record.tradeNo},
+      		</if>
+        	<if test="record.hfTradeNo != null and record.hfTradeNo != '' " >
+        		A.hf_trade_no = #{record.hfTradeNo},
+      		</if>
+        	<if test="record.hfMerchantNo != null and record.hfMerchantNo != '' " >
+        		A.hf_merchant_no = #{record.hfMerchantNo},
+      		</if>
+        	<if test="record.channelNo != null and record.channelNo != '' " >
+        		A.channel_no = #{record.channelNo},
+      		</if>
+        	<if test="record.agentNo != null and record.agentNo != '' " >
+        		A.agent_no = #{record.agentNo},
+      		</if>
+        	<if test="record.merchantNo != null and record.merchantNo != '' " >
+        		A.merchant_no = #{record.merchantNo},
+      		</if>
+        	<if test="record.transAmt != null and record.transAmt != '' " >
+        		A.trans_amt = #{record.transAmt},
+      		</if>
+        	<if test="record.arrivalAmt != null and record.arrivalAmt != '' " >
+        		A.arrival_amt = #{record.arrivalAmt},
+      		</if>
+        	<if test="record.checkFlag != null and record.checkFlag != '' " >
+        		A.check_flag = #{record.checkFlag},
+      		</if>
+        	<if test="record.processingStatus != null and record.processingStatus != '' " >
+        		A.processing_status = #{record.processingStatus},
+      		</if>
+        	<if test="record.clearDate != null and record.clearDate != '' " >
+        		A.clear_date = #{record.clearDate},
+      		</if>
+        	<if test="record.tradeDate != null and record.tradeDate != '' " >
+        		A.trade_date = #{record.tradeDate},
+      		</if>
+        	<if test="record.temp1 != null and record.temp1 != '' " >
+        		A.temp_1 = #{record.temp1},
+      		</if>
+        	<if test="record.temp2 != null and record.temp2 != '' " >
+        		A.temp_2 = #{record.temp2},
+      		</if>
+    </set>
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </update>
+  <update id="update" parameterType="com.hfepay.scancode.commons.entity.ClearingT0Err" >
+    update t_clearing_t0_err A
+    <set >
+        	<if test="id != null and id != '' " >
+        		A.id = #{id},
+      		</if>
+        	<if test="batchNo != null and batchNo != '' " >
+        		A.batch_no = #{batchNo},
+      		</if>
+        	<if test="tradeNo != null and tradeNo != '' " >
+        		A.trade_no = #{tradeNo},
+      		</if>
+        	<if test="hfTradeNo != null and hfTradeNo != '' " >
+        		A.hf_trade_no = #{hfTradeNo},
+      		</if>
+        	<if test="hfMerchantNo != null and hfMerchantNo != '' " >
+        		A.hf_merchant_no = #{hfMerchantNo},
+      		</if>
+        	<if test="channelNo != null and channelNo != '' " >
+        		A.channel_no = #{channelNo},
+      		</if>
+        	<if test="agentNo != null and agentNo != '' " >
+        		A.agent_no = #{agentNo},
+      		</if>
+        	<if test="merchantNo != null and merchantNo != '' " >
+        		A.merchant_no = #{merchantNo},
+      		</if>
+        	<if test="transAmt != null and transAmt != '' " >
+        		A.trans_amt = #{transAmt},
+      		</if>
+        	<if test="arrivalAmt != null and arrivalAmt != '' " >
+        		A.arrival_amt = #{arrivalAmt},
+      		</if>
+        	<if test="checkFlag != null and checkFlag != '' " >
+        		A.check_flag = #{checkFlag},
+      		</if>
+        	<if test="processingStatus != null and processingStatus != '' " >
+        		A.processing_status = #{processingStatus},
+      		</if>
+        	<if test="clearDate != null and clearDate != '' " >
+        		A.clear_date = #{clearDate},
+      		</if>
+        	<if test="tradeDate != null and tradeDate != '' " >
+        		A.trade_date = #{tradeDate},
+      		</if>
+        	<if test="temp1 != null and temp1 != '' " >
+        		A.temp_1 = #{temp1},
+      		</if>
+        	<if test="temp2 != null and temp2 != '' " >
+        		A.temp_2 = #{temp2},
+      		</if>
+    </set>
+    where A.id = #{id}
+  </update>
+  
+  <select id="checkT0Data" resultMap="BaseResultMap" >
+    <![CDATA[
+    select
+    A.batch_no as A_batch_no,A.trade_no as A_trade_no,A.hf_trade_no as A_hf_trade_no,A.hf_merchant_no as A_hf_merchant_no,
+    A.merchant_no as A_merchant_no,A.trans_amt as A_trans_amt,A.arrival_amt as A_arrival_amt,A.check_flag as A_check_flag,A.processing_status as A_processing_status,A.clear_date as A_clear_date,A.trade_date as A_trade_date
+     from 
+	(
+	
+	select '' as batch_no, trade_no,'' as hf_trade_no,'' as hf_merchant_no, merchant_no,order_amt as trans_amt,'' as arrival_amt,'10' as check_flag,'0' as processing_status,#{tradeDate} as clear_date,#{tradeDate} as trade_date
+	from t_withdrawals op where 
+	op.begin_time  >=   str_to_date(#{beginTimeStr},'%Y-%m-%d %H:%i:%s') and op.begin_time  <=   str_to_date(#{endTimeStr},'%Y-%m-%d %H:%i:%s')  
+	and not exists (select 1 from t_clearing_t0 t0 where op.trade_no = t0.trade_no and op.merchant_no = t0.merchant_no and left(t0.trade_date, 8) = #{tradeDate}) 
+	union
+	
+	select batch_no,trade_no,hf_trade_no,hf_merchant_no,merchant_no,trans_amt,arrival_amt,'01' as check_flag,'0' as processing_status,clear_date,trade_date 
+	from t_clearing_t0 t0 where 
+  left(t0.trade_date, 8) = #{tradeDate}
+	and not exists (select 1 from t_withdrawals op where  op.begin_time  >=   str_to_date(#{beginTimeStr},'%Y-%m-%d %H:%i:%s') and op.begin_time  <=   str_to_date(#{endTimeStr},'%Y-%m-%d %H:%i:%s')
+	and op.trade_no = t0.trade_no and op.merchant_no = t0.merchant_no
+	)
+	union
+	
+	select  '' as batch_no, trade_no,'' as hf_trade_no,'' as hf_merchant_no, merchant_no,order_amt as trans_amt,'' as arrival_amt,'11' as check_flag,'0' as processing_status,#{tradeDate} as clear_date,#{tradeDate} as trade_date
+	from t_withdrawals op where 
+	op.begin_time  >=   str_to_date(#{beginTimeStr},'%Y-%m-%d %H:%i:%s') and op.begin_time  <=   str_to_date(#{endTimeStr},'%Y-%m-%d %H:%i:%s') 
+	and exists (select 1 from t_clearing_t0 t0 where op.trade_no = t0.trade_no and left(t0.trade_date, 8) = #{tradeDate} and op.merchant_no = t0.merchant_no 
+	and op.order_amt != t0.trans_amt) 
+	union
+	select  batch_no,trade_no,hf_trade_no,hf_merchant_no,merchant_no,trans_amt,arrival_amt,'11' as check_flag,'0' as processing_status,clear_date,trade_date 
+	from t_clearing_t0 t0 where 
+	exists (select 1 from t_withdrawals op where  op.trade_no = t0.trade_no and left(t0.trade_date, 8) = #{tradeDate} and op.merchant_no = t0.merchant_no
+	and op.order_amt != t0.trans_amt
+	and op.begin_time  >=   str_to_date(#{beginTimeStr},'%Y-%m-%d %H:%i:%s') and op.begin_time  <=   str_to_date(#{endTimeStr},'%Y-%m-%d %H:%i:%s') )
+	) A
+	]]>
+  </select>
+  
+  <insert id="batchInsert" parameterType="com.hfepay.scancode.commons.entity.ClearingT0Err" >
+    insert into t_clearing_t0_err (
+        	id,
+        	batch_no,
+        	trade_no,
+        	hf_trade_no,
+        	hf_merchant_no,
+        	channel_no,
+        	agent_no,
+        	merchant_no,
+        	trans_amt,
+        	arrival_amt,
+        	check_flag,
+        	processing_status,
+        	clear_date,
+        	trade_date,
+        	temp_1,
+        	temp_2
+        )
+    values 
+    <foreach collection="list" item="item" index="index" separator="," >  
+    (
+    		#{item.id},
+        	#{item.batchNo},
+        	#{item.tradeNo},
+        	#{item.hfTradeNo},
+        	#{item.hfMerchantNo},
+        	#{item.channelNo},
+        	#{item.agentNo},
+        	#{item.merchantNo},
+        	#{item.transAmt},
+        	#{item.arrivalAmt},
+        	#{item.checkFlag},
+        	#{item.processingStatus},
+        	#{item.clearDate},
+        	#{item.tradeDate},
+        	#{item.temp1},
+        	#{item.temp2}
+    )
+    </foreach> 
+  </insert>
+  
+</mapper>
+

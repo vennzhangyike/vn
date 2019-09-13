@@ -1,0 +1,717 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="OrderPayment">
+	<resultMap id="BaseResultMap" type="com.hfepay.scancode.commons.entity.OrderPayment">
+        <result property="id" column="A_id"/>
+        <result property="tradeNo" column="A_trade_no"/>
+        <result property="channelNo" column="A_channel_no"/>
+        <result property="agentNo" column="A_agent_no"/>
+        <result property="merchantNo" column="A_merchant_no"/>
+        <result property="qrCode" column="A_qr_code"/>
+        <result property="payCode" column="A_pay_code"/>
+        <result property="businessType" column="A_business_type"/>
+        <result property="orderAmt" column="A_order_amt"/>
+        <result property="productName" column="A_product_name"/>
+        <result property="productDesc" column="A_product_desc"/>
+        <result property="buyerId" column="A_buyer_id"/>
+        <result property="buyerAccount" column="A_buyer_account"/>
+        <result property="totalAmount" column="A_total_amount"/>
+        <result property="buyerPayAmount" column="A_buyer_pay_amount"/>
+        <result property="pointAmount" column="A_point_amount"/>
+        <result property="rateDetail" column="A_rate_detail"/>
+        <result property="feeStatus" column="A_fee_status"/>
+        <result property="feeType" column="A_fee_type"/>
+        <result property="paymentInfo" column="A_payment_info"/>
+        <result property="batchId" column="A_batch_id"/>
+        <result property="resultCode" column="A_result_code"/>
+        <result property="resultInfo" column="A_result_info"/>
+        <result property="payTradeNo" column="A_pay_trade_no"/>
+        <result property="paymentType" column="A_payment_type"/>
+        <result property="notifyUrl" column="A_notify_url"/>
+        <result property="returnUrl" column="A_return_url"/>
+        <result property="beginTime" column="A_begin_time"/>
+        <result property="endTime" column="A_end_time"/>
+        <result property="settleTime" column="A_settle_time"/>
+        <result property="settleMerchant" column="A_settle_merchant"/>
+        <result property="refundStatus" column="A_refund_status"/>
+        <result property="accountType" column="A_account_type"/>
+        <result property="orderStatus" column="A_order_status"/>
+        <result property="optCode" column="A_opt_code"/>
+        <result property="recordStatus" column="A_record_status"/>
+        <result property="updateTime" column="A_update_time"/>
+        <result property="operator" column="A_operator"/>
+        <result property="remark" column="A_remark"/>
+        <result property="temp1" column="A_temp_1"/>
+        <result property="temp2" column="A_temp_2"/>
+        <result property="temp3" column="A_temp_3"/>
+        <result property="temp4" column="A_temp_4"/>
+        <result property="cashierNo" column="A_cashier_no"/>
+        <result property="merchantCost" column="A_merchant_cost"/>
+        <result property="storeNo" column="A_store_no"/>
+        <result property="tradeAmt" column="A_trade_amt"/>
+        <result property="discountAmt" column="A_discount_amt"/>
+        <result property="discountStrategy" column="A_discount_strategy"/>
+        <result property="tradeSource" column="A_trade_source"/>
+        <result property="extraTradeNo" column="A_extra_trade_no"/>
+        <result property="channelTradeNo" column="A_channel_trade_no"/>
+        <result property="extraCallBack" column="A_extra_call_back"/>
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+	    <![CDATA[
+		A.id as A_id,A.trade_no as A_trade_no,A.channel_no as A_channel_no,A.agent_no as A_agent_no,
+		A.merchant_no as A_merchant_no,A.qr_code as A_qr_code,A.pay_code as A_pay_code,A.business_type as A_business_type,
+		ifnull(A.order_amt,0) as A_order_amt,A.product_name as A_product_name,A.product_desc as A_product_desc,
+		A.buyer_id as A_buyer_id,A.buyer_account as A_buyer_account,A.total_amount as A_total_amount,
+		A.buyer_pay_amount as A_buyer_pay_amount,A.point_amount as A_point_amount,A.rate_detail as A_rate_detail,
+		A.fee_status as A_fee_status,A.fee_type as A_fee_type,A.payment_info as A_payment_info,
+		A.batch_id as A_batch_id,A.result_code as A_result_code,A.result_info as A_result_info,
+		A.pay_trade_no as A_pay_trade_no,A.payment_type as A_payment_type,A.notify_url as A_notify_url,
+		A.return_url as A_return_url,A.begin_time as A_begin_time,A.end_time as A_end_time,A.settle_time as A_settle_time,
+		A.settle_merchant as A_settle_merchant,A.refund_status as A_refund_status,A.account_type as A_account_type,A.order_status as A_order_status,
+		A.opt_code as A_opt_code,A.record_status as A_record_status,A.update_time as A_update_time,
+		A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2,A.temp_3 as A_temp_3,
+		A.temp_4 as A_temp_4,
+		A.cashier_no as A_cashier_no,A.merchant_cost as A_merchant_cost,A.store_no as A_store_no,
+		A.trade_amt as A_trade_amt, A.discount_amt as A_discount_amt,A.discount_strategy as A_discount_strategy,
+		A.trade_source as A_trade_source, A.extra_trade_no as A_extra_trade_no,A.channel_trade_no as A_channel_trade_no,A.extra_call_back as A_extra_call_back
+	    ]]>
+	</sql>
+
+	<select id="findByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+     from t_order_payment A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+    <if test="hasOrderBy" >
+      order by
+      <foreach collection="orderBys" item="orderBy" separator="," > ${orderBy} </foreach>
+    </if>
+  </select>
+  <select resultMap="BaseResultMap" parameterType="java.lang.String" id="findById" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_order_payment A
+    where A.id = #{id}
+  </select>
+  <delete parameterType="java.lang.String" id="deleteById" >
+    delete from t_order_payment
+    where id = #{id}
+  </delete>
+  <delete id="deleteByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" >
+    delete A from t_order_payment A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.hfepay.scancode.commons.entity.OrderPayment" >
+    insert into t_order_payment (
+        	id,
+        	trade_no,
+        	channel_no,
+        	agent_no,
+        	merchant_no,
+        	qr_code,
+        	pay_code,
+        	business_type,
+        	order_amt,
+        	product_name,
+        	product_desc,
+        	buyer_id,
+        	buyer_account,
+        	total_amount,
+        	buyer_pay_amount,
+        	point_amount,
+        	rate_detail,
+        	fee_status,
+        	fee_type,
+        	payment_info,
+        	batch_id,
+        	result_code,
+        	result_info,
+        	pay_trade_no,
+        	payment_type,
+        	notify_url,
+        	return_url,
+        	begin_time,
+        	end_time,
+        	settle_time,
+        	settle_merchant,
+        	refund_status,
+        	account_type,
+        	order_status,
+        	opt_code,
+        	record_status,
+        	update_time,
+        	operator,
+        	remark,
+        	temp_1,
+        	temp_2,
+        	temp_3,
+        	temp_4,
+			cashier_no,
+			merchant_cost,
+			store_no,
+			trade_amt,
+			discount_amt,
+			discount_strategy,
+			trade_source, 
+			extra_trade_no,
+			channel_trade_no,
+			extra_call_back
+        )
+    values (
+        	#{id},
+        	#{tradeNo},
+        	#{channelNo},
+        	#{agentNo},
+        	#{merchantNo},
+        	#{qrCode},
+        	#{payCode},
+        	#{businessType},
+        	#{orderAmt},
+        	#{productName},
+        	#{productDesc},
+        	#{buyerId},
+        	#{buyerAccount},
+        	#{totalAmount},
+        	#{buyerPayAmount},
+        	#{pointAmount},
+        	#{rateDetail},
+        	#{feeStatus},
+        	#{feeType},
+        	#{paymentInfo},
+        	#{batchId},
+        	#{resultCode},
+        	#{resultInfo},
+        	#{payTradeNo},
+        	#{paymentType},
+        	#{notifyUrl},
+        	#{returnUrl},
+        	#{beginTime},
+        	#{endTime},
+        	#{settleTime},
+        	#{settleMerchant},
+        	#{refundStatus},
+        	#{accountType},
+        	#{orderStatus},
+        	#{optCode},
+        	#{recordStatus},
+        	#{updateTime},
+        	#{operator},
+        	#{remark},
+        	#{temp1},
+        	#{temp2},
+        	#{temp3},
+        	#{temp4},
+        	#{cashierNo},
+        	#{merchantCost},
+        	#{storeNo},
+        	#{tradeAmt},
+        	#{discountAmt},
+        	#{discountStrategy},
+        	
+        	#{tradeSource}, 
+			#{extraTradeNo},
+			#{channelTradeNo},
+			#{extraCallBack}
+    )
+  </insert>
+  <select id="countByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultType="java.lang.Integer" >
+    select count(*) from t_order_payment A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </select>
+  <update id="updateByCriteria" parameterType="map" >
+    update t_order_payment A
+    <set >
+        	<if test="record.id != null and record.id != '' " >
+        		A.id = #{record.id},
+      		</if>
+        	<if test="record.tradeNo != null and record.tradeNo != '' " >
+        		A.trade_no = #{record.tradeNo},
+      		</if>
+        	<if test="record.channelNo != null and record.channelNo != '' " >
+        		A.channel_no = #{record.channelNo},
+      		</if>
+        	<if test="record.agentNo != null and record.agentNo != '' " >
+        		A.agent_no = #{record.agentNo},
+      		</if>
+        	<if test="record.merchantNo != null and record.merchantNo != '' " >
+        		A.merchant_no = #{record.merchantNo},
+      		</if>
+        	<if test="record.qrCode != null and record.qrCode != '' " >
+        		A.qr_code = #{record.qrCode},
+      		</if>
+        	<if test="record.payCode != null and record.payCode != '' " >
+        		A.pay_code = #{record.payCode},
+      		</if>
+        	<if test="record.businessType != null and record.businessType != '' " >
+        		A.business_type = #{record.businessType},
+      		</if>
+        	<if test="record.orderAmt != null " >
+        		A.order_amt = #{record.orderAmt},
+      		</if>
+        	<if test="record.productName != null and record.productName != '' " >
+        		A.product_name = #{record.productName},
+      		</if>
+        	<if test="record.productDesc != null and record.productDesc != '' " >
+        		A.product_desc = #{record.productDesc},
+      		</if>
+        	<if test="record.buyerId != null and record.buyerId != '' " >
+        		A.buyer_id = #{record.buyerId},
+      		</if>
+        	<if test="record.buyerAccount != null and record.buyerAccount != '' " >
+        		A.buyer_account = #{record.buyerAccount},
+      		</if>
+        	<if test="record.totalAmount != null " >
+        		A.total_amount = #{record.totalAmount},
+      		</if>
+        	<if test="record.buyerPayAmount != null " >
+        		A.buyer_pay_amount = #{record.buyerPayAmount},
+      		</if>
+        	<if test="record.pointAmount != null " >
+        		A.point_amount = #{record.pointAmount},
+      		</if>
+        	<if test="record.rateDetail != null and record.rateDetail != '' " >
+        		A.rate_detail = #{record.rateDetail},
+      		</if>
+        	<if test="record.feeStatus != null and record.feeStatus != '' " >
+        		A.fee_status = #{record.feeStatus},
+      		</if>
+        	<if test="record.feeType != null and record.feeType != '' " >
+        		A.fee_type = #{record.feeType},
+      		</if>
+        	<if test="record.paymentInfo != null and record.paymentInfo != '' " >
+        		A.payment_info = #{record.paymentInfo},
+      		</if>
+        	<if test="record.batchId != null and record.batchId != '' " >
+        		A.batch_id = #{record.batchId},
+      		</if>
+        	<if test="record.resultCode != null and record.resultCode != '' " >
+        		A.result_code = #{record.resultCode},
+      		</if>
+        	<if test="record.resultInfo != null and record.resultInfo != '' " >
+        		A.result_info = #{record.resultInfo},
+      		</if>
+        	<if test="record.payTradeNo != null and record.payTradeNo != '' " >
+        		A.pay_trade_no = #{record.payTradeNo},
+      		</if>
+        	<if test="record.paymentType != null and record.paymentType != '' " >
+        		A.payment_type = #{record.paymentType},
+      		</if>
+        	<if test="record.notifyUrl != null and record.notifyUrl != '' " >
+        		A.notify_url = #{record.notifyUrl},
+      		</if>
+        	<if test="record.returnUrl != null and record.returnUrl != '' " >
+        		A.return_url = #{record.returnUrl},
+      		</if>
+        	<if test="record.beginTime != null and record.beginTime != '' " >
+        		A.begin_time = #{record.beginTime},
+      		</if>
+        	<if test="record.endTime != null and record.endTime != '' " >
+        		A.end_time = #{record.endTime},
+      		</if>
+        	<if test="record.settleTime != null and record.settleTime != '' " >
+        		A.settle_time = #{record.settleTime},
+      		</if>
+        	<if test="record.settleMerchant != null and record.settleMerchant != '' " >
+        		A.settle_merchant = #{record.settleMerchant},
+      		</if>
+        	<if test="record.refundStatus != null and record.refundStatus != '' " >
+        		A.refund_status = #{record.refundStatus},
+      		</if>
+      		<if test="record.accountType != null and record.accountType != '' " >
+        		A.account_type = #{record.accountType},
+      		</if>
+        	<if test="record.orderStatus != null and record.orderStatus != '' " >
+        		A.order_status = #{record.orderStatus},
+      		</if>
+        	<if test="record.optCode != null and record.optCode != '' " >
+        		A.opt_code = #{record.optCode},
+      		</if>
+        	<if test="record.recordStatus != null and record.recordStatus != '' " >
+        		A.record_status = #{record.recordStatus},
+      		</if>
+        	<if test="record.updateTime != null and record.updateTime != '' " >
+        		A.update_time = #{record.updateTime},
+      		</if>
+        	<if test="record.operator != null and record.operator != '' " >
+        		A.operator = #{record.operator},
+      		</if>
+        	<if test="record.remark != null and record.remark != '' " >
+        		A.remark = #{record.remark},
+      		</if>
+        	<if test="record.temp1 != null and record.temp1 != '' " >
+        		A.temp_1 = #{record.temp1},
+      		</if>
+        	<if test="record.temp2 != null and record.temp2 != '' " >
+        		A.temp_2 = #{record.temp2},
+      		</if>
+        	<if test="record.temp3 != null and record.temp3 != '' " >
+        		A.temp_3 = #{record.temp3},
+      		</if>
+        	<if test="record.temp4 != null and record.temp4 != '' " >
+        		A.temp_4 = #{record.temp4},
+      		</if>
+      		<if test="record.cashierNo != null and record.cashierNo != '' " >
+        		A.cashier_no = #{record.cashierNo},
+      		</if>
+        	<if test="record.merchantCost != null and record.merchantCost != '' " >
+        		A.merchant_cost = #{record.merchantCost},
+      		</if>
+      		<if test="record.storeNo != null and record.storeNo != '' " >
+        		A.store_no = #{record.storeNo},
+      		</if>
+			
+      		<if test="record.tradeSource != null and record.tradeSource != '' " >
+        		A.trade_source = #{record.tradeSource},
+      		</if>
+      		<if test="record.extraTradeNo != null and record.extraTradeNo != '' " >
+        		A.extra_trade_no = #{record.extraTradeNo},
+      		</if>
+        	<if test="record.channelTradeNo != null and record.channelTradeNo != '' " >
+        		A.channel_trade_no = #{record.channelTradeNo},
+      		</if>
+      		<if test="record.extraCallBack != null and record.extraCallBack != '' " >
+        		A.extra_call_back = #{record.extraCallBack},
+      		</if>
+    </set>
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </update>
+  <update id="update" parameterType="com.hfepay.scancode.commons.entity.OrderPayment" >
+    update t_order_payment A
+    <set >
+        	<if test="id != null and id != '' " >
+        		A.id = #{id},
+      		</if>
+        	<if test="tradeNo != null and tradeNo != '' " >
+        		A.trade_no = #{tradeNo},
+      		</if>
+        	<if test="channelNo != null and channelNo != '' " >
+        		A.channel_no = #{channelNo},
+      		</if>
+        	<if test="agentNo != null and agentNo != '' " >
+        		A.agent_no = #{agentNo},
+      		</if>
+        	<if test="merchantNo != null and merchantNo != '' " >
+        		A.merchant_no = #{merchantNo},
+      		</if>
+        	<if test="qrCode != null and qrCode != '' " >
+        		A.qr_code = #{qrCode},
+      		</if>
+        	<if test="payCode != null and payCode != '' " >
+        		A.pay_code = #{payCode},
+      		</if>
+        	<if test="businessType != null and businessType != '' " >
+        		A.business_type = #{businessType},
+      		</if>
+        	<if test="orderAmt != null " >
+        		A.order_amt = #{orderAmt},
+      		</if>
+        	<if test="productName != null and productName != '' " >
+        		A.product_name = #{productName},
+      		</if>
+        	<if test="productDesc != null and productDesc != '' " >
+        		A.product_desc = #{productDesc},
+      		</if>
+        	<if test="buyerId != null and buyerId != '' " >
+        		A.buyer_id = #{buyerId},
+      		</if>
+        	<if test="buyerAccount != null and buyerAccount != '' " >
+        		A.buyer_account = #{buyerAccount},
+      		</if>
+        	<if test="totalAmount != null " >
+        		A.total_amount = #{totalAmount},
+      		</if>
+        	<if test="buyerPayAmount != null " >
+        		A.buyer_pay_amount = #{buyerPayAmount},
+      		</if>
+        	<if test="pointAmount != null " >
+        		A.point_amount = #{pointAmount},
+      		</if>
+        	<if test="rateDetail != null and rateDetail != '' " >
+        		A.rate_detail = #{rateDetail},
+      		</if>
+        	<if test="feeStatus != null and feeStatus != '' " >
+        		A.fee_status = #{feeStatus},
+      		</if>
+        	<if test="feeType != null and feeType != '' " >
+        		A.fee_type = #{feeType},
+      		</if>
+        	<if test="paymentInfo != null and paymentInfo != '' " >
+        		A.payment_info = #{paymentInfo},
+      		</if>
+        	<if test="batchId != null and batchId != '' " >
+        		A.batch_id = #{batchId},
+      		</if>
+        	<if test="resultCode != null and resultCode != '' " >
+        		A.result_code = #{resultCode},
+      		</if>
+        	<if test="resultInfo != null and resultInfo != '' " >
+        		A.result_info = #{resultInfo},
+      		</if>
+        	<if test="payTradeNo != null and payTradeNo != '' " >
+        		A.pay_trade_no = #{payTradeNo},
+      		</if>
+        	<if test="paymentType != null and paymentType != '' " >
+        		A.payment_type = #{paymentType},
+      		</if>
+        	<if test="notifyUrl != null and notifyUrl != '' " >
+        		A.notify_url = #{notifyUrl},
+      		</if>
+        	<if test="returnUrl != null and returnUrl != '' " >
+        		A.return_url = #{returnUrl},
+      		</if>
+        	<if test="beginTime != null and beginTime != '' " >
+        		A.begin_time = #{beginTime},
+      		</if>
+        	<if test="endTime != null and endTime != '' " >
+        		A.end_time = #{endTime},
+      		</if>
+        	<if test="settleTime != null and settleTime != '' " >
+        		A.settle_time = #{settleTime},
+      		</if>
+        	<if test="settleMerchant != null and settleMerchant != '' " >
+        		A.settle_merchant = #{settleMerchant},
+      		</if>
+        	<if test="refundStatus != null and refundStatus != '' " >
+        		A.refund_status = #{refundStatus},
+      		</if>
+      		<if test="accountType != null and accountType != '' " >
+        		A.account_type = #{accountType},
+      		</if>
+        	<if test="orderStatus != null and orderStatus != '' " >
+        		A.order_status = #{orderStatus},
+      		</if>
+        	<if test="optCode != null and optCode != '' " >
+        		A.opt_code = #{optCode},
+      		</if>
+        	<if test="recordStatus != null and recordStatus != '' " >
+        		A.record_status = #{recordStatus},
+      		</if>
+        	<if test="updateTime != null and updateTime != '' " >
+        		A.update_time = #{updateTime},
+      		</if>
+        	<if test="operator != null and operator != '' " >
+        		A.operator = #{operator},
+      		</if>
+        	<if test="remark != null and remark != '' " >
+        		A.remark = #{remark},
+      		</if>
+        	<if test="temp1 != null and temp1 != '' " >
+        		A.temp_1 = #{temp1},
+      		</if>
+        	<if test="temp2 != null and temp2 != '' " >
+        		A.temp_2 = #{temp2},
+      		</if>
+        	<if test="temp3 != null and temp3 != '' " >
+        		A.temp_3 = #{temp3},
+      		</if>
+        	<if test="temp4 != null and temp4 != '' " >
+        		A.temp_4 = #{temp4},
+      		</if>
+      		<if test="cashierNo != null and cashierNo != '' " >
+        		A.cashier_no = #{cashierNo},
+      		</if>
+        	<if test="merchantCost != null and merchantCost != '' " >
+        		A.merchant_cost = #{merchantCost},
+      		</if>
+      		<if test="storeNo != null and storeNo != '' " >
+        		A.store_no = #{storeNo},
+      		</if>
+      		
+      		<if test="tradeSource != null and tradeSource != '' " >
+        		A.trade_source = #{tradeSource},
+      		</if>
+      		<if test="extraTradeNo != null and extraTradeNo != '' " >
+        		A.extra_trade_no = #{extraTradeNo},
+      		</if>
+        	<if test="channelTradeNo != null and channelTradeNo != '' " >
+        		A.channel_trade_no = #{channelTradeNo},
+      		</if>
+      		<if test="extraCallBack != null and extraCallBack != '' " >
+        		A.extra_call_back = #{extraCallBack},
+      		</if>
+    </set>
+    where A.id = #{id}
+  </update>
+  
+  
+  <select id="getAmtStaticMoney" parameterType="com.hfepay.scancode.commons.condition.OrderPaymentCondition" resultMap="BaseResultMap" >
+			  select ifnull(sum(order_amt),0) as A_order_amt,
+			  pay_code as A_pay_code,
+			  account_type as A_account_type 
+			  from t_order_payment A
+			  where 1=1
+  			<if test="id != null and id != '' " >
+        		and A.id = #{id}
+      		</if>
+        	<if test="tradeNo != null and tradeNo != '' " >
+        		and A.trade_no = #{tradeNo}
+      		</if>
+        	<if test="channelNo != null and channelNo != '' " >
+        		and A.channel_no = #{channelNo}
+      		</if>
+        	<if test="agentNo != null and agentNo != '' " >
+        		and A.agent_no = #{agentNo}
+      		</if>
+        	<if test="merchantNo != null and merchantNo != '' " >
+        		and A.merchant_no = #{merchantNo}
+      		</if>
+        	<if test="qrCode != null and qrCode != '' " >
+        		and A.qr_code = #{qrCode}
+      		</if>
+        	<if test="payCode != null and payCode != '' " >
+        		and A.pay_code = #{payCode}
+      		</if>
+        	<if test="businessType != null and businessType != '' " >
+        		and A.business_type = #{businessType}
+      		</if>
+        	<if test="orderAmt != null " >
+        		and A.order_amt = #{orderAmt}
+      		</if>
+        	<if test="productName != null and productName != '' " >
+        		and A.product_name = #{productName}
+      		</if>
+        	<if test="productDesc != null and productDesc != '' " >
+        		and A.product_desc = #{productDesc}
+      		</if>
+        	<if test="buyerId != null and buyerId != '' " >
+        		and A.buyer_id = #{buyerId}
+      		</if>
+        	<if test="buyerAccount != null and buyerAccount != '' " >
+        		and A.buyer_account = #{buyerAccount}
+      		</if>
+        	<if test="totalAmount != null " >
+        		and A.total_amount = #{totalAmount}
+      		</if>
+        	<if test="buyerPayAmount != null " >
+        		and A.buyer_pay_amount = #{buyerPayAmount}
+      		</if>
+        	<if test="pointAmount != null " >
+        		and A.point_amount = #{pointAmount}
+      		</if>
+        	<if test="rateDetail != null and rateDetail != '' " >
+        		and A.rate_detail = #{rateDetail}
+      		</if>
+        	<if test="feeStatus != null and feeStatus != '' " >
+        		and A.fee_status = #{feeStatus}
+      		</if>
+        	<if test="feeType != null and feeType != '' " >
+        		and A.fee_type = #{feeType}
+      		</if>
+        	<if test="paymentInfo != null and paymentInfo != '' " >
+        		and A.payment_info = #{paymentInfo}
+      		</if>
+        	<if test="batchId != null and batchId != '' " >
+        		and A.batch_id = #{batchId}
+      		</if>
+        	<if test="resultCode != null and resultCode != '' " >
+        		and A.result_code = #{resultCode}
+      		</if>
+        	<if test="resultInfo != null and resultInfo != '' " >
+        		and A.result_info = #{resultInfo}
+      		</if>
+        	<if test="payTradeNo != null and payTradeNo != '' " >
+        		and A.pay_trade_no = #{payTradeNo}
+      		</if>
+        	<if test="paymentType != null and paymentType != '' " >
+        		and A.payment_type = #{paymentType}
+      		</if>
+        	<if test="notifyUrl != null and notifyUrl != '' " >
+        		and A.notify_url = #{notifyUrl}
+      		</if>
+        	<if test="returnUrl != null and returnUrl != '' " >
+        		and A.return_url = #{returnUrl}
+      		</if>
+        	<if test="beginTime != null and beginTime != '' " >
+        		and A.begin_time >= #{beginTime}
+      		</if>
+        	<if test="endTime != null and endTime != '' " >
+	        	<![CDATA[
+					and A.begin_time <= #{endTime}
+				]]>
+      		</if>
+        	<if test="settleTime != null and settleTime != '' " >
+        		and A.settle_time = #{settleTime}
+      		</if>
+        	<if test="settleMerchant != null and settleMerchant != '' " >
+        		and A.settle_merchant = #{settleMerchant}
+      		</if>
+        	<if test="refundStatus != null and refundStatus != '' " >
+        		and A.refund_status = #{refundStatus}
+      		</if>
+      		<if test="accountType != null and accountType != '' " >
+        		and A.account_type = #{accountType}
+      		</if>
+        	<if test="orderStatus != null and orderStatus != '' " >
+        		and A.order_status = #{orderStatus}
+      		</if>
+        	<if test="optCode != null and optCode != '' " >
+        		and A.opt_code = #{optCode}
+      		</if>
+        	<if test="recordStatus != null and recordStatus != '' " >
+        		and A.record_status = #{recordStatus}
+      		</if>
+        	<if test="updateTime != null and updateTime != '' " >
+        		and A.update_time = #{updateTime}
+      		</if>
+        	<if test="operator != null and operator != '' " >
+        		and A.operator = #{operator}
+      		</if>
+        	<if test="remark != null and remark != '' " >
+        		and A.remark = #{remark}
+      		</if>
+        	<if test="temp1 != null and temp1 != '' " >
+        		and A.temp_1 = #{temp1}
+      		</if>
+        	<if test="temp2 != null and temp2 != '' " >
+        		and A.temp_2 = #{temp2}
+      		</if>
+        	<if test="temp3 != null and temp3 != '' " >
+        		and A.temp_3 = #{temp3}
+      		</if>
+        	<if test="temp4 != null and temp4 != '' " >
+        		and A.temp_4 = #{temp4}
+      		</if>
+      		<if test="cashierNo != null and cashierNo != '' " >
+        		and A.cashier_no = #{cashierNo}
+      		</if>
+        	<if test="merchantCost != null and merchantCost != '' " >
+        		and A.merchant_cost = #{merchantCost}
+      		</if>
+      		<if test="storeNo != null and storeNo != '' " >
+        		and A.store_no = #{storeNo}
+      		</if>
+      		<if test="tradeSource != null and tradeSource != '' " >
+        		A.trade_source = #{tradeSource},
+      		</if>
+      		<if test="extraTradeNo != null and extraTradeNo != '' " >
+        		A.extra_trade_no = #{extraTradeNo},
+      		</if>
+        	<if test="channelTradeNo != null and channelTradeNo != '' " >
+        		A.channel_trade_no = #{channelTradeNo},
+      		</if>
+      		<if test="extraCallBack != null and extraCallBack != '' " >
+        		A.extra_call_back = #{extraCallBack},
+      		</if>
+  GROUP BY pay_code,account_type
+  </select>
+  
+</mapper>
+

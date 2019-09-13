@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="MerchantCashierQr">
+	<resultMap id="BaseResultMap" type="com.hfepay.scancode.commons.entity.MerchantCashierQr">
+        <result property="id" column="A_id"/>
+        <result property="channelNo" column="A_channel_no"/>
+        <result property="agentNo" column="A_agent_no"/>
+        <result property="cashierNo" column="A_cashier_no"/>
+        <result property="merchantNo" column="A_merchant_no"/>
+        <result property="qrCode" column="A_qr_code"/>
+        <result property="isCashier" column="A_is_cashier"/>
+        <result property="status" column="A_status"/>
+        <result property="recordStatus" column="A_record_status"/>
+        <result property="createTime" column="A_create_time"/>
+        <result property="updateTime" column="A_update_time"/>
+        <result property="operator" column="A_operator"/>
+        <result property="remark" column="A_remark"/>
+        <result property="temp1" column="A_temp_1"/>
+        <result property="temp2" column="A_temp_2"/>
+	</resultMap>
+	
+	<resultMap id="BaseResultMapVo" type="com.hfepay.scancode.commons.vo.MerchantCashierQrVo" extends="BaseResultMap">
+		<result property="qrName" column="qr_name"/>
+		<result property="cashierName" column="cashier_name"/>
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+	    <![CDATA[
+		A.id as A_id,A.channel_no as A_channel_no,A.agent_no as A_agent_no,A.cashier_no as A_cashier_no,A.merchant_no as A_merchant_no,A.qr_code as A_qr_code,A.is_cashier as A_is_cashier,A.status as A_status,A.record_status as A_record_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	    ]]>
+	</sql>
+
+	<sql id="channel_filter">
+	    <if test="params.nodeSeq != null" >
+        	EXISTS (
+				SELECT
+					n.current_node
+				FROM
+					t_node_relation n
+				WHERE
+				 <if test="params.identityFlag != null" >
+					 n.identity_flag = '${params.identityFlag}' and
+				</if>
+					 n.node_seq like CONCAT('${params.nodeSeq}','%') and A.merchant_no = n.current_node)
+				<if test="@com.hfepay.commons.base.collection.Collections@isNotEmpty(conditions)"> AND </if> 
+      	</if>
+	</sql>
+
+	<select id="findByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultMap="BaseResultMapVo" >
+    select
+    <include refid="Base_Column_List" />,B.user_name as cashier_name, C.qr_name as qr_name
+     from t_merchant_cashier_qr A 
+     left join t_merchant_cashier  B on A.cashier_no = B.cashier_no
+     left join t_merchant_qrcode C on A.qr_code = C.qr_code
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+      	<include refid="channel_filter" />
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+    <if test="hasOrderBy" >
+      order by
+      <foreach collection="orderBys" item="orderBy" separator="," > ${orderBy} </foreach>
+    </if>
+  </select>
+  <select resultMap="BaseResultMapVo" parameterType="java.lang.String" id="findById" >
+    select 
+    <include refid="Base_Column_List" />,B.qr_name
+     from t_merchant_cashier_qr A left join t_merchant_qrcode B on A.qr_code = B.qr_code
+    where A.id = #{id}
+  </select>
+  <delete parameterType="java.lang.String" id="deleteById" >
+    delete from t_merchant_cashier_qr
+    where id = #{id}
+  </delete>
+  <delete id="deleteByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" >
+    delete A from t_merchant_cashier_qr A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.hfepay.scancode.commons.entity.MerchantCashierQr" >
+    insert into t_merchant_cashier_qr (
+        	id,
+        	channel_no,
+        	agent_no,
+        	cashier_no,
+        	merchant_no,
+        	qr_code,
+        	is_cashier,
+        	status,
+        	record_status,
+        	create_time,
+        	update_time,
+        	operator,
+        	remark,
+        	temp_1,
+        	temp_2
+        )
+    values (
+        	#{id},
+        	#{channelNo},
+        	#{agentNo},
+        	#{cashierNo},
+        	#{merchantNo},
+        	#{qrCode},
+        	#{isCashier},
+        	#{status},
+        	#{recordStatus},
+        	#{createTime},
+        	#{updateTime},
+        	#{operator},
+        	#{remark},
+        	#{temp1},
+        	#{temp2}
+    )
+  </insert>
+  <select id="countByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultType="java.lang.Integer" >
+    select count(*) from t_merchant_cashier_qr A
+     left join t_merchant_cashier  B on A.cashier_no = B.cashier_no
+     left join t_merchant_qrcode C on A.qr_code = C.qr_code
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+      	<include refid="channel_filter" />
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </select>
+  <update id="updateByCriteria" parameterType="map" >
+    update t_merchant_cashier_qr A
+    <set >
+        	<if test="record.id != null and record.id != '' " >
+        		A.id = #{record.id},
+      		</if>
+        	<if test="record.cashierNo != null and record.cashierNo != '' " >
+        		A.cashier_no = #{record.cashierNo},
+      		</if>
+        	<if test="record.merchantNo != null and record.merchantNo != '' " >
+        		A.merchant_no = #{record.merchantNo},
+      		</if>
+        	<if test="record.qrCode != null and record.qrCode != '' " >
+        		A.qr_code = #{record.qrCode},
+      		</if>
+        	<if test="record.isCashier != null and record.isCashier != '' " >
+        		A.is_cashier = #{record.isCashier},
+      		</if>
+        	<if test="record.status != null and record.status != '' " >
+        		A.status = #{record.status},
+      		</if>
+        	<if test="record.recordStatus != null and record.recordStatus != '' " >
+        		A.record_status = #{record.recordStatus},
+      		</if>
+        	<if test="record.createTime != null and record.createTime != '' " >
+        		A.create_time = #{record.createTime},
+      		</if>
+        	<if test="record.updateTime != null and record.updateTime != '' " >
+        		A.update_time = #{record.updateTime},
+      		</if>
+        	<if test="record.operator != null and record.operator != '' " >
+        		A.operator = #{record.operator},
+      		</if>
+        	<if test="record.remark != null and record.remark != '' " >
+        		A.remark = #{record.remark},
+      		</if>
+        	<if test="record.temp1 != null and record.temp1 != '' " >
+        		A.temp_1 = #{record.temp1},
+      		</if>
+        	<if test="record.temp2 != null and record.temp2 != '' " >
+        		A.temp_2 = #{record.temp2},
+      		</if>
+    </set>
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </update>
+  <update id="update" parameterType="com.hfepay.scancode.commons.entity.MerchantCashierQr" >
+    update t_merchant_cashier_qr A
+    <set >
+        	<if test="id != null and id != '' " >
+        		A.id = #{id},
+      		</if>
+        	<if test="cashierNo != null and cashierNo != '' " >
+        		A.cashier_no = #{cashierNo},
+      		</if>
+        	<if test="merchantNo != null and merchantNo != '' " >
+        		A.merchant_no = #{merchantNo},
+      		</if>
+        	<if test="qrCode != null and qrCode != '' " >
+        		A.qr_code = #{qrCode},
+      		</if>
+        	<if test="isCashier != null and isCashier != '' " >
+        		A.is_cashier = #{isCashier},
+      		</if>
+        	<if test="status != null and status != '' " >
+        		A.status = #{status},
+      		</if>
+        	<if test="recordStatus != null and recordStatus != '' " >
+        		A.record_status = #{recordStatus},
+      		</if>
+        	<if test="createTime != null and createTime != '' " >
+        		A.create_time = #{createTime},
+      		</if>
+        	<if test="updateTime != null and updateTime != '' " >
+        		A.update_time = #{updateTime},
+      		</if>
+        	<if test="operator != null and operator != '' " >
+        		A.operator = #{operator},
+      		</if>
+        	<if test="remark != null and remark != '' " >
+        		A.remark = #{remark},
+      		</if>
+        	<if test="temp1 != null and temp1 != '' " >
+        		A.temp_1 = #{temp1},
+      		</if>
+        	<if test="temp2 != null and temp2 != '' " >
+        		A.temp_2 = #{temp2},
+      		</if>
+    </set>
+    where A.id = #{id}
+  </update>
+  
+	<update id="updateStatus">
+    update t_merchant_cashier_qr
+		set `STATUS` = #{status}
+		where id=#{id}
+  </update>
+  
+  <insert id="bindCasiher" parameterType="java.util.List" >
+    insert into t_merchant_cashier_qr (
+        	id,
+        	channel_no,
+        	agent_no,
+        	cashier_no,
+        	merchant_no,
+        	qr_code,
+        	is_cashier,
+        	status,
+        	record_status,
+        	create_time,
+        	update_time,
+        	operator,
+        	remark,
+        	temp_1,
+        	temp_2
+        )
+    values 
+    <foreach collection="list" item="item" index="index" separator="," >  
+	    (
+        	#{item.id},
+        	#{item.channelNo},
+        	#{item.agentNo},
+        	#{item.cashierNo},
+        	#{item.merchantNo},
+        	#{item.qrCode},
+        	#{item.isCashier},
+        	#{item.status},
+        	#{item.recordStatus},
+        	#{item.createTime},
+        	#{item.updateTime},
+        	#{item.operator},
+        	#{item.remark},
+        	#{item.temp1},
+        	#{item.temp2}
+	    )
+    </foreach>  
+  </insert>
+  
+  <update id="deleteByCashier" parameterType="java.lang.String" >
+    update t_merchant_cashier_qr  A set record_status='N',is_cashier='1', update_time=now() 
+    where cashier_no=#{cashierNo}
+  </update>
+  
+  
+  
+  <select id="selfFindByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultMap="BaseResultMapVo" >
+    select
+    <include refid="Base_Column_List" />,B.qr_name
+     from 
+     (
+     select * from t_merchant_cashier_qr C
+     where C.cashier_no=#{params.cashierNo} and  C.qr_code not in
+		(select qr_code from t_merchant_cashier_qr where is_cashier='2' and cashier_no!=#{params.cashierNo}  and record_status='Y')
+     ) A left join t_merchant_qrcode B on A.qr_code = B.qr_code
+  	<if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </select>
+  <select id="selfCountByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultType="java.lang.Integer" >
+    select count(*) 
+ 	from 
+     (
+     select * from t_merchant_cashier_qr C
+     where C.cashier_no=#{params.cashierNo} and  C.qr_code not in
+		(select qr_code from t_merchant_cashier_qr where is_cashier='2' and cashier_no!=#{params.cashierNo}  and record_status='Y')
+     ) A left join t_merchant_qrcode B on A.qr_code = B.qr_code
+  	<if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </select>
+  
+  <update id="unbind" parameterType="java.lang.String" >
+    update t_merchant_cashier_qr set is_cashier='1' where cashier_no=#{params.cashierNo} and record_status='Y' and is_cashier='2'
+  </update>
+</mapper>
+

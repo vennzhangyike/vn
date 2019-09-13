@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="QrcodeAssignedLog">
+	<resultMap id="BaseResultMap" type="com.hfepay.scancode.commons.entity.QrcodeAssignedLog">
+        <result property="id" column="A_id"/>
+        <result property="assignment" column="A_assignment"/>
+        <result property="assignmentName" column="A_assignment_name"/>
+        <result property="recipients" column="A_recipients"/>
+        <result property="recipientsName" column="A_recipients_name"/>
+        <result property="qrNumber" column="A_qr_number"/>
+        <result property="assignedType" column="A_assigned_type"/>
+        <result property="reason" column="A_reason"/>
+        <result property="createTime" column="A_create_time"/>
+        <result property="operator" column="A_operator"/>
+        <result property="remark" column="A_remark"/>
+        <result property="temp1" column="A_temp_1"/>
+        <result property="temp2" column="A_temp_2"/>
+        <result property="temp3" column="A_temp_3"/>
+        <result property="temp4" column="A_temp_4"/>
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+	    <![CDATA[
+		A.id as A_id,A.assignment as A_assignment,A.assignment_name as A_assignment_name,A.recipients as A_recipients,A.recipients_name as A_recipients_name,A.qr_number as A_qr_number,A.assigned_type as A_assigned_type,A.reason as A_reason,A.create_time as A_create_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2,A.temp_3 as A_temp_3,A.temp_4 as A_temp_4
+	    ]]>
+	</sql>
+
+	<select id="findByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+     from t_qrcode_assigned_log A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+    <if test="hasOrderBy" >
+      order by
+      <foreach collection="orderBys" item="orderBy" separator="," > ${orderBy} </foreach>
+    </if>
+  </select>
+  <select resultMap="BaseResultMap" parameterType="java.lang.String" id="findById" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_qrcode_assigned_log A
+    where A.id = #{id}
+  </select>
+  <delete parameterType="java.lang.String" id="deleteById" >
+    delete from t_qrcode_assigned_log
+    where id = #{id}
+  </delete>
+  <delete id="deleteByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" >
+    delete A from t_qrcode_assigned_log A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.hfepay.scancode.commons.entity.QrcodeAssignedLog" >
+    insert into t_qrcode_assigned_log (
+        	id,
+        	assignment,
+        	assignment_name,
+        	recipients,
+        	recipients_name,
+        	qr_number,
+        	assigned_type,
+        	reason,
+        	create_time,
+        	operator,
+        	remark,
+        	temp_1,
+        	temp_2,
+        	temp_3,
+        	temp_4
+        )
+    values (UUID(),
+        	#{assignment},
+        	#{assignmentName},
+        	#{recipients},
+        	#{recipientsName},
+        	#{qrNumber},
+        	#{assignedType},
+        	#{reason},
+        	#{createTime},
+        	#{operator},
+        	#{remark},
+        	#{temp1},
+        	#{temp2},
+        	#{temp3},
+        	#{temp4}
+    )
+  </insert>
+  <select id="countByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultType="java.lang.Integer" >
+    select count(*) from t_qrcode_assigned_log A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </select>
+  <update id="updateByCriteria" parameterType="map" >
+    update t_qrcode_assigned_log A
+    <set >
+        	<if test="record.id != null and record.id != '' " >
+        		A.id = #{record.id},
+      		</if>
+        	<if test="record.assignment != null and record.assignment != '' " >
+        		A.assignment = #{record.assignment},
+      		</if>
+        	<if test="record.assignmentName != null and record.assignmentName != '' " >
+        		A.assignment_name = #{record.assignmentName},
+      		</if>
+        	<if test="record.recipients != null and record.recipients != '' " >
+        		A.recipients = #{record.recipients},
+      		</if>
+        	<if test="record.recipientsName != null and record.recipientsName != '' " >
+        		A.recipients_name = #{record.recipientsName},
+      		</if>
+        	<if test="record.qrNumber != null and record.qrNumber != '' " >
+        		A.qr_number = #{record.qrNumber},
+      		</if>
+        	<if test="record.assignedType != null and record.assignedType != '' " >
+        		A.assigned_type = #{record.assignedType},
+      		</if>
+        	<if test="record.reason != null and record.reason != '' " >
+        		A.reason = #{record.reason},
+      		</if>
+        	<if test="record.createTime != null and record.createTime != '' " >
+        		A.create_time = #{record.createTime},
+      		</if>
+        	<if test="record.operator != null and record.operator != '' " >
+        		A.operator = #{record.operator},
+      		</if>
+        	<if test="record.remark != null and record.remark != '' " >
+        		A.remark = #{record.remark},
+      		</if>
+        	<if test="record.temp1 != null and record.temp1 != '' " >
+        		A.temp_1 = #{record.temp1},
+      		</if>
+        	<if test="record.temp2 != null and record.temp2 != '' " >
+        		A.temp_2 = #{record.temp2},
+      		</if>
+        	<if test="record.temp3 != null and record.temp3 != '' " >
+        		A.temp_3 = #{record.temp3},
+      		</if>
+        	<if test="record.temp4 != null and record.temp4 != '' " >
+        		A.temp_4 = #{record.temp4},
+      		</if>
+    </set>
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </update>
+  <update id="update" parameterType="com.hfepay.scancode.commons.entity.QrcodeAssignedLog" >
+    update t_qrcode_assigned_log A
+    <set >
+        	<if test="id != null and id != '' " >
+        		A.id = #{id},
+      		</if>
+        	<if test="assignment != null and assignment != '' " >
+        		A.assignment = #{assignment},
+      		</if>
+        	<if test="assignmentName != null and assignmentName != '' " >
+        		A.assignment_name = #{assignmentName},
+      		</if>
+        	<if test="recipients != null and recipients != '' " >
+        		A.recipients = #{recipients},
+      		</if>
+        	<if test="recipientsName != null and recipientsName != '' " >
+        		A.recipients_name = #{recipientsName},
+      		</if>
+        	<if test="qrNumber != null and qrNumber != '' " >
+        		A.qr_number = #{qrNumber},
+      		</if>
+        	<if test="assignedType != null and assignedType != '' " >
+        		A.assigned_type = #{assignedType},
+      		</if>
+        	<if test="reason != null and reason != '' " >
+        		A.reason = #{reason},
+      		</if>
+        	<if test="createTime != null and createTime != '' " >
+        		A.create_time = #{createTime},
+      		</if>
+        	<if test="operator != null and operator != '' " >
+        		A.operator = #{operator},
+      		</if>
+        	<if test="remark != null and remark != '' " >
+        		A.remark = #{remark},
+      		</if>
+        	<if test="temp1 != null and temp1 != '' " >
+        		A.temp_1 = #{temp1},
+      		</if>
+        	<if test="temp2 != null and temp2 != '' " >
+        		A.temp_2 = #{temp2},
+      		</if>
+        	<if test="temp3 != null and temp3 != '' " >
+        		A.temp_3 = #{temp3},
+      		</if>
+        	<if test="temp4 != null and temp4 != '' " >
+        		A.temp_4 = #{temp4},
+      		</if>
+    </set>
+    where A.id = #{id}
+  </update>
+  
+</mapper>
+

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd 
+    http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd"
+	default-lazy-init="true">
+
+	<description>服务配置 </description>
+    <!-- consumer application name -->
+    <dubbo:application name="hfepay-scancode-channel-webapp"  />
+    <dubbo:consumer timeout="30000" filter="InvocationRpcFilter"></dubbo:consumer>
+    <dubbo:registry address="zookeeper://${zookeeper.addr}" />
+    
+    <!-- 登录注册权限相关 -->
+	<dubbo:reference id="adminService" interface="com.hfepay.scancode.service.channel.ChannelAdminService"  check="false"/>
+	<dubbo:reference id="sysResourceService" interface="com.hfepay.scancode.service.channel.ChannelResourceService" check="false"/>
+	<dubbo:reference id="sysRoleService" interface="com.hfepay.scancode.service.channel.ChannelRoleService" check="false"/>
+	<dubbo:reference id="sysRoleUserService" interface="com.hfepay.scancode.service.channel.ChannelRoleUserService" check="false"/>
+	<dubbo:reference id="urlFilterService" interface="com.hfepay.scancode.service.channel.ChannelUrlFilterService" check="false"/>
+	
+	<dubbo:reference id="changeLogService" interface="com.hfepay.scancode.service.operator.ChangeLogService" check="false"/>
+	<!-- 渠道信息 -->
+	<dubbo:reference id="channelExpandService" interface="com.hfepay.scancode.service.operator.ChannelExpandService" check="false"/>
+	<dubbo:reference id="channelBankcardService" interface="com.hfepay.scancode.service.operator.ChannelBankcardService" check="false"/>
+	<dubbo:reference id="channelBaseService" interface="com.hfepay.scancode.service.operator.ChannelBaseService" check="false"/>
+	<dubbo:reference id="channelPaywayService" interface="com.hfepay.scancode.service.operator.ChannelPaywayService" check="false"/>
+	<dubbo:reference id="hfepayPaywayService" interface="com.hfepay.scancode.service.operator.HfepayPaywayService" check="false"/>	
+	<!-- 递归子节点 -->
+	<dubbo:reference id="dataNodeService" interface="com.hfepay.scancode.service.channel.DataNodeService" check="false" />
+	<!-- 查询管理 -->
+	<dubbo:reference id="orderPayService" interface="com.hfepay.scancode.service.order.OrderPayService" check="false" />
+	<dubbo:reference id="orderPaymentService" interface="com.hfepay.scancode.service.order.OrderPaymentService" check="false" />
+	<dubbo:reference id="withdrawalsService" interface="com.hfepay.scancode.service.order.WithdrawalsService" check="false"/>
+	<!-- 商户信息 -->
+	<dubbo:reference id="merchantInfoService" interface="com.hfepay.scancode.service.operator.MerchantInfoService" check="false"/>
+	<!-- 二维码信息 -->
+	<dubbo:reference id="platformQrcodeService" interface="com.hfepay.scancode.service.operator.PlatformQrcodeService" check="false"/>
+	<!-- 代理商信息 -->
+	<dubbo:reference id="agentBaseService" interface="com.hfepay.scancode.service.operator.AgentBaseService" check="false"/>
+	<!-- 商户银行账户信息 -->
+	<dubbo:reference id="merchantBankcardService" interface="com.hfepay.scancode.service.operator.MerchantBankcardService" check="false"/>
+	<dubbo:reference id="merchantBankcardChangeService" interface="com.hfepay.scancode.service.operator.MerchantBankcardChangeService" check="false"/>
+	<!-- 商户费率信息 -->
+	<dubbo:reference id="merchantPaywayService" interface="com.hfepay.scancode.service.operator.MerchantPaywayService" check="false"/>
+	<dubbo:reference id="merchantPaywayTmpService" interface="com.hfepay.scancode.service.operator.MerchantPaywayTmpService" check="false"/>
+	<!-- 代理商费率信息 -->
+	<dubbo:reference id="agentPaywayService" interface="com.hfepay.scancode.service.operator.AgentPaywayService" check="false"/>
+	<!-- 商户余额信息 -->
+	<dubbo:reference id="merchantWalletService" interface="com.hfepay.scancode.service.operator.MerchantWalletService" check="false"/>
+	<!-- 商户审核记录表信息 -->
+	<dubbo:reference id="auditLogService" interface="com.hfepay.scancode.service.operator.AuditLogService" check="false"/>
+	<!-- 商户门店表信息 -->
+	<dubbo:reference id="merchantStoreService" interface="com.hfepay.scancode.service.operator.MerchantStoreService" check="false"/>
+	<!-- 商户子二维码信息 -->
+	<dubbo:reference id="merchantQrcodeService" interface="com.hfepay.scancode.service.operator.MerchantQrcodeService" check="false"/>
+	<!-- 自增序列 -->
+	<dubbo:reference id="idCreateService" interface="com.hfepay.scancode.service.operator.IdCreateService" check="false"/>
+	<!-- 代理商账户 -->
+	<dubbo:reference id="agentBankcardService" interface="com.hfepay.scancode.service.operator.AgentBankcardService" check="false"/>
+	<!-- 银行信息 -->
+	<dubbo:reference id="remitBankInfoService" interface="com.hfepay.scancode.service.operator.RemitBankInfoService" check="false"/>
+	<!-- 银行卡属性对照数据表 -->
+	<dubbo:reference id="bankcardNatureConfService" interface="com.hfepay.scancode.service.operator.BankcardNatureConfService" check="false"/>
+	
+	<!-- 二维码商品 -->
+	<dubbo:reference id="qrcodeGoodsService" interface="com.hfepay.scancode.service.operator.QrcodeGoodsService" check="false"/>
+	
+	<!-- API对外接口 -->
+	<dubbo:reference id="merchantBusinessService" interface="com.hfepay.scancode.api.service.MerchantBusinessService" check="false"/>
+	<dubbo:reference id="mappingDicionService" interface="com.hfepay.scancode.service.operator.MappingDicionService" check="false"/>
+	<!-- 商户收银员 -->
+	<dubbo:reference id="merchantCashierService" interface="com.hfepay.scancode.service.operator.MerchantCashierService" check="false"/>
+<!-- 统计相关 -->
+	<dubbo:reference id="merchantStatisticDataService" interface="com.hfepay.scancode.service.operator.MerchantStatisticDataService" check="false" />
+	<!-- 商户收银员二维码 -->
+	<dubbo:reference id="merchantCashierQrService" interface="com.hfepay.scancode.service.operator.MerchantCashierQrService" check="false"/>
+	
+	<!-- 商户实名认证 -->
+	<dubbo:reference id="merchantAuthDetailService" interface="com.hfepay.scancode.service.operator.MerchantAuthDetailService" check="false"/>
+
+	<!-- 代理商推广码 -->
+	<dubbo:reference id="agentPromotionService" interface="com.hfepay.scancode.service.operator.AgentPromotionService" check="false"/>
+	<dubbo:reference id="paramsInfoService" interface="com.hfepay.scancode.service.operator.ParamsInfoService" check="false"/>	
+	<dubbo:reference id="qrcodeAssignedLogService" interface="com.hfepay.scancode.service.operator.QrcodeAssignedLogService" check="false"/>
+	<dubbo:reference id="channelWxParamsService" interface="com.hfepay.scancode.service.operator.ChannelWxParamsService" check="false"/>
+	
+	<!-- 站内信 -->
+	<dubbo:reference id="messageService" interface="com.hfepay.scancode.service.operator.MessageService" check="false"/>
+	<!-- 用户站内信 -->
+	<dubbo:reference id="userMessageService" interface="com.hfepay.scancode.service.operator.UserMessageService" check="false"/>
+	<!-- 用户短信记录 -->
+	<dubbo:reference id="userSmsService" interface="com.hfepay.scancode.service.operator.UserSmsService" check="false"/>
+	<!-- 商户成本记录 -->
+	<dubbo:reference id="merchantCostService" interface="com.hfepay.scancode.service.operator.MerchantCostService" check="false"/>
+	<!-- 电子协议 -->
+	<dubbo:reference id="agreementInfoService" interface="com.hfepay.scancode.service.operator.AgreementInfoService" check="false"/>
+	<!-- 经营类目 -->
+	<dubbo:reference id="hfepayCategoryService" interface="com.hfepay.scancode.service.operator.HfepayCategoryService" check="false"/>
+	<!-- 各层级结算对账单（日总金额结算） -->
+	<dubbo:reference id="hierarchicalSettlementTotalService" interface="com.hfepay.scancode.service.operator.HierarchicalSettlementTotalService" check="false" />
+	<!-- 机构钱包 -->
+	<dubbo:reference id="organWalletService" interface="com.hfepay.scancode.service.operator.OrganWalletService" check="false" />
+	<!-- 机构分润提现 -->
+	<dubbo:reference id="organWithdrawalsService" interface="com.hfepay.scancode.service.operator.OrganWithdrawalsService" check="false" />
+	<!-- 获取微信信息 -->
+	<dubbo:reference id="apiChannelWxParamsService" interface="com.hfepay.scancode.api.service.ApiChannelWxParamsService" check="false" />
+	
+	<dubbo:reference id="scanPayService" interface="com.hfepay.scancode.service.payway.ScanPayService" check="false" />
+	<dubbo:reference id="scanCodeService" interface="com.hfepay.scancode.service.payway.ScanCodeService" check="false" />
+	<dubbo:reference id="callBackService" interface="com.hfepay.scancode.service.payway.CallBackService"  check="false"  retries="0"/>
+	<dubbo:reference id="apiLogApiService" interface="com.hfepay.scancode.api.service.ApiLogService"  check="false"/>	
+	<!-- 机构限额管理 -->
+	<dubbo:reference id="organLimitService" interface="com.hfepay.scancode.service.operator.OrganLimitService" check="false" />
+	<!-- 广告管理 -->
+	<dubbo:reference id="adviertisementInfoService" interface="com.hfepay.scancode.service.operator.AdviertisementInfoService" check="false" />
+	<!-- 市 -->
+	<dubbo:reference id="cityService" interface="com.hfepay.scancode.service.operator.CityService" check="false" />
+	<!-- 省 -->
+	<dubbo:reference id="provinceService" interface="com.hfepay.scancode.service.operator.ProvinceService" check="false" />
+	 <!-- 商户营销支付日志 -->
+	<dubbo:reference id="marketingPayLogService" interface="com.hfepay.scancode.service.operator.MarketingPayLogService" check="false" /> 
+	<!-- 分润明细 -->
+	<dubbo:reference id="profitDetailService" interface="com.hfepay.scancode.service.order.ProfitDetailService"  check="false" />
+	<dubbo:reference id="nodeRelationService" interface="com.hfepay.scancode.service.operator.NodeRelationService" check="false" />
+
+	<dubbo:reference id="merchantActivityService" interface="com.hfepay.scancode.service.operator.MerchantActivityService" check="false" />
+	<dubbo:reference id="merchantActivityDiscountService" interface="com.hfepay.scancode.service.operator.MerchantActivityDiscountService" check="false" />
+	<!-- 消息推送规则  -->
+	<dubbo:reference id="messagePushRuleService" interface="com.hfepay.scancode.service.operator.MessagePushRuleService" check="false" />
+  	<dubbo:reference id="payScanCodeService" interface="com.hfepay.pay.service.PayScanCodeService" check="false" retries="0"/>
+	<dubbo:reference id="payScanPayService"  interface="com.hfepay.pay.service.PayScanPayService" check="false" retries="0" />
+
+</beans>

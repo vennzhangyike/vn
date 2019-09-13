@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="WebankOrder">
+	<resultMap id="BaseResultMap" type="com.hfepay.scancode.api.entity.WebankOrder">
+        <result property="id" column="A_ID"/>
+        <result property="merchantId" column="A_merchant_id"/>
+        <result property="tradeNo" column="A_trade_no"/>
+        <result property="tradeAmt" column="A_trade_amt"/>
+        <result property="createTime" column="A_create_time"/>
+        <result property="operator" column="A_operator"/>
+        <result property="tradeStatus" column="A_trade_status"/>
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+	    <![CDATA[
+		A.ID as A_ID,A.merchant_id as A_merchant_id,A.trade_no as A_trade_no,A.trade_amt as A_trade_amt,A.create_time as A_create_time,A.operator as A_operator,A.trade_status as A_trade_status
+	    ]]>
+	</sql>
+
+	<select id="findByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+     from t_webank_order A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+    <if test="hasOrderBy" >
+      order by
+      <foreach collection="orderBys" item="orderBy" separator="," > ${orderBy} </foreach>
+    </if>
+  </select>
+  <select resultMap="BaseResultMap" parameterType="java.lang.String" id="findById" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_webank_order A
+    where A.ID = #{id}
+  </select>
+   <select resultMap="BaseResultMap" parameterType="java.lang.String" id="findByTradeNo" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_webank_order A
+    where A.trade_no = #{tradeNo}
+  </select>
+  <delete parameterType="java.lang.String" id="deleteById" >
+    delete from t_webank_order
+    where ID = #{id}
+  </delete>
+  <delete id="deleteByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" >
+    delete A from t_webank_order A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.hfepay.scancode.api.entity.WebankOrder" >
+    insert into t_webank_order (
+        	ID,
+        	merchant_id,
+        	trade_no,
+        	trade_amt,
+        	create_time,
+        	operator,
+        	trade_status
+        )
+    values (
+        	#{id},
+        	#{merchantId},
+        	#{tradeNo},
+        	#{tradeAmt},
+        	#{createTime},
+        	#{operator},
+        	#{tradeStatus}
+    )
+  </insert>
+  <select id="countByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultType="java.lang.Integer" >
+    select count(*) from t_webank_order A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </select>
+  <update id="updateByCriteria" parameterType="map" >
+    update t_webank_order A
+    <set >
+        	<if test="record.id != null and record.id != '' " >
+        		A.ID = #{record.id},
+      		</if>
+        	<if test="record.merchantId != null and record.merchantId != '' " >
+        		A.merchant_id = #{record.merchantId},
+      		</if>
+        	<if test="record.tradeNo != null and record.tradeNo != '' " >
+        		A.trade_no = #{record.tradeNo},
+      		</if>
+        	<if test="record.tradeAmt != null" >
+        		A.trade_amt = #{record.tradeAmt},
+      		</if>
+      		<if test="record.createTime != null and record.createTime != '' " >
+        		A.create_time = #{record.createTime},
+      		</if>
+        	<if test="record.operator != null and record.operator != '' " >
+        		A.operator = #{record.operator},
+      		</if>
+      		<if test="record.tradeStatus != null and record.tradeStatus != '' " >
+        		A.trade_status = #{record.tradeStatus},
+      		</if>
+    </set>
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </update>
+  <update id="update" parameterType="com.hfepay.scancode.api.entity.WebankOrder" >
+    update t_webank_order A
+    <set >
+        	<if test="id != null and id != '' " >
+        		A.ID = #{id},
+      		</if>
+        	<if test="merchantId != null and merchantId != '' " >
+        		A.merchant_id = #{merchantId},
+      		</if>
+        	<if test="tradeNo != null and tradeNo != '' " >
+        		A.trade_no = #{tradeNo},
+      		</if>
+        	<if test="tradeAmt != null" >
+        		A.trade_amt = #{tradeAmt},
+      		</if>
+      		<if test="createTime != null and createTime != '' " >
+        		A.create_time = #{createTime},
+      		</if>
+        	<if test="operator != null and operator != '' " >
+        		A.operator = #{operator},
+      		</if>
+      		<if test="tradeStatus != null and tradeStatus != '' " >
+        		A.trade_status = #{tradeStatus},
+      		</if>
+    </set>
+    where A.ID = #{id}
+  </update>
+  
+</mapper>
+

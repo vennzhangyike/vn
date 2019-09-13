@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="ChangeLog">
+	<resultMap id="BaseResultMap" type="com.hfepay.scancode.commons.entity.ChangeLog">
+        <result property="id" column="A_id"/>
+        <result property="tradeNo" column="A_trade_no"/>
+        <result property="batchNo" column="A_batch_no"/>
+        <result property="transCode" column="A_trans_code"/>
+        <result property="transName" column="A_trans_name"/>
+        <result property="ownersNo" column="A_owners_no"/>
+        <result property="before" column="A_before"/>
+        <result property="after" column="A_after"/>
+        <result property="status" column="A_status"/>
+        <result property="operator" column="A_operator"/>
+        <result property="createTime" column="A_create_time"/>
+        <result property="remark" column="A_remark"/>
+        <result property="temp1" column="A_temp_1"/>
+        <result property="temp2" column="A_temp_2"/>
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+	    <![CDATA[
+		A.id as A_id,A.trade_no as A_trade_no,A.batch_no as A_batch_no,A.trans_code as A_trans_code,A.trans_name as A_trans_name,A.owners_no as A_owners_no,A.before as A_before,A.after as A_after,A.status as A_status,A.operator as A_operator,A.create_time as A_create_time,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	    ]]>
+	</sql>
+
+	<select id="findByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+     from t_change_log A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+    <if test="hasOrderBy" >
+      order by
+      <foreach collection="orderBys" item="orderBy" separator="," > ${orderBy} </foreach>
+    </if>
+  </select>
+  
+  <select id="findAuditMerchantBankcard" parameterType="com.hfepay.commons.criteria.Criteria" resultMap="BaseResultMap" >
+	  SELECT
+      <include refid="Base_Column_List" />
+	  <![CDATA[
+	  FROM
+			t_change_log A
+		WHERE
+			A.trade_no IN (
+				SELECT
+					C.id
+				FROM
+					(select B.id,C.merchant_no,C.merchant_name from t_merchant_bankcard B ,t_merchant_info C where B. STATUS = '3' and C. STATUS = '3' and  B.merchant_no = C.merchant_no) C
+		]]>
+			<if test="_parameter != null and _parameter != '' " >
+		      <where >
+		        <include refid="Global.Where_Clause" />
+		      </where>
+		    </if>
+		    )
+		AND NOT EXISTS (
+			SELECT
+				1
+			FROM
+				t_change_log
+			WHERE
+				trade_no = A.trade_no
+			AND create_time > A.create_time
+		)
+    <if test="hasOrderBy" >
+      order by
+      <foreach collection="orderBys" item="orderBy" separator="," > ${orderBy} </foreach>
+    </if>
+  </select>
+  <select id="countAuditMerchantBankcard" parameterType="com.hfepay.commons.criteria.Criteria" resultType="java.lang.Integer" >
+    <![CDATA[
+    select count(*) 
+	  FROM
+			t_change_log A
+		WHERE
+			A.trade_no IN (
+				SELECT
+					C.id
+				FROM
+					(select B.id,C.merchant_no,C.merchant_name from t_merchant_bankcard B ,t_merchant_info C where B. STATUS = '3' and C. STATUS = '3' and  B.merchant_no = C.merchant_no) C
+		]]>
+			<if test="_parameter != null and _parameter != '' " >
+		      <where >
+		        <include refid="Global.Where_Clause" />
+		      </where>
+		      
+		    </if>
+		    )
+		AND NOT EXISTS (
+			SELECT
+				1
+			FROM
+				t_change_log
+			WHERE
+				trade_no = A.trade_no
+			AND create_time > A.create_time
+		)
+  </select>
+  
+  <select resultMap="BaseResultMap" parameterType="java.lang.String" id="findByTradeNo" >
+     SELECT
+      <include refid="Base_Column_List" />
+	  <![CDATA[
+	  FROM
+			t_change_log A
+		WHERE
+			A.trade_no IN (
+				SELECT
+					B.id
+				FROM
+					t_merchant_bankcard B
+				LEFT JOIN t_merchant_info C ON B.merchant_no = C.merchant_no
+		    )
+		AND NOT EXISTS (
+			SELECT
+				1
+			FROM
+				t_change_log
+			WHERE
+				trade_no = A.trade_no
+			AND create_time > A.create_time
+		)
+		AND A.trade_no = #{id}
+		]]>
+  </select>
+  
+  <select resultMap="BaseResultMap" parameterType="java.lang.String" id="findById" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_change_log A
+    where A.id = #{id}
+  </select>
+  <delete parameterType="java.lang.String" id="deleteById" >
+    delete from t_change_log
+    where id = #{id}
+  </delete>
+  <delete id="deleteByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" >
+    delete A from t_change_log A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.hfepay.scancode.commons.entity.ChangeLog" >
+    insert into t_change_log (
+        	id,
+        	trade_no,
+        	batch_no,
+        	trans_code,
+        	trans_name,
+        	owners_no,
+        	`before`,
+        	after,
+        	status,
+        	operator,
+        	create_time,
+        	remark,
+        	temp_1,
+        	temp_2
+        )
+    values (UUID(),
+        	#{tradeNo},
+        	#{batchNo},
+        	#{transCode},
+        	#{transName},
+        	#{ownersNo},
+        	#{before},
+        	#{after},
+        	#{status},
+        	#{operator},
+        	#{createTime},
+        	#{remark},
+        	#{temp1},
+        	#{temp2}
+    )
+  </insert>
+  <select id="countByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultType="java.lang.Integer" >
+    select count(*) from t_change_log A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </select>
+  <update id="updateByCriteria" parameterType="map" >
+    update t_change_log A
+    <set >
+        	<if test="record.id != null and record.id != '' " >
+        		A.id = #{record.id},
+      		</if>
+        	<if test="record.tradeNo != null and record.tradeNo != '' " >
+        		A.trade_no = #{record.tradeNo},
+      		</if>
+        	<if test="record.batchNo != null and record.batchNo != '' " >
+        		A.batch_no = #{record.batchNo},
+      		</if>
+        	<if test="record.transCode != null and record.transCode != '' " >
+        		A.trans_code = #{record.transCode},
+      		</if>
+        	<if test="record.transName != null and record.transName != '' " >
+        		A.trans_name = #{record.transName},
+      		</if>
+        	<if test="record.ownersNo != null and record.ownersNo != '' " >
+        		A.owners_no = #{record.ownersNo},
+      		</if>
+        	<if test="record.before != null and record.before != '' " >
+        		A.before = #{record.before},
+      		</if>
+        	<if test="record.after != null and record.after != '' " >
+        		A.after = #{record.after},
+      		</if>
+        	<if test="record.status != null and record.status != '' " >
+        		A.status = #{record.status},
+      		</if>
+        	<if test="record.operator != null and record.operator != '' " >
+        		A.operator = #{record.operator},
+      		</if>
+        	<if test="record.createTime != null and record.createTime != '' " >
+        		A.create_time = #{record.createTime},
+      		</if>
+        	<if test="record.remark != null and record.remark != '' " >
+        		A.remark = #{record.remark},
+      		</if>
+        	<if test="record.temp1 != null and record.temp1 != '' " >
+        		A.temp_1 = #{record.temp1},
+      		</if>
+        	<if test="record.temp2 != null and record.temp2 != '' " >
+        		A.temp_2 = #{record.temp2},
+      		</if>
+    </set>
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </update>
+  <update id="update" parameterType="com.hfepay.scancode.commons.entity.ChangeLog" >
+    update t_change_log A
+    <set >
+        	<if test="id != null and id != '' " >
+        		A.id = #{id},
+      		</if>
+        	<if test="tradeNo != null and tradeNo != '' " >
+        		A.trade_no = #{tradeNo},
+      		</if>
+        	<if test="batchNo != null and batchNo != '' " >
+        		A.batch_no = #{batchNo},
+      		</if>
+        	<if test="transCode != null and transCode != '' " >
+        		A.trans_code = #{transCode},
+      		</if>
+        	<if test="transName != null and transName != '' " >
+        		A.trans_name = #{transName},
+      		</if>
+        	<if test="ownersNo != null and ownersNo != '' " >
+        		A.owners_no = #{ownersNo},
+      		</if>
+        	<if test="before != null and before != '' " >
+        		A.before = #{before},
+      		</if>
+        	<if test="after != null and after != '' " >
+        		A.after = #{after},
+      		</if>
+        	<if test="status != null and status != '' " >
+        		A.status = #{status},
+      		</if>
+        	<if test="operator != null and operator != '' " >
+        		A.operator = #{operator},
+      		</if>
+        	<if test="createTime != null and createTime != '' " >
+        		A.create_time = #{createTime},
+      		</if>
+        	<if test="remark != null and remark != '' " >
+        		A.remark = #{remark},
+      		</if>
+        	<if test="temp1 != null and temp1 != '' " >
+        		A.temp_1 = #{temp1},
+      		</if>
+        	<if test="temp2 != null and temp2 != '' " >
+        		A.temp_2 = #{temp2},
+      		</if>
+    </set>
+    where A.id = #{id}
+  </update>
+  
+	<update id="updateStatus">
+    update t_change_log
+		set `STATUS` = #{status}
+		where id=#{id}
+  </update>
+</mapper>
+

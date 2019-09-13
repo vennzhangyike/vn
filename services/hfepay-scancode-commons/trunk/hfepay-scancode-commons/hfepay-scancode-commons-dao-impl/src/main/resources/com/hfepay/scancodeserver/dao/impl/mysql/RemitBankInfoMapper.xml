@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="RemitBankInfo">
+	<resultMap id="BaseResultMap" type="com.hfepay.scancode.commons.entity.RemitBankInfo">
+        <result property="id" column="A_ID"/>
+        <result property="version" column="A_VERSION"/>
+        <result property="bankChannelNo" column="A_BANK_CHANNEL_NO"/>
+        <result property="bankName" column="A_BANK_NAME"/>
+        <result property="province" column="A_PROVINCE"/>
+        <result property="city" column="A_CITY"/>
+        <result property="bankType" column="A_BANK_TYPE"/>
+        <result property="clearBankChannelNo" column="A_CLEAR_BANK_CHANNEL_NO"/>
+        <result property="isInProvince" column="A_IS_IN_PROVINCE"/>
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+	    <![CDATA[
+		A.ID as A_ID,A.VERSION as A_VERSION,A.BANK_CHANNEL_NO as A_BANK_CHANNEL_NO,A.BANK_NAME as A_BANK_NAME,A.PROVINCE as A_PROVINCE,A.CITY as A_CITY,A.BANK_TYPE as A_BANK_TYPE,A.CLEAR_BANK_CHANNEL_NO as A_CLEAR_BANK_CHANNEL_NO,A.IS_IN_PROVINCE as A_IS_IN_PROVINCE
+	    ]]>
+	</sql>
+
+	<select id="findByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+     from t_remit_bank_info A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+    <if test="hasOrderBy" >
+      order by
+      <foreach collection="orderBys" item="orderBy" separator="," > ${orderBy} </foreach>
+    </if>
+  </select>
+  <select resultMap="BaseResultMap" parameterType="java.lang.Long" id="findById" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_remit_bank_info A 
+    where A.ID = #{id}
+  </select>
+  <delete parameterType="java.lang.Long" id="deleteById" >
+    delete from t_remit_bank_info
+    where ID = #{id}
+  </delete>
+  <delete id="deleteByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" >
+    delete A from t_remit_bank_info A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </delete>
+   <insert id="insert"  useGeneratedKeys="true" parameterType="com.hfepay.scancode.commons.entity.RemitBankInfo" >
+  		<selectKey resultType="int" keyProperty="id" order="AFTER">  
+	        SELECT  
+	        LAST_INSERT_ID()  
+	    </selectKey>  
+	    insert into t_remit_bank_info (
+        	VERSION,
+        	BANK_CHANNEL_NO,
+        	BANK_NAME,
+        	PROVINCE,
+        	CITY,
+        	BANK_TYPE,
+        	CLEAR_BANK_CHANNEL_NO,
+        	IS_IN_PROVINCE
+        )
+    values (
+        	#{version},
+        	#{bankChannelNo},
+        	#{bankName},
+        	#{province},
+        	#{city},
+        	#{bankType},
+        	#{clearBankChannelNo},
+        	#{isInProvince}
+    )
+  </insert>
+  <select id="countByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultType="java.lang.Integer" >
+    select count(*) from t_remit_bank_info A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </select>
+  <update id="updateByCriteria" parameterType="map" >
+    update t_remit_bank_info A
+    <set >
+        	<if test="record.id != null and record.id != '' " >
+        		A.ID = #{record.id},
+      		</if>
+        	<if test="record.version != null and record.version != '' " >
+        		A.VERSION = #{record.version},
+      		</if>
+        	<if test="record.bankChannelNo != null and record.bankChannelNo != '' " >
+        		A.BANK_CHANNEL_NO = #{record.bankChannelNo},
+      		</if>
+        	<if test="record.bankName != null and record.bankName != '' " >
+        		A.BANK_NAME = #{record.bankName},
+      		</if>
+        	<if test="record.province != null and record.province != '' " >
+        		A.PROVINCE = #{record.province},
+      		</if>
+        	<if test="record.city != null and record.city != '' " >
+        		A.CITY = #{record.city},
+      		</if>
+        	<if test="record.bankType != null and record.bankType != '' " >
+        		A.BANK_TYPE = #{record.bankType},
+      		</if>
+        	<if test="record.clearBankChannelNo != null and record.clearBankChannelNo != '' " >
+        		A.CLEAR_BANK_CHANNEL_NO = #{record.clearBankChannelNo},
+      		</if>
+        	<if test="record.isInProvince != null and record.isInProvince != '' " >
+        		A.IS_IN_PROVINCE = #{record.isInProvince},
+      		</if>
+    </set>
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </update>
+  <update id="update" parameterType="com.hfepay.scancode.commons.entity.RemitBankInfo" >
+    update t_remit_bank_info A
+    <set >
+        	<if test="id != null and id != '' " >
+        		A.ID = #{id},
+      		</if>
+        	<if test="version != null and version != '' " >
+        		A.VERSION = #{version},
+      		</if>
+        	<if test="bankChannelNo != null and bankChannelNo != '' " >
+        		A.BANK_CHANNEL_NO = #{bankChannelNo},
+      		</if>
+        	<if test="bankName != null and bankName != '' " >
+        		A.BANK_NAME = #{bankName},
+      		</if>
+        	<if test="province != null and province != '' " >
+        		A.PROVINCE = #{province},
+      		</if>
+        	<if test="city != null and city != '' " >
+        		A.CITY = #{city},
+      		</if>
+        	<if test="bankType != null and bankType != '' " >
+        		A.BANK_TYPE = #{bankType},
+      		</if>
+        	<if test="clearBankChannelNo != null and clearBankChannelNo != '' " >
+        		A.CLEAR_BANK_CHANNEL_NO = #{clearBankChannelNo},
+      		</if>
+        	<if test="isInProvince != null and isInProvince != '' " >
+        		A.IS_IN_PROVINCE = #{isInProvince},
+      		</if>
+    </set>
+    where A.ID = #{id}
+  </update>
+  
+  <select id="getInfoByCardNo" parameterType="java.util.List" resultMap="BaseResultMap" >
+	  select i.bank_name as A_BANK_NAME,i.clear_bank_channel_no as A_CLEAR_BANK_CHANNEL_NO from 
+		(
+			select BANK_NAME,BANK_CODE,replace(replace(main_acount,'x',''),'X','') as length 
+			FROM t_bankcard_nature_conf  having length in 
+			<foreach item="item" collection="list" separator="," open="(" close=")" index="">  
+	     	 #{item, jdbcType=VARCHAR}  
+	    	</foreach>
+			ORDER by length(length) desc limit 1
+		) s LEFT JOIN t_remit_bank_info i on s.BANK_CODE=i.BANK_CHANNEL_NO
+  </select>
+  
+</mapper>
+

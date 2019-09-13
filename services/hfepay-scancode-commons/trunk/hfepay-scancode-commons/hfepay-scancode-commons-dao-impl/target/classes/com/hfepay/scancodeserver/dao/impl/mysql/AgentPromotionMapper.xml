@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="AgentPromotion">
+	<resultMap id="BaseResultMap" type="com.hfepay.scancode.commons.entity.AgentPromotion">
+		<result property="id" column="A_id" />
+		<result property="agentNo" column="A_agent_no" />
+		<result property="title" column="A_title" />
+		<result property="content" column="A_content" />
+		<result property="address" column="A_address" />
+		<result property="qrAddress" column="A_qr_address" />
+		<result property="qrImgAddress" column="A_qr_img_address" />
+		<result property="createTime" column="A_create_time" />
+		<result property="updateTime" column="A_update_time" />
+		<result property="operator" column="A_operator" />
+		<result property="remark" column="A_remark" />
+		<result property="temp1" column="A_temp_1" />
+		<result property="temp2" column="A_temp_2" />
+		<result property="temp3" column="A_temp_3" />
+		<result property="temp4" column="A_temp_4" />
+	</resultMap>
+
+	<sql id="Base_Column_List">
+	    <![CDATA[
+		A.id as A_id,A.agent_no as A_agent_no,A.title as A_title,A.content as A_content,A.address as A_address,A.qr_address as A_qr_address,A.qr_img_address as A_qr_img_address,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2,A.temp_3 as A_temp_3,A.temp_4 as A_temp_4
+	    ]]>
+	</sql>
+
+	<select id="findByCriteria" parameterType="com.hfepay.commons.criteria.Criteria"
+		resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from t_agent_promotion A
+		<if test="_parameter != null and _parameter != '' ">
+			<where>
+				<include refid="Global.Where_Clause" />
+			</where>
+		</if>
+		<if test="hasOrderBy">
+			order by
+			<foreach collection="orderBys" item="orderBy" separator=",">
+				${orderBy} </foreach>
+		</if>
+	</select>
+	<select resultMap="BaseResultMap" parameterType="java.lang.String"
+		id="findById">
+		select
+		<include refid="Base_Column_List" />
+		from t_agent_promotion A
+		where A.id = #{id}
+	</select>
+	<delete parameterType="java.lang.String" id="deleteById">
+		delete from t_agent_promotion
+		where id = #{id}
+	</delete>
+	<delete id="deleteByCriteria" parameterType="com.hfepay.commons.criteria.Criteria">
+		delete A from t_agent_promotion A
+		<if test="_parameter != null and _parameter != '' ">
+			<where>
+				<include refid="Global.Where_Clause" />
+			</where>
+		</if>
+	</delete>
+	<insert id="insert" parameterType="com.hfepay.scancode.commons.entity.AgentPromotion">
+		insert into t_agent_promotion (
+		id,
+		agent_no,
+		title,
+		content,
+		address,
+		qr_address,
+		qr_img_address,
+		create_time,
+		update_time,
+		operator,
+		remark,
+		temp_1,
+		temp_2,
+		temp_3,
+		temp_4
+		)
+		values (UUID(),
+		#{agentNo},
+		#{title},
+		#{content},
+		#{address},
+		#{qrAddress},
+		#{qrImgAddress},
+		#{createTime},
+		#{updateTime},
+		#{operator},
+		#{remark},
+		#{temp1},
+		#{temp2},
+		#{temp3},
+		#{temp4}
+		)
+	</insert>
+	<select id="countByCriteria" parameterType="com.hfepay.commons.criteria.Criteria"
+		resultType="java.lang.Integer">
+		select count(*) from t_agent_promotion A
+		<if test="_parameter != null and _parameter != '' ">
+			<where>
+				<include refid="Global.Where_Clause" />
+			</where>
+		</if>
+	</select>
+	<update id="updateByCriteria" parameterType="map">
+		update t_agent_promotion A
+		<set>
+			<if test="record.id != null and record.id != '' ">
+				A.id = #{record.id},
+			</if>
+			<if test="record.agentNo != null and record.agentNo != '' ">
+				A.agent_no = #{record.agentNo},
+			</if>
+			<if test="record.title != null and record.title != '' ">
+				A.title = #{record.title},
+			</if>
+			<if test="record.content != null and record.content != '' ">
+				A.content = #{record.content},
+			</if>
+			<if test="record.address != null and record.address != '' ">
+				A.address = #{record.address},
+			</if>
+			<if test="record.qrAddress != null and record.qrAddress != '' ">
+				A.qr_address = #{record.qrAddress},
+			</if>
+			<if test="record.qrImgAddress != null and record.qrImgAddress != '' ">
+				A.qr_img_address = #{record.qrImgAddress},
+			</if>
+			<if test="record.createTime != null and record.createTime != '' ">
+				A.create_time = #{record.createTime},
+			</if>
+			<if test="record.updateTime != null and record.updateTime != '' ">
+				A.update_time = #{record.updateTime},
+			</if>
+			<if test="record.operator != null and record.operator != '' ">
+				A.operator = #{record.operator},
+			</if>
+			<if test="record.remark != null and record.remark != '' ">
+				A.remark = #{record.remark},
+			</if>
+			<if test="record.temp1 != null and record.temp1 != '' ">
+				A.temp_1 = #{record.temp1},
+			</if>
+			<if test="record.temp2 != null and record.temp2 != '' ">
+				A.temp_2 = #{record.temp2},
+			</if>
+			<if test="record.temp3 != null and record.temp3 != '' ">
+				A.temp_3 = #{record.temp3},
+			</if>
+			<if test="record.temp4 != null and record.temp4 != '' ">
+				A.temp_4 = #{record.temp4},
+			</if>
+		</set>
+		<if test="_parameter != null and _parameter != '' ">
+			<where>
+				<include refid="Global.Where_Clause" />
+			</where>
+		</if>
+	</update>
+	<update id="update" parameterType="com.hfepay.scancode.commons.entity.AgentPromotion">
+		update t_agent_promotion A
+		<set>
+			<if test="id != null and id != '' ">
+				A.id = #{id},
+			</if>
+			<if test="agentNo != null and agentNo != '' ">
+				A.agent_no = #{agentNo},
+			</if>
+			<if test="title != null and title != '' ">
+				A.title = #{title},
+			</if>
+			<if test="content != null and content != '' ">
+				A.content = #{content},
+			</if>
+			<if test="address != null and address != '' ">
+				A.address = #{address},
+			</if>
+			<if test="qrAddress != null and qrAddress != '' ">
+				A.qr_address = #{qrAddress},
+			</if>
+			<if test="qrImgAddress != null and qrImgAddress != '' ">
+				A.qr_img_address = #{qrImgAddress},
+			</if>
+			<if test="createTime != null and createTime != '' ">
+				A.create_time = #{createTime},
+			</if>
+			<if test="updateTime != null and updateTime != '' ">
+				A.update_time = #{updateTime},
+			</if>
+			<if test="operator != null and operator != '' ">
+				A.operator = #{operator},
+			</if>
+			<if test="remark != null and remark != '' ">
+				A.remark = #{remark},
+			</if>
+			<if test="temp1 != null and temp1 != '' ">
+				A.temp_1 = #{temp1},
+			</if>
+			<if test="temp2 != null and temp2 != '' ">
+				A.temp_2 = #{temp2},
+			</if>
+			<if test="temp3 != null and temp3 != '' ">
+				A.temp_3 = #{temp3},
+			</if>
+			<if test="temp4 != null and temp4 != '' ">
+				A.temp_4 = #{temp4},
+			</if>
+		</set>
+		where A.id = #{id}
+	</update>
+
+</mapper>
+

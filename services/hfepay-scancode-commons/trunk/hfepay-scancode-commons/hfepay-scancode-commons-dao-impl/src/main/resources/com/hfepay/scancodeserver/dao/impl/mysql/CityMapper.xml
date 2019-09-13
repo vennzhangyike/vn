@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="City">
+	<resultMap id="BaseResultMap" type="com.hfepay.scancode.commons.entity.City">
+        <result property="cid" column="A_cid"/>
+        <result property="cname" column="A_cname"/>
+        <result property="cpostcode" column="A_cpostcode"/>
+        <result property="pid" column="A_pid"/>
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+	    <![CDATA[
+		A.cid as A_cid,A.cname as A_cname,A.cpostcode as A_cpostcode,A.pid as A_pid
+	    ]]>
+	</sql>
+
+	<select id="findByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+     from t_city A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+    <if test="hasOrderBy" >
+      order by
+      <foreach collection="orderBys" item="orderBy" separator="," > ${orderBy} </foreach>
+    </if>
+  </select>
+  <select resultMap="BaseResultMap" parameterType="java.lang.Integer" id="findById" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_city A
+    where A.cid = #{cid}
+  </select>
+  <delete parameterType="java.lang.Integer" id="deleteById" >
+    delete from t_city
+    where cid = #{cid}
+  </delete>
+  <delete id="deleteByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" >
+    delete A from t_city A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </delete>
+  <!--  <insert id="insert"  useGeneratedKeys="true" parameterType="com.hfepay.system.entity.SysArea" >
+  		<selectKey resultType="int" keyProperty="id" order="AFTER">  
+	        SELECT  
+	        LAST_INSERT_ID()  
+	    </selectKey>  
+	    insert into t_city (
+        	cname,
+        	cpostcode,
+        	pid
+        )
+    values (
+        	#{cname},
+        	#{cpostcode},
+        	#{pid}
+    )
+  </insert> -->
+  <select id="countByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultType="java.lang.Integer" >
+    select count(*) from t_city A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </select>
+  <update id="updateByCriteria" parameterType="map" >
+    update t_city A
+    <set >
+        	<if test="record.cid != null and record.cid != '' " >
+        		A.cid = #{record.cid},
+      		</if>
+        	<if test="record.cname != null and record.cname != '' " >
+        		A.cname = #{record.cname},
+      		</if>
+        	<if test="record.cpostcode != null and record.cpostcode != '' " >
+        		A.cpostcode = #{record.cpostcode},
+      		</if>
+        	<if test="record.pid != null and record.pid != '' " >
+        		A.pid = #{record.pid},
+      		</if>
+    </set>
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </update>
+  <update id="update" parameterType="com.hfepay.scancode.commons.entity.City" >
+    update t_city A
+    <set >
+        	<if test="cid != null and cid != '' " >
+        		A.cid = #{cid},
+      		</if>
+        	<if test="cname != null and cname != '' " >
+        		A.cname = #{cname},
+      		</if>
+        	<if test="cpostcode != null and cpostcode != '' " >
+        		A.cpostcode = #{cpostcode},
+      		</if>
+        	<if test="pid != null and pid != '' " >
+        		A.pid = #{pid},
+      		</if>
+    </set>
+    where A.cid = #{cid}
+  </update>
+  
+</mapper>
+

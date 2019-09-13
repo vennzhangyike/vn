@@ -1,0 +1,278 @@
+html, body{
+	padding: 0;
+	margin: 0;
+}
+
+body{
+	background: #ebebeb;
+	font-family:Arial,Helvetica,sans-serif;
+	line-height: 22px;
+	color: #141821;
+	position: relative;
+	-webkit-text-size-adjust: none;
+}
+
+body *{
+	text-shadow: none;
+}
+a:focus { outline: 0; }
+a {text-decoration: none;color: #09F;}
+a:hover {text-decoration: none;}
+ol,ul{list-style:none}
+.clear{
+	clear:both;
+	display:block;
+	overflow:hidden;
+	visibility:hidden;
+	width:0;
+	height:0;
+}
+
+.header{
+	margin: 20px 0;
+	font-size:140%;
+	font-weight:bold;
+	text-align:center;
+}
+
+.mid{
+	margin:5px 0 10px 0;
+	font-size:100%;
+	color:#999;
+	text-align:center;
+}
+
+.amount{
+	height:80px;
+	line-height:80px;
+	padding:0 20px;
+	margin-bottom:10px;
+	font-size:200%;
+	text-align:left;
+	background:#fff;
+	border-top:solid 1px #ccc;
+	border-bottom:solid 1px #ccc;
+}
+
+.footer{
+	height:30px;
+	line-height:30px;
+	font-size:80%;
+	color:#b4b4b4;
+	text-align:center;
+	margin-top:5%;
+}
+
+.tip{
+	height:30px;
+	line-height:30px;
+	font-size:80%;
+	color:#999;
+	text-align:left;
+	padding:10px 20px 5px 20px;
+}
+
+.zffs{clear:both;padding:0;margin:0 0 0 20px}
+
+.zffs li{float:left;height:30px;padding:10px 20px;border:1px #ccc solid;margin-right:20px;position:relative;background:#fff}
+
+.zffs li.cur{border:1px #09bd04 solid;}
+
+.zffs li.cur span{position:absolute;right:0;bottom:0;background:url(../../images/zffs_selected_green.png);width:15px;height:15px}
+
+
+
+.keypad{
+	position:fixed;
+	left:0;
+	right:0;
+	bottom:0;
+}
+
+.keypad .message{
+	padding:5px 10px;
+	color:#e35b5a;
+	font-size:80%;
+}
+
+.keypad .col{
+	float:left;
+	width:25%;
+}
+
+.keypad .col .key{
+	color:#424857;
+	font-size:180%;
+	text-align:center;
+	border-top:1px #ccc solid;
+	border-right:1px #ccc solid;
+}
+
+.keypad .col .digit{
+	height:60px;
+	line-height:60px;
+	background:#fff;
+}
+
+.keypad .col .point{
+	height:60px;
+	line-height:60px;
+	background:#fff;
+}
+
+.keypad .col .back{
+	height:60px;
+	line-height:60px;
+	background:#fff;
+}
+
+.keypad .col .prepay{
+	height:60px;
+	line-height:60px;
+	font-weight:bold;
+	background:#ccc;
+}
+
+.keypad .col .empty{
+	height:121px;
+	line-height:121px;
+	font-size:150%;
+	font-weight:bold;
+	background:#fff;
+}
+.keypad .col .enter{
+	height:121px;
+	line-height:121px;
+	font-size:150%;
+	font-weight:bold;
+	color:#fff;
+	background:#09bd04;
+}
+
+.keypad .col .active{
+	background:#ccc;
+}
+
+.keypad .col .locked{
+	background:#ccc !important;
+}
+
+#black_wrapper{
+	position:fixed;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	background-color:rgba(0,0,0,0.8);
+}
+
+#select_method{
+	position:fixed;
+	left:20px;
+	top:50px;
+	right:20px;
+	background:#fff;
+	border:solid 1px #ccc;
+}
+
+#select_method .title{
+	padding:15px;
+	text-align:center;
+	font-size:120%;
+	border-bottom:solid 1px #f8f8f8;
+}
+
+#select_method .title span{
+	float:right;
+}
+
+#select_method .description{
+	padding:20px 0;
+	text-align:center;
+	font-size:200%;
+}
+
+#prepay{
+	position:fixed;
+	left:20px;
+	top:50px;
+	right:20px;
+	background:#fff;
+	border:solid 1px #ccc;
+}
+
+#prepay .title{
+	padding:15px;
+	text-align:center;
+	font-size:120%;
+	border-bottom:solid 1px #f8f8f8;
+}
+
+#prepay .title span{
+	float:right;
+}
+
+#prepay .description{
+	padding:20px 0;
+	text-align:center;
+	font-size:200%;
+}
+
+#prepay .pin{
+	margin:20px 15px;
+	padding:10px;
+	border:solid 1px #ccc;
+	background:#f8f8f8;
+}
+
+#prepay .pin input{
+	height: 30px;
+	line-height: 30px;
+	font-size: 150%;
+	color: #333;
+	border: none;
+	outline: none;
+	width: 80%;
+	background:#f8f8f8;
+}
+
+.btn_green{
+	margin:20px 15px;
+	padding:15px;
+	font-size:120%;
+	text-align:center;
+	color:#fff;
+	background:#1C8F5F;
+}
+
+.btn_blue{
+	margin:15px;
+	padding:15px;
+	font-size:120%;
+	text-align:center;
+	color:#fff;
+	background:#4B77BE;
+}
+.state{
+	padding:30px 20px;
+	font-size:120%;
+	text-align:center;
+	background:#fff;
+	border-top:solid 1px #ccc;
+	border-bottom:solid 1px #ccc;
+}
+.success_t{color:#11cd6e;font-size:150%;}
+.failure_t{color:#eb4f38;font-size:150%;}
+.order{font-size:100%;}
+.closed{
+	height:60px;
+	line-height:60px;
+	font-size:150%;
+	font-weight:bold;
+	color:#fff;
+	text-align:center;
+	background:#09bd04;
+	display:block;
+	margin:10%;
+	border-radius: 5px;
+}

@@ -1,0 +1,9 @@
+com\hfepay\common\sms\contants\ManDaoContants.class
+com\hfepay\common\sms\services\impl\ManDaoSmsServiceImpl.class
+com\hfepay\common\sms\services\SmsService.class
+com\hfepay\common\sms\contants\MailContants.class
+com\hfepay\common\sms\mandao\Client.class
+com\hfepay\common\sms\services\impl\XieheSmsServiceImpl.class
+com\hfepay\common\sms\mailentity\MailEntity.class
+com\hfepay\common\sms\services\MailService.class
+com\hfepay\common\sms\services\impl\MailServiceImpl.class

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+ PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+ "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<properties url="file:c:/application-mysql.properties" />
+	<classPathEntry location="${mbg.classPathEntry.mysql.jar}"></classPathEntry>
+	<classPathEntry location="./target/classes"></classPathEntry>
+	<context id="app" targetRuntime="MyBatis3">
+		<property name="modelNamespace" value="app" />
+		<property name="messageFileName" value="module_message_zh_CN.properties" />
+ 		
+		<!-- 多模块配置支持 -->
+		<property name="isMultiModule" value="true" />
+		<!-- 参数package 和 artifactId 由maven archetype组件自动引入 -->
+		<!-- 定义dao层实现模块项目名和包名，用于存放dao实现类 -->
+		<property name="daoImplProject" value="${artifactId}-dao-impl/src/main/java" />
+		<property name="daoImplPackage" value="${package}.dao.impl" />
+
+		<plugin type="com.hfepay.common.codegen.plugin.NamespacePlugin" />
+		<commentGenerator
+			type="com.hfepay.common.codegen.utils.HuafuePayCommentGenerator">
+			<property name="suppressDate" value="false" />
+			<property name="suppressAllComments" value="false" />
+		</commentGenerator>
+		<jdbcConnection driverClass="${mbg.mysql.jdbc.driver}"
+			connectionURL="${mbg.mysql.jdbc.url}" userId="${mbg.mysql.jdbc.username}"
+			password="${mbg.mysql.jdbc.password}">
+			<property name="remarksReporting" value="true" />
+		</jdbcConnection>
+		<javaTypeResolver
+			type="com.hfepay.common.codegen.types.JavaTypeResolverCustomImpl">
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<javaModelGenerator targetPackage="${package}.entity"
+			targetProject="${artifactId}-entity/src/main/java">
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+		<sqlMapGenerator targetPackage="${package}.dao.impl.mysql"
+			targetProject="${artifactId}-dao-impl/src/main/resources">
+		</sqlMapGenerator>
+		<javaClientGenerator targetPackage="${package}.dao"
+			targetProject="${artifactId}-dao/src/main/java" type="com.hfepay.common.codegen.utils.DaoJavaClientGenerator">
+		</javaClientGenerator>
+
+		<table tableName="app_version" domainObjectName="AppVersion"
+			alias="A">
+			<columnOverride column="ID" javaType="java.lang.Long"></columnOverride>
+			<columnOverride column="CREATE_DATE" javaType="java.util.Date"></columnOverride>
+			<columnOverride column="UPDATE_DATE" javaType="java.util.Date"></columnOverride>
+		</table>
+	</context>
+
+</generatorConfiguration>

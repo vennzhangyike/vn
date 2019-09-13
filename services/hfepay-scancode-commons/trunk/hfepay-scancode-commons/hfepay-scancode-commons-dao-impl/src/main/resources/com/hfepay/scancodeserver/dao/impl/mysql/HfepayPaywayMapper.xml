@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="HfepayPayway">
+	<resultMap id="BaseResultMap" type="com.hfepay.scancode.commons.entity.HfepayPayway">
+        <result property="id" column="A_id"/>
+        <result property="serverNo" column="A_server_no"/>
+        <result property="serverName" column="A_server_name"/>
+        <result property="payCode" column="A_pay_code"/>
+        <result property="payType" column="A_pay_type"/>
+        <result property="payDesc" column="A_pay_desc"/>
+        <result property="paySeq" column="A_pay_seq"/>
+        <result property="t0Rate" column="A_t0_rate"/>
+        <result property="t1Rate" column="A_t1_rate"/>
+        <result property="rate" column="A_rate"/>
+        <result property="recordStatus" column="A_record_status"/>
+        <result property="createTime" column="A_create_time"/>
+        <result property="updateTime" column="A_update_time"/>
+        <result property="operator" column="A_operator"/>
+        <result property="remark" column="A_remark"/>
+        <result property="temp1" column="A_temp_1"/>
+        <result property="temp2" column="A_temp_2"/>
+        <result property="temp3" column="A_temp_3"/>
+        <result property="temp4" column="A_temp_4"/>
+	</resultMap>
+	
+	<resultMap id="BaseResultMapVo" type="com.hfepay.scancode.commons.vo.HfepayPaywayVo" extends="BaseResultMap">
+		<result property="operatorName" column="operator_name"/>
+        <result property="payName" column="pay_name"/>
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+	    <![CDATA[
+		A.id as A_id,A.server_no as A_server_no,A.server_name as A_server_name,A.pay_code as A_pay_code,A.pay_type as A_pay_type,A.pay_desc as A_pay_desc,A.pay_seq as A_pay_seq,A.t0_rate as A_t0_rate,A.t1_rate as A_t1_rate,A.rate as A_rate,A.record_status as A_record_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2,A.temp_3 as A_temp_3,A.temp_4 as A_temp_4
+	    ]]>
+	</sql>
+
+	<select id="findByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultMap="BaseResultMapVo" >
+    select
+    <include refid="Base_Column_List" />,C.para_name as pay_name
+     from t_hfepay_payway A
+    left join t_mapping_dicion C on A.pay_code = C.para_val 
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+    <if test="hasOrderBy" >
+      order by
+      <foreach collection="orderBys" item="orderBy" separator="," > ${orderBy} </foreach>
+    </if>
+  </select>
+  <select resultMap="BaseResultMapVo" parameterType="java.lang.String" id="findById" >
+    select 
+    <include refid="Base_Column_List" />,B.short_name as operator_name,C.para_name as pay_name
+     from t_hfepay_payway A
+     left join t_sys_admin B on A.operator = B.id 
+    left join t_mapping_dicion C on A.pay_code = C.para_val 
+    where A.id = #{id}
+  </select>
+  <delete parameterType="java.lang.String" id="deleteById" >
+    delete from t_hfepay_payway
+    where id = #{id}
+  </delete>
+  <delete id="deleteByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" >
+    delete A from t_hfepay_payway A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.hfepay.scancode.commons.entity.HfepayPayway" >
+    insert into t_hfepay_payway (
+        	id,
+        	server_no,
+        	server_name,
+        	pay_code,
+        	pay_type,
+        	pay_desc,
+        	pay_seq,
+        	t0_rate,
+        	t1_rate,
+        	rate,
+        	record_status,
+        	create_time,
+        	update_time,
+        	operator,
+        	remark,
+        	temp_1,
+        	temp_2,
+        	temp_3,
+        	temp_4
+        )
+    values (UUID(),
+        	#{serverNo},
+        	#{serverName},
+        	#{payCode},
+        	#{payType},
+        	#{payDesc},
+        	#{paySeq},
+        	#{t0Rate},
+        	#{t1Rate},
+        	#{rate},
+        	#{recordStatus},
+        	#{createTime},
+        	#{updateTime},
+        	#{operator},
+        	#{remark},
+        	#{temp1},
+        	#{temp2},
+        	#{temp3},
+        	#{temp4}
+    )
+  </insert>
+  <select id="countByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultType="java.lang.Integer" >
+    select count(*) from t_hfepay_payway A
+    left join t_mapping_dicion C on A.pay_code = C.para_val 
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </select>
+  <update id="updateByCriteria" parameterType="map" >
+    update t_hfepay_payway A
+    <set >
+        	<if test="record.id != null and record.id != '' " >
+        		A.id = #{record.id},
+      		</if>
+        	<if test="record.serverNo != null and record.serverNo != '' " >
+        		A.server_no = #{record.serverNo},
+      		</if>
+        	<if test="record.serverName != null and record.serverName != '' " >
+        		A.server_name = #{record.serverName},
+      		</if>
+        	<if test="record.payCode != null and record.payCode != '' " >
+        		A.pay_code = #{record.payCode},
+      		</if>
+        	<if test="record.payType != null and record.payType != '' " >
+        		A.pay_type = #{record.payType},
+      		</if>
+        	<if test="record.payDesc != null and record.payDesc != '' " >
+        		A.pay_desc = #{record.payDesc},
+      		</if>
+        	<if test="record.paySeq != null and record.paySeq != '' " >
+        		A.pay_seq = #{record.paySeq},
+      		</if>
+        	<if test="record.t0Rate != null and record.t0Rate != '' " >
+        		A.t0_rate = #{record.t0Rate},
+      		</if>
+        	<if test="record.t1Rate != null and record.t1Rate != '' " >
+        		A.t1_rate = #{record.t1Rate},
+      		</if>
+        	<if test="record.rate != null and record.rate != '' " >
+        		A.rate = #{record.rate},
+      		</if>
+        	<if test="record.recordStatus != null and record.recordStatus != '' " >
+        		A.record_status = #{record.recordStatus},
+      		</if>
+        	<if test="record.createTime != null and record.createTime != '' " >
+        		A.create_time = #{record.createTime},
+      		</if>
+        	<if test="record.updateTime != null and record.updateTime != '' " >
+        		A.update_time = #{record.updateTime},
+      		</if>
+        	<if test="record.operator != null and record.operator != '' " >
+        		A.operator = #{record.operator},
+      		</if>
+        	<if test="record.remark != null and record.remark != '' " >
+        		A.remark = #{record.remark},
+      		</if>
+        	<if test="record.temp1 != null and record.temp1 != '' " >
+        		A.temp_1 = #{record.temp1},
+      		</if>
+        	<if test="record.temp2 != null and record.temp2 != '' " >
+        		A.temp_2 = #{record.temp2},
+      		</if>
+        	<if test="record.temp3 != null and record.temp3 != '' " >
+        		A.temp_3 = #{record.temp3},
+      		</if>
+        	<if test="record.temp4 != null and record.temp4 != '' " >
+        		A.temp_4 = #{record.temp4},
+      		</if>
+    </set>
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </update>
+  <update id="update" parameterType="com.hfepay.scancode.commons.entity.HfepayPayway" >
+    update t_hfepay_payway A
+    <set >
+        	<if test="id != null and id != '' " >
+        		A.id = #{id},
+      		</if>
+        	<if test="serverNo != null and serverNo != '' " >
+        		A.server_no = #{serverNo},
+      		</if>
+        	<if test="serverName != null and serverName != '' " >
+        		A.server_name = #{serverName},
+      		</if>
+        	<if test="payCode != null and payCode != '' " >
+        		A.pay_code = #{payCode},
+      		</if>
+        	<if test="payType != null and payType != '' " >
+        		A.pay_type = #{payType},
+      		</if>
+        	<if test="payDesc != null and payDesc != '' " >
+        		A.pay_desc = #{payDesc},
+      		</if>
+        	<if test="paySeq != null and paySeq != '' " >
+        		A.pay_seq = #{paySeq},
+      		</if>
+        	<if test="t0Rate != null " >
+        		A.t0_rate = #{t0Rate},
+      		</if>
+        	<if test="t1Rate != null " >
+        		A.t1_rate = #{t1Rate},
+      		</if>
+        	<if test="rate != null " >
+        		A.rate = #{rate},
+      		</if>
+        	<if test="recordStatus != null and recordStatus != '' " >
+        		A.record_status = #{recordStatus},
+      		</if>
+        	<if test="createTime != null and createTime != '' " >
+        		A.create_time = #{createTime},
+      		</if>
+        	<if test="updateTime != null and updateTime != '' " >
+        		A.update_time = #{updateTime},
+      		</if>
+        	<if test="operator != null and operator != '' " >
+        		A.operator = #{operator},
+      		</if>
+        	<if test="remark != null and remark != '' " >
+        		A.remark = #{remark},
+      		</if>
+        	<if test="temp1 != null and temp1 != '' " >
+        		A.temp_1 = #{temp1},
+      		</if>
+        	<if test="temp2 != null and temp2 != '' " >
+        		A.temp_2 = #{temp2},
+      		</if>
+        	<if test="temp3 != null and temp3 != '' " >
+        		A.temp_3 = #{temp3},
+      		</if>
+        	<if test="temp4 != null and temp4 != '' " >
+        		A.temp_4 = #{temp4},
+      		</if>
+    </set>
+    where A.id = #{id}
+  </update>
+  
+</mapper>
+

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="MerchantActivityDiscount">
+	<resultMap id="BaseResultMap" type="com.hfepay.scancode.commons.entity.MerchantActivityDiscount">
+        <result property="id" column="A_ID"/>
+        <result property="activityId" column="A_ACTIVITY_ID"/>
+        <result property="activityDiscount" column="A_ACTIVITY_DISCOUNT"/>
+        <result property="activityCondition" column="A_ACTIVITY_CONDITION"/>
+        <result property="chance" column="A_CHANCE"/>
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+	    <![CDATA[
+		A.ID as A_ID,A.ACTIVITY_ID as A_ACTIVITY_ID,A.ACTIVITY_DISCOUNT as A_ACTIVITY_DISCOUNT,A.ACTIVITY_CONDITION as A_ACTIVITY_CONDITION,A.CHANCE as A_CHANCE
+	    ]]>
+	</sql>
+
+	<select id="findByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+     from t_merchant_activity_discount A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+    <if test="hasOrderBy" >
+      order by
+      <foreach collection="orderBys" item="orderBy" separator="," > ${orderBy} </foreach>
+    </if>
+  </select>
+  <select resultMap="BaseResultMap" parameterType="java.lang.String" id="findById" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_merchant_activity_discount A 
+    where A.ID = #{id}
+  </select>
+  <delete parameterType="java.lang.String" id="deleteByActivityId" >
+    delete from t_merchant_activity_discount
+    where activity_id = #{activityId}
+  </delete>
+  
+   <delete parameterType="java.lang.String" id="deleteById" >
+    delete from t_merchant_activity_discount
+    where ID = #{id}
+  </delete>
+  
+  <delete id="deleteByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" >
+    delete A from t_merchant_activity_discount A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.hfepay.scancode.commons.entity.MerchantActivityDiscount" >
+    insert into t_merchant_activity_discount (
+        	ID,
+        	ACTIVITY_ID,
+        	ACTIVITY_DISCOUNT,
+        	ACTIVITY_CONDITION,
+        	CHANCE
+        )
+    values (
+        	#{id},
+        	#{activityId},
+        	#{activityDiscount},
+        	#{activityCondition},
+        	#{chance}
+    )
+  </insert>
+  <select id="countByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultType="java.lang.Integer" >
+    select count(*) from t_merchant_activity_discount A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </select>
+  <update id="updateByCriteria" parameterType="map" >
+    update t_merchant_activity_discount A
+    <set >
+        	<if test="record.id != null and record.id != '' " >
+        		A.ID = #{record.id},
+      		</if>
+        	<if test="record.activityId != null and record.activityId != '' " >
+        		A.ACTIVITY_ID = #{record.activityId},
+      		</if>
+        	<if test="record.activityDiscount != null and record.activityDiscount != '' " >
+        		A.ACTIVITY_DISCOUNT = #{record.activityDiscount},
+      		</if>
+        	<if test="record.activityCondition != null and record.activityCondition != '' " >
+        		A.ACTIVITY_CONDITION = #{record.activityCondition},
+      		</if>
+        	<if test="record.chance != null and record.chance != '' " >
+        		A.CHANCE = #{record.chance},
+      		</if>
+    </set>
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </update>
+  <update id="update" parameterType="com.hfepay.scancode.commons.entity.MerchantActivityDiscount" >
+    update t_merchant_activity_discount A
+    <set >
+        	<if test="id != null and id != '' " >
+        		A.ID = #{id},
+      		</if>
+        	<if test="activityId != null and activityId != '' " >
+        		A.ACTIVITY_ID = #{activityId},
+      		</if>
+        	<if test="activityDiscount != null and activityDiscount != '' " >
+        		A.ACTIVITY_DISCOUNT = #{activityDiscount},
+      		</if>
+        	<if test="activityCondition != null and activityCondition != '' " >
+        		A.ACTIVITY_CONDITION = #{activityCondition},
+      		</if>
+        	<if test="chance != null and chance != '' " >
+        		A.CHANCE = #{chance},
+      		</if>
+    </set>
+    where A.ID = #{id}
+  </update>
+  
+  <insert id="batchInsert" parameterType="java.util.List">
+		 insert into t_merchant_activity_discount (
+        	ID,
+        	ACTIVITY_ID,
+        	ACTIVITY_DISCOUNT,
+        	ACTIVITY_CONDITION,
+        	CHANCE
+        )
+		values
+		<foreach collection="list" item="item" index="index"
+			separator=",">
+			(
+			#{item.id},
+        	#{item.activityId},
+        	#{item.activityDiscount},
+        	#{item.activityCondition},
+        	#{item.chance}
+			)
+		</foreach>
+	</insert>
+  
+</mapper>
+

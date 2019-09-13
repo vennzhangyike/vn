@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="UserMessage">
+	<resultMap id="BaseResultMap" type="com.hfepay.scancode.commons.entity.UserMessage">
+        <result property="id" column="A_ID"/>
+        <result property="messageId" column="A_MESSAGE_ID"/>
+        <result property="userNo" column="A_USER_NO"/>
+        <result property="readStatus" column="A_READ_STATUS"/>
+        <result property="recordStatus" column="A_RECORD_STATUS"/>
+        <result property="operator" column="A_OPERATOR"/>
+        <result property="createTime" column="A_CREATE_TIME"/>
+        <result property="updateTime" column="A_UPDATE_TIME"/>
+        <result property="remark" column="A_REMARK"/>
+	</resultMap>
+	
+	<resultMap id="BaseResultMapVo" type="com.hfepay.scancode.commons.vo.UserMessageVo" extends="BaseResultMap">
+		<result property="title" column="title"/>
+		<result property="content" column="content"/>
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+	    <![CDATA[
+		A.ID as A_ID,A.MESSAGE_ID as A_MESSAGE_ID,A.USER_NO as A_USER_NO,A.READ_STATUS as A_READ_STATUS,A.RECORD_STATUS as A_RECORD_STATUS,A.OPERATOR as A_OPERATOR,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.REMARK as A_REMARK
+	    ]]>
+	</sql>
+
+	<select id="findByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultMap="BaseResultMapVo" >
+    select
+    <include refid="Base_Column_List" />,B.title as title,B.content as content 
+     from t_user_message A left join t_message B on A.message_id = B.id 
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+    <if test="hasOrderBy" >
+      order by
+      <foreach collection="orderBys" item="orderBy" separator="," > ${orderBy} </foreach>
+    </if>
+  </select>
+  
+  <select id="findByUserType" parameterType="com.hfepay.commons.criteria.Criteria" resultMap="BaseResultMapVo" >
+    select
+    <include refid="Base_Column_List" />,B.title as title,B.content as content 
+     from t_user_message A left join t_message B on A.message_id = B.id 
+     <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+    <if test="hasOrderBy" >
+      order by
+      <foreach collection="orderBys" item="orderBy" separator="," > ${orderBy} </foreach>
+    </if>
+  </select>
+  
+  <select id="countByUserType" parameterType="com.hfepay.commons.criteria.Criteria" resultType="java.lang.Integer" >
+    select count(*) from t_user_message A left join t_message B on A.message_id = B.id 
+     <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </select>
+  
+  <select resultMap="BaseResultMap" parameterType="java.lang.String" id="findById" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_user_message A 
+    where A.ID = #{id}
+  </select>
+  
+  <select resultMap="BaseResultMapVo" parameterType="java.lang.String" id="findByMessageId" >
+    select 
+    <include refid="Base_Column_List" />,B.title as title,B.content as content 
+    from t_user_message A left join t_message B on A.message_id = B.id 
+    where A.message_id = #{messageId}
+  </select>
+  
+  <select resultMap="BaseResultMapVo" parameterType="java.lang.String" id="findByMessageIdAndUserNo" >
+    select 
+    <include refid="Base_Column_List" />,B.title as title,B.content as content 
+    from t_user_message A left join t_message B on A.message_id = B.id 
+    where A.message_id = #{messageId} and A.user_no = #{userName}
+  </select>
+  
+  <delete parameterType="java.lang.String" id="deleteById" >
+    delete from t_user_message
+    where ID = #{id}
+  </delete>
+  <delete id="deleteByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" >
+    delete A from t_user_message A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.hfepay.scancode.commons.entity.UserMessage" >
+    insert into t_user_message (
+        	ID,
+        	MESSAGE_ID,
+        	USER_NO,
+        	READ_STATUS,
+        	RECORD_STATUS,
+        	OPERATOR,
+        	CREATE_TIME,
+        	UPDATE_TIME,
+        	REMARK
+        )
+    values (
+        	#{id},
+        	#{messageId},
+        	#{userNo},
+        	#{readStatus},
+        	#{recordStatus},
+        	#{operator},
+        	#{createTime},
+        	#{updateTime},
+        	#{remark}
+    )
+  </insert>
+  <select id="countByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultType="java.lang.Integer" >
+    select count(*) from t_user_message A left join t_message B on A.message_id = B.id 
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </select>
+  <update id="updateByCriteria" parameterType="map" >
+    update t_user_message A
+    <set >
+        	<if test="record.id != null and record.id != '' " >
+        		A.ID = #{record.id},
+      		</if>
+        	<if test="record.messageId != null and record.messageId != '' " >
+        		A.MESSAGE_ID = #{record.messageId},
+      		</if>
+        	<if test="record.userNo != null and record.userNo != '' " >
+        		A.USER_NO = #{record.userNo},
+      		</if>
+        	<if test="record.readStatus != null and record.readStatus != '' " >
+        		A.READ_STATUS = #{record.readStatus},
+      		</if>
+      		<if test="record.recordStatus != null and record.recordStatus != '' " >
+        		A.RECORD_STATUS = #{record.recordStatus},
+      		</if>
+        	<if test="record.operator != null and record.operator != '' " >
+        		A.OPERATOR = #{record.operator},
+      		</if>
+        	<if test="record.createTime != null and record.createTime != '' " >
+        		A.CREATE_TIME = #{record.createTime},
+      		</if>
+        	<if test="record.updateTime != null and record.updateTime != '' " >
+        		A.UPDATE_TIME = #{record.updateTime},
+      		</if>
+        	<if test="record.remark != null and record.remark != '' " >
+        		A.REMARK = #{record.remark},
+      		</if>
+    </set>
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </update>
+  <update id="update" parameterType="com.hfepay.scancode.commons.entity.UserMessage" >
+    update t_user_message A
+    <set >
+        	<if test="id != null and id != '' " >
+        		A.ID = #{id},
+      		</if>
+        	<if test="messageId != null and messageId != '' " >
+        		A.MESSAGE_ID = #{messageId},
+      		</if>
+        	<if test="userNo != null and userNo != '' " >
+        		A.USER_NO = #{userNo},
+      		</if>
+        	<if test="readStatus != null and readStatus != '' " >
+        		A.READ_STATUS = #{readStatus},
+      		</if>
+      		<if test="recordStatus != null and recordStatus != '' " >
+        		A.RECORD_STATUS = #{recordStatus},
+      		</if>
+        	<if test="operator != null and operator != '' " >
+        		A.OPERATOR = #{operator},
+      		</if>
+        	<if test="createTime != null and createTime != '' " >
+        		A.CREATE_TIME = #{createTime},
+      		</if>
+        	<if test="updateTime != null and updateTime != '' " >
+        		A.UPDATE_TIME = #{updateTime},
+      		</if>
+        	<if test="remark != null and remark != '' " >
+        		A.REMARK = #{remark},
+      		</if>
+    </set>
+    where A.ID = #{id}
+  </update>
+  
+</mapper>
+

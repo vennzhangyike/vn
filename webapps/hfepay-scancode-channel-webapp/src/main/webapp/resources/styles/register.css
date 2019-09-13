@@ -1,0 +1,101 @@
+@charset "utf-8";
+.header .home{position:absolute; top:60px; right:50px; font-size:12px; color:#666; height:20px; line-height:20px;background:url(../images/iphone.png) -25px -290px no-repeat; text-indent:20px;}
+.header .home:hover{color:#ff5256;}
+.header h1{width:350px; height:48px;  position:absolute; left:0; top:30px; text-indent:-999em; }
+.header h1 a{display:block}
+.header h3{position:absolute; top:56px; left:214px; height:24px; font:18px/24px "microsoft yahei"; border-left:1px solid #afafaf; padding:0 12px;}
+
+.loginBanner h2 {
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+    text-align:center;
+    margin-bottom: 2px;
+}
+.register_content{width:1200px; margin:0 auto; position:relative;}
+.bg{height:34px;background:url(../images/aaa.png) left 0 repeat-x;}
+.step_ul{padding:0 40px; margin-top:32px; height:64px; background:url(../images/iphone.png) 0 -314px no-repeat;}
+.step1{padding:0 40px; height:64px; background:url(../images/iphone.png) center -381px no-repeat;}
+.step2{padding:0 40px; height:64px; background:url(../images/iphone.png) center -314px no-repeat;}
+.step_ul li{float:left; width:540px; height:64px; text-align:center; font:bold 16px/64px "microsoft yahei"; color:#fff;}
+.step1 .li1{background:#ff5256;}
+.step1 .li2{background:#d1d1d1; margin-left:40px;}
+.step2 .li1{background:#d1d1d1;}
+.step2 .li2{background:#ff5256; margin-left:40px;}
+
+#register_form{width:300px; padding:30px 50px; height: 410px; box-shadow: 0 0 2px rgba(0,0,0,0.3); border-radius: 4px; background: #fff; position:absolute; top:12px; right:50px;z-index: 9;}
+#register_form h2{color:#333; font:bold 18px/16px "microsoft yahei"; height:16px; line-height:16px; margin-bottom:18px;}
+#register_form h4 {
+  height: 30px;
+  line-height: 30px;
+  position: relative;
+  color: #999;
+}
+
+.div_form{height:48px; margin-bottom:24px;}
+.div_form label{float:left; width:146px; font-size:14px; color:#333; text-align:right; height:48px; line-height:48px;}
+.div_form .input_div{float:left; width:620px;}
+#username,#mail,#password1,#password2,#varcode,#incode{width:308px; height:26px;line-height:26px;padding:10px 5px; border:1px solid #aeaeae; border-radius:4px; color:#666;}
+.input_div span{ margin-left:6px;}
+#btn, .btn2, .success_login, .login_btn{width:460px; height:60px; text-align:center; font:bold 16px/60px "microsoft yahei"; border:0 none; border-radius:4px; color:#fff; cursor:pointer; background:#e22;letter-spacing:6px;}
+#btn{width:320px;}
+#btn:hover, .btn2:hover, .success_login:hover,.login_btn:hover{background:#e81717;}
+.code_img{width:70px; height:48px;}
+.change{color:#666; text-decoration:underline; margin-left:10px;}
+.input_div span{background:url(../images/text.png) no-repeat;padding-left:25px; padding-bottom:6px;}
+.input_div5 span{background:0 none;}
+.check2{background:url(../images/check2.png) no-repeat; padding-left:22px; padding-bottom:4px;}
+.check1{background:url(../images/check1.png) no-repeat; padding-left:22px; padding-bottom:4px;}
+
+.reg_login{width:270px; height:240px; border:2px solid #e1e1e1; border-top:2px solid #0089e1; position:absolute; top:190px; right:40px; background:url(../images/smile.png) center 35px no-repeat;}
+.btn2{position:absolute; left:50px; top:160px; width:170px; height:38px; line-height:38px;}
+.reg_login p{text-align:center; margin-top:130px; line-height:20px;}
+
+/*注册成功*/
+.success{height:65px; width:220px; background:url(../images/success.png) no-repeat; font:16px/65px "microsoft yahei"; text-indent:76px; margin:75px auto 45px;}
+.success_login{display:block; width:460px; margin:0 auto; margin-bottom:130px;}
+
+#loginBanner{width: 100%; min-width: 1200px; height: 500px; position:relative; overflow: hidden;}
+.loginBanner{position: relative; z-index: 9; width: 1200px; margin: 0 auto;}
+#login_form{width:300px; padding:30px 50px; height: 320px; box-shadow: 0 0 2px rgba(0,0,0,0.3); border-radius: 4px; background: #fff; position:absolute; top:60px; right:50px;z-index: 9;}
+#login_form h2{color:#333; font:bold 18px/16px "microsoft yahei"; height:20px; line-height:20px; margin-bottom:24px;}
+
+.username, .pw, .captcha{width:250px; padding:10px 5px 10px 45px; border:0 none; border-bottom:1px solid #ddd; height:30px; line-height:30px; }
+#captcha_box{border-bottom:1px solid #ddd;}
+.div_user, .div_pw{position:relative;}
+.captcha{width:110px; border:0 none;}
+#captchaimg{height:48px;}
+.div_user span, .div_pw span{position:absolute; left:15px; top:16px; width:16px; height:18px; background:url(../images/iphone.png) 0 -480px no-repeat; z-index:1;}
+.div_pw span{background-position:0 -506px;}
+.forget_a{position: absolute; right: 0; top: 17px; color: #ff5256;}
+.forget_a:hover,.login_reg:hover,.inputDiv a:hover{text-decoration: underline;}
+.login_btn{display:block; width:300px;height:50px; line-height: 50px; border-radius:3px; box-shadow:0 4px 0 #d30b0b; margin-top: 15px; margin-bottom: 5px;}
+#login_form h4{height:30px; line-height:30px; position:relative; color:#999;}
+.login_reg{font-weight:bold;position:absolute; right:5px; top:0; color:#ff5256;}
+.inputDiv {padding-top: 20px;}
+.inputDiv a {color:#ff5256}
+.form .button{position:absolute; left:135px; top:242px; width:190px; height:40px;text-align:center; line-height:40px; font-size:16px; color:#ff5256; font-weight:bold;}
+
+#bannerUl{position:relative; z-index:1;}
+#bannerUl ul{ width:100% !important; min-width: 1200px;}
+#bannerUl li{ width:100% !important; min-width: 1200px;  height:500px; }
+.banDivContent{margin:0 auto; width:100%; height: 500px;}
+.hd{ width:100%;  position:absolute; z-index:1; bottom:0; left:0; height:30px; line-height:30px; text-align:center; }
+.hd ul li{ cursor:pointer; display:inline-block; *display:inline; zoom:1; width:12px; height:12px; margin:4px; background:#000; border-radius: 50%; overflow:hidden;
+    line-height:9999px; filter:alpha(opacity=20);opacity:0.2;
+}
+.hd ul .on{ filter:alpha(opacity=60);opacity:0.6;  }
+
+
+.div_err{background:#009fe3;box-shadow:0 0 1px #aaa;color: #ffffff;font-weight: bolder;text-align: center;padding: 10px 20px;width: 50%;margin-left: 20%;margin-top: 20px;}
+
+
+
+
+
+
+
+
+
+
+

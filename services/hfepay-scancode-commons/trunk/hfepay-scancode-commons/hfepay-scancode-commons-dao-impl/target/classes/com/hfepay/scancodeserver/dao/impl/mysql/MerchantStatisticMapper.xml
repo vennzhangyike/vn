@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="MerchantStatistic" >
+  <resultMap id="BaseResultMap" type="com.hfepay.scancode.commons.dto.MerchantOrderStatisticDTO" >
+    <result column="time" property="time" jdbcType="BIGINT" />
+    <result column="count" property="count" jdbcType="VARCHAR" />
+  </resultMap>
+  
+  <!-- 统计数据  t_order_pay -->
+  <select resultMap="BaseResultMap" parameterType="com.hfepay.scancode.commons.condition.MerchantOrderStatisticCondition" id="orderPayStatistic" >
+	   select count(id) as count,
+	  	<if test="type != null and type == 'Y'.toString() "><!-- 按年 -->
+	 		DATE_FORMAT(date(begin_time),'%m') as time 
+		</if>
+		<if test="type != null and type == 'M'.toString() "><!-- 按月 -->
+	 		DATE_FORMAT(date(begin_time),'%d') as time 
+		</if>
+		<if test="type != null and type == 'W'.toString() "><!-- 按周 -->
+	 		DAYOFWEEK(date(begin_time)) as time 
+		</if>
+		<if test="type != null and type == 'D'.toString() "><!-- 按天 -->
+	 		DATE_FORMAT(begin_time,'%H') as time 
+		</if>
+	   from t_order_pay
+	   where pay_status=#{status} 
+	   <if test="type != null and type != 'W'.toString() "><!-- 非周 -->
+	   	and begin_time like CONCAT(#{startTime},'%')
+	   </if>
+	   <if test="type != null and type == 'W'.toString() "><!-- 周是一个时间段 -->
+	     <![CDATA[
+	   	and date(begin_time) >=date(#{startTime}) 
+		and date(begin_time)<=date(#{endTime})
+		 ]]>
+	   </if>
+	   <if test="merchantNo != null and merchantNo != ''">
+	   	and merchant_no=#{merchantNo}
+	   </if>
+	   <if test="agentNo != null and agentNo != ''">
+	   	and agent_no=#{agentNo}
+	   </if>
+	   <if test="channelNo != null and channelNo != ''">
+	   	and channel_no=#{channelNo}
+	   </if>
+	   <if test="payType != null and payType != ''">
+	   	and pay_type=#{payType}
+	   </if>
+		group by time
+		order by time
+  </select>
+  
+  <!-- 统计数据  t_order_refund -->
+   <!--  <select resultMap="BaseResultMap" parameterType="com.hfepay.scancode.commons.condition.MerchantOrderStatisticCondition" id="orderRefundStatistic" >
+	   select count(id) as count,
+	  	<if test="type != null and type == 'Y'.toString() ">按年
+	 		DATE_FORMAT(date(begin_time),'%m') as time 
+		</if>
+		<if test="type != null and type == 'M'.toString() ">按月
+	 		DATE_FORMAT(date(begin_time),'%d') as time 
+		</if>
+		<if test="type != null and type == 'W'.toString() ">按周
+	 		DAYOFWEEK(date(begin_time)) as time 
+		</if>
+		<if test="type != null and type == 'D'.toString() ">按天
+	 		DATE_FORMAT(begin_time,'%H') as time 
+		</if>
+	   from t_order_refund
+	   where REFUND_STATE=#{status} 
+	   <if test="type != null and type != 'W'.toString() ">非周
+	   	and begin_time like CONCAT(#{startTime},'%')
+	   </if>
+	   <if test="type != null and type == 'W'.toString() ">周是一个时间段
+	   <![CDATA[
+		   	and date(begin_time) >=date(#{startTime}) 
+			and date(begin_time)<=date(#{endTime})
+		 ]]>
+	   </if>
+	   <if test="merchantNo != null and merchantNo != ''">
+	   	and merchant_no=#{merchantNo}
+	   </if>
+	   <if test="agentNo != null and agentNo != ''">
+	   	and agent_no=#{agentNo}
+	   </if>
+	   <if test="channelNo != null and channelNo != ''">
+	   	and channel_no=#{channelNo}
+	   </if>
+		group by time
+		order by time
+  </select>
+   -->
+  
+  
+    <!-- 统计金额数据  t_order_pay -->
+  <select resultMap="BaseResultMap" parameterType="com.hfepay.scancode.commons.condition.MerchantOrderStatisticCondition" id="orderPayAmtStatistic" >
+	   select ROUND(sum(order_amt),2) as count,
+	  	<if test="type != null and type == 'Y'.toString() "><!-- 按年 -->
+	 		DATE_FORMAT(date(begin_time),'%m') as time 
+		</if>
+		<if test="type != null and type == 'M'.toString() "><!-- 按月 -->
+	 		DATE_FORMAT(date(begin_time),'%d') as time 
+		</if>
+		<if test="type != null and type == 'W'.toString() "><!-- 按周 -->
+	 		DAYOFWEEK(date(begin_time)) as time 
+		</if>
+		<if test="type != null and type == 'D'.toString() "><!-- 按天 -->
+	 		DATE_FORMAT(begin_time,'%H') as time 
+		</if>
+	   from t_order_pay
+	   where pay_status=#{status} 
+	   <if test="type != null and type != 'W'.toString() "><!-- 非周 -->
+	   	and begin_time like CONCAT(#{startTime},'%')
+	   </if>
+	   <if test="type != null and type == 'W'.toString() "><!-- 周是一个时间段 -->
+	     <![CDATA[
+	   	and date(begin_time) >=date(#{startTime}) 
+		and date(begin_time)<=date(#{endTime})
+		 ]]>
+	   </if>
+	   <if test="merchantNo != null and merchantNo != ''">
+	   	and merchant_no=#{merchantNo}
+	   </if>
+	    <if test="agentNo != null and agentNo != ''">
+	   	and agent_no=#{agentNo}
+	   </if>
+	   <if test="channelNo != null and channelNo != ''">
+	   	and channel_no=#{channelNo}
+	   </if>
+	   <if test="payType != null and payType != ''">
+	   	and pay_type=#{payType}
+	   </if>
+		group by time
+		order by time
+  </select>
+  
+  <!-- 统计金额数据  t_order_refund -->
+    <!-- <select resultMap="BaseResultMap" parameterType="com.hfepay.scancode.commons.condition.MerchantOrderStatisticCondition" id="orderRefundAmtStatistic" >
+	   select ROUND(sum(refund_fee/100),2) as count,
+	  	<if test="type != null and type == 'Y'.toString() ">按年
+	 		DATE_FORMAT(date(begin_time),'%m') as time 
+		</if>
+		<if test="type != null and type == 'M'.toString() ">按月
+	 		DATE_FORMAT(date(begin_time),'%d') as time 
+		</if>
+		<if test="type != null and type == 'W'.toString() ">按周
+	 		DAYOFWEEK(date(begin_time)) as time 
+		</if>
+		<if test="type != null and type == 'D'.toString() ">按天
+	 		DATE_FORMAT(begin_time,'%H') as time 
+		</if>
+	   from t_order_refund
+	   where REFUND_STATE=#{status} 
+	   <if test="type != null and type != 'W'.toString() ">非周
+	   	and begin_time like CONCAT(#{startTime},'%')
+	   </if>
+	   <if test="type != null and type == 'W'.toString() ">周是一个时间段
+	   <![CDATA[
+		   	and date(begin_time) >=date(#{startTime}) 
+			and date(begin_time)<=date(#{endTime})
+		 ]]>
+	   </if>
+	  <if test="merchantNo != null and merchantNo != ''">
+	   	and merchant_no=#{merchantNo}
+	   </if>
+	    <if test="agentNo != null and agentNo != ''">
+	   	and agent_no=#{agentNo}
+	   </if>
+	   <if test="channelNo != null and channelNo != ''">
+	   	and channel_no=#{channelNo}
+	   </if>
+		group by time
+		order by time
+  </select> -->
+  
+</mapper>

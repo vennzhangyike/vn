@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd 
+    http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd"
+	default-lazy-init="true">
+
+	<description>服务配置 </description>
+    <!-- consumer application name -->
+    <dubbo:application name="hfepay-scancode-gateway-webapp"  />
+    <dubbo:consumer timeout="30000" filter="InvocationRpcFilter"></dubbo:consumer>
+    <dubbo:registry address="zookeeper://${zookeeper.addr}" />
+  	<dubbo:reference id="payScanCodeService" interface="com.hfepay.pay.service.PayScanCodeService" check="false" retries="0"/>
+	
+	<dubbo:reference id="payCallBackOperatorService" interface="com.hfepay.pay.service.PayCallBackOperatorService" check="false" retries="0"/>
+	<dubbo:reference id="payCallBackService" interface="com.hfepay.pay.service.PayCallBackService" check="false" retries="0"/>
+  	<dubbo:reference id="apiLogApiService" interface="com.hfepay.scancode.api.service.ApiLogService"  check="false" retries="0"/>
+<dubbo:reference id="payScanPayService"  interface="com.hfepay.pay.service.PayScanPayService" check="false" retries="0" />
+<dubbo:reference id="payOrderPaymentService"  interface="com.hfepay.pay.service.PayOrderPaymentService" check="false" retries="0" />
+
+<dubbo:reference id="webankOrderService"  interface="com.hfepay.scancode.api.service.WebankOrderService" check="false" retries="0" />
+<dubbo:reference id="weBankMerchantBusinessService"  interface="com.hfepay.scancode.api.webank.service.WeBankMerchantBusinessService" check="false" retries="0" />
+	
+	<dubbo:reference id="payService"  interface="com.hfepay.pay.service.PayService" check="false" retries="0" />
+	<dubbo:reference id="withdrawService"  interface="com.hfepay.pay.service.WithdrawService" check="false" retries="0" />
+	<dubbo:reference id="payWithdrawalsService"  interface="com.hfepay.pay.service.PayWithdrawalsService" check="false" retries="0" />
+	<dubbo:reference id="channelSecretKeyService"  interface="com.hfepay.pay.service.ChannelSecretKeyService" check="false" retries="0" />
+</beans>

@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="AdviertisementInfo">
+	<resultMap id="BaseResultMap" type="com.hfepay.scancode.commons.entity.AdviertisementInfo">
+        <result property="id" column="A_id"/>
+        <result property="adviertNo" column="A_adviert_no"/>
+        <result property="organNo" column="A_organ_no"/>
+        <result property="adviertScope" column="A_adviert_scope"/>
+        <result property="adviertPosition" column="A_adviert_position"/>
+        <result property="imgUrl" column="A_img_url"/>
+        <result property="adviertLink" column="A_adviert_link"/>
+        <result property="startDate" column="A_start_date"/>
+        <result property="endDate" column="A_end_date"/>
+        <result property="priority" column="A_priority"/>
+        <result property="status" column="A_status"/>
+        <result property="recordStatus" column="A_record_status"/>
+        <result property="createTime" column="A_create_time"/>
+        <result property="updateTime" column="A_update_time"/>
+        <result property="operator" column="A_operator"/>
+        <result property="remark" column="A_remark"/>
+        <result property="temp1" column="A_temp_1"/>
+        <result property="temp2" column="A_temp_2"/>
+        <result property="temp3" column="A_temp_3"/>
+        <result property="temp4" column="A_temp_4"/>
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+	    <![CDATA[
+		A.id as A_id,A.adviert_no as A_adviert_no,A.organ_no as A_organ_no,A.adviert_scope as A_adviert_scope,A.adviert_position as A_adviert_position,A.img_url as A_img_url,A.adviert_link as A_adviert_link,A.start_date as A_start_date,A.end_date as A_end_date,A.priority as A_priority,A.status as A_status,A.record_status as A_record_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2,A.temp_3 as A_temp_3,A.temp_4 as A_temp_4
+	    ]]>
+	</sql>
+
+	<sql id="channel_filter">
+	    <if test="params.nodeSeq != null" >
+        	EXISTS (
+				SELECT
+					n.current_node
+				FROM
+					t_node_relation n
+				WHERE
+				 <if test="params.identityFlag != null" >
+					 n.identity_flag = '${params.identityFlag}' and
+				</if>
+				<if test="params.nodeSeq == 'system'" >
+					 n.node_seq like '%' and
+				</if>
+				<if test="params.nodeSeq != 'system'" >
+					 n.node_seq like CONCAT('${params.nodeSeq}','%') and 
+				</if>
+					 A.organ_no = n.current_node)
+				<if test="@com.hfepay.commons.base.collection.Collections@isNotEmpty(conditions)"> AND </if> 
+      	</if>
+	</sql>
+	
+	<select id="findByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+     from t_adviertisement_info A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+      	<include refid="channel_filter" />
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+    <if test="hasOrderBy" >
+      order by
+      <foreach collection="orderBys" item="orderBy" separator="," > ${orderBy} </foreach>
+    </if>
+  </select>
+  <select resultMap="BaseResultMap" parameterType="java.lang.String" id="findById" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_adviertisement_info A
+    where A.id = #{id}
+  </select>
+  <delete parameterType="java.lang.String" id="deleteById" >
+    delete from t_adviertisement_info
+    where id = #{id}
+  </delete>
+  <delete id="deleteByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" >
+    delete A from t_adviertisement_info A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.hfepay.scancode.commons.entity.AdviertisementInfo" >
+    insert into t_adviertisement_info (
+        	id,
+        	adviert_no,
+        	organ_no,
+        	adviert_scope,
+        	adviert_position,
+        	img_url,
+        	adviert_link,
+        	start_date,
+        	end_date,
+        	priority,
+        	status,
+        	record_status,
+        	create_time,
+        	update_time,
+        	operator,
+        	remark,
+        	temp_1,
+        	temp_2,
+        	temp_3,
+        	temp_4
+        )
+    values (UUID(),
+        	#{adviertNo},
+        	#{organNo},
+        	#{adviertScope},
+        	#{adviertPosition},
+        	#{imgUrl},
+        	#{adviertLink},
+        	#{startDate},
+        	#{endDate},
+        	#{priority},
+        	#{status},
+        	#{recordStatus},
+        	#{createTime},
+        	#{updateTime},
+        	#{operator},
+        	#{remark},
+        	#{temp1},
+        	#{temp2},
+        	#{temp3},
+        	#{temp4}
+    )
+  </insert>
+  <select id="countByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultType="java.lang.Integer" >
+    select count(*) from t_adviertisement_info A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+      	<include refid="channel_filter" />
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </select>
+  <update id="updateByCriteria" parameterType="map" >
+    update t_adviertisement_info A
+    <set >
+        	<if test="record.id != null and record.id != '' " >
+        		A.id = #{record.id},
+      		</if>
+        	<if test="record.adviertNo != null and record.adviertNo != '' " >
+        		A.adviert_no = #{record.adviertNo},
+      		</if>
+        	<if test="record.organNo != null and record.organNo != '' " >
+        		A.organ_no = #{record.organNo},
+      		</if>
+        	<if test="record.adviertScope != null and record.adviertScope != '' " >
+        		A.adviert_scope = #{record.adviertScope},
+      		</if>
+        	<if test="record.adviertPosition != null and record.adviertPosition != '' " >
+        		A.adviert_position = #{record.adviertPosition},
+      		</if>
+        	<if test="record.imgUrl != null and record.imgUrl != '' " >
+        		A.img_url = #{record.imgUrl},
+      		</if>
+        	<if test="record.adviertLink != null and record.adviertLink != '' " >
+        		A.adviert_link = #{record.adviertLink},
+      		</if>
+        	<if test="record.startDate != null and record.startDate != '' " >
+        		A.start_date = #{record.startDate},
+      		</if>
+        	<if test="record.endDate != null and record.endDate != '' " >
+        		A.end_date = #{record.endDate},
+      		</if>
+        	<if test="record.priority != null and record.priority != '' " >
+        		A.priority = #{record.priority},
+      		</if>
+        	<if test="record.status != null and record.status != '' " >
+        		A.status = #{record.status},
+      		</if>
+        	<if test="record.recordStatus != null and record.recordStatus != '' " >
+        		A.record_status = #{record.recordStatus},
+      		</if>
+        	<if test="record.createTime != null and record.createTime != '' " >
+        		A.create_time = #{record.createTime},
+      		</if>
+        	<if test="record.updateTime != null and record.updateTime != '' " >
+        		A.update_time = #{record.updateTime},
+      		</if>
+        	<if test="record.operator != null and record.operator != '' " >
+        		A.operator = #{record.operator},
+      		</if>
+        	<if test="record.remark != null and record.remark != '' " >
+        		A.remark = #{record.remark},
+      		</if>
+        	<if test="record.temp1 != null and record.temp1 != '' " >
+        		A.temp_1 = #{record.temp1},
+      		</if>
+        	<if test="record.temp2 != null and record.temp2 != '' " >
+        		A.temp_2 = #{record.temp2},
+      		</if>
+        	<if test="record.temp3 != null and record.temp3 != '' " >
+        		A.temp_3 = #{record.temp3},
+      		</if>
+        	<if test="record.temp4 != null and record.temp4 != '' " >
+        		A.temp_4 = #{record.temp4},
+      		</if>
+    </set>
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </update>
+  <update id="update" parameterType="com.hfepay.scancode.commons.entity.AdviertisementInfo" >
+    update t_adviertisement_info A
+    <set >
+        	<if test="id != null and id != '' " >
+        		A.id = #{id},
+      		</if>
+        	<if test="adviertNo != null and adviertNo != '' " >
+        		A.adviert_no = #{adviertNo},
+      		</if>
+        	<if test="organNo != null" >
+        		A.organ_no = #{organNo},
+      		</if>
+        	<if test="adviertScope != null " >
+        		A.adviert_scope = #{adviertScope},
+      		</if>
+        	<if test="adviertPosition != null and adviertPosition != '' " >
+        		A.adviert_position = #{adviertPosition},
+      		</if>
+        	<if test="imgUrl != null and imgUrl != '' " >
+        		A.img_url = #{imgUrl},
+      		</if>
+        	<if test="adviertLink != null and adviertLink != '' " >
+        		A.adviert_link = #{adviertLink},
+      		</if>
+        	<if test="startDate != null and startDate != '' " >
+        		A.start_date = #{startDate},
+      		</if>
+        	<if test="endDate != null and endDate != '' " >
+        		A.end_date = #{endDate},
+      		</if>
+        	<if test="priority != null and priority != '' " >
+        		A.priority = #{priority},
+      		</if>
+        	<if test="status != null and status != '' " >
+        		A.status = #{status},
+      		</if>
+        	<if test="recordStatus != null and recordStatus != '' " >
+        		A.record_status = #{recordStatus},
+      		</if>
+        	<if test="createTime != null and createTime != '' " >
+        		A.create_time = #{createTime},
+      		</if>
+        	<if test="updateTime != null and updateTime != '' " >
+        		A.update_time = #{updateTime},
+      		</if>
+        	<if test="operator != null and operator != '' " >
+        		A.operator = #{operator},
+      		</if>
+        	<if test="remark != null and remark != '' " >
+        		A.remark = #{remark},
+      		</if>
+        	<if test="temp1 != null and temp1 != '' " >
+        		A.temp_1 = #{temp1},
+      		</if>
+        	<if test="temp2 != null and temp2 != '' " >
+        		A.temp_2 = #{temp2},
+      		</if>
+        	<if test="temp3 != null and temp3 != '' " >
+        		A.temp_3 = #{temp3},
+      		</if>
+        	<if test="temp4 != null and temp4 != '' " >
+        		A.temp_4 = #{temp4},
+      		</if>
+    </set>
+    where A.id = #{id}
+  </update>
+  
+	<update id="updateStatus">
+    update t_adviertisement_info
+		set `STATUS` = #{status}
+		where id=#{id}
+  </update>
+  <!-- 获取机构列表  -->
+  <select id="getOrganList" resultMap="BaseResultMap">
+  	SELECT
+	organNo AS A_organ_no,
+	organName AS organName
+	FROM
+		(
+			SELECT
+				channel_no AS organNo,
+				channel_name AS organName
+			FROM
+				t_channel_base A
+			WHERE 1=1
+			<if test="organName != null and organName != '' " >
+				AND A.channel_name LIKE CONCAT('%',#{organName},'%')
+			</if>
+			<if test="organNo != null and organNo != '' " >
+				AND A.channel_no = #{organNo}
+			</if>
+			UNION
+			SELECT
+				AGENT_NO AS organNo,
+				AGENT_NAME AS organName
+			FROM
+				t_agent_base B
+			WHERE 1=1
+			<if test="organName != null and organName != '' " >
+				AND B.AGENT_NAME LIKE CONCAT('%',#{organName},'%')
+			</if>
+			<if test="organNo != null and organNo != '' " >
+				AND B.AGENT_NO = #{organNo}
+			</if>
+		) C
+  </select>
+</mapper>
+

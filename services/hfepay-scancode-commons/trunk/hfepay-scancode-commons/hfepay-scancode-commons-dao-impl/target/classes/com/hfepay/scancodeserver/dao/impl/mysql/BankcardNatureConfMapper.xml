@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="BankcardNatureConf">
+	<resultMap id="BaseResultMap" type="com.hfepay.scancode.commons.entity.BankcardNatureConf">
+        <result property="id" column="A_ID"/>
+        <result property="bankName" column="A_BANK_NAME"/>
+        <result property="bankCode" column="A_BANK_CODE"/>
+        <result property="bankCardName" column="A_BANK_CARD_NAME"/>
+        <result property="atm" column="A_ATM"/>
+        <result property="pos" column="A_POS"/>
+        <result property="track" column="A_TRACK"/>
+        <result property="trackStartChar" column="A_TRACK_START_CHAR"/>
+        <result property="trackNum" column="A_TRACK_NUM"/>
+        <result property="acountStartChar" column="A_ACOUNT_START_CHAR"/>
+        <result property="acountNum" column="A_ACOUNT_NUM"/>
+        <result property="mainAcount" column="A_MAIN_ACOUNT"/>
+        <result property="acountReadTrack" column="A_ACOUNT_READ_TRACK"/>
+        <result property="identStartChar" column="A_IDENT_START_CHAR"/>
+        <result property="identNum" column="A_IDENT_NUM"/>
+        <result property="identValue" column="A_IDENT_VALUE"/>
+        <result property="identReadTrack" column="A_IDENT_READ_TRACK"/>
+        <result property="bankCardType" column="A_BANK_CARD_TYPE"/>
+        <result property="addCut" column="A_ADD_CUT"/>
+        <result property="telePhone" column="A_TELE_PHONE"/>
+	</resultMap>
+	
+	
+	<sql id="Base_Column_List">
+	    <![CDATA[
+		A.ID as A_ID,A.BANK_NAME as A_BANK_NAME,A.BANK_CODE as A_BANK_CODE,A.BANK_CARD_NAME as A_BANK_CARD_NAME,A.ATM as A_ATM,A.POS as A_POS,A.TRACK as A_TRACK,A.TRACK_START_CHAR as A_TRACK_START_CHAR,A.TRACK_NUM as A_TRACK_NUM,A.ACOUNT_START_CHAR as A_ACOUNT_START_CHAR,A.ACOUNT_NUM as A_ACOUNT_NUM,A.MAIN_ACOUNT as A_MAIN_ACOUNT,A.ACOUNT_READ_TRACK as A_ACOUNT_READ_TRACK,A.IDENT_START_CHAR as A_IDENT_START_CHAR,A.IDENT_NUM as A_IDENT_NUM,A.IDENT_VALUE as A_IDENT_VALUE,A.IDENT_READ_TRACK as A_IDENT_READ_TRACK,A.BANK_CARD_TYPE as A_BANK_CARD_TYPE,A.ADD_CUT as A_ADD_CUT,A.TELE_PHONE as A_TELE_PHONE
+	    ]]>
+	</sql>
+
+	<select id="findByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+     from t_bankcard_nature_conf A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+    <if test="hasOrderBy" >
+      order by
+      <foreach collection="orderBys" item="orderBy" separator="," > ${orderBy} </foreach>
+    </if>
+  </select>
+  <select resultMap="BaseResultMap" parameterType="java.lang.String" id="findById" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_bankcard_nature_conf A 
+    where A.ID = #{id}
+  </select>
+  <delete parameterType="java.lang.String" id="deleteById" >
+    delete from t_bankcard_nature_conf
+    where ID = #{id}
+  </delete>
+  <delete id="deleteByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" >
+    delete A from t_bankcard_nature_conf A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.hfepay.scancode.commons.entity.BankcardNatureConf" >
+    insert into t_bankcard_nature_conf (
+        	ID,
+        	BANK_NAME,
+        	BANK_CODE,
+        	BANK_CARD_NAME,
+        	ATM,
+        	POS,
+        	TRACK,
+        	TRACK_START_CHAR,
+        	TRACK_NUM,
+        	ACOUNT_START_CHAR,
+        	ACOUNT_NUM,
+        	MAIN_ACOUNT,
+        	ACOUNT_READ_TRACK,
+        	IDENT_START_CHAR,
+        	IDENT_NUM,
+        	IDENT_VALUE,
+        	IDENT_READ_TRACK,
+        	BANK_CARD_TYPE,
+        	ADD_CUT,
+        	TELE_PHONE
+        )
+    values (
+        	#{id},
+        	#{bankName},
+        	#{bankCode},
+        	#{bankCardName},
+        	#{atm},
+        	#{pos},
+        	#{track},
+        	#{trackStartChar},
+        	#{trackNum},
+        	#{acountStartChar},
+        	#{acountNum},
+        	#{mainAcount},
+        	#{acountReadTrack},
+        	#{identStartChar},
+        	#{identNum},
+        	#{identValue},
+        	#{identReadTrack},
+        	#{bankCardType},
+        	#{addCut},
+        	#{telePhone}
+    )
+  </insert>
+  <select id="countByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultType="java.lang.Integer" >
+    select count(*) from t_bankcard_nature_conf A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </select>
+  <update id="updateByCriteria" parameterType="map" >
+    update t_bankcard_nature_conf A
+    <set >
+        	<if test="record.id != null and record.id != '' " >
+        		A.ID = #{record.id},
+      		</if>
+        	<if test="record.bankName != null and record.bankName != '' " >
+        		A.BANK_NAME = #{record.bankName},
+      		</if>
+        	<if test="record.bankCode != null and record.bankCode != '' " >
+        		A.BANK_CODE = #{record.bankCode},
+      		</if>
+        	<if test="record.bankCardName != null and record.bankCardName != '' " >
+        		A.BANK_CARD_NAME = #{record.bankCardName},
+      		</if>
+        	<if test="record.atm != null and record.atm != '' " >
+        		A.ATM = #{record.atm},
+      		</if>
+        	<if test="record.pos != null and record.pos != '' " >
+        		A.POS = #{record.pos},
+      		</if>
+        	<if test="record.track != null and record.track != '' " >
+        		A.TRACK = #{record.track},
+      		</if>
+        	<if test="record.trackStartChar != null and record.trackStartChar != '' " >
+        		A.TRACK_START_CHAR = #{record.trackStartChar},
+      		</if>
+        	<if test="record.trackNum != null and record.trackNum != '' " >
+        		A.TRACK_NUM = #{record.trackNum},
+      		</if>
+        	<if test="record.acountStartChar != null and record.acountStartChar != '' " >
+        		A.ACOUNT_START_CHAR = #{record.acountStartChar},
+      		</if>
+        	<if test="record.acountNum != null and record.acountNum != '' " >
+        		A.ACOUNT_NUM = #{record.acountNum},
+      		</if>
+        	<if test="record.mainAcount != null and record.mainAcount != '' " >
+        		A.MAIN_ACOUNT = #{record.mainAcount},
+      		</if>
+        	<if test="record.acountReadTrack != null and record.acountReadTrack != '' " >
+        		A.ACOUNT_READ_TRACK = #{record.acountReadTrack},
+      		</if>
+        	<if test="record.identStartChar != null and record.identStartChar != '' " >
+        		A.IDENT_START_CHAR = #{record.identStartChar},
+      		</if>
+        	<if test="record.identNum != null and record.identNum != '' " >
+        		A.IDENT_NUM = #{record.identNum},
+      		</if>
+        	<if test="record.identValue != null and record.identValue != '' " >
+        		A.IDENT_VALUE = #{record.identValue},
+      		</if>
+        	<if test="record.identReadTrack != null and record.identReadTrack != '' " >
+        		A.IDENT_READ_TRACK = #{record.identReadTrack},
+      		</if>
+        	<if test="record.bankCardType != null and record.bankCardType != '' " >
+        		A.BANK_CARD_TYPE = #{record.bankCardType},
+      		</if>
+        	<if test="record.addCut != null and record.addCut != '' " >
+        		A.ADD_CUT = #{record.addCut},
+      		</if>
+        	<if test="record.telePhone != null and record.telePhone != '' " >
+        		A.TELE_PHONE = #{record.telePhone},
+      		</if>
+    </set>
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </update>
+  <update id="update" parameterType="com.hfepay.scancode.commons.entity.BankcardNatureConf" >
+    update t_bankcard_nature_conf A
+    <set >
+        	<if test="id != null and id != '' " >
+        		A.ID = #{id},
+      		</if>
+        	<if test="bankName != null and bankName != '' " >
+        		A.BANK_NAME = #{bankName},
+      		</if>
+        	<if test="bankCode != null and bankCode != '' " >
+        		A.BANK_CODE = #{bankCode},
+      		</if>
+        	<if test="bankCardName != null and bankCardName != '' " >
+        		A.BANK_CARD_NAME = #{bankCardName},
+      		</if>
+        	<if test="atm != null and atm != '' " >
+        		A.ATM = #{atm},
+      		</if>
+        	<if test="pos != null and pos != '' " >
+        		A.POS = #{pos},
+      		</if>
+        	<if test="track != null and track != '' " >
+        		A.TRACK = #{track},
+      		</if>
+        	<if test="trackStartChar != null and trackStartChar != '' " >
+        		A.TRACK_START_CHAR = #{trackStartChar},
+      		</if>
+        	<if test="trackNum != null and trackNum != '' " >
+        		A.TRACK_NUM = #{trackNum},
+      		</if>
+        	<if test="acountStartChar != null and acountStartChar != '' " >
+        		A.ACOUNT_START_CHAR = #{acountStartChar},
+      		</if>
+        	<if test="acountNum != null and acountNum != '' " >
+        		A.ACOUNT_NUM = #{acountNum},
+      		</if>
+        	<if test="mainAcount != null and mainAcount != '' " >
+        		A.MAIN_ACOUNT = #{mainAcount},
+      		</if>
+        	<if test="acountReadTrack != null and acountReadTrack != '' " >
+        		A.ACOUNT_READ_TRACK = #{acountReadTrack},
+      		</if>
+        	<if test="identStartChar != null and identStartChar != '' " >
+        		A.IDENT_START_CHAR = #{identStartChar},
+      		</if>
+        	<if test="identNum != null and identNum != '' " >
+        		A.IDENT_NUM = #{identNum},
+      		</if>
+        	<if test="identValue != null and identValue != '' " >
+        		A.IDENT_VALUE = #{identValue},
+      		</if>
+        	<if test="identReadTrack != null and identReadTrack != '' " >
+        		A.IDENT_READ_TRACK = #{identReadTrack},
+      		</if>
+        	<if test="bankCardType != null and bankCardType != '' " >
+        		A.BANK_CARD_TYPE = #{bankCardType},
+      		</if>
+        	<if test="addCut != null and addCut != '' " >
+        		A.ADD_CUT = #{addCut},
+      		</if>
+        	<if test="telePhone != null and telePhone != '' " >
+        		A.TELE_PHONE = #{telePhone},
+      		</if>
+    </set>
+    where A.ID = #{id}
+  </update>
+  
+</mapper>
+

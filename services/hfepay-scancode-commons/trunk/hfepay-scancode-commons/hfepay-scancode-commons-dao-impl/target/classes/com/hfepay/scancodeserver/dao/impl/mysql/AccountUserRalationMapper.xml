@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="AccountUserRalation">
+	<resultMap id="BaseResultMap" type="com.hfepay.scancode.commons.entity.AccountUserRalation">
+        <result property="id" column="A_id"/>
+        <result property="accountId" column="A_account_id"/>
+        <result property="userId" column="A_user_id"/>
+        <result property="userCode" column="A_user_code"/>
+        <result property="status" column="A_status"/>
+        <result property="operatorId" column="A_operator_id"/>
+        <result property="createTime" column="A_CREATE_TIME"/>
+        <result property="rechangeId" column="A_rechange_id"/>
+        <result property="updateTime" column="A_UPDATE_TIME"/>
+	</resultMap>
+	
+	<resultMap id="BaseResultMapVo" type="com.hfepay.scancode.commons.vo.AccountUserRalationVo" extends="BaseResultMap">
+		<result property="operatorName" column="operator_name"/>
+		<result property="userName" column="user_name"/>
+		<result property="rechangeName" column="rechange_name"/>
+		<result property="accountName" column="account_name"/>
+		<result property="shortName" column="short_name"/>
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+	    <![CDATA[
+		A.id as A_id,A.account_id as A_account_id,A.user_id as A_user_id,A.user_code as A_user_code,A.status as A_status,A.operator_id as A_operator_id,A.CREATE_TIME as A_CREATE_TIME,A.rechange_id as A_rechange_id,A.UPDATE_TIME as A_UPDATE_TIME
+	    ]]>
+	</sql>
+
+	<select id="findByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultMap="BaseResultMapVo" >
+    select
+    <include refid="Base_Column_List" />,B.user_name as operator_name,C.user_name as account_name,C.short_name,D.user_name as rechange_name,CASE
+			WHEN F.user_type = 0 THEN F.user_realname
+			WHEN F.user_type = 1 THEN F.company_name
+			ELSE E.user_name
+			END AS user_name
+     from t_account_user_ralation A
+      left join t_sys_admin B on A.operator_id = B.id 
+      left join t_sys_admin C on A.account_id = C.id 
+      left join t_sys_admin D on A.rechange_id = D.id 
+      left join t_user_register E on A.user_id = E.id 
+      LEFT JOIN t_user_detail F ON F.user_id = E.id 
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+    <if test="hasOrderBy" >
+      order by
+      <foreach collection="orderBys" item="orderBy" separator="," > ${orderBy} </foreach>
+    </if>
+  </select>
+  <select resultMap="BaseResultMapVo" parameterType="java.lang.String" id="findById" >
+    select 
+    <include refid="Base_Column_List" />,B.user_name as operator_name,C.user_name as account_name,C.short_name,D.user_name as rechange_name,CASE
+			WHEN F.user_type = 0 THEN F.user_realname
+			WHEN F.user_type = 1 THEN F.company_name
+			ELSE E.user_name
+			END AS user_name
+    from t_account_user_ralation A 
+    	left join t_sys_admin B on A.operator_id = B.id 
+    	left join t_sys_admin C on A.account_id = C.id 
+      left join t_sys_admin D on A.rechange_id = D.id 
+      left join t_user_register E on A.user_id = E.id
+      LEFT JOIN t_user_detail F ON F.user_id = E.id 
+    where A.id = #{id}
+  </select>
+  <delete parameterType="java.lang.String" id="deleteById" >
+    delete from t_account_user_ralation
+    where id = #{id}
+  </delete>
+  <delete id="deleteByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" >
+    delete A from t_account_user_ralation A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.hfepay.scancode.commons.entity.AccountUserRalation" >
+    insert into t_account_user_ralation (
+        	id,
+        	account_id,
+        	user_id,
+        	user_code,
+        	status,
+        	operator_id,
+        	CREATE_TIME,
+        	rechange_id,
+        	UPDATE_TIME
+        )
+    values (
+        	#{id},
+        	#{accountId},
+        	#{userId},
+        	#{userCode},
+        	#{status},
+        	#{operatorId},
+        	#{createTime},
+        	#{rechangeId},
+        	#{updateTime}
+    )
+  </insert>
+  <select id="countByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultType="java.lang.Integer" >
+    select count(*) from t_account_user_ralation A
+     left join t_sys_admin C on A.account_id = C.id 
+      left join t_user_register E on A.user_id = E.id 
+      LEFT JOIN t_user_detail F ON F.user_id = E.id 
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </select>
+  <update id="updateByCriteria" parameterType="map" >
+    update t_account_user_ralation A
+    <set >
+        	<if test="record.id != null and record.id != '' " >
+        		A.id = #{record.id},
+      		</if>
+        	<if test="record.accountId != null and record.accountId != '' " >
+        		A.account_id = #{record.accountId},
+      		</if>
+        	<if test="record.userId != null and record.userId != '' " >
+        		A.user_id = #{record.userId},
+      		</if>
+        	<if test="record.userCode != null and record.userCode != '' " >
+        		A.user_code = #{record.userCode},
+      		</if>
+        	<if test="record.status != null and record.status != '' " >
+        		A.status = #{record.status},
+      		</if>
+        	<if test="record.operatorId != null and record.operatorId != '' " >
+        		A.operator_id = #{record.operatorId},
+      		</if>
+        	<if test="record.createTime != null and record.createTime != '' " >
+        		A.CREATE_TIME = #{record.createTime},
+      		</if>
+        	<if test="record.rechangeId != null and record.rechangeId != '' " >
+        		A.rechange_id = #{record.rechangeId},
+      		</if>
+        	<if test="record.updateTime != null and record.updateTime != '' " >
+        		A.UPDATE_TIME = #{record.updateTime},
+      		</if>
+    </set>
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </update>
+  <update id="update" parameterType="com.hfepay.scancode.commons.entity.AccountUserRalation" >
+    update t_account_user_ralation A
+    <set >
+        	<if test="id != null and id != '' " >
+        		A.id = #{id},
+      		</if>
+        	<if test="accountId != null and accountId != '' " >
+        		A.account_id = #{accountId},
+      		</if>
+        	<if test="userId != null and userId != '' " >
+        		A.user_id = #{userId},
+      		</if>
+        	<if test="userCode != null and userCode != '' " >
+        		A.user_code = #{userCode},
+      		</if>
+        	<if test="status != null and status != '' " >
+        		A.status = #{status},
+      		</if>
+        	<if test="operatorId != null and operatorId != '' " >
+        		A.operator_id = #{operatorId},
+      		</if>
+        	<if test="createTime != null and createTime != '' " >
+        		A.CREATE_TIME = #{createTime},
+      		</if>
+        	<if test="rechangeId != null and rechangeId != '' " >
+        		A.rechange_id = #{rechangeId},
+      		</if>
+        	<if test="updateTime != null and updateTime != '' " >
+        		A.UPDATE_TIME = #{updateTime},
+      		</if>
+    </set>
+    where A.id = #{id}
+  </update>
+  
+	<update id="updateStatus">
+    update t_account_user_ralation
+		set `STATUS` = #{status}
+		where id=#{id}
+  </update>
+</mapper>
+

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="QrcodeGoods">
+	<resultMap id="BaseResultMap" type="com.hfepay.scancode.commons.entity.QrcodeGoods">
+        <result property="id" column="A_id"/>
+        <result property="qrCode" column="A_qr_code"/>
+        <result property="merchantNo" column="A_merchant_no"/>
+        <result property="goodsName" column="A_goods_name"/>
+        <result property="goodsDesc" column="A_goods_desc"/>
+        <result property="isDefault" column="A_is_default"/>
+        <result property="recordStatus" column="A_record_status"/>
+        <result property="createTime" column="A_create_time"/>
+        <result property="updateTime" column="A_update_time"/>
+        <result property="operator" column="A_operator"/>
+        <result property="remark" column="A_remark"/>
+	</resultMap>
+	
+	<resultMap id="BaseResultMapVo" type="com.hfepay.scancode.commons.vo.QrcodeGoodsVo" extends="BaseResultMap">
+		<result property="operatorName" column="operator_name"/>
+		<result property="merchantName" column="merchant_name"/>
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+	    <![CDATA[
+		A.id as A_id,A.qr_code as A_qr_code,A.merchant_no as A_merchant_no,A.goods_name as A_goods_name,A.goods_desc as A_goods_desc,A.is_default as A_is_default,A.record_status as A_record_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark
+	    ]]>
+	</sql>
+	
+	<sql id="channel_filter">
+	    <if test="params.nodeSeq != null" >
+        	EXISTS (
+				SELECT
+					n.current_node
+				FROM
+					t_node_relation n
+				WHERE
+				 <if test="params.identityFlag != null" >
+					 n.identity_flag = '${params.identityFlag}' and
+				</if>
+					 n.node_seq like CONCAT('${params.nodeSeq}','%') and A.merchant_no = n.current_node)
+				<if test="@com.hfepay.commons.base.collection.Collections@isNotEmpty(conditions)"> AND </if> 
+      	</if>
+	</sql>
+	
+	<select id="findByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultMap="BaseResultMapVo" >
+    select
+    <include refid="Base_Column_List" />,C.merchant_name
+     from t_qrcode_goods A
+     left join t_merchant_info C on A.merchant_no = C.merchant_no
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+      	<include refid="channel_filter" />
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+    <if test="hasOrderBy" >
+      order by
+      <foreach collection="orderBys" item="orderBy" separator="," > ${orderBy} </foreach>
+    </if>
+  </select>
+  <select resultMap="BaseResultMapVo" parameterType="java.lang.String" id="findById" >
+    select 
+    <include refid="Base_Column_List" />,B.short_name as operator_name,C.merchant_name
+    from t_qrcode_goods A left join t_sys_admin B on A.operator = B.id 
+    left join t_merchant_info C on A.merchant_no = C.merchant_no
+    where A.id = #{id}
+  </select>
+  <delete parameterType="java.lang.String" id="deleteById" >
+    delete from t_qrcode_goods
+    where id = #{id}
+  </delete>
+  <delete id="deleteByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" >
+    delete A from t_qrcode_goods A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.hfepay.scancode.commons.entity.QrcodeGoods" >
+    insert into t_qrcode_goods (
+        	id,
+        	qr_code,
+        	merchant_no,
+        	goods_name,
+        	goods_desc,
+        	is_default,
+        	record_status,
+        	create_time,
+        	update_time,
+        	operator,
+        	remark
+        )
+    values (
+        	#{id},
+        	#{qrCode},
+        	#{merchantNo},
+        	#{goodsName},
+        	#{goodsDesc},
+        	#{isDefault},
+        	#{recordStatus},
+        	#{createTime},
+        	#{updateTime},
+        	#{operator},
+        	#{remark}
+    )
+  </insert>
+  <select id="countByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultType="java.lang.Integer" >
+    select count(*) from t_qrcode_goods A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+      	<include refid="channel_filter" />
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </select>
+  <update id="updateByCriteria" parameterType="map" >
+    update t_qrcode_goods A
+    <set >
+	        	<if test="record.id != null and record.id != '' " >
+	        		A.id = #{record.id},
+	      		</if>
+	        	<if test="record.qrCode != null and record.qrCode != '' " >
+	        		A.qr_code = #{record.qrCode},
+	      		</if>
+	        	<if test="record.merchantNo != null and record.merchantNo != '' " >
+	        		A.merchant_no = #{record.merchantNo},
+	      		</if>
+	        	<if test="record.goodsName != null and record.goodsName != '' " >
+	        		A.goods_name = #{record.goodsName},
+	      		</if>
+	        	<if test="record.goodsDesc != null and record.goodsDesc != '' " >
+	        		A.goods_desc = #{record.goodsDesc},
+	      		</if>
+	        	<if test="record.isDefault != null and record.isDefault != '' " >
+	        		A.is_default = #{record.isDefault},
+	      		</if>
+	        	<if test="record.recordStatus != null and record.recordStatus != '' " >
+	        		A.record_status = #{record.recordStatus},
+	      		</if>
+	        	<if test="record.createTime != null and record.createTime != '' " >
+	        		A.create_time = #{record.createTime},
+	      		</if>
+	        	<if test="record.updateTime != null and record.updateTime != '' " >
+	        		A.update_time = #{record.updateTime},
+	      		</if>
+	        	<if test="record.operator != null and record.operator != '' " >
+	        		A.operator = #{record.operator},
+	      		</if>
+	        	<if test="record.remark != null and record.remark != '' " >
+	        		A.remark = #{record.remark},
+	      		</if>
+    </set>
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </update>
+  <update id="update" parameterType="com.hfepay.scancode.commons.entity.QrcodeGoods" >
+    update t_qrcode_goods A
+    <set >
+	        	<if test="id != null and id != '' " >
+	        		A.id = #{id},
+	      		</if>
+	        	<if test="qrCode != null and qrCode != '' " >
+	        		A.qr_code = #{qrCode},
+	      		</if>
+	        	<if test="merchantNo != null and merchantNo != '' " >
+	        		A.merchant_no = #{merchantNo},
+	      		</if>
+	        	<if test="goodsName != null and goodsName != '' " >
+	        		A.goods_name = #{goodsName},
+	      		</if>
+	        	<if test="goodsDesc != null and goodsDesc != '' " >
+	        		A.goods_desc = #{goodsDesc},
+	      		</if>
+	        	<if test="isDefault != null and isDefault != '' " >
+	        		A.is_default = #{isDefault},
+	      		</if>
+	        	<if test="recordStatus != null and recordStatus != '' " >
+	        		A.record_status = #{recordStatus},
+	      		</if>
+	        	<if test="createTime != null and createTime != '' " >
+	        		A.create_time = #{createTime},
+	      		</if>
+	        	<if test="updateTime != null and updateTime != '' " >
+	        		A.update_time = #{updateTime},
+	      		</if>
+	        	<if test="operator != null and operator != '' " >
+	        		A.operator = #{operator},
+	      		</if>
+	        	<if test="remark != null and remark != '' " >
+	        		A.remark = #{remark},
+	      		</if>
+    </set>
+    where A.id = #{id}
+  </update>
+</mapper>
+

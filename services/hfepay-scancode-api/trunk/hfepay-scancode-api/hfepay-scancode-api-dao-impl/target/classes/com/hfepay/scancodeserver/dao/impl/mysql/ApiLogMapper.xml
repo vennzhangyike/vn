@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="ApiLog">
+	<resultMap id="BaseResultMap" type="com.hfepay.scancode.api.entity.ApiLog">
+		<result property="id" column="A_id" />
+		<result property="payCode" column="A_pay_code" />
+		<result property="tradeNo" column="A_trade_no" />
+		<result property="channelNo" column="A_channel_no" />
+		<result property="agentNo" column="A_agent_no" />
+		<result property="merchantNo" column="A_merchant_no" />
+		<result property="requestParams" column="A_request_params" />
+		<result property="responseParams" column="A_response_params" />
+		<result property="notifyParams" column="A_notify_params" />
+		<result property="createTime" column="A_create_time" />
+		<result property="updateTime" column="A_update_time" />
+		<result property="notifyTime" column="A_notify_time" />
+		<result property="remark" column="A_remark" />
+		<result property="temp1" column="A_temp_1" />
+		<result property="temp2" column="A_temp_2" />
+	</resultMap>
+
+	<sql id="Base_Column_List">
+	    <![CDATA[
+		A.id as A_id,A.pay_code as A_pay_code,A.trade_no as A_trade_no,A.channel_no as A_channel_no,A.agent_no as A_agent_no,A.merchant_no as A_merchant_no,A.request_params as A_request_params,A.response_params as A_response_params,A.notify_params as A_notify_params,A.create_time as A_create_time,A.update_time as A_update_time,A.notify_time as A_notify_time,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	    ]]>
+	</sql>
+
+	<select id="findByCriteria" parameterType="com.hfepay.commons.criteria.Criteria"
+		resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from t_api_log A
+		<if test="_parameter != null and _parameter != '' ">
+			<where>
+				<include refid="Global.Where_Clause" />
+			</where>
+		</if>
+		<if test="hasOrderBy">
+			order by
+			<foreach collection="orderBys" item="orderBy" separator=",">
+				${orderBy} </foreach>
+		</if>
+	</select>
+	<select resultMap="BaseResultMap" parameterType="java.lang.String"
+		id="findById">
+		select
+		<include refid="Base_Column_List" />
+		from t_api_log A 
+		where A.id = #{id}
+	</select>
+	<delete parameterType="java.lang.String" id="deleteById">
+		delete from t_api_log
+		where id = #{id}
+	</delete>
+	<delete id="deleteByCriteria" parameterType="com.hfepay.commons.criteria.Criteria">
+		delete A from t_api_log A
+		<if test="_parameter != null and _parameter != '' ">
+			<where>
+				<include refid="Global.Where_Clause" />
+			</where>
+		</if>
+	</delete>
+	<insert id="insert" parameterType="com.hfepay.scancode.api.entity.ApiLog">
+		insert into t_api_log (
+		id,
+		pay_code,
+		trade_no,
+		channel_no,
+		agent_no,
+		merchant_no,
+		request_params,
+		response_params,
+		notify_params,
+		create_time,
+		update_time,
+		notify_time,
+		remark,
+		temp_1,
+		temp_2
+		)
+		values (
+		#{id},
+		#{payCode},
+		#{tradeNo},
+		#{channelNo},
+		#{agentNo},
+		#{merchantNo},
+		#{requestParams},
+		#{responseParams},
+		#{notifyParams},
+		#{createTime},
+		#{updateTime},
+		#{notifyTime},
+		#{remark},
+		#{temp1},
+		#{temp2}
+		)
+	</insert>
+	<select id="countByCriteria" parameterType="com.hfepay.commons.criteria.Criteria"
+		resultType="java.lang.Integer">
+		select count(*) from t_api_log A
+		<if test="_parameter != null and _parameter != '' ">
+			<where>
+				<include refid="Global.Where_Clause" />
+			</where>
+		</if>
+	</select>
+	<update id="updateByCriteria" parameterType="map">
+		update t_api_log A
+		<set>
+			<if test="record.id != null and record.id != '' ">
+				A.id = #{record.id},
+			</if>
+			<if test="record.payCode != null and record.payCode != '' ">
+				A.pay_code = #{record.payCode},
+			</if>
+			<if test="record.tradeNo != null and record.tradeNo != '' ">
+				A.trade_no = #{record.tradeNo},
+			</if>
+			<if test="record.channelNo != null and record.channelNo != '' ">
+				A.channel_no = #{record.channelNo},
+			</if>
+			<if test="record.agentNo != null and record.agentNo != '' ">
+				A.agent_no = #{record.agentNo},
+			</if>
+			<if test="record.merchantNo != null and record.merchantNo != '' ">
+				A.merchant_no = #{record.merchantNo},
+			</if>
+			<if test="record.requestParams != null and record.requestParams != '' ">
+				A.request_params = #{record.requestParams},
+			</if>
+			<if test="record.responseParams != null and record.responseParams != '' ">
+				A.response_params = #{record.responseParams},
+			</if>
+			<if test="record.notifyParams != null and record.notifyParams != '' ">
+				A.notify_params = #{record.notifyParams},
+			</if>
+			<if test="record.createTime != null and record.createTime != '' ">
+				A.create_time = #{record.createTime},
+			</if>
+			<if test="record.updateTime != null and record.updateTime != '' ">
+				A.update_time = #{record.updateTime},
+			</if>
+			<if test="record.notifyTime != null and record.notifyTime != '' ">
+				A.notify_time = #{record.notifyTime},
+			</if>
+			<if test="record.remark != null and record.remark != '' ">
+				A.remark = #{record.remark},
+			</if>
+			<if test="record.temp1 != null and record.temp1 != '' ">
+				A.temp_1 = #{record.temp1},
+			</if>
+			<if test="record.temp2 != null and record.temp2 != '' ">
+				A.temp_2 = #{record.temp2},
+			</if>
+		</set>
+		<if test="_parameter != null and _parameter != '' ">
+			<where>
+				<include refid="Global.Where_Clause" />
+			</where>
+		</if>
+	</update>
+	<update id="update" parameterType="com.hfepay.scancode.api.entity.ApiLog">
+		update t_api_log A
+		<set>
+			<if test="id != null and id != '' ">
+				A.id = #{id},
+			</if>
+			<if test="payCode != null and payCode != '' ">
+				A.pay_code = #{payCode},
+			</if>
+			<if test="tradeNo != null and tradeNo != '' ">
+				A.trade_no = #{tradeNo},
+			</if>
+			<if test="channelNo != null and channelNo != '' ">
+				A.channel_no = #{channelNo},
+			</if>
+			<if test="agentNo != null and agentNo != '' ">
+				A.agent_no = #{agentNo},
+			</if>
+			<if test="merchantNo != null and merchantNo != '' ">
+				A.merchant_no = #{merchantNo},
+			</if>
+			<if test="requestParams != null and requestParams != '' ">
+				A.request_params = #{requestParams},
+			</if>
+			<if test="responseParams != null and responseParams != '' ">
+				A.response_params = #{responseParams},
+			</if>
+			<if test="notifyParams != null and notifyParams != '' ">
+				A.notify_params = #{notifyParams},
+			</if>
+			<if test="createTime != null and createTime != '' ">
+				A.create_time = #{createTime},
+			</if>
+			<if test="updateTime != null and updateTime != '' ">
+				A.update_time = #{updateTime},
+			</if>
+			<if test="notifyTime != null and notifyTime != '' ">
+				A.notify_time = #{notifyTime},
+			</if>
+			<if test="remark != null and remark != '' ">
+				A.remark = #{remark},
+			</if>
+			<if test="temp1 != null and temp1 != '' ">
+				A.temp_1 = #{temp1},
+			</if>
+			<if test="temp2 != null and temp2 != '' ">
+				A.temp_2 = #{temp2},
+			</if>
+		</set>
+		where A.id = #{id}
+	</update>
+	
+	<update id="updateByTradeNo" parameterType="com.hfepay.scancode.api.entity.ApiLog">
+		update t_api_log A
+		<set>
+			<if test="id != null and id != '' ">
+				A.id = #{id},
+			</if>
+			<if test="payCode != null and payCode != '' ">
+				A.pay_code = #{payCode},
+			</if>
+			<if test="tradeNo != null and tradeNo != '' ">
+				A.trade_no = #{tradeNo},
+			</if>
+			<if test="channelNo != null and channelNo != '' ">
+				A.channel_no = #{channelNo},
+			</if>
+			<if test="agentNo != null and agentNo != '' ">
+				A.agent_no = #{agentNo},
+			</if>
+			<if test="merchantNo != null and merchantNo != '' ">
+				A.merchant_no = #{merchantNo},
+			</if>
+			<if test="requestParams != null and requestParams != '' ">
+				A.request_params = #{requestParams},
+			</if>
+			<if test="responseParams != null and responseParams != '' ">
+				A.response_params = #{responseParams},
+			</if>
+			<if test="notifyParams != null and notifyParams != '' ">
+				A.notify_params = #{notifyParams},
+			</if>
+			<if test="createTime != null and createTime != '' ">
+				A.create_time = #{createTime},
+			</if>
+			<if test="updateTime != null and updateTime != '' ">
+				A.update_time = #{updateTime},
+			</if>
+			<if test="notifyTime != null and notifyTime != '' ">
+				A.notify_time = #{notifyTime},
+			</if>
+			<if test="remark != null and remark != '' ">
+				A.remark = #{remark},
+			</if>
+			<if test="temp1 != null and temp1 != '' ">
+				A.temp_1 = #{temp1},
+			</if>
+			<if test="temp2 != null and temp2 != '' ">
+				A.temp_2 = #{temp2},
+			</if>
+		</set>
+		where A.trade_no = #{tradeNo}
+	</update>
+
+</mapper>
+

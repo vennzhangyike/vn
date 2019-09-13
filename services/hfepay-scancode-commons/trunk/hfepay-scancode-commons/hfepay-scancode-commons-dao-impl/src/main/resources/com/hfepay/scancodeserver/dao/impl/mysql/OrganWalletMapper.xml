@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="OrganWallet">
+	<resultMap id="BaseResultMap" type="com.hfepay.scancode.commons.entity.OrganWallet">
+        <result property="id" column="A_id"/>
+        <result property="organNo" column="A_organ_no"/>
+        <result property="balance" column="A_balance"/>
+        <result property="freezesAmt" column="A_freezes_amt"/>
+        <result property="status" column="A_status"/>
+        <result property="createTime" column="A_create_time"/>
+        <result property="updateTime" column="A_update_time"/>
+        <result property="operator" column="A_operator"/>
+        <result property="remark" column="A_remark"/>
+        <result property="temp1" column="A_temp_1"/>
+        <result property="temp2" column="A_temp_2"/>
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+	    <![CDATA[
+		A.id as A_id,A.organ_no as A_organ_no,A.balance as A_balance,A.freezes_amt as A_freezes_amt,A.status as A_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	    ]]>
+	</sql>
+
+	<select id="findByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+     from t_organ_wallet A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+    <if test="hasOrderBy" >
+      order by
+      <foreach collection="orderBys" item="orderBy" separator="," > ${orderBy} </foreach>
+    </if>
+  </select>
+  <select resultMap="BaseResultMap" parameterType="java.lang.String" id="findById" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_organ_wallet A
+    where A.id = #{id}
+  </select>
+  <delete parameterType="java.lang.String" id="deleteById" >
+    delete from t_organ_wallet
+    where id = #{id}
+  </delete>
+  <delete id="deleteByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" >
+    delete A from t_organ_wallet A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.hfepay.scancode.commons.entity.OrganWallet" >
+    insert into t_organ_wallet (
+        	id,
+        	organ_no,
+        	balance,
+        	freezes_amt,
+        	status,
+        	create_time,
+        	update_time,
+        	operator,
+        	remark,
+        	temp_1,
+        	temp_2
+        )
+    values (
+        #{id},
+        #{organNo},
+        #{balance},
+        #{freezesAmt},
+        #{status},
+        #{createTime},
+        #{updateTime},
+        #{operator},
+        #{remark},
+        #{temp1},
+        #{temp2}
+    )
+  </insert>
+  <select id="countByCriteria" parameterType="com.hfepay.commons.criteria.Criteria" resultType="java.lang.Integer" >
+    select count(*) from t_organ_wallet A
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </select>
+  <update id="updateByCriteria" parameterType="map" >
+    update t_organ_wallet A
+    <set >
+        	<if test="record.id != null and record.id != '' " >
+        		A.id = #{record.id},
+      		</if>
+        	<if test="record.organNo != null and record.organNo != '' " >
+        		A.organ_no = #{record.organNo},
+      		</if>
+        	<if test="record.balance != null" >
+        		A.balance = #{record.balance},
+      		</if>
+        	<if test="record.freezesAmt != null" >
+        		A.freezes_amt = #{record.freezesAmt},
+      		</if>
+        	<if test="record.status != null and record.status != '' " >
+        		A.status = #{record.status},
+      		</if>
+        	<if test="record.createTime != null and record.createTime != '' " >
+        		A.create_time = #{record.createTime},
+      		</if>
+        	<if test="record.updateTime != null and record.updateTime != '' " >
+        		A.update_time = #{record.updateTime},
+      		</if>
+        	<if test="record.operator != null and record.operator != '' " >
+        		A.operator = #{record.operator},
+      		</if>
+        	<if test="record.remark != null and record.remark != '' " >
+        		A.remark = #{record.remark},
+      		</if>
+        	<if test="record.temp1 != null and record.temp1 != '' " >
+        		A.temp_1 = #{record.temp1},
+      		</if>
+        	<if test="record.temp2 != null and record.temp2 != '' " >
+        		A.temp_2 = #{record.temp2},
+      		</if>
+    </set>
+    <if test="_parameter != null and _parameter != '' " >
+      <where >
+        <include refid="Global.Where_Clause" />
+      </where>
+    </if>
+  </update>
+  <update id="update" parameterType="com.hfepay.scancode.commons.entity.OrganWallet" >
+    update t_organ_wallet A
+    <set >
+        	<if test="id != null and id != '' " >
+        		A.id = #{id},
+      		</if>
+        	<if test="organNo != null and organNo != '' " >
+        		A.organ_no = #{organNo},
+      		</if>
+        	<if test="balance != null" >
+        		A.balance = #{balance},
+      		</if>
+        	<if test="freezesAmt != null" >
+        		A.freezes_amt = #{freezesAmt},
+      		</if>
+        	<if test="status != null and status != '' " >
+        		A.status = #{status},
+      		</if>
+        	<if test="createTime != null and createTime != '' " >
+        		A.create_time = #{createTime},
+      		</if>
+        	<if test="updateTime != null and updateTime != '' " >
+        		A.update_time = #{updateTime},
+      		</if>
+        	<if test="operator != null and operator != '' " >
+        		A.operator = #{operator},
+      		</if>
+        	<if test="remark != null and remark != '' " >
+        		A.remark = #{remark},
+      		</if>
+        	<if test="temp1 != null and temp1 != '' " >
+        		A.temp_1 = #{temp1},
+      		</if>
+        	<if test="temp2 != null and temp2 != '' " >
+        		A.temp_2 = #{temp2},
+      		</if>
+    </set>
+    where A.id = #{id}
+  </update>
+  
+  <update id="updateBalance" parameterType="com.hfepay.scancode.commons.condition.OrganWalletCondition">
+   update t_organ_wallet A
+    <set >
+        	<if test="balance != null" >
+        		A.balance = #{balance},
+      		</if>
+        	<if test="freezesAmt != null" >
+        		A.freezes_amt = #{freezesAmt},
+      		</if>
+      		<!-- 提现申请提交或者审核失败的时候 -->
+      		<if test="modifyBalance != null" >
+        		A.freezes_amt = A.freezes_amt+#{modifyBalance},
+        		A.balance = A.balance-#{modifyBalance},
+      		</if>
+      		<!-- 审核通过的时候修改冻结金额 -->
+      		<if test="freezenBalance != null" >
+        		A.freezes_amt = A.freezes_amt-#{freezenBalance},
+      		</if>
+      		
+        	<if test="status != null and status != '' " >
+        		A.status = #{status},
+      		</if>
+        	<if test="createTime != null and createTime != '' " >
+        		A.create_time = #{createTime},
+      		</if>
+        	<if test="updateTime != null and updateTime != '' " >
+        		A.update_time = #{updateTime},
+      		</if>
+        	<if test="operator != null and operator != '' " >
+        		A.operator = #{operator},
+      		</if>
+        	<if test="remark != null and remark != '' " >
+        		A.remark = #{remark},
+      		</if>
+        	<if test="temp1 != null and temp1 != '' " >
+        		A.temp_1 = #{temp1},
+      		</if>
+        	<if test="temp2 != null and temp2 != '' " >
+        		A.temp_2 = #{temp2},
+      		</if>
+    </set>
+    where A.organ_no = #{organNo}
+  </update>
+  
+  
+  <update id="updateBalanceToWallet" parameterType="java.lang.String">
+  	update t_organ_wallet A  INNER JOIN
+	(
+		select agent_no as organ_no,IFNULL(total_profit,0) total_profit from t_hierarchical_settlement_total where settle_date=#{date} and agent_no is NOT null
+		UNION
+		select channel_no,IFNULL(total_profit,0) from t_hierarchical_settlement_total where settle_date=#{date} and agent_no is null
+	)
+	 B on A.organ_no= B.organ_no
+	set A.balance=A.balance+B.total_profit,A.update_time=NOW()
+  </update>
+  
+  <update id="updateBalanceToChannel" parameterType="java.lang.String">
+  UPDATE t_organ_wallet t INNER JOIN(
+	select sum(total_profit) total,channel_no 
+	from 
+	t_hierarchical_settlement_total where agent_no is not null and settle_date=#{date} 
+	GROUP BY channel_no
+  ) c on t.organ_no=c.channel_no SET t.balance=t.balance+c.total
+  </update>
+</mapper>
+
