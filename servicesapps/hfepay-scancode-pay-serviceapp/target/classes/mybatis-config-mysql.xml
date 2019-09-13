@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration> 
+
+	<settings>
+		<setting name="lazyLoadingEnabled" value="false" />
+		<!-- 数据表字段名和类属性名的映射是否开启骆驼表示法，如为true，则LOGIN_NAME映射为loginName，否则映射为login_name -->
+		<setting name="mapUnderscoreToCamelCase" value="true" />
+	</settings>
+	
+	<plugins>
+		<!-- 记录状态拦截处理器 -->
+		<plugin interceptor="com.hfepay.commons.mybatis.interceptor.RecordStatusHandlerInterceptor"></plugin>
+		
+		
+		<!-- 指定数据库分页方言Dialect, 其它方言:OracleDialect,SQLServerDialect,SybaseDialect,DB2Dialect,PostgreSQLDialect,MySQLDialect,DerbyDialect--> 
+		<plugin interceptor="com.hfepay.commons.mybatis.interceptor.PagingHandlerInterceptor">
+			<property name="dialectClass" value="com.hfepay.commons.jdbc.MySQLDialect"/>
+		</plugin>
+		
+		<!-- SQL监控打印 -->
+		<plugin interceptor="com.hfepay.commons.mybatis.interceptor.SqlMonitorInterceptor">
+			<property name="printSql" value="sysParameter"/>
+		</plugin>
+	</plugins>
+	<!--  通过使用Spring动态搜态Mapper资源文件，这里不再用手工加入.数据字典的除外 -->
+</configuration>

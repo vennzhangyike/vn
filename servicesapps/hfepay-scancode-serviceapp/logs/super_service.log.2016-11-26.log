@@ -1,0 +1,823 @@
+2016-11-26 15:50:51.599 [main] INFO  o.s.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+2016-11-26 15:50:53.335 [main] INFO  o.s.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-services.xml]
+2016-11-26 15:50:53.502 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'adminServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.AdminServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\AdminServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.AdminServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2016-11-26 15:50:53.508 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'pageServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.PageServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\PageServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.PageServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2016-11-26 15:50:53.515 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'sysConfigServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.SysConfigServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\SysConfigServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.SysConfigServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2016-11-26 15:50:53.525 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'channelAdminServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.channel.impl.ChannelAdminServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\channel\impl\ChannelAdminServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.channel.impl.ChannelAdminServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2016-11-26 15:50:53.545 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'idCreateServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.IdCreateServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\IdCreateServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.IdCreateServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2016-11-26 15:50:53.570 [main] INFO  o.s.context.support.GenericXmlApplicationContext - Refreshing org.springframework.context.support.GenericXmlApplicationContext@2dc68dc6: startup date [Sat Nov 26 15:50:53 CST 2016]; root of context hierarchy
+2016-11-26 15:50:53.959 [main] INFO  c.h.c.configuration.PropertyPlaceholderConfigurer - file:/E:/
+2016-11-26 15:50:53.960 [main] INFO  c.h.c.configuration.PropertyPlaceholderConfigurer - Loading properties file from URL [file:/E:/workspaces/xiaoermaidan/servicesapps/hfepay-scancode-serviceapp/target/classes/application-hfepay.properties]
+2016-11-26 15:50:53.979 [main] INFO  c.h.c.configuration.PropertyPlaceholderConfigurer - Loading properties file from URL [file:d:/application-hfepay.properties]
+2016-11-26 15:50:53.979 [main] WARN  c.h.c.configuration.PropertyPlaceholderConfigurer - Could not load properties from URL [file:d:/application-hfepay.properties]: d:\application-hfepay.properties (系统找不到指定的文件。)
+2016-11-26 15:50:53.979 [main] INFO  c.h.c.configuration.PropertyPlaceholderConfigurer - Loading properties file from URL [file:./conf/application-hfepay.properties]
+2016-11-26 15:50:53.979 [main] WARN  c.h.c.configuration.PropertyPlaceholderConfigurer - Could not load properties from URL [file:./conf/application-hfepay.properties]: .\conf\application-hfepay.properties (系统找不到指定的路径。)
+2016-11-26 15:50:54.034 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0' of type [class org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-26 15:50:54.228 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2016-11-26 15:50:54.250 [main] INFO  org.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2016-11-26 15:50:54.251 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.1.5 created.
+2016-11-26 15:50:54.252 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2016-11-26 15:50:54.253 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.1.5) 'hfScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 20 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2016-11-26 15:50:54.253 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'hfScheduler' initialized from an externally provided properties instance.
+2016-11-26 15:50:54.253 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.1.5
+2016-11-26 15:50:54.255 [main] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@6782560c
+2016-11-26 15:50:54.295 [main] INFO  com.hfepay.scancode.service.timer.InitTasks - 初始化定时开始任务：2016-11-26 15:50:54
+2016-11-26 15:50:54.326 [main] INFO  com.hfepay.scancode.service.timer.InitTasks - 初始化定时任务完成：2016-11-26 15:50:54
+2016-11-26 15:50:57.159 [main] WARN  o.s.context.support.GenericXmlApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'com.hfepay.scancode.service.operator.AdminService': Cannot resolve reference to bean 'adminServiceImpl' while setting bean property 'ref'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'adminServiceImpl': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.hfepay.scancode.dao.AdminDAO com.hfepay.scancode.service.operator.impl.AdminServiceImpl.AdminDAO; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'adminDAOImpl': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire method: public void com.hfepay.commons.dao.impl.MybatisEntityDAO.setSqlSessionFactory(org.apache.ibatis.session.SqlSessionFactory); nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [applicationContext.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-dao-impl\target\classes\com\hfepay\scancodeserver\dao\impl\mysql\OrderPayMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'BaseResultMapVo'.  Cause: java.lang.ClassNotFoundException: Cannot find class: BaseResultMapVo
+2016-11-26 15:50:57.163 [main] INFO  o.s.scheduling.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler
+2016-11-26 15:50:57.163 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler hfScheduler_$_NON_CLUSTERED shutting down.
+2016-11-26 15:50:57.164 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler hfScheduler_$_NON_CLUSTERED paused.
+2016-11-26 15:50:57.331 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler hfScheduler_$_NON_CLUSTERED shutdown complete.
+2016-11-26 15:52:14.058 [main] INFO  o.s.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+2016-11-26 15:52:14.759 [main] INFO  o.s.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-services.xml]
+2016-11-26 15:52:14.888 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'adminServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.AdminServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\AdminServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.AdminServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2016-11-26 15:52:14.897 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'pageServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.PageServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\PageServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.PageServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2016-11-26 15:52:14.908 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'sysConfigServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.SysConfigServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\SysConfigServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.SysConfigServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2016-11-26 15:52:14.937 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'channelAdminServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.channel.impl.ChannelAdminServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\channel\impl\ChannelAdminServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.channel.impl.ChannelAdminServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2016-11-26 15:52:14.957 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'idCreateServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.IdCreateServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\IdCreateServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.IdCreateServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2016-11-26 15:52:14.985 [main] INFO  o.s.context.support.GenericXmlApplicationContext - Refreshing org.springframework.context.support.GenericXmlApplicationContext@4685d9a4: startup date [Sat Nov 26 15:52:14 CST 2016]; root of context hierarchy
+2016-11-26 15:52:15.374 [main] INFO  c.h.c.configuration.PropertyPlaceholderConfigurer - file:/E:/
+2016-11-26 15:52:15.374 [main] INFO  c.h.c.configuration.PropertyPlaceholderConfigurer - Loading properties file from URL [file:/E:/workspaces/xiaoermaidan/servicesapps/hfepay-scancode-serviceapp/target/classes/application-hfepay.properties]
+2016-11-26 15:52:15.375 [main] INFO  c.h.c.configuration.PropertyPlaceholderConfigurer - Loading properties file from URL [file:d:/application-hfepay.properties]
+2016-11-26 15:52:15.375 [main] WARN  c.h.c.configuration.PropertyPlaceholderConfigurer - Could not load properties from URL [file:d:/application-hfepay.properties]: d:\application-hfepay.properties (系统找不到指定的文件。)
+2016-11-26 15:52:15.375 [main] INFO  c.h.c.configuration.PropertyPlaceholderConfigurer - Loading properties file from URL [file:./conf/application-hfepay.properties]
+2016-11-26 15:52:15.375 [main] WARN  c.h.c.configuration.PropertyPlaceholderConfigurer - Could not load properties from URL [file:./conf/application-hfepay.properties]: .\conf\application-hfepay.properties (系统找不到指定的路径。)
+2016-11-26 15:52:15.430 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0' of type [class org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-26 15:52:15.620 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2016-11-26 15:52:15.641 [main] INFO  org.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2016-11-26 15:52:15.642 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.1.5 created.
+2016-11-26 15:52:15.644 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2016-11-26 15:52:15.645 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.1.5) 'hfScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 20 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2016-11-26 15:52:15.645 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'hfScheduler' initialized from an externally provided properties instance.
+2016-11-26 15:52:15.645 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.1.5
+2016-11-26 15:52:15.646 [main] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@6782560c
+2016-11-26 15:52:15.686 [main] INFO  com.hfepay.scancode.service.timer.InitTasks - 初始化定时开始任务：2016-11-26 15:52:15
+2016-11-26 15:52:15.697 [main] INFO  com.hfepay.scancode.service.timer.InitTasks - 初始化定时任务完成：2016-11-26 15:52:15
+2016-11-26 15:52:18.298 [main] WARN  o.s.context.support.GenericXmlApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'com.hfepay.scancode.service.operator.AdminService': Cannot resolve reference to bean 'adminServiceImpl' while setting bean property 'ref'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'adminServiceImpl': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.hfepay.scancode.dao.AdminDAO com.hfepay.scancode.service.operator.impl.AdminServiceImpl.AdminDAO; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'adminDAOImpl': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire method: public void com.hfepay.commons.dao.impl.MybatisEntityDAO.setSqlSessionFactory(org.apache.ibatis.session.SqlSessionFactory); nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [applicationContext.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-dao-impl\target\classes\com\hfepay\scancodeserver\dao\impl\mysql\OrderPayMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'BaseResultMapVo'.  Cause: java.lang.ClassNotFoundException: Cannot find class: BaseResultMapVo
+2016-11-26 15:52:18.305 [main] INFO  o.s.scheduling.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler
+2016-11-26 15:52:18.305 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler hfScheduler_$_NON_CLUSTERED shutting down.
+2016-11-26 15:52:18.305 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler hfScheduler_$_NON_CLUSTERED paused.
+2016-11-26 15:52:18.628 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler hfScheduler_$_NON_CLUSTERED shutdown complete.
+2016-11-26 15:55:47.025 [main] INFO  o.s.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+2016-11-26 15:55:47.714 [main] INFO  o.s.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-services.xml]
+2016-11-26 15:55:47.839 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'adminServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.AdminServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\AdminServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.AdminServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2016-11-26 15:55:47.847 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'pageServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.PageServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\PageServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.PageServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2016-11-26 15:55:47.858 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'sysConfigServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.SysConfigServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\SysConfigServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.SysConfigServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2016-11-26 15:55:47.889 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'channelAdminServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.channel.impl.ChannelAdminServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\channel\impl\ChannelAdminServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.channel.impl.ChannelAdminServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2016-11-26 15:55:47.905 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'idCreateServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.IdCreateServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\IdCreateServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.IdCreateServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2016-11-26 15:55:47.926 [main] INFO  o.s.context.support.GenericXmlApplicationContext - Refreshing org.springframework.context.support.GenericXmlApplicationContext@7d93c227: startup date [Sat Nov 26 15:55:47 CST 2016]; root of context hierarchy
+2016-11-26 15:55:48.290 [main] INFO  c.h.c.configuration.PropertyPlaceholderConfigurer - file:/E:/
+2016-11-26 15:55:48.290 [main] INFO  c.h.c.configuration.PropertyPlaceholderConfigurer - Loading properties file from URL [file:/E:/workspaces/xiaoermaidan/servicesapps/hfepay-scancode-serviceapp/target/classes/application-hfepay.properties]
+2016-11-26 15:55:48.290 [main] INFO  c.h.c.configuration.PropertyPlaceholderConfigurer - Loading properties file from URL [file:d:/application-hfepay.properties]
+2016-11-26 15:55:48.290 [main] WARN  c.h.c.configuration.PropertyPlaceholderConfigurer - Could not load properties from URL [file:d:/application-hfepay.properties]: d:\application-hfepay.properties (系统找不到指定的文件。)
+2016-11-26 15:55:48.290 [main] INFO  c.h.c.configuration.PropertyPlaceholderConfigurer - Loading properties file from URL [file:./conf/application-hfepay.properties]
+2016-11-26 15:55:48.291 [main] WARN  c.h.c.configuration.PropertyPlaceholderConfigurer - Could not load properties from URL [file:./conf/application-hfepay.properties]: .\conf\application-hfepay.properties (系统找不到指定的路径。)
+2016-11-26 15:55:48.344 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0' of type [class org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-26 15:55:48.532 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2016-11-26 15:55:48.554 [main] INFO  org.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2016-11-26 15:55:48.555 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.1.5 created.
+2016-11-26 15:55:48.556 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2016-11-26 15:55:48.557 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.1.5) 'hfScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 20 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2016-11-26 15:55:48.558 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'hfScheduler' initialized from an externally provided properties instance.
+2016-11-26 15:55:48.558 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.1.5
+2016-11-26 15:55:48.559 [main] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@34d7419f
+2016-11-26 15:55:48.596 [main] INFO  com.hfepay.scancode.service.timer.InitTasks - 初始化定时开始任务：2016-11-26 15:55:48
+2016-11-26 15:55:48.606 [main] INFO  com.hfepay.scancode.service.timer.InitTasks - 初始化定时任务完成：2016-11-26 15:55:48
+2016-11-26 15:55:51.225 [main] WARN  o.s.context.support.GenericXmlApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'com.hfepay.scancode.service.operator.AdminService': Cannot resolve reference to bean 'adminServiceImpl' while setting bean property 'ref'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'adminServiceImpl': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.hfepay.scancode.dao.AdminDAO com.hfepay.scancode.service.operator.impl.AdminServiceImpl.AdminDAO; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'adminDAOImpl': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire method: public void com.hfepay.commons.dao.impl.MybatisEntityDAO.setSqlSessionFactory(org.apache.ibatis.session.SqlSessionFactory); nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [applicationContext.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-dao-impl\target\classes\com\hfepay\scancodeserver\dao\impl\mysql\OrderPayMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'BaseResultMapVo'.  Cause: java.lang.ClassNotFoundException: Cannot find class: BaseResultMapVo
+2016-11-26 15:55:51.229 [main] INFO  o.s.scheduling.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler
+2016-11-26 15:55:51.229 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler hfScheduler_$_NON_CLUSTERED shutting down.
+2016-11-26 15:55:51.229 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler hfScheduler_$_NON_CLUSTERED paused.
+2016-11-26 15:55:51.537 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler hfScheduler_$_NON_CLUSTERED shutdown complete.
+2016-11-26 16:11:38.329 [main] INFO  o.s.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+2016-11-26 16:11:39.038 [main] INFO  o.s.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-services.xml]
+2016-11-26 16:11:39.166 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'adminServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.AdminServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\AdminServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.AdminServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2016-11-26 16:11:39.175 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'pageServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.PageServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\PageServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.PageServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2016-11-26 16:11:39.186 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'sysConfigServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.SysConfigServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\SysConfigServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.SysConfigServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2016-11-26 16:11:39.215 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'channelAdminServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.channel.impl.ChannelAdminServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\channel\impl\ChannelAdminServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.channel.impl.ChannelAdminServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2016-11-26 16:11:39.235 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'idCreateServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.IdCreateServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\IdCreateServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.IdCreateServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2016-11-26 16:11:39.255 [main] INFO  o.s.context.support.GenericXmlApplicationContext - Refreshing org.springframework.context.support.GenericXmlApplicationContext@2508d3eb: startup date [Sat Nov 26 16:11:39 CST 2016]; root of context hierarchy
+2016-11-26 16:11:39.638 [main] INFO  c.h.c.configuration.PropertyPlaceholderConfigurer - file:/E:/
+2016-11-26 16:11:39.638 [main] INFO  c.h.c.configuration.PropertyPlaceholderConfigurer - Loading properties file from URL [file:/E:/workspaces/xiaoermaidan/servicesapps/hfepay-scancode-serviceapp/target/classes/application-hfepay.properties]
+2016-11-26 16:11:39.638 [main] INFO  c.h.c.configuration.PropertyPlaceholderConfigurer - Loading properties file from URL [file:d:/application-hfepay.properties]
+2016-11-26 16:11:39.639 [main] WARN  c.h.c.configuration.PropertyPlaceholderConfigurer - Could not load properties from URL [file:d:/application-hfepay.properties]: d:\application-hfepay.properties (系统找不到指定的文件。)
+2016-11-26 16:11:39.639 [main] INFO  c.h.c.configuration.PropertyPlaceholderConfigurer - Loading properties file from URL [file:./conf/application-hfepay.properties]
+2016-11-26 16:11:39.639 [main] WARN  c.h.c.configuration.PropertyPlaceholderConfigurer - Could not load properties from URL [file:./conf/application-hfepay.properties]: .\conf\application-hfepay.properties (系统找不到指定的路径。)
+2016-11-26 16:11:39.694 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0' of type [class org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-26 16:11:39.882 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2016-11-26 16:11:39.904 [main] INFO  org.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2016-11-26 16:11:39.905 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.1.5 created.
+2016-11-26 16:11:39.906 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2016-11-26 16:11:39.907 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.1.5) 'hfScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 20 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2016-11-26 16:11:39.907 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'hfScheduler' initialized from an externally provided properties instance.
+2016-11-26 16:11:39.907 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.1.5
+2016-11-26 16:11:39.909 [main] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@3ffbe014
+2016-11-26 16:11:39.948 [main] INFO  com.hfepay.scancode.service.timer.InitTasks - 初始化定时开始任务：2016-11-26 16:11:39
+2016-11-26 16:11:39.960 [main] INFO  com.hfepay.scancode.service.timer.InitTasks - 初始化定时任务完成：2016-11-26 16:11:39
+2016-11-26 16:11:42.552 [main] WARN  o.s.context.support.GenericXmlApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'com.hfepay.scancode.service.operator.AdminService': Cannot resolve reference to bean 'adminServiceImpl' while setting bean property 'ref'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'adminServiceImpl': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.hfepay.scancode.dao.AdminDAO com.hfepay.scancode.service.operator.impl.AdminServiceImpl.AdminDAO; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'adminDAOImpl': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire method: public void com.hfepay.commons.dao.impl.MybatisEntityDAO.setSqlSessionFactory(org.apache.ibatis.session.SqlSessionFactory); nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [applicationContext.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-dao-impl\target\classes\com\hfepay\scancodeserver\dao\impl\mysql\OrderPayMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'BaseResultMapVo'.  Cause: java.lang.ClassNotFoundException: Cannot find class: BaseResultMapVo
+2016-11-26 16:11:42.555 [main] INFO  o.s.scheduling.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler
+2016-11-26 16:11:42.555 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler hfScheduler_$_NON_CLUSTERED shutting down.
+2016-11-26 16:11:42.555 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler hfScheduler_$_NON_CLUSTERED paused.
+2016-11-26 16:11:42.899 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler hfScheduler_$_NON_CLUSTERED shutdown complete.
+2016-11-26 16:23:40.933 [main] INFO  o.s.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+2016-11-26 16:23:41.643 [main] INFO  o.s.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-services.xml]
+2016-11-26 16:23:41.772 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'adminServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.AdminServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\AdminServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.AdminServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2016-11-26 16:23:41.781 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'pageServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.PageServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\PageServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.PageServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2016-11-26 16:23:41.792 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'sysConfigServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.SysConfigServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\SysConfigServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.SysConfigServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2016-11-26 16:23:41.820 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'channelAdminServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.channel.impl.ChannelAdminServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\channel\impl\ChannelAdminServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.channel.impl.ChannelAdminServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2016-11-26 16:23:41.843 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'idCreateServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.IdCreateServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\IdCreateServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.IdCreateServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2016-11-26 16:23:41.855 [main] INFO  o.s.context.support.GenericXmlApplicationContext - Refreshing org.springframework.context.support.GenericXmlApplicationContext@6fafced9: startup date [Sat Nov 26 16:23:41 CST 2016]; root of context hierarchy
+2016-11-26 16:23:42.229 [main] INFO  c.h.c.configuration.PropertyPlaceholderConfigurer - file:/E:/
+2016-11-26 16:23:42.229 [main] INFO  c.h.c.configuration.PropertyPlaceholderConfigurer - Loading properties file from URL [file:/E:/workspaces/xiaoermaidan/servicesapps/hfepay-scancode-serviceapp/target/classes/application-hfepay.properties]
+2016-11-26 16:23:42.229 [main] INFO  c.h.c.configuration.PropertyPlaceholderConfigurer - Loading properties file from URL [file:d:/application-hfepay.properties]
+2016-11-26 16:23:42.230 [main] WARN  c.h.c.configuration.PropertyPlaceholderConfigurer - Could not load properties from URL [file:d:/application-hfepay.properties]: d:\application-hfepay.properties (系统找不到指定的文件。)
+2016-11-26 16:23:42.230 [main] INFO  c.h.c.configuration.PropertyPlaceholderConfigurer - Loading properties file from URL [file:./conf/application-hfepay.properties]
+2016-11-26 16:23:42.230 [main] WARN  c.h.c.configuration.PropertyPlaceholderConfigurer - Could not load properties from URL [file:./conf/application-hfepay.properties]: .\conf\application-hfepay.properties (系统找不到指定的路径。)
+2016-11-26 16:23:42.284 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0' of type [class org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-26 16:23:42.471 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2016-11-26 16:23:42.492 [main] INFO  org.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2016-11-26 16:23:42.493 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.1.5 created.
+2016-11-26 16:23:42.494 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2016-11-26 16:23:42.495 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.1.5) 'hfScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 20 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2016-11-26 16:23:42.495 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'hfScheduler' initialized from an externally provided properties instance.
+2016-11-26 16:23:42.495 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.1.5
+2016-11-26 16:23:42.497 [main] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@7ee5efe1
+2016-11-26 16:23:42.535 [main] INFO  com.hfepay.scancode.service.timer.InitTasks - 初始化定时开始任务：2016-11-26 16:23:42
+2016-11-26 16:23:42.547 [main] INFO  com.hfepay.scancode.service.timer.InitTasks - 初始化定时任务完成：2016-11-26 16:23:42
+2016-11-26 16:23:45.102 [main] WARN  o.s.context.support.GenericXmlApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'com.hfepay.scancode.service.operator.AdminService': Cannot resolve reference to bean 'adminServiceImpl' while setting bean property 'ref'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'adminServiceImpl': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.hfepay.scancode.dao.AdminDAO com.hfepay.scancode.service.operator.impl.AdminServiceImpl.AdminDAO; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'adminDAOImpl': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire method: public void com.hfepay.commons.dao.impl.MybatisEntityDAO.setSqlSessionFactory(org.apache.ibatis.session.SqlSessionFactory); nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [applicationContext.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-dao-impl\target\classes\com\hfepay\scancodeserver\dao\impl\mysql\OrderPayMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'BaseResultMapVo'.  Cause: java.lang.ClassNotFoundException: Cannot find class: BaseResultMapVo
+2016-11-26 16:23:45.106 [main] INFO  o.s.scheduling.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler
+2016-11-26 16:23:45.106 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler hfScheduler_$_NON_CLUSTERED shutting down.
+2016-11-26 16:23:45.107 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler hfScheduler_$_NON_CLUSTERED paused.
+2016-11-26 16:23:45.485 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler hfScheduler_$_NON_CLUSTERED shutdown complete.
+2016-11-26 16:28:58.472 [main] INFO  o.s.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+2016-11-26 16:28:59.169 [main] INFO  o.s.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-services.xml]
+2016-11-26 16:28:59.301 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'adminServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.AdminServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\AdminServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.AdminServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2016-11-26 16:28:59.310 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'pageServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.PageServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\PageServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.PageServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2016-11-26 16:28:59.320 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'sysConfigServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.SysConfigServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\SysConfigServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.SysConfigServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2016-11-26 16:28:59.349 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'channelAdminServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.channel.impl.ChannelAdminServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\channel\impl\ChannelAdminServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.channel.impl.ChannelAdminServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2016-11-26 16:28:59.370 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'idCreateServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.IdCreateServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\IdCreateServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.IdCreateServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2016-11-26 16:28:59.384 [main] INFO  o.s.context.support.GenericXmlApplicationContext - Refreshing org.springframework.context.support.GenericXmlApplicationContext@2dc68dc6: startup date [Sat Nov 26 16:28:59 CST 2016]; root of context hierarchy
+2016-11-26 16:28:59.747 [main] INFO  c.h.c.configuration.PropertyPlaceholderConfigurer - file:/E:/
+2016-11-26 16:28:59.748 [main] INFO  c.h.c.configuration.PropertyPlaceholderConfigurer - Loading properties file from URL [file:/E:/workspaces/xiaoermaidan/servicesapps/hfepay-scancode-serviceapp/target/classes/application-hfepay.properties]
+2016-11-26 16:28:59.748 [main] INFO  c.h.c.configuration.PropertyPlaceholderConfigurer - Loading properties file from URL [file:d:/application-hfepay.properties]
+2016-11-26 16:28:59.748 [main] WARN  c.h.c.configuration.PropertyPlaceholderConfigurer - Could not load properties from URL [file:d:/application-hfepay.properties]: d:\application-hfepay.properties (系统找不到指定的文件。)
+2016-11-26 16:28:59.748 [main] INFO  c.h.c.configuration.PropertyPlaceholderConfigurer - Loading properties file from URL [file:./conf/application-hfepay.properties]
+2016-11-26 16:28:59.748 [main] WARN  c.h.c.configuration.PropertyPlaceholderConfigurer - Could not load properties from URL [file:./conf/application-hfepay.properties]: .\conf\application-hfepay.properties (系统找不到指定的路径。)
+2016-11-26 16:28:59.801 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0' of type [class org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-26 16:28:59.987 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2016-11-26 16:29:00.009 [main] INFO  org.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2016-11-26 16:29:00.010 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.1.5 created.
+2016-11-26 16:29:00.012 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2016-11-26 16:29:00.013 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.1.5) 'hfScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 20 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2016-11-26 16:29:00.013 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'hfScheduler' initialized from an externally provided properties instance.
+2016-11-26 16:29:00.013 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.1.5
+2016-11-26 16:29:00.015 [main] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@42e0dd34
+2016-11-26 16:29:00.051 [main] INFO  com.hfepay.scancode.service.timer.InitTasks - 初始化定时开始任务：2016-11-26 16:29:00
+2016-11-26 16:29:00.062 [main] INFO  com.hfepay.scancode.service.timer.InitTasks - 初始化定时任务完成：2016-11-26 16:29:00
+2016-11-26 16:29:03.660 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:zookeeper.version=3.4.7-1713338, built on 11/09/2015 04:32 GMT
+2016-11-26 16:29:03.661 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:host.name=windows10.microdone.cn
+2016-11-26 16:29:03.661 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.version=1.7.0_51
+2016-11-26 16:29:03.661 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.vendor=Oracle Corporation
+2016-11-26 16:29:03.661 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.home=E:\jdk1.7.0_51\jre
+2016-11-26 16:29:03.661 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.class.path=E:\workspaces\xiaoermaidan\servicesapps\hfepay-scancode-serviceapp\target\classes;E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes;E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service\target\classes;E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-entity\target\classes;C:\Users\Administrator\.m2\repository\org\apache\shiro\shiro-core\1.2.2\shiro-core-1.2.2.jar;C:\Users\Administrator\.m2\repository\org\apache\shiro\shiro-web\1.2.2\shiro-web-1.2.2.jar;C:\Users\Administrator\.m2\repository\org\apache\shiro\shiro-ehcache\1.2.2\shiro-ehcache-1.2.2.jar;C:\Users\Administrator\.m2\repository\net\sf\ehcache\ehcache-core\2.5.0\ehcache-core-2.5.0.jar;C:\Users\Administrator\.m2\repository\org\apache\shiro\shiro-spring\1.2.2\shiro-spring-1.2.2.jar;E:\workspaces\xiaoermaidan\commons\hfepay-commons-cache\trunk\hfepay-commons-cache\target\classes;C:\Users\Administrator\.m2\repository\redis\clients\jedis\2.8.1\jedis-2.8.1.jar;E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-dao-impl\target\classes;E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-dao\target\classes;C:\Users\Administrator\.m2\repository\com\alibaba\fastjson\1.1.32\fastjson-1.1.32.jar;E:\workspaces\xiaoermaidan\commons\hfepay-commons-excelutils\trunk\hfepay-commons-excelutils\target\classes;C:\Users\Administrator\.m2\repository\net\sf\jxls\jxls-core\1.0.5\jxls-core-1.0.5.jar;C:\Users\Administrator\.m2\repository\commons-collections\commons-collections\3.2.1\commons-collections-3.2.1.jar;C:\Users\Administrator\.m2\repository\commons-digester\commons-digester\2.0\commons-digester-2.0.jar;C:\Users\Administrator\.m2\repository\org\apache\commons\commons-jexl\2.0.1\commons-jexl-2.0.1.jar;C:\Users\Administrator\.m2\repository\org\apache\poi\poi\3.9\poi-3.9.jar;C:\Users\Administrator\.m2\repository\org\apache\poi\poi-ooxml\3.9\poi-ooxml-3.9.jar;C:\Users\Administrator\.m2\repository\org\apache\poi\poi-ooxml-schemas\3.9\poi-ooxml-schemas-3.9.jar;C:\Users\Administrator\.m2\repository\org\apache\xmlbeans\xmlbeans\2.3.0\xmlbeans-2.3.0.jar;C:\Users\Administrator\.m2\repository\dom4j\dom4j\1.6.1\dom4j-1.6.1.jar;E:\workspaces\xiaoermaidan\commons\hfepay-commons-sms\trunk\hfepay-commons-sms\target\classes;C:\Users\Administrator\.m2\repository\com\xiehe\sms\xiehe_smsclient\1.1.1\xiehe_smsclient-1.1.1.jar;C:\Users\Administrator\.m2\repository\javax\mail\javax.mail-api\1.5.5\javax.mail-api-1.5.5.jar;C:\Users\Administrator\.m2\repository\org\apache\commons\commons-email\1.4\commons-email-1.4.jar;C:\Users\Administrator\.m2\repository\com\sun\mail\javax.mail\1.5.2\javax.mail-1.5.2.jar;C:\Users\Administrator\.m2\repository\javax\activation\activation\1.1.1\activation-1.1.1.jar;E:\workspaces\xiaoermaidan\commons\hfepay-commons-timer\target\classes;C:\Users\Administrator\.m2\repository\org\quartz-scheduler\quartz\2.1.5\quartz-2.1.5.jar;C:\Users\Administrator\.m2\repository\c3p0\c3p0\0.9.1.1\c3p0-0.9.1.1.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-context-support\4.2.5.RELEASE\spring-context-support-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\aspectj\aspectjrt\1.7.0\aspectjrt-1.7.0.jar;C:\Users\Administrator\.m2\repository\org\aspectj\aspectjweaver\1.7.4\aspectjweaver-1.7.4.jar;C:\Users\Administrator\.m2\repository\cglib\cglib\2.2.2\cglib-2.2.2.jar;C:\Users\Administrator\.m2\repository\asm\asm\3.3.1\asm-3.3.1.jar;C:\Users\Administrator\.m2\repository\org\jsoup\jsoup\1.7.3\jsoup-1.7.3.jar;C:\Users\Administrator\.m2\repository\com\google\zxing\core\3.1.0\core-3.1.0.jar;C:\Users\Administrator\.m2\repository\commons-codec\commons-codec\1.8\commons-codec-1.8.jar;E:\workspaces\xiaoermaidan\services\hfepay-scancode-api\trunk\hfepay-scancode-api\hfepay-scancode-api-service\target\classes;E:\workspaces\xiaoermaidan\services\hfepay-scancode-api\trunk\hfepay-scancode-api\hfepay-scancode-api-entity\target\classes;E:\workspaces\xiaoermaidan\commons\hfepay-commons-dao\trunk\hfepay-commons-dao\target\classes;E:\workspaces\xiaoermaidan\commons\hfepay-commons-base\trunk\hfepay-commons-base\target\classes;C:\Users\Administrator\.m2\repository\org\apache\commons\commons-lang3\3.2.1\commons-lang3-3.2.1.jar;C:\Users\Administrator\.m2\repository\commons-beanutils\commons-beanutils\1.9.1\commons-beanutils-1.9.1.jar;C:\Users\Administrator\.m2\repository\org\apache\httpcomponents\httpclient\4.3.5\httpclient-4.3.5.jar;C:\Users\Administrator\.m2\repository\org\apache\httpcomponents\httpcore\4.3.2\httpcore-4.3.2.jar;C:\Users\Administrator\.m2\repository\joda-time\joda-time\2.3\joda-time-2.3.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-jdbc\4.2.5.RELEASE\spring-jdbc-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-tx\4.2.5.RELEASE\spring-tx-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-test\4.2.5.RELEASE\spring-test-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\mybatis\mybatis\3.2.4\mybatis-3.2.4.jar;C:\Users\Administrator\.m2\repository\org\mybatis\mybatis-spring\1.2.1\mybatis-spring-1.2.1.jar;C:\Users\Administrator\.m2\repository\xerces\xercesImpl\2.9.1\xercesImpl-2.9.1.jar;C:\Users\Administrator\.m2\repository\xml-apis\xml-apis\1.3.04\xml-apis-1.3.04.jar;C:\Users\Administrator\.m2\repository\com\alibaba\druid\0.2.8\druid-0.2.8.jar;C:\Users\Administrator\.m2\repository\javax\persistence\toplink-essentials\1.0\toplink-essentials-1.0.jar;C:\Users\Administrator\.m2\repository\javax\persistence\persistence-api\1.0\persistence-api-1.0.jar;C:\Users\Administrator\.m2\repository\org\json\org.json\chargebee-1.0\org.json-chargebee-1.0.jar;C:\Users\Administrator\.m2\repository\com\chinaums\XmClient\1.0\XmClient-1.0.jar;C:\Users\Administrator\.m2\repository\org\quartz-scheduler\quartz-jobs\2.2.1\quartz-jobs-2.2.1.jar;C:\Users\Administrator\.m2\repository\net\sf\json-lib\json-lib\2.4\json-lib-2.4-jdk15.jar;C:\Users\Administrator\.m2\repository\commons-lang\commons-lang\2.5\commons-lang-2.5.jar;C:\Users\Administrator\.m2\repository\net\sf\ezmorph\ezmorph\1.0.6\ezmorph-1.0.6.jar;C:\Users\Administrator\.m2\repository\org\springframework\session\spring-session-data-redis\1.2.0.RELEASE\spring-session-data-redis-1.2.0.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\apache\commons\commons-pool2\2.4.2\commons-pool2-2.4.2.jar;C:\Users\Administrator\.m2\repository\org\springframework\data\spring-data-redis\1.7.1.RELEASE\spring-data-redis-1.7.1.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\data\spring-data-keyvalue\1.1.1.RELEASE\spring-data-keyvalue-1.1.1.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\data\spring-data-commons\1.12.1.RELEASE\spring-data-commons-1.12.1.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-oxm\4.2.5.RELEASE\spring-oxm-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\session\spring-session\1.2.0.RELEASE\spring-session-1.2.0.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\apache\zookeeper\zookeeper\3.4.7\zookeeper-3.4.7.jar;C:\Users\Administrator\.m2\repository\jline\jline\0.9.94\jline-0.9.94.jar;C:\Users\Administrator\.m2\repository\io\netty\netty\3.7.0.Final\netty-3.7.0.Final.jar;C:\Users\Administrator\.m2\repository\com\alibaba\dubbo\2.5.3\dubbo-2.5.3.jar;C:\Users\Administrator\.m2\repository\org\javassist\javassist\3.15.0-GA\javassist-3.15.0-GA.jar;C:\Users\Administrator\.m2\repository\org\jboss\netty\netty\3.2.5.Final\netty-3.2.5.Final.jar;C:\Users\Administrator\.m2\repository\org\apache\hadoop\hadoop-core\1.2.1\hadoop-core-1.2.1.jar;C:\Users\Administrator\.m2\repository\commons-cli\commons-cli\1.2\commons-cli-1.2.jar;C:\Users\Administrator\.m2\repository\xmlenc\xmlenc\0.52\xmlenc-0.52.jar;C:\Users\Administrator\.m2\repository\com\sun\jersey\jersey-core\1.8\jersey-core-1.8.jar;C:\Users\Administrator\.m2\repository\com\sun\jersey\jersey-json\1.8\jersey-json-1.8.jar;C:\Users\Administrator\.m2\repository\org\codehaus\jettison\jettison\1.1\jettison-1.1.jar;C:\Users\Administrator\.m2\repository\stax\stax-api\1.0.1\stax-api-1.0.1.jar;C:\Users\Administrator\.m2\repository\com\sun\xml\bind\jaxb-impl\2.2.3-1\jaxb-impl-2.2.3-1.jar;C:\Users\Administrator\.m2\repository\javax\xml\bind\jaxb-api\2.2.2\jaxb-api-2.2.2.jar;C:\Users\Administrator\.m2\repository\javax\xml\stream\stax-api\1.0-2\stax-api-1.0-2.jar;C:\Users\Administrator\.m2\repository\org\codehaus\jackson\jackson-core-asl\1.7.1\jackson-core-asl-1.7.1.jar;C:\Users\Administrator\.m2\repository\org\codehaus\jackson\jackson-jaxrs\1.7.1\jackson-jaxrs-1.7.1.jar;C:\Users\Administrator\.m2\repository\org\codehaus\jackson\jackson-xc\1.7.1\jackson-xc-1.7.1.jar;C:\Users\Administrator\.m2\repository\com\sun\jersey\jersey-server\1.8\jersey-server-1.8.jar;C:\Users\Administrator\.m2\repository\commons-io\commons-io\2.1\commons-io-2.1.jar;C:\Users\Administrator\.m2\repository\commons-httpclient\commons-httpclient\3.0.1\commons-httpclient-3.0.1.jar;C:\Users\Administrator\.m2\repository\org\apache\commons\commons-math\2.1\commons-math-2.1.jar;C:\Users\Administrator\.m2\repository\commons-net\commons-net\1.4.1\commons-net-1.4.1.jar;C:\Users\Administrator\.m2\repository\org\mortbay\jetty\jetty\6.1.26\jetty-6.1.26.jar;C:\Users\Administrator\.m2\repository\org\mortbay\jetty\servlet-api\2.5-20081211\servlet-api-2.5-20081211.jar;C:\Users\Administrator\.m2\repository\org\mortbay\jetty\jetty-util\6.1.26\jetty-util-6.1.26.jar;C:\Users\Administrator\.m2\repository\tomcat\jasper-runtime\5.5.12\jasper-runtime-5.5.12.jar;C:\Users\Administrator\.m2\repository\tomcat\jasper-compiler\5.5.12\jasper-compiler-5.5.12.jar;C:\Users\Administrator\.m2\repository\org\mortbay\jetty\jsp-api-2.1\6.1.14\jsp-api-2.1-6.1.14.jar;C:\Users\Administrator\.m2\repository\org\mortbay\jetty\servlet-api-2.5\6.1.14\servlet-api-2.5-6.1.14.jar;C:\Users\Administrator\.m2\repository\org\mortbay\jetty\jsp-2.1\6.1.14\jsp-2.1-6.1.14.jar;C:\Users\Administrator\.m2\repository\ant\ant\1.6.5\ant-1.6.5.jar;C:\Users\Administrator\.m2\repository\commons-el\commons-el\1.0\commons-el-1.0.jar;C:\Users\Administrator\.m2\repository\net\java\dev\jets3t\jets3t\0.6.1\jets3t-0.6.1.jar;C:\Users\Administrator\.m2\repository\hsqldb\hsqldb\1.8.0.10\hsqldb-1.8.0.10.jar;C:\Users\Administrator\.m2\repository\oro\oro\2.0.8\oro-2.0.8.jar;C:\Users\Administrator\.m2\repository\org\eclipse\jdt\core\3.1.1\core-3.1.1.jar;C:\Users\Administrator\.m2\repository\org\codehaus\jackson\jackson-mapper-asl\1.8.8\jackson-mapper-asl-1.8.8.jar;C:\Users\Administrator\.m2\repository\commons-configuration\commons-configuration\1.9\commons-configuration-1.9.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-core\4.2.5.RELEASE\spring-core-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\commons-logging\commons-logging\1.1.3\commons-logging-1.1.3.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-context\4.2.5.RELEASE\spring-context-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-aop\4.2.5.RELEASE\spring-aop-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\aopalliance\aopalliance\1.0\aopalliance-1.0.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-beans\4.2.5.RELEASE\spring-beans-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-expression\4.2.5.RELEASE\spring-expression-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\mysql\mysql-connector-java\5.1.27\mysql-connector-java-5.1.27.jar;C:\Users\Administrator\.m2\repository\org\hibernate\hibernate-validator\5.0.1.Final\hibernate-validator-5.0.1.Final.jar;C:\Users\Administrator\.m2\repository\javax\validation\validation-api\1.1.0.Final\validation-api-1.1.0.Final.jar;C:\Users\Administrator\.m2\repository\org\jboss\logging\jboss-logging\3.1.1.GA\jboss-logging-3.1.1.GA.jar;C:\Users\Administrator\.m2\repository\com\fasterxml\classmate\0.8.0\classmate-0.8.0.jar;C:\Users\Administrator\.m2\repository\com\101tec\zkclient\0.2\zkclient-0.2.jar;C:\Users\Administrator\.m2\repository\log4j\log4j\1.2.14\log4j-1.2.14.jar;C:\Users\Administrator\.m2\repository\ch\qos\logback\logback-core\1.0.13\logback-core-1.0.13.jar;C:\Users\Administrator\.m2\repository\org\slf4j\slf4j-api\1.7.5\slf4j-api-1.7.5.jar;C:\Users\Administrator\.m2\repository\org\slf4j\jcl-over-slf4j\1.7.5\jcl-over-slf4j-1.7.5.jar;C:\Users\Administrator\.m2\repository\ch\qos\logback\logback-classic\1.0.13\logback-classic-1.0.13.jar
+2016-11-26 16:29:03.662 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.library.path=E:\jdk1.7.0_51\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;E:/jdk1.7.0_51/bin/../jre/bin/server;E:/jdk1.7.0_51/bin/../jre/bin;E:/jdk1.7.0_51/bin/../jre/lib/amd64;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\Program Files\TortoiseSVN\bin;E:\jdk1.7.0_51\bin;E:\jdk1.7.0_51\jre\bin;;E:\eclipse;;.
+2016-11-26 16:29:03.662 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.io.tmpdir=C:\Users\ADMINI~1\AppData\Local\Temp\
+2016-11-26 16:29:03.662 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.compiler=<NA>
+2016-11-26 16:29:03.662 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:os.name=Windows 7
+2016-11-26 16:29:03.662 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:os.arch=amd64
+2016-11-26 16:29:03.662 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:os.version=6.1
+2016-11-26 16:29:03.662 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:user.name=Administrator
+2016-11-26 16:29:03.662 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:user.home=C:\Users\Administrator
+2016-11-26 16:29:03.662 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:user.dir=E:\workspaces\xiaoermaidan\servicesapps\hfepay-scancode-serviceapp
+2016-11-26 16:29:03.663 [main] INFO  org.apache.zookeeper.ZooKeeper - Initiating client connection, connectString=127.0.0.1:2181 sessionTimeout=30000 watcher=org.I0Itec.zkclient.ZkClient@511b62a0
+2016-11-26 16:29:03.691 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn - Opening socket connection to server 127.0.0.1/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+2016-11-26 16:29:03.692 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn - Socket connection established to 127.0.0.1/127.0.0.1:2181, initiating session
+2016-11-26 16:29:03.724 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn - Session establishment complete on server 127.0.0.1/127.0.0.1:2181, sessionid = 0x158903d207c0022, negotiated timeout = 30000
+2016-11-26 16:29:05.358 [main] INFO  o.s.context.support.DefaultLifecycleProcessor - Starting beans in phase 2147483647
+2016-11-26 16:29:05.358 [main] INFO  o.s.scheduling.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
+2016-11-26 16:29:05.358 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler hfScheduler_$_NON_CLUSTERED started.
+2016-11-26 16:29:14.774 [main] INFO  o.s.context.support.DefaultLifecycleProcessor - Starting beans in phase 2147483647
+2016-11-26 17:07:10.101 [main] INFO  o.s.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+2016-11-26 17:07:10.833 [main] INFO  o.s.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-services.xml]
+2016-11-26 17:07:10.953 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'adminServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.AdminServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\AdminServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.AdminServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2016-11-26 17:07:10.962 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'pageServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.PageServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\PageServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.PageServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2016-11-26 17:07:10.973 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'sysConfigServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.SysConfigServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\SysConfigServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.SysConfigServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2016-11-26 17:07:10.997 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'channelAdminServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.channel.impl.ChannelAdminServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\channel\impl\ChannelAdminServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.channel.impl.ChannelAdminServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2016-11-26 17:07:11.023 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'idCreateServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.IdCreateServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\IdCreateServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.IdCreateServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2016-11-26 17:07:11.038 [main] INFO  o.s.context.support.GenericXmlApplicationContext - Refreshing org.springframework.context.support.GenericXmlApplicationContext@2dc68dc6: startup date [Sat Nov 26 17:07:11 CST 2016]; root of context hierarchy
+2016-11-26 17:07:11.409 [main] INFO  c.h.c.configuration.PropertyPlaceholderConfigurer - file:/E:/
+2016-11-26 17:07:11.410 [main] INFO  c.h.c.configuration.PropertyPlaceholderConfigurer - Loading properties file from URL [file:/E:/workspaces/xiaoermaidan/servicesapps/hfepay-scancode-serviceapp/target/classes/application-hfepay.properties]
+2016-11-26 17:07:11.410 [main] INFO  c.h.c.configuration.PropertyPlaceholderConfigurer - Loading properties file from URL [file:d:/application-hfepay.properties]
+2016-11-26 17:07:11.410 [main] WARN  c.h.c.configuration.PropertyPlaceholderConfigurer - Could not load properties from URL [file:d:/application-hfepay.properties]: d:\application-hfepay.properties (系统找不到指定的文件。)
+2016-11-26 17:07:11.410 [main] INFO  c.h.c.configuration.PropertyPlaceholderConfigurer - Loading properties file from URL [file:./conf/application-hfepay.properties]
+2016-11-26 17:07:11.410 [main] WARN  c.h.c.configuration.PropertyPlaceholderConfigurer - Could not load properties from URL [file:./conf/application-hfepay.properties]: .\conf\application-hfepay.properties (系统找不到指定的路径。)
+2016-11-26 17:07:11.468 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0' of type [class org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-26 17:07:11.688 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2016-11-26 17:07:11.711 [main] INFO  org.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2016-11-26 17:07:11.713 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.1.5 created.
+2016-11-26 17:07:11.715 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2016-11-26 17:07:11.716 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.1.5) 'hfScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 20 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2016-11-26 17:07:11.716 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'hfScheduler' initialized from an externally provided properties instance.
+2016-11-26 17:07:11.716 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.1.5
+2016-11-26 17:07:11.718 [main] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@3b95e4df
+2016-11-26 17:07:11.764 [main] INFO  com.hfepay.scancode.service.timer.InitTasks - 初始化定时开始任务：2016-11-26 17:07:11
+2016-11-26 17:07:11.796 [main] INFO  com.hfepay.scancode.service.timer.InitTasks - 初始化定时任务完成：2016-11-26 17:07:11
+2016-11-26 17:07:15.476 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:zookeeper.version=3.4.7-1713338, built on 11/09/2015 04:32 GMT
+2016-11-26 17:07:15.476 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:host.name=windows10.microdone.cn
+2016-11-26 17:07:15.476 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.version=1.7.0_51
+2016-11-26 17:07:15.476 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.vendor=Oracle Corporation
+2016-11-26 17:07:15.476 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.home=E:\jdk1.7.0_51\jre
+2016-11-26 17:07:15.476 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.class.path=E:\workspaces\xiaoermaidan\servicesapps\hfepay-scancode-serviceapp\target\classes;E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes;E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service\target\classes;E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-entity\target\classes;C:\Users\Administrator\.m2\repository\org\apache\shiro\shiro-core\1.2.2\shiro-core-1.2.2.jar;C:\Users\Administrator\.m2\repository\org\apache\shiro\shiro-web\1.2.2\shiro-web-1.2.2.jar;C:\Users\Administrator\.m2\repository\org\apache\shiro\shiro-ehcache\1.2.2\shiro-ehcache-1.2.2.jar;C:\Users\Administrator\.m2\repository\net\sf\ehcache\ehcache-core\2.5.0\ehcache-core-2.5.0.jar;C:\Users\Administrator\.m2\repository\org\apache\shiro\shiro-spring\1.2.2\shiro-spring-1.2.2.jar;E:\workspaces\xiaoermaidan\commons\hfepay-commons-cache\trunk\hfepay-commons-cache\target\classes;C:\Users\Administrator\.m2\repository\redis\clients\jedis\2.8.1\jedis-2.8.1.jar;E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-dao-impl\target\classes;E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-dao\target\classes;C:\Users\Administrator\.m2\repository\com\alibaba\fastjson\1.1.32\fastjson-1.1.32.jar;E:\workspaces\xiaoermaidan\commons\hfepay-commons-excelutils\trunk\hfepay-commons-excelutils\target\classes;C:\Users\Administrator\.m2\repository\net\sf\jxls\jxls-core\1.0.5\jxls-core-1.0.5.jar;C:\Users\Administrator\.m2\repository\commons-collections\commons-collections\3.2.1\commons-collections-3.2.1.jar;C:\Users\Administrator\.m2\repository\commons-digester\commons-digester\2.0\commons-digester-2.0.jar;C:\Users\Administrator\.m2\repository\org\apache\commons\commons-jexl\2.0.1\commons-jexl-2.0.1.jar;C:\Users\Administrator\.m2\repository\org\apache\poi\poi\3.9\poi-3.9.jar;C:\Users\Administrator\.m2\repository\org\apache\poi\poi-ooxml\3.9\poi-ooxml-3.9.jar;C:\Users\Administrator\.m2\repository\org\apache\poi\poi-ooxml-schemas\3.9\poi-ooxml-schemas-3.9.jar;C:\Users\Administrator\.m2\repository\org\apache\xmlbeans\xmlbeans\2.3.0\xmlbeans-2.3.0.jar;C:\Users\Administrator\.m2\repository\dom4j\dom4j\1.6.1\dom4j-1.6.1.jar;E:\workspaces\xiaoermaidan\commons\hfepay-commons-sms\trunk\hfepay-commons-sms\target\classes;C:\Users\Administrator\.m2\repository\com\xiehe\sms\xiehe_smsclient\1.1.1\xiehe_smsclient-1.1.1.jar;C:\Users\Administrator\.m2\repository\javax\mail\javax.mail-api\1.5.5\javax.mail-api-1.5.5.jar;C:\Users\Administrator\.m2\repository\org\apache\commons\commons-email\1.4\commons-email-1.4.jar;C:\Users\Administrator\.m2\repository\com\sun\mail\javax.mail\1.5.2\javax.mail-1.5.2.jar;C:\Users\Administrator\.m2\repository\javax\activation\activation\1.1.1\activation-1.1.1.jar;E:\workspaces\xiaoermaidan\commons\hfepay-commons-timer\target\classes;C:\Users\Administrator\.m2\repository\org\quartz-scheduler\quartz\2.1.5\quartz-2.1.5.jar;C:\Users\Administrator\.m2\repository\c3p0\c3p0\0.9.1.1\c3p0-0.9.1.1.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-context-support\4.2.5.RELEASE\spring-context-support-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\aspectj\aspectjrt\1.7.0\aspectjrt-1.7.0.jar;C:\Users\Administrator\.m2\repository\org\aspectj\aspectjweaver\1.7.4\aspectjweaver-1.7.4.jar;C:\Users\Administrator\.m2\repository\cglib\cglib\2.2.2\cglib-2.2.2.jar;C:\Users\Administrator\.m2\repository\asm\asm\3.3.1\asm-3.3.1.jar;C:\Users\Administrator\.m2\repository\org\jsoup\jsoup\1.7.3\jsoup-1.7.3.jar;C:\Users\Administrator\.m2\repository\com\google\zxing\core\3.1.0\core-3.1.0.jar;C:\Users\Administrator\.m2\repository\commons-codec\commons-codec\1.8\commons-codec-1.8.jar;E:\workspaces\xiaoermaidan\services\hfepay-scancode-api\trunk\hfepay-scancode-api\hfepay-scancode-api-service\target\classes;E:\workspaces\xiaoermaidan\services\hfepay-scancode-api\trunk\hfepay-scancode-api\hfepay-scancode-api-entity\target\classes;E:\workspaces\xiaoermaidan\commons\hfepay-commons-dao\trunk\hfepay-commons-dao\target\classes;E:\workspaces\xiaoermaidan\commons\hfepay-commons-base\trunk\hfepay-commons-base\target\classes;C:\Users\Administrator\.m2\repository\org\apache\commons\commons-lang3\3.2.1\commons-lang3-3.2.1.jar;C:\Users\Administrator\.m2\repository\commons-beanutils\commons-beanutils\1.9.1\commons-beanutils-1.9.1.jar;C:\Users\Administrator\.m2\repository\org\apache\httpcomponents\httpclient\4.3.5\httpclient-4.3.5.jar;C:\Users\Administrator\.m2\repository\org\apache\httpcomponents\httpcore\4.3.2\httpcore-4.3.2.jar;C:\Users\Administrator\.m2\repository\joda-time\joda-time\2.3\joda-time-2.3.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-jdbc\4.2.5.RELEASE\spring-jdbc-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-tx\4.2.5.RELEASE\spring-tx-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-test\4.2.5.RELEASE\spring-test-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\mybatis\mybatis\3.2.4\mybatis-3.2.4.jar;C:\Users\Administrator\.m2\repository\org\mybatis\mybatis-spring\1.2.1\mybatis-spring-1.2.1.jar;C:\Users\Administrator\.m2\repository\xerces\xercesImpl\2.9.1\xercesImpl-2.9.1.jar;C:\Users\Administrator\.m2\repository\xml-apis\xml-apis\1.3.04\xml-apis-1.3.04.jar;C:\Users\Administrator\.m2\repository\com\alibaba\druid\0.2.8\druid-0.2.8.jar;C:\Users\Administrator\.m2\repository\javax\persistence\toplink-essentials\1.0\toplink-essentials-1.0.jar;C:\Users\Administrator\.m2\repository\javax\persistence\persistence-api\1.0\persistence-api-1.0.jar;C:\Users\Administrator\.m2\repository\org\json\org.json\chargebee-1.0\org.json-chargebee-1.0.jar;C:\Users\Administrator\.m2\repository\com\chinaums\XmClient\1.0\XmClient-1.0.jar;C:\Users\Administrator\.m2\repository\org\quartz-scheduler\quartz-jobs\2.2.1\quartz-jobs-2.2.1.jar;C:\Users\Administrator\.m2\repository\net\sf\json-lib\json-lib\2.4\json-lib-2.4-jdk15.jar;C:\Users\Administrator\.m2\repository\commons-lang\commons-lang\2.5\commons-lang-2.5.jar;C:\Users\Administrator\.m2\repository\net\sf\ezmorph\ezmorph\1.0.6\ezmorph-1.0.6.jar;C:\Users\Administrator\.m2\repository\org\springframework\session\spring-session-data-redis\1.2.0.RELEASE\spring-session-data-redis-1.2.0.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\apache\commons\commons-pool2\2.4.2\commons-pool2-2.4.2.jar;C:\Users\Administrator\.m2\repository\org\springframework\data\spring-data-redis\1.7.1.RELEASE\spring-data-redis-1.7.1.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\data\spring-data-keyvalue\1.1.1.RELEASE\spring-data-keyvalue-1.1.1.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\data\spring-data-commons\1.12.1.RELEASE\spring-data-commons-1.12.1.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-oxm\4.2.5.RELEASE\spring-oxm-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\session\spring-session\1.2.0.RELEASE\spring-session-1.2.0.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\apache\zookeeper\zookeeper\3.4.7\zookeeper-3.4.7.jar;C:\Users\Administrator\.m2\repository\jline\jline\0.9.94\jline-0.9.94.jar;C:\Users\Administrator\.m2\repository\io\netty\netty\3.7.0.Final\netty-3.7.0.Final.jar;C:\Users\Administrator\.m2\repository\com\alibaba\dubbo\2.5.3\dubbo-2.5.3.jar;C:\Users\Administrator\.m2\repository\org\javassist\javassist\3.15.0-GA\javassist-3.15.0-GA.jar;C:\Users\Administrator\.m2\repository\org\jboss\netty\netty\3.2.5.Final\netty-3.2.5.Final.jar;C:\Users\Administrator\.m2\repository\org\apache\hadoop\hadoop-core\1.2.1\hadoop-core-1.2.1.jar;C:\Users\Administrator\.m2\repository\commons-cli\commons-cli\1.2\commons-cli-1.2.jar;C:\Users\Administrator\.m2\repository\xmlenc\xmlenc\0.52\xmlenc-0.52.jar;C:\Users\Administrator\.m2\repository\com\sun\jersey\jersey-core\1.8\jersey-core-1.8.jar;C:\Users\Administrator\.m2\repository\com\sun\jersey\jersey-json\1.8\jersey-json-1.8.jar;C:\Users\Administrator\.m2\repository\org\codehaus\jettison\jettison\1.1\jettison-1.1.jar;C:\Users\Administrator\.m2\repository\stax\stax-api\1.0.1\stax-api-1.0.1.jar;C:\Users\Administrator\.m2\repository\com\sun\xml\bind\jaxb-impl\2.2.3-1\jaxb-impl-2.2.3-1.jar;C:\Users\Administrator\.m2\repository\javax\xml\bind\jaxb-api\2.2.2\jaxb-api-2.2.2.jar;C:\Users\Administrator\.m2\repository\javax\xml\stream\stax-api\1.0-2\stax-api-1.0-2.jar;C:\Users\Administrator\.m2\repository\org\codehaus\jackson\jackson-core-asl\1.7.1\jackson-core-asl-1.7.1.jar;C:\Users\Administrator\.m2\repository\org\codehaus\jackson\jackson-jaxrs\1.7.1\jackson-jaxrs-1.7.1.jar;C:\Users\Administrator\.m2\repository\org\codehaus\jackson\jackson-xc\1.7.1\jackson-xc-1.7.1.jar;C:\Users\Administrator\.m2\repository\com\sun\jersey\jersey-server\1.8\jersey-server-1.8.jar;C:\Users\Administrator\.m2\repository\commons-io\commons-io\2.1\commons-io-2.1.jar;C:\Users\Administrator\.m2\repository\commons-httpclient\commons-httpclient\3.0.1\commons-httpclient-3.0.1.jar;C:\Users\Administrator\.m2\repository\org\apache\commons\commons-math\2.1\commons-math-2.1.jar;C:\Users\Administrator\.m2\repository\commons-net\commons-net\1.4.1\commons-net-1.4.1.jar;C:\Users\Administrator\.m2\repository\org\mortbay\jetty\jetty\6.1.26\jetty-6.1.26.jar;C:\Users\Administrator\.m2\repository\org\mortbay\jetty\servlet-api\2.5-20081211\servlet-api-2.5-20081211.jar;C:\Users\Administrator\.m2\repository\org\mortbay\jetty\jetty-util\6.1.26\jetty-util-6.1.26.jar;C:\Users\Administrator\.m2\repository\tomcat\jasper-runtime\5.5.12\jasper-runtime-5.5.12.jar;C:\Users\Administrator\.m2\repository\tomcat\jasper-compiler\5.5.12\jasper-compiler-5.5.12.jar;C:\Users\Administrator\.m2\repository\org\mortbay\jetty\jsp-api-2.1\6.1.14\jsp-api-2.1-6.1.14.jar;C:\Users\Administrator\.m2\repository\org\mortbay\jetty\servlet-api-2.5\6.1.14\servlet-api-2.5-6.1.14.jar;C:\Users\Administrator\.m2\repository\org\mortbay\jetty\jsp-2.1\6.1.14\jsp-2.1-6.1.14.jar;C:\Users\Administrator\.m2\repository\ant\ant\1.6.5\ant-1.6.5.jar;C:\Users\Administrator\.m2\repository\commons-el\commons-el\1.0\commons-el-1.0.jar;C:\Users\Administrator\.m2\repository\net\java\dev\jets3t\jets3t\0.6.1\jets3t-0.6.1.jar;C:\Users\Administrator\.m2\repository\hsqldb\hsqldb\1.8.0.10\hsqldb-1.8.0.10.jar;C:\Users\Administrator\.m2\repository\oro\oro\2.0.8\oro-2.0.8.jar;C:\Users\Administrator\.m2\repository\org\eclipse\jdt\core\3.1.1\core-3.1.1.jar;C:\Users\Administrator\.m2\repository\org\codehaus\jackson\jackson-mapper-asl\1.8.8\jackson-mapper-asl-1.8.8.jar;C:\Users\Administrator\.m2\repository\commons-configuration\commons-configuration\1.9\commons-configuration-1.9.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-core\4.2.5.RELEASE\spring-core-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\commons-logging\commons-logging\1.1.3\commons-logging-1.1.3.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-context\4.2.5.RELEASE\spring-context-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-aop\4.2.5.RELEASE\spring-aop-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\aopalliance\aopalliance\1.0\aopalliance-1.0.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-beans\4.2.5.RELEASE\spring-beans-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-expression\4.2.5.RELEASE\spring-expression-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\mysql\mysql-connector-java\5.1.27\mysql-connector-java-5.1.27.jar;C:\Users\Administrator\.m2\repository\org\hibernate\hibernate-validator\5.0.1.Final\hibernate-validator-5.0.1.Final.jar;C:\Users\Administrator\.m2\repository\javax\validation\validation-api\1.1.0.Final\validation-api-1.1.0.Final.jar;C:\Users\Administrator\.m2\repository\org\jboss\logging\jboss-logging\3.1.1.GA\jboss-logging-3.1.1.GA.jar;C:\Users\Administrator\.m2\repository\com\fasterxml\classmate\0.8.0\classmate-0.8.0.jar;C:\Users\Administrator\.m2\repository\com\101tec\zkclient\0.2\zkclient-0.2.jar;C:\Users\Administrator\.m2\repository\log4j\log4j\1.2.14\log4j-1.2.14.jar;C:\Users\Administrator\.m2\repository\ch\qos\logback\logback-core\1.0.13\logback-core-1.0.13.jar;C:\Users\Administrator\.m2\repository\org\slf4j\slf4j-api\1.7.5\slf4j-api-1.7.5.jar;C:\Users\Administrator\.m2\repository\org\slf4j\jcl-over-slf4j\1.7.5\jcl-over-slf4j-1.7.5.jar;C:\Users\Administrator\.m2\repository\ch\qos\logback\logback-classic\1.0.13\logback-classic-1.0.13.jar
+2016-11-26 17:07:15.478 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.library.path=E:\jdk1.7.0_51\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;E:/jdk1.7.0_51/bin/../jre/bin/server;E:/jdk1.7.0_51/bin/../jre/bin;E:/jdk1.7.0_51/bin/../jre/lib/amd64;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\Program Files\TortoiseSVN\bin;E:\jdk1.7.0_51\bin;E:\jdk1.7.0_51\jre\bin;;E:\eclipse;;.
+2016-11-26 17:07:15.478 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.io.tmpdir=C:\Users\ADMINI~1\AppData\Local\Temp\
+2016-11-26 17:07:15.478 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.compiler=<NA>
+2016-11-26 17:07:15.478 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:os.name=Windows 7
+2016-11-26 17:07:15.478 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:os.arch=amd64
+2016-11-26 17:07:15.478 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:os.version=6.1
+2016-11-26 17:07:15.478 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:user.name=Administrator
+2016-11-26 17:07:15.478 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:user.home=C:\Users\Administrator
+2016-11-26 17:07:15.478 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:user.dir=E:\workspaces\xiaoermaidan\servicesapps\hfepay-scancode-serviceapp
+2016-11-26 17:07:15.479 [main] INFO  org.apache.zookeeper.ZooKeeper - Initiating client connection, connectString=127.0.0.1:2181 sessionTimeout=30000 watcher=org.I0Itec.zkclient.ZkClient@422e402
+2016-11-26 17:07:15.509 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn - Opening socket connection to server 127.0.0.1/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+2016-11-26 17:07:15.510 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn - Socket connection established to 127.0.0.1/127.0.0.1:2181, initiating session
+2016-11-26 17:07:15.598 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn - Session establishment complete on server 127.0.0.1/127.0.0.1:2181, sessionid = 0x158903d207c0023, negotiated timeout = 30000
+2016-11-26 17:07:17.147 [main] INFO  o.s.context.support.DefaultLifecycleProcessor - Starting beans in phase 2147483647
+2016-11-26 17:07:17.147 [main] INFO  o.s.scheduling.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
+2016-11-26 17:07:17.147 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler hfScheduler_$_NON_CLUSTERED started.
+2016-11-26 17:07:26.692 [main] INFO  o.s.context.support.DefaultLifecycleProcessor - Starting beans in phase 2147483647
+2016-11-26 17:08:00.485 [DubboServerHandler-172.16.2.7:20892-thread-2] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLUrlFilter.findAllUrl:
+		select m.url,GROUP_CONCAT(m.name) as name FROM(
+		select
+		res.url,ifnull(role.role_name,'superadmin') as name from (
+		select menu.url,res.role_id from t_sys_resource menu
+		left JOIN t_sys_role_resource res on menu.id =res.resource_id
+		) res LEFT JOIN
+		t_sys_role role on res.role_id = role.id) m
+		GROUP BY m.url
+	
+2016-11-26 17:08:00.485 [DubboServerHandler-172.16.2.7:20892-thread-2] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 49ms
+2016-11-26 17:08:37.102 [DubboServerHandler-172.16.2.7:20892-thread-3] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLAdmin.findByCriteria:select
+		 
+		
+		A.id as A_id, A.user_name as A_user_name, A.password as A_password,
+		A.salt as A_salt,
+		A.email as A_email, A.phone as A_phone, A.short_name as A_short_name,
+		A.status as A_status, A.create_time as A_create_time
+	 ,C.description as role_name
+		from t_sys_admin A 
+		left join t_sys_role_user B on A.id = B.account_id 
+		left join t_sys_role C on B.role_id = C.id
+		 
+			 WHERE (
+        
+        
+          
+                 A.user_name  =   'zhuceceshi' 
+               
+            
+        
+      )
+2016-11-26 17:08:37.102 [DubboServerHandler-172.16.2.7:20892-thread-3] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 81ms
+2016-11-26 17:08:37.111 [DubboServerHandler-172.16.2.7:20892-thread-4] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLUrlFilter.findRoles:
+		select role_name as name from t_sys_role role
+		inner JOIN t_sys_role_user u on role.id=u.role_id
+		INNER JOIN t_sys_admin acc on u.account_id = acc.id
+		where acc.user_name='zhuceceshi'
+	
+2016-11-26 17:08:37.111 [DubboServerHandler-172.16.2.7:20892-thread-4] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 3ms
+2016-11-26 17:08:37.121 [DubboServerHandler-172.16.2.7:20892-thread-5] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLAdmin.findByCriteria:select
+		 
+		
+		A.id as A_id, A.user_name as A_user_name, A.password as A_password,
+		A.salt as A_salt,
+		A.email as A_email, A.phone as A_phone, A.short_name as A_short_name,
+		A.status as A_status, A.create_time as A_create_time
+	 ,C.description as role_name
+		from t_sys_admin A 
+		left join t_sys_role_user B on A.id = B.account_id 
+		left join t_sys_role C on B.role_id = C.id
+		 
+			 WHERE (
+        
+        
+          
+                 A.user_name  =   'zhuceceshi' 
+               
+            
+        
+      )
+2016-11-26 17:08:37.121 [DubboServerHandler-172.16.2.7:20892-thread-5] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 5ms
+2016-11-26 17:08:37.144 [DubboServerHandler-172.16.2.7:20892-thread-6] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLSysResource.selectActiveMenu:
+		select
+		A.id as A_id, menu_name as A_menu_name, parent_id as parent_id, sort as
+		A_sort, icon as A_icon,url as A_url,level as A_level,status as
+		A_status
+		from t_sys_resource A INNER JOIN t_sys_role_resource rr on A.id=rr.resource_id
+		INNER JOIN t_sys_role_user ru on rr.role_id=ru.role_id
+		where STATUS=1 and `level`not in(3,4)
+		and ru.account_id='aaaa-ddd-ass-admin1'
+		ORDER BY parent_id,sort
+	
+2016-11-26 17:08:37.144 [DubboServerHandler-172.16.2.7:20892-thread-6] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 12ms
+2016-11-26 17:08:37.192 [DubboServerHandler-172.16.2.7:20892-thread-7] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMerchantInfo.findByCriteria:select
+     
+	     
+		A.id as A_id,A.channel_no as A_channel_no,A.agent_no as A_agent_no,A.merchant_no as A_merchant_no,A.merchant_name as A_merchant_name,A.short_name as A_short_name,
+		A.platform_merchant_no as A_platform_merchant_no,A.bus_type as A_bus_type,A.name as A_name,A.id_card as A_id_card,A.idcard_img_1 as A_idcard_img_1,
+		A.idcard_img_2 as A_idcard_img_2,A.idcard_img_3 as A_idcard_img_3,A.mobile as A_mobile,A.phone as A_phone,A.email as A_email,A.address as A_address,
+		A.merchant_license as A_merchant_license,A.merchant_license_img as A_merchant_license_img,A.tax_no as A_tax_no,A.tax_img as A_tax_img,
+		A.org_no as A_org_no,A.qr_code as A_qr_code,A.credit_pay_status as A_credit_pay_status,A.authen_status as A_authen_status,A.status as A_status,A.create_time as A_create_time,
+		A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2,A.temp_3 as A_temp_3,A.temp_4 as A_temp_4
+	     
+	 ,C.channel_name as channel_name,D.agent_name
+     from t_merchant_info A
+     left join t_channel_base C on A.channel_no = C.channel_no 
+     left join t_agent_base D on A.agent_no = D.agent_no 
+     
+       WHERE (
+        
+        
+          
+                 A.status  =   '0' 
+               
+            
+        
+      )
+2016-11-26 17:08:37.193 [DubboServerHandler-172.16.2.7:20892-thread-7] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 9ms
+2016-11-26 17:08:37.204 [DubboServerHandler-172.16.2.7:20892-thread-8] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLUserMessage.findByCriteria:select
+     
+	     
+		A.ID as A_ID,A.USER_NO as A_USER_NO,A.USER_TYPE as A_USER_TYPE,A.TITLE as A_TITLE,A.CONTENT as A_CONTENT,A.READ_STATUS as A_READ_STATUS,A.MESSAGE_TYPE as A_MESSAGE_TYPE,A.STATUS as A_STATUS,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.OPERATOR as A_OPERATOR,A.REMARK as A_REMARK
+	     
+	 
+     from t_user_message A
+     
+       WHERE (
+        
+        
+          
+                 A.READ_STATUS  =   '1' 
+               
+            
+        
+      )
+2016-11-26 17:08:37.205 [DubboServerHandler-172.16.2.7:20892-thread-8] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 6ms
+2016-11-26 17:08:37.775 [DubboServerHandler-172.16.2.7:20892-thread-9] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMerchantInfo.findByCriteria:select
+     
+	     
+		A.id as A_id,A.channel_no as A_channel_no,A.agent_no as A_agent_no,A.merchant_no as A_merchant_no,A.merchant_name as A_merchant_name,A.short_name as A_short_name,
+		A.platform_merchant_no as A_platform_merchant_no,A.bus_type as A_bus_type,A.name as A_name,A.id_card as A_id_card,A.idcard_img_1 as A_idcard_img_1,
+		A.idcard_img_2 as A_idcard_img_2,A.idcard_img_3 as A_idcard_img_3,A.mobile as A_mobile,A.phone as A_phone,A.email as A_email,A.address as A_address,
+		A.merchant_license as A_merchant_license,A.merchant_license_img as A_merchant_license_img,A.tax_no as A_tax_no,A.tax_img as A_tax_img,
+		A.org_no as A_org_no,A.qr_code as A_qr_code,A.credit_pay_status as A_credit_pay_status,A.authen_status as A_authen_status,A.status as A_status,A.create_time as A_create_time,
+		A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2,A.temp_3 as A_temp_3,A.temp_4 as A_temp_4
+	     
+	 ,C.channel_name as channel_name,D.agent_name
+     from t_merchant_info A
+     left join t_channel_base C on A.channel_no = C.channel_no 
+     left join t_agent_base D on A.agent_no = D.agent_no 
+     
+       WHERE (
+        
+        
+          
+                 A.status  =   '0' 
+               
+            
+        
+      )
+2016-11-26 17:08:37.776 [DubboServerHandler-172.16.2.7:20892-thread-9] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 11ms
+2016-11-26 17:08:37.788 [DubboServerHandler-172.16.2.7:20892-thread-10] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLUserMessage.findByCriteria:select
+     
+	     
+		A.ID as A_ID,A.USER_NO as A_USER_NO,A.USER_TYPE as A_USER_TYPE,A.TITLE as A_TITLE,A.CONTENT as A_CONTENT,A.READ_STATUS as A_READ_STATUS,A.MESSAGE_TYPE as A_MESSAGE_TYPE,A.STATUS as A_STATUS,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.OPERATOR as A_OPERATOR,A.REMARK as A_REMARK
+	     
+	 
+     from t_user_message A
+     
+       WHERE (
+        
+        
+          
+                 A.READ_STATUS  =   '1' 
+               
+            
+        
+      )
+2016-11-26 17:08:37.788 [DubboServerHandler-172.16.2.7:20892-thread-10] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 5ms
+2016-11-26 17:08:42.831 [DubboServerHandler-172.16.2.7:20892-thread-11] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLUrlFilter.findRoles:
+		select role_name as name from t_sys_role role
+		inner JOIN t_sys_role_user u on role.id=u.role_id
+		INNER JOIN t_sys_admin acc on u.account_id = acc.id
+		where acc.user_name='zhuceceshi'
+	
+2016-11-26 17:08:42.832 [DubboServerHandler-172.16.2.7:20892-thread-11] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 4ms
+2016-11-26 17:08:42.844 [DubboServerHandler-172.16.2.7:20892-thread-12] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMappingDicion.findByCriteria:select
+     
+	     
+		A.ID as A_ID,A.NAME as A_NAME,A.KEY_NO as A_KEY_NO,A.PARA_NAME as A_PARA_NAME,A.PARA_VAL as A_PARA_VAL,A.RECORD_STATUS as A_RECORD_STATUS,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.OPERATOR as A_OPERATOR,A.REMARK as A_REMARK
+	     
+	 
+     from t_mapping_dicion A
+     
+       WHERE (
+        
+        
+          
+                 A.KEY_NO  =   'ZFTD' 
+               
+            
+        
+      )
+2016-11-26 17:08:42.844 [DubboServerHandler-172.16.2.7:20892-thread-12] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 6ms
+2016-11-26 17:08:43.148 [DubboServerHandler-172.16.2.7:20892-thread-13] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLPlatformLimit.countByCriteria:select count(*) from t_platform_limit A
+     
+       WHERE (
+        
+        
+          
+                 A.record_status  =   'Y' 
+               
+            
+        
+      )
+2016-11-26 17:08:43.149 [DubboServerHandler-172.16.2.7:20892-thread-13] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 8ms
+2016-11-26 17:08:43.158 [DubboServerHandler-172.16.2.7:20892-thread-13] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLPlatformLimit.findByCriteria:select
+     
+	     
+		A.id as A_id,A.limit_pay_code as A_limit_pay_code,A.limit_type as A_limit_type,A.day_trans_limit as A_day_trans_limit,A.day_withdrawals_limit as A_day_withdrawals_limit,A.single_trans_limit as A_single_trans_limit,A.single_withdrawals_limit as A_single_withdrawals_limit,A.status as A_status,A.record_status as A_record_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	     
+	 ,B.para_name as paraName
+     from t_platform_limit A left join t_mapping_dicion B on A.limit_pay_code = B.para_val 
+     
+       WHERE (
+        
+        
+          
+                 A.record_status  =   'Y' 
+               
+            
+        
+      ) 
+     
+     
+      order by
+         A.create_time DESC
+2016-11-26 17:08:43.159 [DubboServerHandler-172.16.2.7:20892-thread-13] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 10ms
+2016-11-26 17:08:43.170 [DubboServerHandler-172.16.2.7:20892-thread-14] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMerchantInfo.findByCriteria:select
+     
+	     
+		A.id as A_id,A.channel_no as A_channel_no,A.agent_no as A_agent_no,A.merchant_no as A_merchant_no,A.merchant_name as A_merchant_name,A.short_name as A_short_name,
+		A.platform_merchant_no as A_platform_merchant_no,A.bus_type as A_bus_type,A.name as A_name,A.id_card as A_id_card,A.idcard_img_1 as A_idcard_img_1,
+		A.idcard_img_2 as A_idcard_img_2,A.idcard_img_3 as A_idcard_img_3,A.mobile as A_mobile,A.phone as A_phone,A.email as A_email,A.address as A_address,
+		A.merchant_license as A_merchant_license,A.merchant_license_img as A_merchant_license_img,A.tax_no as A_tax_no,A.tax_img as A_tax_img,
+		A.org_no as A_org_no,A.qr_code as A_qr_code,A.credit_pay_status as A_credit_pay_status,A.authen_status as A_authen_status,A.status as A_status,A.create_time as A_create_time,
+		A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2,A.temp_3 as A_temp_3,A.temp_4 as A_temp_4
+	     
+	 ,C.channel_name as channel_name,D.agent_name
+     from t_merchant_info A
+     left join t_channel_base C on A.channel_no = C.channel_no 
+     left join t_agent_base D on A.agent_no = D.agent_no 
+     
+       WHERE (
+        
+        
+          
+                 A.status  =   '0' 
+               
+            
+        
+      )
+2016-11-26 17:08:43.170 [DubboServerHandler-172.16.2.7:20892-thread-14] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 13ms
+2016-11-26 17:08:43.192 [DubboServerHandler-172.16.2.7:20892-thread-15] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLUserMessage.findByCriteria:select
+     
+	     
+		A.ID as A_ID,A.USER_NO as A_USER_NO,A.USER_TYPE as A_USER_TYPE,A.TITLE as A_TITLE,A.CONTENT as A_CONTENT,A.READ_STATUS as A_READ_STATUS,A.MESSAGE_TYPE as A_MESSAGE_TYPE,A.STATUS as A_STATUS,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.OPERATOR as A_OPERATOR,A.REMARK as A_REMARK
+	     
+	 
+     from t_user_message A
+     
+       WHERE (
+        
+        
+          
+                 A.READ_STATUS  =   '1' 
+               
+            
+        
+      )
+2016-11-26 17:08:43.192 [DubboServerHandler-172.16.2.7:20892-thread-15] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 10ms
+2016-11-26 17:11:51.162 [main] INFO  o.s.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+2016-11-26 17:11:51.876 [main] INFO  o.s.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-services.xml]
+2016-11-26 17:11:52.007 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'adminServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.AdminServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\AdminServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.AdminServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2016-11-26 17:11:52.016 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'pageServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.PageServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\PageServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.PageServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2016-11-26 17:11:52.027 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'sysConfigServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.SysConfigServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\SysConfigServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.SysConfigServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2016-11-26 17:11:52.055 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'channelAdminServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.channel.impl.ChannelAdminServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\channel\impl\ChannelAdminServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.channel.impl.ChannelAdminServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2016-11-26 17:11:52.128 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'idCreateServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.IdCreateServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\IdCreateServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.IdCreateServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2016-11-26 17:11:52.174 [main] INFO  o.s.context.support.GenericXmlApplicationContext - Refreshing org.springframework.context.support.GenericXmlApplicationContext@2dc68dc6: startup date [Sat Nov 26 17:11:52 CST 2016]; root of context hierarchy
+2016-11-26 17:11:52.640 [main] INFO  c.h.c.configuration.PropertyPlaceholderConfigurer - file:/E:/
+2016-11-26 17:11:52.640 [main] INFO  c.h.c.configuration.PropertyPlaceholderConfigurer - Loading properties file from URL [file:/E:/workspaces/xiaoermaidan/servicesapps/hfepay-scancode-serviceapp/target/classes/application-hfepay.properties]
+2016-11-26 17:11:52.640 [main] INFO  c.h.c.configuration.PropertyPlaceholderConfigurer - Loading properties file from URL [file:d:/application-hfepay.properties]
+2016-11-26 17:11:52.640 [main] WARN  c.h.c.configuration.PropertyPlaceholderConfigurer - Could not load properties from URL [file:d:/application-hfepay.properties]: d:\application-hfepay.properties (系统找不到指定的文件。)
+2016-11-26 17:11:52.640 [main] INFO  c.h.c.configuration.PropertyPlaceholderConfigurer - Loading properties file from URL [file:./conf/application-hfepay.properties]
+2016-11-26 17:11:52.641 [main] WARN  c.h.c.configuration.PropertyPlaceholderConfigurer - Could not load properties from URL [file:./conf/application-hfepay.properties]: .\conf\application-hfepay.properties (系统找不到指定的路径。)
+2016-11-26 17:11:52.698 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0' of type [class org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-26 17:11:52.891 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2016-11-26 17:11:52.913 [main] INFO  org.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2016-11-26 17:11:52.915 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.1.5 created.
+2016-11-26 17:11:52.916 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2016-11-26 17:11:52.917 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.1.5) 'hfScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 20 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2016-11-26 17:11:52.917 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'hfScheduler' initialized from an externally provided properties instance.
+2016-11-26 17:11:52.917 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.1.5
+2016-11-26 17:11:52.919 [main] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@13821b95
+2016-11-26 17:11:52.961 [main] INFO  com.hfepay.scancode.service.timer.InitTasks - 初始化定时开始任务：2016-11-26 17:11:52
+2016-11-26 17:11:52.972 [main] INFO  com.hfepay.scancode.service.timer.InitTasks - 初始化定时任务完成：2016-11-26 17:11:52
+2016-11-26 17:11:56.721 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:zookeeper.version=3.4.7-1713338, built on 11/09/2015 04:32 GMT
+2016-11-26 17:11:56.721 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:host.name=windows10.microdone.cn
+2016-11-26 17:11:56.721 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.version=1.7.0_51
+2016-11-26 17:11:56.721 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.vendor=Oracle Corporation
+2016-11-26 17:11:56.721 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.home=E:\jdk1.7.0_51\jre
+2016-11-26 17:11:56.721 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.class.path=E:\workspaces\xiaoermaidan\servicesapps\hfepay-scancode-serviceapp\target\classes;E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes;E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service\target\classes;E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-entity\target\classes;C:\Users\Administrator\.m2\repository\org\apache\shiro\shiro-core\1.2.2\shiro-core-1.2.2.jar;C:\Users\Administrator\.m2\repository\org\apache\shiro\shiro-web\1.2.2\shiro-web-1.2.2.jar;C:\Users\Administrator\.m2\repository\org\apache\shiro\shiro-ehcache\1.2.2\shiro-ehcache-1.2.2.jar;C:\Users\Administrator\.m2\repository\net\sf\ehcache\ehcache-core\2.5.0\ehcache-core-2.5.0.jar;C:\Users\Administrator\.m2\repository\org\apache\shiro\shiro-spring\1.2.2\shiro-spring-1.2.2.jar;E:\workspaces\xiaoermaidan\commons\hfepay-commons-cache\trunk\hfepay-commons-cache\target\classes;C:\Users\Administrator\.m2\repository\redis\clients\jedis\2.8.1\jedis-2.8.1.jar;E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-dao-impl\target\classes;E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-dao\target\classes;C:\Users\Administrator\.m2\repository\com\alibaba\fastjson\1.1.32\fastjson-1.1.32.jar;E:\workspaces\xiaoermaidan\commons\hfepay-commons-excelutils\trunk\hfepay-commons-excelutils\target\classes;C:\Users\Administrator\.m2\repository\net\sf\jxls\jxls-core\1.0.5\jxls-core-1.0.5.jar;C:\Users\Administrator\.m2\repository\commons-collections\commons-collections\3.2.1\commons-collections-3.2.1.jar;C:\Users\Administrator\.m2\repository\commons-digester\commons-digester\2.0\commons-digester-2.0.jar;C:\Users\Administrator\.m2\repository\org\apache\commons\commons-jexl\2.0.1\commons-jexl-2.0.1.jar;C:\Users\Administrator\.m2\repository\org\apache\poi\poi\3.9\poi-3.9.jar;C:\Users\Administrator\.m2\repository\org\apache\poi\poi-ooxml\3.9\poi-ooxml-3.9.jar;C:\Users\Administrator\.m2\repository\org\apache\poi\poi-ooxml-schemas\3.9\poi-ooxml-schemas-3.9.jar;C:\Users\Administrator\.m2\repository\org\apache\xmlbeans\xmlbeans\2.3.0\xmlbeans-2.3.0.jar;C:\Users\Administrator\.m2\repository\dom4j\dom4j\1.6.1\dom4j-1.6.1.jar;E:\workspaces\xiaoermaidan\commons\hfepay-commons-sms\trunk\hfepay-commons-sms\target\classes;C:\Users\Administrator\.m2\repository\com\xiehe\sms\xiehe_smsclient\1.1.1\xiehe_smsclient-1.1.1.jar;C:\Users\Administrator\.m2\repository\javax\mail\javax.mail-api\1.5.5\javax.mail-api-1.5.5.jar;C:\Users\Administrator\.m2\repository\org\apache\commons\commons-email\1.4\commons-email-1.4.jar;C:\Users\Administrator\.m2\repository\com\sun\mail\javax.mail\1.5.2\javax.mail-1.5.2.jar;C:\Users\Administrator\.m2\repository\javax\activation\activation\1.1.1\activation-1.1.1.jar;E:\workspaces\xiaoermaidan\commons\hfepay-commons-timer\target\classes;C:\Users\Administrator\.m2\repository\org\quartz-scheduler\quartz\2.1.5\quartz-2.1.5.jar;C:\Users\Administrator\.m2\repository\c3p0\c3p0\0.9.1.1\c3p0-0.9.1.1.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-context-support\4.2.5.RELEASE\spring-context-support-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\aspectj\aspectjrt\1.7.0\aspectjrt-1.7.0.jar;C:\Users\Administrator\.m2\repository\org\aspectj\aspectjweaver\1.7.4\aspectjweaver-1.7.4.jar;C:\Users\Administrator\.m2\repository\cglib\cglib\2.2.2\cglib-2.2.2.jar;C:\Users\Administrator\.m2\repository\asm\asm\3.3.1\asm-3.3.1.jar;C:\Users\Administrator\.m2\repository\org\jsoup\jsoup\1.7.3\jsoup-1.7.3.jar;C:\Users\Administrator\.m2\repository\com\google\zxing\core\3.1.0\core-3.1.0.jar;C:\Users\Administrator\.m2\repository\commons-codec\commons-codec\1.8\commons-codec-1.8.jar;E:\workspaces\xiaoermaidan\services\hfepay-scancode-api\trunk\hfepay-scancode-api\hfepay-scancode-api-service\target\classes;E:\workspaces\xiaoermaidan\services\hfepay-scancode-api\trunk\hfepay-scancode-api\hfepay-scancode-api-entity\target\classes;E:\workspaces\xiaoermaidan\commons\hfepay-commons-dao\trunk\hfepay-commons-dao\target\classes;E:\workspaces\xiaoermaidan\commons\hfepay-commons-base\trunk\hfepay-commons-base\target\classes;C:\Users\Administrator\.m2\repository\org\apache\commons\commons-lang3\3.2.1\commons-lang3-3.2.1.jar;C:\Users\Administrator\.m2\repository\commons-beanutils\commons-beanutils\1.9.1\commons-beanutils-1.9.1.jar;C:\Users\Administrator\.m2\repository\org\apache\httpcomponents\httpclient\4.3.5\httpclient-4.3.5.jar;C:\Users\Administrator\.m2\repository\org\apache\httpcomponents\httpcore\4.3.2\httpcore-4.3.2.jar;C:\Users\Administrator\.m2\repository\joda-time\joda-time\2.3\joda-time-2.3.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-jdbc\4.2.5.RELEASE\spring-jdbc-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-tx\4.2.5.RELEASE\spring-tx-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-test\4.2.5.RELEASE\spring-test-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\mybatis\mybatis\3.2.4\mybatis-3.2.4.jar;C:\Users\Administrator\.m2\repository\org\mybatis\mybatis-spring\1.2.1\mybatis-spring-1.2.1.jar;C:\Users\Administrator\.m2\repository\xerces\xercesImpl\2.9.1\xercesImpl-2.9.1.jar;C:\Users\Administrator\.m2\repository\xml-apis\xml-apis\1.3.04\xml-apis-1.3.04.jar;C:\Users\Administrator\.m2\repository\com\alibaba\druid\0.2.8\druid-0.2.8.jar;C:\Users\Administrator\.m2\repository\javax\persistence\toplink-essentials\1.0\toplink-essentials-1.0.jar;C:\Users\Administrator\.m2\repository\javax\persistence\persistence-api\1.0\persistence-api-1.0.jar;C:\Users\Administrator\.m2\repository\org\json\org.json\chargebee-1.0\org.json-chargebee-1.0.jar;C:\Users\Administrator\.m2\repository\com\chinaums\XmClient\1.0\XmClient-1.0.jar;C:\Users\Administrator\.m2\repository\org\quartz-scheduler\quartz-jobs\2.2.1\quartz-jobs-2.2.1.jar;C:\Users\Administrator\.m2\repository\net\sf\json-lib\json-lib\2.4\json-lib-2.4-jdk15.jar;C:\Users\Administrator\.m2\repository\commons-lang\commons-lang\2.5\commons-lang-2.5.jar;C:\Users\Administrator\.m2\repository\net\sf\ezmorph\ezmorph\1.0.6\ezmorph-1.0.6.jar;C:\Users\Administrator\.m2\repository\org\springframework\session\spring-session-data-redis\1.2.0.RELEASE\spring-session-data-redis-1.2.0.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\apache\commons\commons-pool2\2.4.2\commons-pool2-2.4.2.jar;C:\Users\Administrator\.m2\repository\org\springframework\data\spring-data-redis\1.7.1.RELEASE\spring-data-redis-1.7.1.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\data\spring-data-keyvalue\1.1.1.RELEASE\spring-data-keyvalue-1.1.1.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\data\spring-data-commons\1.12.1.RELEASE\spring-data-commons-1.12.1.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-oxm\4.2.5.RELEASE\spring-oxm-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\session\spring-session\1.2.0.RELEASE\spring-session-1.2.0.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\apache\zookeeper\zookeeper\3.4.7\zookeeper-3.4.7.jar;C:\Users\Administrator\.m2\repository\jline\jline\0.9.94\jline-0.9.94.jar;C:\Users\Administrator\.m2\repository\io\netty\netty\3.7.0.Final\netty-3.7.0.Final.jar;C:\Users\Administrator\.m2\repository\com\alibaba\dubbo\2.5.3\dubbo-2.5.3.jar;C:\Users\Administrator\.m2\repository\org\javassist\javassist\3.15.0-GA\javassist-3.15.0-GA.jar;C:\Users\Administrator\.m2\repository\org\jboss\netty\netty\3.2.5.Final\netty-3.2.5.Final.jar;C:\Users\Administrator\.m2\repository\org\apache\hadoop\hadoop-core\1.2.1\hadoop-core-1.2.1.jar;C:\Users\Administrator\.m2\repository\commons-cli\commons-cli\1.2\commons-cli-1.2.jar;C:\Users\Administrator\.m2\repository\xmlenc\xmlenc\0.52\xmlenc-0.52.jar;C:\Users\Administrator\.m2\repository\com\sun\jersey\jersey-core\1.8\jersey-core-1.8.jar;C:\Users\Administrator\.m2\repository\com\sun\jersey\jersey-json\1.8\jersey-json-1.8.jar;C:\Users\Administrator\.m2\repository\org\codehaus\jettison\jettison\1.1\jettison-1.1.jar;C:\Users\Administrator\.m2\repository\stax\stax-api\1.0.1\stax-api-1.0.1.jar;C:\Users\Administrator\.m2\repository\com\sun\xml\bind\jaxb-impl\2.2.3-1\jaxb-impl-2.2.3-1.jar;C:\Users\Administrator\.m2\repository\javax\xml\bind\jaxb-api\2.2.2\jaxb-api-2.2.2.jar;C:\Users\Administrator\.m2\repository\javax\xml\stream\stax-api\1.0-2\stax-api-1.0-2.jar;C:\Users\Administrator\.m2\repository\org\codehaus\jackson\jackson-core-asl\1.7.1\jackson-core-asl-1.7.1.jar;C:\Users\Administrator\.m2\repository\org\codehaus\jackson\jackson-jaxrs\1.7.1\jackson-jaxrs-1.7.1.jar;C:\Users\Administrator\.m2\repository\org\codehaus\jackson\jackson-xc\1.7.1\jackson-xc-1.7.1.jar;C:\Users\Administrator\.m2\repository\com\sun\jersey\jersey-server\1.8\jersey-server-1.8.jar;C:\Users\Administrator\.m2\repository\commons-io\commons-io\2.1\commons-io-2.1.jar;C:\Users\Administrator\.m2\repository\commons-httpclient\commons-httpclient\3.0.1\commons-httpclient-3.0.1.jar;C:\Users\Administrator\.m2\repository\org\apache\commons\commons-math\2.1\commons-math-2.1.jar;C:\Users\Administrator\.m2\repository\commons-net\commons-net\1.4.1\commons-net-1.4.1.jar;C:\Users\Administrator\.m2\repository\org\mortbay\jetty\jetty\6.1.26\jetty-6.1.26.jar;C:\Users\Administrator\.m2\repository\org\mortbay\jetty\servlet-api\2.5-20081211\servlet-api-2.5-20081211.jar;C:\Users\Administrator\.m2\repository\org\mortbay\jetty\jetty-util\6.1.26\jetty-util-6.1.26.jar;C:\Users\Administrator\.m2\repository\tomcat\jasper-runtime\5.5.12\jasper-runtime-5.5.12.jar;C:\Users\Administrator\.m2\repository\tomcat\jasper-compiler\5.5.12\jasper-compiler-5.5.12.jar;C:\Users\Administrator\.m2\repository\org\mortbay\jetty\jsp-api-2.1\6.1.14\jsp-api-2.1-6.1.14.jar;C:\Users\Administrator\.m2\repository\org\mortbay\jetty\servlet-api-2.5\6.1.14\servlet-api-2.5-6.1.14.jar;C:\Users\Administrator\.m2\repository\org\mortbay\jetty\jsp-2.1\6.1.14\jsp-2.1-6.1.14.jar;C:\Users\Administrator\.m2\repository\ant\ant\1.6.5\ant-1.6.5.jar;C:\Users\Administrator\.m2\repository\commons-el\commons-el\1.0\commons-el-1.0.jar;C:\Users\Administrator\.m2\repository\net\java\dev\jets3t\jets3t\0.6.1\jets3t-0.6.1.jar;C:\Users\Administrator\.m2\repository\hsqldb\hsqldb\1.8.0.10\hsqldb-1.8.0.10.jar;C:\Users\Administrator\.m2\repository\oro\oro\2.0.8\oro-2.0.8.jar;C:\Users\Administrator\.m2\repository\org\eclipse\jdt\core\3.1.1\core-3.1.1.jar;C:\Users\Administrator\.m2\repository\org\codehaus\jackson\jackson-mapper-asl\1.8.8\jackson-mapper-asl-1.8.8.jar;C:\Users\Administrator\.m2\repository\commons-configuration\commons-configuration\1.9\commons-configuration-1.9.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-core\4.2.5.RELEASE\spring-core-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\commons-logging\commons-logging\1.1.3\commons-logging-1.1.3.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-context\4.2.5.RELEASE\spring-context-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-aop\4.2.5.RELEASE\spring-aop-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\aopalliance\aopalliance\1.0\aopalliance-1.0.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-beans\4.2.5.RELEASE\spring-beans-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-expression\4.2.5.RELEASE\spring-expression-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\mysql\mysql-connector-java\5.1.27\mysql-connector-java-5.1.27.jar;C:\Users\Administrator\.m2\repository\org\hibernate\hibernate-validator\5.0.1.Final\hibernate-validator-5.0.1.Final.jar;C:\Users\Administrator\.m2\repository\javax\validation\validation-api\1.1.0.Final\validation-api-1.1.0.Final.jar;C:\Users\Administrator\.m2\repository\org\jboss\logging\jboss-logging\3.1.1.GA\jboss-logging-3.1.1.GA.jar;C:\Users\Administrator\.m2\repository\com\fasterxml\classmate\0.8.0\classmate-0.8.0.jar;C:\Users\Administrator\.m2\repository\com\101tec\zkclient\0.2\zkclient-0.2.jar;C:\Users\Administrator\.m2\repository\log4j\log4j\1.2.14\log4j-1.2.14.jar;C:\Users\Administrator\.m2\repository\ch\qos\logback\logback-core\1.0.13\logback-core-1.0.13.jar;C:\Users\Administrator\.m2\repository\org\slf4j\slf4j-api\1.7.5\slf4j-api-1.7.5.jar;C:\Users\Administrator\.m2\repository\org\slf4j\jcl-over-slf4j\1.7.5\jcl-over-slf4j-1.7.5.jar;C:\Users\Administrator\.m2\repository\ch\qos\logback\logback-classic\1.0.13\logback-classic-1.0.13.jar
+2016-11-26 17:11:56.722 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.library.path=E:\jdk1.7.0_51\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;E:/jdk1.7.0_51/bin/../jre/bin/server;E:/jdk1.7.0_51/bin/../jre/bin;E:/jdk1.7.0_51/bin/../jre/lib/amd64;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\Program Files\TortoiseSVN\bin;E:\jdk1.7.0_51\bin;E:\jdk1.7.0_51\jre\bin;;E:\eclipse;;.
+2016-11-26 17:11:56.722 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.io.tmpdir=C:\Users\ADMINI~1\AppData\Local\Temp\
+2016-11-26 17:11:56.722 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.compiler=<NA>
+2016-11-26 17:11:56.722 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:os.name=Windows 7
+2016-11-26 17:11:56.722 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:os.arch=amd64
+2016-11-26 17:11:56.722 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:os.version=6.1
+2016-11-26 17:11:56.722 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:user.name=Administrator
+2016-11-26 17:11:56.722 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:user.home=C:\Users\Administrator
+2016-11-26 17:11:56.722 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:user.dir=E:\workspaces\xiaoermaidan\servicesapps\hfepay-scancode-serviceapp
+2016-11-26 17:11:56.723 [main] INFO  org.apache.zookeeper.ZooKeeper - Initiating client connection, connectString=127.0.0.1:2181 sessionTimeout=30000 watcher=org.I0Itec.zkclient.ZkClient@422e402
+2016-11-26 17:11:56.753 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn - Opening socket connection to server 127.0.0.1/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+2016-11-26 17:11:56.754 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn - Socket connection established to 127.0.0.1/127.0.0.1:2181, initiating session
+2016-11-26 17:11:56.803 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn - Session establishment complete on server 127.0.0.1/127.0.0.1:2181, sessionid = 0x158903d207c0025, negotiated timeout = 30000
+2016-11-26 17:11:58.561 [main] INFO  o.s.context.support.DefaultLifecycleProcessor - Starting beans in phase 2147483647
+2016-11-26 17:11:58.562 [main] INFO  o.s.scheduling.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
+2016-11-26 17:11:58.562 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler hfScheduler_$_NON_CLUSTERED started.
+2016-11-26 17:12:16.647 [main] INFO  o.s.context.support.DefaultLifecycleProcessor - Starting beans in phase 2147483647
+2016-11-26 17:13:16.797 [DubboServerHandler-172.16.2.7:20892-thread-2] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLUrlFilter.findAllUrl:
+		select m.url,GROUP_CONCAT(m.name) as name FROM(
+		select
+		res.url,ifnull(role.role_name,'superadmin') as name from (
+		select menu.url,res.role_id from t_sys_resource menu
+		left JOIN t_sys_role_resource res on menu.id =res.resource_id
+		) res LEFT JOIN
+		t_sys_role role on res.role_id = role.id) m
+		GROUP BY m.url
+	
+2016-11-26 17:13:16.797 [DubboServerHandler-172.16.2.7:20892-thread-2] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 49ms
+2016-11-26 17:13:44.467 [DubboServerHandler-172.16.2.7:20892-thread-3] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMerchantInfo.findByCriteria:select
+     
+	     
+		A.id as A_id,A.channel_no as A_channel_no,A.agent_no as A_agent_no,A.merchant_no as A_merchant_no,A.merchant_name as A_merchant_name,A.short_name as A_short_name,
+		A.platform_merchant_no as A_platform_merchant_no,A.bus_type as A_bus_type,A.name as A_name,A.id_card as A_id_card,A.idcard_img_1 as A_idcard_img_1,
+		A.idcard_img_2 as A_idcard_img_2,A.idcard_img_3 as A_idcard_img_3,A.mobile as A_mobile,A.phone as A_phone,A.email as A_email,A.address as A_address,
+		A.merchant_license as A_merchant_license,A.merchant_license_img as A_merchant_license_img,A.tax_no as A_tax_no,A.tax_img as A_tax_img,
+		A.org_no as A_org_no,A.qr_code as A_qr_code,A.credit_pay_status as A_credit_pay_status,A.authen_status as A_authen_status,A.status as A_status,A.create_time as A_create_time,
+		A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2,A.temp_3 as A_temp_3,A.temp_4 as A_temp_4
+	     
+	 ,C.channel_name as channel_name,D.agent_name
+     from t_merchant_info A
+     left join t_channel_base C on A.channel_no = C.channel_no 
+     left join t_agent_base D on A.agent_no = D.agent_no 
+     
+       WHERE (
+        
+        
+          
+                 A.status  =   '0' 
+               
+            
+        
+      )
+2016-11-26 17:13:44.467 [DubboServerHandler-172.16.2.7:20892-thread-3] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 82ms
+2016-11-26 17:13:44.482 [DubboServerHandler-172.16.2.7:20892-thread-4] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLUserMessage.findByCriteria:select
+     
+	     
+		A.ID as A_ID,A.USER_NO as A_USER_NO,A.USER_TYPE as A_USER_TYPE,A.TITLE as A_TITLE,A.CONTENT as A_CONTENT,A.READ_STATUS as A_READ_STATUS,A.MESSAGE_TYPE as A_MESSAGE_TYPE,A.STATUS as A_STATUS,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.OPERATOR as A_OPERATOR,A.REMARK as A_REMARK
+	     
+	 
+     from t_user_message A
+     
+       WHERE (
+        
+        
+          
+                 A.READ_STATUS  =   '1' 
+               
+            
+        
+      )
+2016-11-26 17:13:44.482 [DubboServerHandler-172.16.2.7:20892-thread-4] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 5ms
+2016-11-26 17:13:45.011 [DubboServerHandler-172.16.2.7:20892-thread-5] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLUrlFilter.findRoles:
+		select role_name as name from t_sys_role role
+		inner JOIN t_sys_role_user u on role.id=u.role_id
+		INNER JOIN t_sys_admin acc on u.account_id = acc.id
+		where acc.user_name='zhuceceshi'
+	
+2016-11-26 17:13:45.011 [DubboServerHandler-172.16.2.7:20892-thread-5] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 4ms
+2016-11-26 17:13:45.027 [DubboServerHandler-172.16.2.7:20892-thread-6] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMappingDicion.findByCriteria:select
+     
+	     
+		A.ID as A_ID,A.NAME as A_NAME,A.KEY_NO as A_KEY_NO,A.PARA_NAME as A_PARA_NAME,A.PARA_VAL as A_PARA_VAL,A.RECORD_STATUS as A_RECORD_STATUS,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.OPERATOR as A_OPERATOR,A.REMARK as A_REMARK
+	     
+	 
+     from t_mapping_dicion A
+     
+       WHERE (
+        
+        
+          
+                 A.KEY_NO  =   'ZFTD' 
+               
+            
+        
+      )
+2016-11-26 17:13:45.027 [DubboServerHandler-172.16.2.7:20892-thread-6] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 5ms
+2016-11-26 17:13:45.502 [DubboServerHandler-172.16.2.7:20892-thread-7] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLPlatformLimit.countByCriteria:select count(*) from t_platform_limit A
+     
+       WHERE (
+        
+        
+          
+                 A.record_status  =   'Y' 
+               
+            
+        
+      )
+2016-11-26 17:13:45.502 [DubboServerHandler-172.16.2.7:20892-thread-7] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 3ms
+2016-11-26 17:13:45.510 [DubboServerHandler-172.16.2.7:20892-thread-7] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLPlatformLimit.findByCriteria:select
+     
+	     
+		A.id as A_id,A.limit_pay_code as A_limit_pay_code,A.limit_type as A_limit_type,A.day_trans_limit as A_day_trans_limit,A.day_withdrawals_limit as A_day_withdrawals_limit,A.single_trans_limit as A_single_trans_limit,A.single_withdrawals_limit as A_single_withdrawals_limit,A.status as A_status,A.record_status as A_record_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	     
+	 ,B.para_name as paraName
+     from t_platform_limit A left join t_mapping_dicion B on A.limit_pay_code = B.para_val 
+     
+       WHERE (
+        
+        
+          
+                 A.record_status  =   'Y' 
+               
+            
+        
+      ) 
+     
+     
+      order by
+         A.create_time DESC
+2016-11-26 17:13:45.510 [DubboServerHandler-172.16.2.7:20892-thread-7] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 7ms
+2016-11-26 17:13:45.534 [DubboServerHandler-172.16.2.7:20892-thread-8] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMerchantInfo.findByCriteria:select
+     
+	     
+		A.id as A_id,A.channel_no as A_channel_no,A.agent_no as A_agent_no,A.merchant_no as A_merchant_no,A.merchant_name as A_merchant_name,A.short_name as A_short_name,
+		A.platform_merchant_no as A_platform_merchant_no,A.bus_type as A_bus_type,A.name as A_name,A.id_card as A_id_card,A.idcard_img_1 as A_idcard_img_1,
+		A.idcard_img_2 as A_idcard_img_2,A.idcard_img_3 as A_idcard_img_3,A.mobile as A_mobile,A.phone as A_phone,A.email as A_email,A.address as A_address,
+		A.merchant_license as A_merchant_license,A.merchant_license_img as A_merchant_license_img,A.tax_no as A_tax_no,A.tax_img as A_tax_img,
+		A.org_no as A_org_no,A.qr_code as A_qr_code,A.credit_pay_status as A_credit_pay_status,A.authen_status as A_authen_status,A.status as A_status,A.create_time as A_create_time,
+		A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2,A.temp_3 as A_temp_3,A.temp_4 as A_temp_4
+	     
+	 ,C.channel_name as channel_name,D.agent_name
+     from t_merchant_info A
+     left join t_channel_base C on A.channel_no = C.channel_no 
+     left join t_agent_base D on A.agent_no = D.agent_no 
+     
+       WHERE (
+        
+        
+          
+                 A.status  =   '0' 
+               
+            
+        
+      )
+2016-11-26 17:13:45.534 [DubboServerHandler-172.16.2.7:20892-thread-8] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 8ms
+2016-11-26 17:13:45.542 [DubboServerHandler-172.16.2.7:20892-thread-9] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLUserMessage.findByCriteria:select
+     
+	     
+		A.ID as A_ID,A.USER_NO as A_USER_NO,A.USER_TYPE as A_USER_TYPE,A.TITLE as A_TITLE,A.CONTENT as A_CONTENT,A.READ_STATUS as A_READ_STATUS,A.MESSAGE_TYPE as A_MESSAGE_TYPE,A.STATUS as A_STATUS,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.OPERATOR as A_OPERATOR,A.REMARK as A_REMARK
+	     
+	 
+     from t_user_message A
+     
+       WHERE (
+        
+        
+          
+                 A.READ_STATUS  =   '1' 
+               
+            
+        
+      )
+2016-11-26 17:13:45.542 [DubboServerHandler-172.16.2.7:20892-thread-9] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 3ms
+2016-11-26 17:13:52.226 [DubboServerHandler-172.16.2.7:20892-thread-10] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLOrderPay.findAllTradeByDay:
+    select 
+	    
+		A.id as A_id,A.pay_no as A_pay_no,A.trade_no as A_trade_no,A.channel_no as A_channel_no,A.agent_no as A_agent_no,
+		A.merchant_no as A_merchant_no,A.qr_code as A_qr_code,A.pay_code as A_pay_code,A.trade_type as A_trade_type,
+		A.order_amt as A_order_amt,A.product_name as A_product_name,A.product_desc as A_product_desc,
+		A.buyer_id as A_buyer_id,A.buyer_account as A_buyer_account,A.total_amount as A_total_amount,
+		A.buyer_pay_amount as A_buyer_pay_amount,A.point_amount as A_point_amount,A.rate_detail as A_rate_detail,
+		A.business_type as A_business_type,A.pay_type as A_pay_type,A.is_main_pay as A_is_main_pay,
+		A.account_time as A_account_time,A.error_code as A_error_code,A.error_msg as A_error_msg,
+		A.pay_trade_no as A_pay_trade_no,A.pay_order_type as A_pay_order_type,A.notify_url as A_notify_url,
+		A.return_url as A_return_url,A.refund_status as A_refund_status,A.pay_status as A_pay_status,
+		A.batch_id as A_batch_id,A.opt_code as A_opt_code,A.record_status as A_record_status,
+		A.begin_time as A_begin_time,A.end_time as A_end_time,A.update_time as A_update_time,
+		A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2,
+		A.temp_3 as A_temp_3,A.temp_4 as A_temp_4,
+		A.cashier_no as A_cashier_no,A.merchant_cost as A_merchant_cost,A.store_no as A_store_no
+	    
+	,
+	(select cp.t0_rate from t_channel_payway cp where cp.channel_no = p.channel_no and cp.pay_code = p.pay_code) c_t0_rate,
+	(select cp.t1_rate from t_channel_payway cp where cp.channel_no = p.channel_no and cp.pay_code = p.pay_code) c_t1_rate,
+	(select ap.t0_rate from t_agent_payway ap where ap.agent_no = p.agent_no and ap.pay_code = p.pay_code) a_t0_rate,
+	(select ap.t1_rate from t_agent_payway ap where ap.agent_no = p.agent_no and ap.pay_code = p.pay_code) a_t1_rate
+ from t_order_pay p 
+  
+GROUP BY p.channel_no,p.pay_code
+  
+2016-11-26 17:13:52.226 [DubboServerHandler-172.16.2.7:20892-thread-10] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 4ms
+2016-11-26 17:13:52.237 [DubboServerHandler-172.16.2.7:20892-thread-10] INFO  o.s.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+2016-11-26 17:13:52.255 [DubboServerHandler-172.16.2.7:20892-thread-10] INFO  o.s.jdbc.support.SQLErrorCodesFactory - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase, Hana]

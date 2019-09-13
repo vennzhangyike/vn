@@ -1,0 +1,52 @@
+//package com.test;
+//
+//
+//import org.junit.Test;
+//import org.junit.runner.RunWith;
+//import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.test.context.ContextConfiguration;
+//import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+//
+//import com.hfepay.commons.base.lang.Strings;
+//import com.hfepay.commons.utils.PagingResult;
+//import com.hfepay.superserver.condition.ChannelApiCondition;
+//import com.hfepay.superserver.condition.ChannelInfoCondition;
+//import com.hfepay.superserver.service.ChannelApiService;
+//import com.hfepay.superserver.service.ChannelInfoService;
+//import com.hfepay.superserver.service.commons.SuperConstants;
+//import com.hfepay.superserver.vo.PlatformApiVo;
+//
+//@RunWith(SpringJUnit4ClassRunner.class) // 整合 
+//@ContextConfiguration(locations="classpath:applicationContext*.xml") // 加载配置
+//public class DubboTest {
+//
+//	@Autowired
+//	private ChannelApiService channelApiService;
+//	
+//	@Autowired
+//	private ChannelInfoService channelInfoService;
+//	
+//	@Test
+//	public void findPageByChannelCode(){
+//		ChannelApiCondition channelApiCondition = new ChannelApiCondition();
+//		channelApiCondition.setStatus(SuperConstants.STATUS_ACTIVE);
+//		channelApiCondition.setApiStatus(SuperConstants.STATUS_ACTIVE);
+//		channelApiCondition.setApiOpen(SuperConstants.STATUS_ACTIVE);
+//		channelApiCondition.setApiHot(SuperConstants.STATUS_ACTIVE);
+//		channelApiCondition.setOrderBy("apiSort");
+//		channelApiCondition.setOrder("ASC");
+//		channelApiCondition.setChannelCode("11");
+//		PagingResult<PlatformApiVo> result = channelApiService.findPageByChannelCode(channelApiCondition);
+//		for (PlatformApiVo vo : result.getResult()) {
+//			System.out.println(vo.getApiName());
+//		}
+//		
+//	}
+//	
+//	@Test
+//	public void insertChannel(){
+//		ChannelInfoCondition channel = new ChannelInfoCondition();
+//		channel.setId(Strings.getUUID());
+//		long result = channelInfoService.insert(channel);
+//	}
+//}

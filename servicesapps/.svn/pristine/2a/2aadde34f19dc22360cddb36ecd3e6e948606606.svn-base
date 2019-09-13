@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="hfepay-scancode-serviceapp">
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <dependent-module archiveName="hfepay-super-service-impl-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/hfepay-super-service-impl/hfepay-super-service-impl">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="hfepay-super-service-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/hfepay-super-service/hfepay-super-service">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="hfepay-super-entity-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/hfepay-super-entity/hfepay-super-entity">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="hfepay-super-dao-impl-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/hfepay-super-dao-impl/hfepay-super-dao-impl">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="hfepay-super-dao-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/hfepay-super-dao/hfepay-super-dao">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="hfepay-commons-dao-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/hfepay-commons-dao/hfepay-commons-dao">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="hfepay-commons-base-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/hfepay-commons-base/hfepay-commons-base">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="java-output-path" value="/hfepay-scancode-serviceapp/target/classes"/>
+        <property name="context-root" value="hfepay-scancode-serviceapp"/>
+    </wb-module>
+</project-modules>

@@ -1,0 +1,3066 @@
+2016-12-19 13:59:14.831 [main] INFO  o.s.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+2016-12-19 13:59:15.618 [main] INFO  o.s.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-services.xml]
+2016-12-19 13:59:15.768 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'adminServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.AdminServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\AdminServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.AdminServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2016-12-19 13:59:15.776 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'pageServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.PageServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\PageServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.PageServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2016-12-19 13:59:15.787 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'sysConfigServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.SysConfigServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\SysConfigServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.SysConfigServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2016-12-19 13:59:15.804 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'channelAdminServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.channel.impl.ChannelAdminServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\channel\impl\ChannelAdminServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.channel.impl.ChannelAdminServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2016-12-19 13:59:15.817 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'idCreateServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.IdCreateServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\IdCreateServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.IdCreateServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2016-12-19 13:59:15.833 [main] INFO  o.s.context.support.GenericXmlApplicationContext - Refreshing org.springframework.context.support.GenericXmlApplicationContext@6fafced9: startup date [Mon Dec 19 13:59:15 CST 2016]; root of context hierarchy
+2016-12-19 13:59:16.284 [main] INFO  c.h.c.configuration.PropertyPlaceholderConfigurer - file:/E:/
+2016-12-19 13:59:16.284 [main] INFO  c.h.c.configuration.PropertyPlaceholderConfigurer - Loading properties file from URL [file:/E:/workspaces/xiaoermaidan/servicesapps/hfepay-scancode-serviceapp/target/classes/application-hfepay.properties]
+2016-12-19 13:59:16.285 [main] INFO  c.h.c.configuration.PropertyPlaceholderConfigurer - Loading properties file from URL [file:d:/application-hfepay.properties]
+2016-12-19 13:59:16.285 [main] WARN  c.h.c.configuration.PropertyPlaceholderConfigurer - Could not load properties from URL [file:d:/application-hfepay.properties]: d:\application-hfepay.properties (系统找不到指定的文件。)
+2016-12-19 13:59:16.285 [main] INFO  c.h.c.configuration.PropertyPlaceholderConfigurer - Loading properties file from URL [file:./conf/application-hfepay.properties]
+2016-12-19 13:59:16.285 [main] WARN  c.h.c.configuration.PropertyPlaceholderConfigurer - Could not load properties from URL [file:./conf/application-hfepay.properties]: .\conf\application-hfepay.properties (系统找不到指定的路径。)
+2016-12-19 13:59:16.343 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0' of type [class org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-12-19 13:59:16.544 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2016-12-19 13:59:16.567 [main] INFO  org.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2016-12-19 13:59:16.568 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.1.5 created.
+2016-12-19 13:59:16.569 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2016-12-19 13:59:16.570 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.1.5) 'hfScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 20 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2016-12-19 13:59:16.571 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'hfScheduler' initialized from an externally provided properties instance.
+2016-12-19 13:59:16.571 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.1.5
+2016-12-19 13:59:16.573 [main] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@74c5eff0
+2016-12-19 13:59:16.615 [main] INFO  com.hfepay.scancode.service.timer.InitTasks - 初始化定时开始任务：2016-12-19 13:59:16
+2016-12-19 13:59:16.632 [main] INFO  com.hfepay.scancode.service.timer.InitTasks - 初始化定时任务完成：2016-12-19 13:59:16
+2016-12-19 13:59:20.452 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:zookeeper.version=3.4.7-1713338, built on 11/09/2015 04:32 GMT
+2016-12-19 13:59:20.452 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:host.name=windows10.microdone.cn
+2016-12-19 13:59:20.453 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.version=1.7.0_51
+2016-12-19 13:59:20.453 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.vendor=Oracle Corporation
+2016-12-19 13:59:20.453 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.home=E:\jdk1.7.0_51\jre
+2016-12-19 13:59:20.453 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.class.path=E:\workspaces\xiaoermaidan\servicesapps\hfepay-scancode-serviceapp\target\classes;E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes;E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service\target\classes;E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-entity\target\classes;C:\Users\Administrator\.m2\repository\org\apache\shiro\shiro-core\1.2.2\shiro-core-1.2.2.jar;C:\Users\Administrator\.m2\repository\org\apache\shiro\shiro-web\1.2.2\shiro-web-1.2.2.jar;C:\Users\Administrator\.m2\repository\org\apache\shiro\shiro-ehcache\1.2.2\shiro-ehcache-1.2.2.jar;C:\Users\Administrator\.m2\repository\net\sf\ehcache\ehcache-core\2.5.0\ehcache-core-2.5.0.jar;C:\Users\Administrator\.m2\repository\org\apache\shiro\shiro-spring\1.2.2\shiro-spring-1.2.2.jar;E:\workspaces\xiaoermaidan\commons\hfepay-commons-cache\trunk\hfepay-commons-cache\target\classes;C:\Users\Administrator\.m2\repository\redis\clients\jedis\2.8.1\jedis-2.8.1.jar;E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-dao-impl\target\classes;E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-dao\target\classes;C:\Users\Administrator\.m2\repository\com\alibaba\fastjson\1.1.32\fastjson-1.1.32.jar;E:\workspaces\xiaoermaidan\commons\hfepay-commons-excelutils\trunk\hfepay-commons-excelutils\target\classes;C:\Users\Administrator\.m2\repository\net\sf\jxls\jxls-core\1.0.5\jxls-core-1.0.5.jar;C:\Users\Administrator\.m2\repository\commons-collections\commons-collections\3.2.1\commons-collections-3.2.1.jar;C:\Users\Administrator\.m2\repository\commons-digester\commons-digester\2.0\commons-digester-2.0.jar;C:\Users\Administrator\.m2\repository\org\apache\commons\commons-jexl\2.0.1\commons-jexl-2.0.1.jar;C:\Users\Administrator\.m2\repository\org\apache\poi\poi\3.9\poi-3.9.jar;C:\Users\Administrator\.m2\repository\org\apache\poi\poi-ooxml\3.9\poi-ooxml-3.9.jar;C:\Users\Administrator\.m2\repository\org\apache\poi\poi-ooxml-schemas\3.9\poi-ooxml-schemas-3.9.jar;C:\Users\Administrator\.m2\repository\org\apache\xmlbeans\xmlbeans\2.3.0\xmlbeans-2.3.0.jar;C:\Users\Administrator\.m2\repository\dom4j\dom4j\1.6.1\dom4j-1.6.1.jar;E:\workspaces\xiaoermaidan\commons\hfepay-commons-sms\trunk\hfepay-commons-sms\target\classes;C:\Users\Administrator\.m2\repository\com\xiehe\sms\xiehe_smsclient\1.1.1\xiehe_smsclient-1.1.1.jar;C:\Users\Administrator\.m2\repository\javax\mail\javax.mail-api\1.5.5\javax.mail-api-1.5.5.jar;C:\Users\Administrator\.m2\repository\org\apache\commons\commons-email\1.4\commons-email-1.4.jar;C:\Users\Administrator\.m2\repository\com\sun\mail\javax.mail\1.5.2\javax.mail-1.5.2.jar;C:\Users\Administrator\.m2\repository\javax\activation\activation\1.1.1\activation-1.1.1.jar;E:\workspaces\xiaoermaidan\commons\hfepay-commons-timer\target\classes;C:\Users\Administrator\.m2\repository\org\quartz-scheduler\quartz\2.1.5\quartz-2.1.5.jar;C:\Users\Administrator\.m2\repository\c3p0\c3p0\0.9.1.1\c3p0-0.9.1.1.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-context-support\4.2.5.RELEASE\spring-context-support-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\aspectj\aspectjrt\1.7.0\aspectjrt-1.7.0.jar;C:\Users\Administrator\.m2\repository\org\aspectj\aspectjweaver\1.7.4\aspectjweaver-1.7.4.jar;C:\Users\Administrator\.m2\repository\cglib\cglib\2.2.2\cglib-2.2.2.jar;C:\Users\Administrator\.m2\repository\asm\asm\3.3.1\asm-3.3.1.jar;C:\Users\Administrator\.m2\repository\org\jsoup\jsoup\1.7.3\jsoup-1.7.3.jar;C:\Users\Administrator\.m2\repository\com\google\zxing\core\3.1.0\core-3.1.0.jar;C:\Users\Administrator\.m2\repository\commons-codec\commons-codec\1.8\commons-codec-1.8.jar;E:\workspaces\xiaoermaidan\services\hfepay-scancode-api\trunk\hfepay-scancode-api\hfepay-scancode-api-service\target\classes;E:\workspaces\xiaoermaidan\services\hfepay-scancode-api\trunk\hfepay-scancode-api\hfepay-scancode-api-entity\target\classes;E:\workspaces\xiaoermaidan\commons\hfepay-commons-dao\trunk\hfepay-commons-dao\target\classes;E:\workspaces\xiaoermaidan\commons\hfepay-commons-base\trunk\hfepay-commons-base\target\classes;C:\Users\Administrator\.m2\repository\org\apache\commons\commons-lang3\3.2.1\commons-lang3-3.2.1.jar;C:\Users\Administrator\.m2\repository\commons-beanutils\commons-beanutils\1.9.1\commons-beanutils-1.9.1.jar;C:\Users\Administrator\.m2\repository\org\apache\httpcomponents\httpclient\4.3.5\httpclient-4.3.5.jar;C:\Users\Administrator\.m2\repository\org\apache\httpcomponents\httpcore\4.3.2\httpcore-4.3.2.jar;C:\Users\Administrator\.m2\repository\joda-time\joda-time\2.3\joda-time-2.3.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-jdbc\4.2.5.RELEASE\spring-jdbc-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-tx\4.2.5.RELEASE\spring-tx-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-test\4.2.5.RELEASE\spring-test-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\mybatis\mybatis\3.2.4\mybatis-3.2.4.jar;C:\Users\Administrator\.m2\repository\org\mybatis\mybatis-spring\1.2.1\mybatis-spring-1.2.1.jar;C:\Users\Administrator\.m2\repository\xerces\xercesImpl\2.9.1\xercesImpl-2.9.1.jar;C:\Users\Administrator\.m2\repository\xml-apis\xml-apis\1.3.04\xml-apis-1.3.04.jar;C:\Users\Administrator\.m2\repository\com\alibaba\druid\0.2.8\druid-0.2.8.jar;C:\Users\Administrator\.m2\repository\javax\persistence\toplink-essentials\1.0\toplink-essentials-1.0.jar;C:\Users\Administrator\.m2\repository\javax\persistence\persistence-api\1.0\persistence-api-1.0.jar;C:\Users\Administrator\.m2\repository\org\json\org.json\chargebee-1.0\org.json-chargebee-1.0.jar;C:\Users\Administrator\.m2\repository\com\chinaums\XmClient\1.0\XmClient-1.0.jar;C:\Users\Administrator\.m2\repository\org\quartz-scheduler\quartz-jobs\2.2.1\quartz-jobs-2.2.1.jar;C:\Users\Administrator\.m2\repository\net\sf\json-lib\json-lib\2.4\json-lib-2.4-jdk15.jar;C:\Users\Administrator\.m2\repository\commons-lang\commons-lang\2.5\commons-lang-2.5.jar;C:\Users\Administrator\.m2\repository\net\sf\ezmorph\ezmorph\1.0.6\ezmorph-1.0.6.jar;C:\Users\Administrator\.m2\repository\org\springframework\session\spring-session-data-redis\1.2.0.RELEASE\spring-session-data-redis-1.2.0.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\apache\commons\commons-pool2\2.4.2\commons-pool2-2.4.2.jar;C:\Users\Administrator\.m2\repository\org\springframework\data\spring-data-redis\1.7.1.RELEASE\spring-data-redis-1.7.1.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\data\spring-data-keyvalue\1.1.1.RELEASE\spring-data-keyvalue-1.1.1.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\data\spring-data-commons\1.12.1.RELEASE\spring-data-commons-1.12.1.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-oxm\4.2.5.RELEASE\spring-oxm-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\session\spring-session\1.2.0.RELEASE\spring-session-1.2.0.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\apache\zookeeper\zookeeper\3.4.7\zookeeper-3.4.7.jar;C:\Users\Administrator\.m2\repository\jline\jline\0.9.94\jline-0.9.94.jar;C:\Users\Administrator\.m2\repository\io\netty\netty\3.7.0.Final\netty-3.7.0.Final.jar;C:\Users\Administrator\.m2\repository\com\alibaba\dubbo\2.5.3\dubbo-2.5.3.jar;C:\Users\Administrator\.m2\repository\org\javassist\javassist\3.15.0-GA\javassist-3.15.0-GA.jar;C:\Users\Administrator\.m2\repository\org\jboss\netty\netty\3.2.5.Final\netty-3.2.5.Final.jar;C:\Users\Administrator\.m2\repository\org\apache\hadoop\hadoop-core\1.2.1\hadoop-core-1.2.1.jar;C:\Users\Administrator\.m2\repository\commons-cli\commons-cli\1.2\commons-cli-1.2.jar;C:\Users\Administrator\.m2\repository\xmlenc\xmlenc\0.52\xmlenc-0.52.jar;C:\Users\Administrator\.m2\repository\com\sun\jersey\jersey-core\1.8\jersey-core-1.8.jar;C:\Users\Administrator\.m2\repository\com\sun\jersey\jersey-json\1.8\jersey-json-1.8.jar;C:\Users\Administrator\.m2\repository\org\codehaus\jettison\jettison\1.1\jettison-1.1.jar;C:\Users\Administrator\.m2\repository\stax\stax-api\1.0.1\stax-api-1.0.1.jar;C:\Users\Administrator\.m2\repository\com\sun\xml\bind\jaxb-impl\2.2.3-1\jaxb-impl-2.2.3-1.jar;C:\Users\Administrator\.m2\repository\javax\xml\bind\jaxb-api\2.2.2\jaxb-api-2.2.2.jar;C:\Users\Administrator\.m2\repository\javax\xml\stream\stax-api\1.0-2\stax-api-1.0-2.jar;C:\Users\Administrator\.m2\repository\org\codehaus\jackson\jackson-core-asl\1.7.1\jackson-core-asl-1.7.1.jar;C:\Users\Administrator\.m2\repository\org\codehaus\jackson\jackson-jaxrs\1.7.1\jackson-jaxrs-1.7.1.jar;C:\Users\Administrator\.m2\repository\org\codehaus\jackson\jackson-xc\1.7.1\jackson-xc-1.7.1.jar;C:\Users\Administrator\.m2\repository\com\sun\jersey\jersey-server\1.8\jersey-server-1.8.jar;C:\Users\Administrator\.m2\repository\commons-io\commons-io\2.1\commons-io-2.1.jar;C:\Users\Administrator\.m2\repository\commons-httpclient\commons-httpclient\3.0.1\commons-httpclient-3.0.1.jar;C:\Users\Administrator\.m2\repository\org\apache\commons\commons-math\2.1\commons-math-2.1.jar;C:\Users\Administrator\.m2\repository\commons-net\commons-net\1.4.1\commons-net-1.4.1.jar;C:\Users\Administrator\.m2\repository\org\mortbay\jetty\jetty\6.1.26\jetty-6.1.26.jar;C:\Users\Administrator\.m2\repository\org\mortbay\jetty\servlet-api\2.5-20081211\servlet-api-2.5-20081211.jar;C:\Users\Administrator\.m2\repository\org\mortbay\jetty\jetty-util\6.1.26\jetty-util-6.1.26.jar;C:\Users\Administrator\.m2\repository\tomcat\jasper-runtime\5.5.12\jasper-runtime-5.5.12.jar;C:\Users\Administrator\.m2\repository\tomcat\jasper-compiler\5.5.12\jasper-compiler-5.5.12.jar;C:\Users\Administrator\.m2\repository\org\mortbay\jetty\jsp-api-2.1\6.1.14\jsp-api-2.1-6.1.14.jar;C:\Users\Administrator\.m2\repository\org\mortbay\jetty\servlet-api-2.5\6.1.14\servlet-api-2.5-6.1.14.jar;C:\Users\Administrator\.m2\repository\org\mortbay\jetty\jsp-2.1\6.1.14\jsp-2.1-6.1.14.jar;C:\Users\Administrator\.m2\repository\ant\ant\1.6.5\ant-1.6.5.jar;C:\Users\Administrator\.m2\repository\commons-el\commons-el\1.0\commons-el-1.0.jar;C:\Users\Administrator\.m2\repository\net\java\dev\jets3t\jets3t\0.6.1\jets3t-0.6.1.jar;C:\Users\Administrator\.m2\repository\hsqldb\hsqldb\1.8.0.10\hsqldb-1.8.0.10.jar;C:\Users\Administrator\.m2\repository\oro\oro\2.0.8\oro-2.0.8.jar;C:\Users\Administrator\.m2\repository\org\eclipse\jdt\core\3.1.1\core-3.1.1.jar;C:\Users\Administrator\.m2\repository\org\codehaus\jackson\jackson-mapper-asl\1.8.8\jackson-mapper-asl-1.8.8.jar;C:\Users\Administrator\.m2\repository\commons-configuration\commons-configuration\1.9\commons-configuration-1.9.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-core\4.2.5.RELEASE\spring-core-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\commons-logging\commons-logging\1.1.3\commons-logging-1.1.3.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-context\4.2.5.RELEASE\spring-context-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-aop\4.2.5.RELEASE\spring-aop-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\aopalliance\aopalliance\1.0\aopalliance-1.0.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-beans\4.2.5.RELEASE\spring-beans-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-expression\4.2.5.RELEASE\spring-expression-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\mysql\mysql-connector-java\5.1.27\mysql-connector-java-5.1.27.jar;C:\Users\Administrator\.m2\repository\org\hibernate\hibernate-validator\5.0.1.Final\hibernate-validator-5.0.1.Final.jar;C:\Users\Administrator\.m2\repository\javax\validation\validation-api\1.1.0.Final\validation-api-1.1.0.Final.jar;C:\Users\Administrator\.m2\repository\org\jboss\logging\jboss-logging\3.1.1.GA\jboss-logging-3.1.1.GA.jar;C:\Users\Administrator\.m2\repository\com\fasterxml\classmate\0.8.0\classmate-0.8.0.jar;C:\Users\Administrator\.m2\repository\com\101tec\zkclient\0.2\zkclient-0.2.jar;C:\Users\Administrator\.m2\repository\log4j\log4j\1.2.14\log4j-1.2.14.jar;C:\Users\Administrator\.m2\repository\ch\qos\logback\logback-core\1.0.13\logback-core-1.0.13.jar;C:\Users\Administrator\.m2\repository\org\slf4j\slf4j-api\1.7.5\slf4j-api-1.7.5.jar;C:\Users\Administrator\.m2\repository\org\slf4j\jcl-over-slf4j\1.7.5\jcl-over-slf4j-1.7.5.jar;C:\Users\Administrator\.m2\repository\ch\qos\logback\logback-classic\1.0.13\logback-classic-1.0.13.jar
+2016-12-19 13:59:20.454 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.library.path=E:\jdk1.7.0_51\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;E:/jdk1.7.0_51/bin/../jre/bin/server;E:/jdk1.7.0_51/bin/../jre/bin;E:/jdk1.7.0_51/bin/../jre/lib/amd64;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\Program Files\TortoiseSVN\bin;E:\jdk1.7.0_51\bin;E:\jdk1.7.0_51\jre\bin;;E:\eclipse;;.
+2016-12-19 13:59:20.454 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.io.tmpdir=C:\Users\ADMINI~1\AppData\Local\Temp\
+2016-12-19 13:59:20.454 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.compiler=<NA>
+2016-12-19 13:59:20.454 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:os.name=Windows 7
+2016-12-19 13:59:20.454 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:os.arch=amd64
+2016-12-19 13:59:20.454 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:os.version=6.1
+2016-12-19 13:59:20.454 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:user.name=Administrator
+2016-12-19 13:59:20.454 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:user.home=C:\Users\Administrator
+2016-12-19 13:59:20.454 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:user.dir=E:\workspaces\xiaoermaidan\servicesapps\hfepay-scancode-serviceapp
+2016-12-19 13:59:20.455 [main] INFO  org.apache.zookeeper.ZooKeeper - Initiating client connection, connectString=127.0.0.1:2181 sessionTimeout=30000 watcher=org.I0Itec.zkclient.ZkClient@12738bc7
+2016-12-19 13:59:20.483 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn - Opening socket connection to server 127.0.0.1/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+2016-12-19 13:59:20.484 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn - Socket connection established to 127.0.0.1/127.0.0.1:2181, initiating session
+2016-12-19 13:59:20.519 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn - Session establishment complete on server 127.0.0.1/127.0.0.1:2181, sessionid = 0x158b806662b014a, negotiated timeout = 30000
+2016-12-19 13:59:22.328 [main] INFO  o.s.context.support.DefaultLifecycleProcessor - Starting beans in phase 2147483647
+2016-12-19 13:59:22.328 [main] INFO  o.s.scheduling.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
+2016-12-19 13:59:22.329 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler hfScheduler_$_NON_CLUSTERED started.
+2016-12-19 13:59:35.510 [main] INFO  o.s.context.support.DefaultLifecycleProcessor - Starting beans in phase 2147483647
+2016-12-19 14:07:41.161 [DubboServerHandler-172.16.2.7:20892-thread-2] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLChannelUrlFilter.findAllUrl:
+		select m.url,GROUP_CONCAT(m.name) as name FROM(
+		select
+		res.url,ifnull(role.role_name,'superadmin') as name from (
+		select menu.url,res.role_id from t_channel_resource menu
+		left JOIN t_channel_role_resource res on menu.id =res.resource_id
+		) res LEFT JOIN
+		t_channel_role role on res.role_id = role.id) m
+		GROUP BY m.url
+	
+2016-12-19 14:07:41.162 [DubboServerHandler-172.16.2.7:20892-thread-2] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 46ms
+2016-12-19 14:07:49.028 [DubboServerHandler-172.16.2.7:20892-thread-3] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLChannelExpand.findByCriteria:select
+     
+	     
+		A.id as A_id,A.channel_no as A_channel_no,A.channel_code as A_channel_code,A.channel_pre_code as A_channel_pre_code,A.nick_name as A_nick_name,A.index_top_img as A_index_top_img,A.index_bottom_img as A_index_bottom_img,A.index_wx_img as A_index_wx_img,A.address as A_address,A.phone as A_phone,A.technical_support_email as A_technical_support_email,A.qq_group as A_qq_group,A.custom_service_qq as A_custom_service_qq,A.business_cooperation_qq as A_business_cooperation_qq,A.business_cooperation_email as A_business_cooperation_email,A.microblog_url as A_microblog_url,A.contact_address_img as A_contact_address_img,A.login_background_img as A_login_background_img,A.center_head_img as A_center_head_img,A.company_name as A_company_name,A.pre_code as A_pre_code,A.record_number as A_record_number,A.icon as A_icon,A.title as A_title,A.key_words as A_key_words,A.description as A_description,A.domain_name as A_domain_name,A.telephone as A_telephone,A.about_us as A_about_us,A.help_info as A_help_info,A.is_active as A_is_active,A.status as A_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	     
+	 ,C.channel_name
+     from t_channel_expand A
+    left join t_channel_base C on A.channel_no = C.channel_no
+     
+       WHERE (
+        
+        
+          
+                 A.channel_code  =   'zy' 
+               
+            
+        
+      )
+2016-12-19 14:07:49.028 [DubboServerHandler-172.16.2.7:20892-thread-3] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 77ms
+2016-12-19 14:07:49.033 [DubboServerHandler-172.16.2.7:20892-thread-3] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLChannelExpand.findById:
+    select 
+    
+	    
+		A.id as A_id,A.channel_no as A_channel_no,A.channel_code as A_channel_code,A.channel_pre_code as A_channel_pre_code,A.nick_name as A_nick_name,A.index_top_img as A_index_top_img,A.index_bottom_img as A_index_bottom_img,A.index_wx_img as A_index_wx_img,A.address as A_address,A.phone as A_phone,A.technical_support_email as A_technical_support_email,A.qq_group as A_qq_group,A.custom_service_qq as A_custom_service_qq,A.business_cooperation_qq as A_business_cooperation_qq,A.business_cooperation_email as A_business_cooperation_email,A.microblog_url as A_microblog_url,A.contact_address_img as A_contact_address_img,A.login_background_img as A_login_background_img,A.center_head_img as A_center_head_img,A.company_name as A_company_name,A.pre_code as A_pre_code,A.record_number as A_record_number,A.icon as A_icon,A.title as A_title,A.key_words as A_key_words,A.description as A_description,A.domain_name as A_domain_name,A.telephone as A_telephone,A.about_us as A_about_us,A.help_info as A_help_info,A.is_active as A_is_active,A.status as A_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	    
+	,B.short_name as operator_name,C.channel_name
+    from t_channel_expand A
+    left join t_sys_admin B on A.operator = B.id 
+    left join t_channel_base C on A.channel_no = C.channel_no
+    where A.id = '28ab1814-a007-11e6-a668-5254008bbc2a'
+  
+2016-12-19 14:07:49.034 [DubboServerHandler-172.16.2.7:20892-thread-3] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 6ms
+2016-12-19 14:07:59.605 [DubboServerHandler-172.16.2.7:20892-thread-4] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLChannelAdmin.findByCriteria:select
+		 
+		
+		A.id as A_id, A.user_name as A_user_name, A.password as A_password,
+		A.salt as A_salt,
+		A.email as A_email, A.phone as A_phone, A.short_name as A_short_name,
+		A.channel_code as A_channel_code,
+		A.agent_no as A_agent_no,
+		A.merchant_no as A_merchant_no,A.identity_No as A_identity_no,
+		A.identity_flag as A_identity_flag,
+		A.status as A_status, A.create_time as A_create_time,A.open_id as A_open_id
+	 ,C.description as role_name,E.channel_name,D.agent_name,F.merchant_name
+		from t_channel_admin A 
+		left join t_channel_role_user B on A.id = B.account_id 
+		left join t_channel_role C on B.role_id = C.id
+		left join t_channel_base E on A.channel_code = E.channel_no 
+		left join t_agent_base D on A.agent_no = D.agent_no 
+		left join t_merchant_info F on A.merchant_no = F.merchant_no 
+		 
+			 WHERE (
+        
+        
+          
+                 A.user_name  =   'zy123' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.channel_code  =   'QDXX20161101000001' 
+               
+            
+        
+      )
+2016-12-19 14:07:59.606 [DubboServerHandler-172.16.2.7:20892-thread-4] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 9ms
+2016-12-19 14:07:59.612 [DubboServerHandler-172.16.2.7:20892-thread-5] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLChannelUrlFilter.findRoles:
+		select role_name as name from t_channel_role role
+		inner JOIN t_channel_role_user u on role.id=u.role_id
+		INNER JOIN t_channel_admin acc on u.account_id = acc.id
+		where acc.user_name='zy123'
+	
+2016-12-19 14:07:59.612 [DubboServerHandler-172.16.2.7:20892-thread-5] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 2ms
+2016-12-19 14:07:59.623 [DubboServerHandler-172.16.2.7:20892-thread-6] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLChannelAdmin.findByCriteria:select
+		 
+		
+		A.id as A_id, A.user_name as A_user_name, A.password as A_password,
+		A.salt as A_salt,
+		A.email as A_email, A.phone as A_phone, A.short_name as A_short_name,
+		A.channel_code as A_channel_code,
+		A.agent_no as A_agent_no,
+		A.merchant_no as A_merchant_no,A.identity_No as A_identity_no,
+		A.identity_flag as A_identity_flag,
+		A.status as A_status, A.create_time as A_create_time,A.open_id as A_open_id
+	 ,C.description as role_name,E.channel_name,D.agent_name,F.merchant_name
+		from t_channel_admin A 
+		left join t_channel_role_user B on A.id = B.account_id 
+		left join t_channel_role C on B.role_id = C.id
+		left join t_channel_base E on A.channel_code = E.channel_no 
+		left join t_agent_base D on A.agent_no = D.agent_no 
+		left join t_merchant_info F on A.merchant_no = F.merchant_no 
+		 
+			 WHERE (
+        
+        
+          
+                 A.user_name  =   'zy123' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.channel_code  =   'QDXX20161101000001' 
+               
+            
+        
+      )
+2016-12-19 14:07:59.624 [DubboServerHandler-172.16.2.7:20892-thread-6] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 7ms
+2016-12-19 14:07:59.631 [DubboServerHandler-172.16.2.7:20892-thread-7] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLChannelBase.findByCriteria:select
+     
+	     
+		A.id as A_id,A.channel_no as A_channel_no,A.channel_name as A_channel_name,A.channel_type as A_channel_type,A.qr_total as A_qr_total,A.use_total as A_use_total,A.less_total as A_less_total,A.status as A_status,A.record_status as A_record_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2,A.temp_3 as A_temp_3,A.temp_4 as A_temp_4
+	     
+	 
+     from t_channel_base A
+     
+       WHERE (
+        
+        
+          
+                 A.channel_no  =   'QDXX20161101000001' 
+               
+            
+        
+      )
+2016-12-19 14:07:59.631 [DubboServerHandler-172.16.2.7:20892-thread-7] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 4ms
+2016-12-19 14:07:59.653 [DubboServerHandler-172.16.2.7:20892-thread-8] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLChannelResource.selectActiveMenu:
+		select
+		A.id as A_id, menu_name as A_menu_name, parent_id as parent_id, sort as
+		A_sort, icon as A_icon,url as A_url,level as A_level,status as
+		A_status
+		from t_channel_resource A INNER JOIN t_channel_role_resource rr on A.id=rr.resource_id
+		INNER JOIN t_channel_role_user ru on rr.role_id=ru.role_id
+		where STATUS=1 and `level`not in(3,4)
+		and ru.account_id='a7f72d1ff3cb4b3eb9e8a2e882e62869'
+		ORDER BY parent_id,sort
+	
+2016-12-19 14:07:59.654 [DubboServerHandler-172.16.2.7:20892-thread-8] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 11ms
+2016-12-19 14:07:59.672 [DubboServerHandler-172.16.2.7:20892-thread-9] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMerchantCost.findByCriteria:select
+		 
+	     
+		A.id as A_id,A.trade_no as A_trade_no,A.channel_no as A_channel_no,A.agent_no as A_agent_no,
+		A.agent_level as A_agent_level,A.merchant_no as A_merchant_no,A.qr_code as A_qr_code,A.pay_code as A_pay_code,
+		A.type as A_type,A.rate_type as A_rate_type,ifnull(A.amount,0) as A_amount,A.merchant_rate as A_merchant_rate,A.fixed_amount as A_fixed_amount,
+		ifnull(A.merchant_cost,0) as A_merchant_cost,A.status as A_status,A.create_time as A_create_time,A.remark as A_remark,
+		A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	     
+	 
+		from t_merchant_cost A
+		 
+			 WHERE (
+        
+        
+          
+                 A.channel_no  =   'QDXX20161101000001' 
+               
+            
+        
+      ) 
+		 
+		 
+			order by
+			  
+				A.create_time DESC
+2016-12-19 14:07:59.672 [DubboServerHandler-172.16.2.7:20892-thread-9] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 4ms
+2016-12-19 14:07:59.731 [DubboServerHandler-172.16.2.7:20892-thread-11] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLDataNode.findByCriteria:select
+		 
+	     
+		A.id as A_id,A.parent_node as A_parent_node,A.current_node as A_current_node,A.current_node_level as A_current_node_level,A.identity_flag as A_identity_flag,A.operator as A_operator,A.create_time as A_create_time,A.update_time as A_update_time
+	     
+	 
+		from t_data_node A
+		 
+			 WHERE (
+        
+        
+          
+                 A.parent_node  =   'QDXX20161101000001' 
+               
+            
+        
+      ) 
+		 
+		 
+			order by
+			  
+				A.current_node_level DESC
+2016-12-19 14:07:59.731 [DubboServerHandler-172.16.2.7:20892-thread-11] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 5ms
+2016-12-19 14:07:59.743 [DubboServerHandler-172.16.2.7:20892-thread-12] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMerchantInfo.findByCriteria:select
+     
+	     
+		A.id as A_id,A.channel_no as A_channel_no,A.agent_no as A_agent_no,A.merchant_no as A_merchant_no,A.merchant_name as A_merchant_name,A.short_name as A_short_name,
+		A.platform_merchant_no as A_platform_merchant_no,A.bus_type as A_bus_type,A.name as A_name,A.id_card as A_id_card,A.idcard_img_1 as A_idcard_img_1,
+		A.idcard_img_2 as A_idcard_img_2,A.idcard_img_3 as A_idcard_img_3,A.mobile as A_mobile,A.phone as A_phone,A.email as A_email,A.address as A_address,
+		A.merchant_license as A_merchant_license,A.merchant_license_img as A_merchant_license_img,A.tax_no as A_tax_no,A.tax_img as A_tax_img,
+		A.org_no as A_org_no,A.qr_code as A_qr_code,A.credit_pay_status as A_credit_pay_status,A.authen_status as A_authen_status,A.status as A_status,A.create_time as A_create_time,
+		A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2,A.temp_3 as A_temp_3,A.temp_4 as A_temp_4
+	     
+	 ,C.channel_name as channel_name,D.agent_name
+     from t_merchant_info A
+     left join t_channel_base C on A.channel_no = C.channel_no 
+     left join t_agent_base D on A.agent_no = D.agent_no 
+     
+       WHERE (
+        
+        
+          
+                A.agent_no  IN  
+              (
+                'HFJK20161101000021'
+              ,
+                'HFJK20161101000019'
+              ,
+                'zzzyyy'
+              ,
+                'HFJK20161101000017'
+              )
+            
+        
+      
+        
+        
+          
+                AND A.status  =   '0' 
+               
+            
+        
+      )
+2016-12-19 14:07:59.744 [DubboServerHandler-172.16.2.7:20892-thread-12] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 7ms
+2016-12-19 14:07:59.754 [DubboServerHandler-172.16.2.7:20892-thread-13] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMessage.findAllByUserTypeAndUserNo:select
+     
+	     
+		A.ID as A_ID,A.CHANNEL_NO as A_CHANNEL_NO,A.USER_TYPE as A_USER_TYPE,A.TITLE as A_TITLE,A.CONTENT as A_CONTENT,A.MESSAGE_TYPE as A_MESSAGE_TYPE,A.STATUS as A_STATUS,A.OPERATOR as A_OPERATOR,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.REMARK as A_REMARK
+	     
+	 
+     from t_message A
+     where A.user_type in 
+       (   
+           '3' 
+        ,  
+           '9' 
+        )  
+	and not EXISTS(select * from t_user_message um where um.message_id = A.id and um.user_no='zy123');
+2016-12-19 14:07:59.754 [DubboServerHandler-172.16.2.7:20892-thread-13] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 5ms
+2016-12-19 14:07:59.779 [DubboServerHandler-172.16.2.7:20892-thread-14] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLUserMessage.insert:
+    insert into t_user_message (
+        	ID,
+        	MESSAGE_ID,
+        	USER_NO,
+        	READ_STATUS,
+        	RECORD_STATUS,
+        	OPERATOR,
+        	CREATE_TIME,
+        	UPDATE_TIME,
+        	REMARK
+        )
+    values (
+        	'ea42dbc642874dac8347b752ade74c7b',
+        	'3e44a1bdb8cc4964a3f368feae2b3ed5',
+        	'zy123',
+        	'1',
+        	'Y',
+        	'a7f72d1ff3cb4b3eb9e8a2e882e62869',
+        	str_to_date('2016-12-19 14:07:59','%Y-%m-%d %H:%i:%s'),
+        	null,
+        	null
+    )
+  
+2016-12-19 14:07:59.780 [DubboServerHandler-172.16.2.7:20892-thread-14] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 13ms
+2016-12-19 14:07:59.788 [DubboServerHandler-172.16.2.7:20892-thread-15] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLUserMessage.insert:
+    insert into t_user_message (
+        	ID,
+        	MESSAGE_ID,
+        	USER_NO,
+        	READ_STATUS,
+        	RECORD_STATUS,
+        	OPERATOR,
+        	CREATE_TIME,
+        	UPDATE_TIME,
+        	REMARK
+        )
+    values (
+        	'659458efa9714979ac818c65f18612c5',
+        	'ad70996b37cc40fabba5e2be43d2ea33',
+        	'zy123',
+        	'1',
+        	'Y',
+        	'a7f72d1ff3cb4b3eb9e8a2e882e62869',
+        	str_to_date('2016-12-19 14:07:59','%Y-%m-%d %H:%i:%s'),
+        	null,
+        	null
+    )
+  
+2016-12-19 14:07:59.788 [DubboServerHandler-172.16.2.7:20892-thread-15] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 5ms
+2016-12-19 14:07:59.796 [DubboServerHandler-172.16.2.7:20892-thread-16] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLUserMessage.insert:
+    insert into t_user_message (
+        	ID,
+        	MESSAGE_ID,
+        	USER_NO,
+        	READ_STATUS,
+        	RECORD_STATUS,
+        	OPERATOR,
+        	CREATE_TIME,
+        	UPDATE_TIME,
+        	REMARK
+        )
+    values (
+        	'7344f3b9d7394b5e8e67ede054a403b3',
+        	'ddddddddssssssssss',
+        	'zy123',
+        	'1',
+        	'Y',
+        	'a7f72d1ff3cb4b3eb9e8a2e882e62869',
+        	str_to_date('2016-12-19 14:07:59','%Y-%m-%d %H:%i:%s'),
+        	null,
+        	null
+    )
+  
+2016-12-19 14:07:59.796 [DubboServerHandler-172.16.2.7:20892-thread-16] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 3ms
+2016-12-19 14:08:00.425 [DubboServerHandler-172.16.2.7:20892-thread-17] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMessage.findAllByUserTypeAndUserNo:select
+     
+	     
+		A.ID as A_ID,A.CHANNEL_NO as A_CHANNEL_NO,A.USER_TYPE as A_USER_TYPE,A.TITLE as A_TITLE,A.CONTENT as A_CONTENT,A.MESSAGE_TYPE as A_MESSAGE_TYPE,A.STATUS as A_STATUS,A.OPERATOR as A_OPERATOR,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.REMARK as A_REMARK
+	     
+	 
+     from t_message A
+     where A.user_type in 
+       (   
+           '3' 
+        ,  
+           '9' 
+        )  
+	and not EXISTS(select * from t_user_message um where um.message_id = A.id and um.user_no='zy123');
+2016-12-19 14:08:00.425 [DubboServerHandler-172.16.2.7:20892-thread-17] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 3ms
+2016-12-19 14:08:00.437 [DubboServerHandler-172.16.2.7:20892-thread-18] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLUserMessage.findByUserType:select
+     
+	     
+		A.ID as A_ID,A.MESSAGE_ID as A_MESSAGE_ID,A.USER_NO as A_USER_NO,A.READ_STATUS as A_READ_STATUS,A.RECORD_STATUS as A_RECORD_STATUS,A.OPERATOR as A_OPERATOR,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.REMARK as A_REMARK
+	     
+	 ,B.title as title,B.content as content 
+     from t_user_message A left join t_message B on A.message_id = B.id 
+      
+       WHERE (
+        
+        
+          
+                 A.USER_NO  =   'zy123' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.READ_STATUS  =   '1' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.RECORD_STATUS  =   'Y' 
+               
+            
+        
+      
+        
+        
+          
+               AND B.USER_TYPE  IN  
+              (
+                '3'
+              ,
+                '9'
+              )
+            
+        
+      )
+2016-12-19 14:08:00.438 [DubboServerHandler-172.16.2.7:20892-thread-18] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 7ms
+2016-12-19 14:08:00.592 [DubboServerHandler-172.16.2.7:20892-thread-19] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLDataNode.findByCriteria:select
+		 
+	     
+		A.id as A_id,A.parent_node as A_parent_node,A.current_node as A_current_node,A.current_node_level as A_current_node_level,A.identity_flag as A_identity_flag,A.operator as A_operator,A.create_time as A_create_time,A.update_time as A_update_time
+	     
+	 
+		from t_data_node A
+		 
+			 WHERE (
+        
+        
+          
+                 A.parent_node  =   'QDXX20161101000001' 
+               
+            
+        
+      ) 
+		 
+		 
+			order by
+			  
+				A.current_node_level DESC
+2016-12-19 14:08:00.592 [DubboServerHandler-172.16.2.7:20892-thread-19] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 5ms
+2016-12-19 14:08:00.603 [DubboServerHandler-172.16.2.7:20892-thread-20] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMerchantInfo.findByCriteria:select
+     
+	     
+		A.id as A_id,A.channel_no as A_channel_no,A.agent_no as A_agent_no,A.merchant_no as A_merchant_no,A.merchant_name as A_merchant_name,A.short_name as A_short_name,
+		A.platform_merchant_no as A_platform_merchant_no,A.bus_type as A_bus_type,A.name as A_name,A.id_card as A_id_card,A.idcard_img_1 as A_idcard_img_1,
+		A.idcard_img_2 as A_idcard_img_2,A.idcard_img_3 as A_idcard_img_3,A.mobile as A_mobile,A.phone as A_phone,A.email as A_email,A.address as A_address,
+		A.merchant_license as A_merchant_license,A.merchant_license_img as A_merchant_license_img,A.tax_no as A_tax_no,A.tax_img as A_tax_img,
+		A.org_no as A_org_no,A.qr_code as A_qr_code,A.credit_pay_status as A_credit_pay_status,A.authen_status as A_authen_status,A.status as A_status,A.create_time as A_create_time,
+		A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2,A.temp_3 as A_temp_3,A.temp_4 as A_temp_4
+	     
+	 ,C.channel_name as channel_name,D.agent_name
+     from t_merchant_info A
+     left join t_channel_base C on A.channel_no = C.channel_no 
+     left join t_agent_base D on A.agent_no = D.agent_no 
+     
+       WHERE (
+        
+        
+          
+                A.agent_no  IN  
+              (
+                'HFJK20161101000021'
+              ,
+                'HFJK20161101000019'
+              ,
+                'zzzyyy'
+              ,
+                'HFJK20161101000017'
+              )
+            
+        
+      
+        
+        
+          
+                AND A.status  =   '0' 
+               
+            
+        
+      )
+2016-12-19 14:08:00.603 [DubboServerHandler-172.16.2.7:20892-thread-20] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 7ms
+2016-12-19 14:08:00.609 [DubboServerHandler-172.16.2.7:20892-thread-21] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMessage.findAllByUserTypeAndUserNo:select
+     
+	     
+		A.ID as A_ID,A.CHANNEL_NO as A_CHANNEL_NO,A.USER_TYPE as A_USER_TYPE,A.TITLE as A_TITLE,A.CONTENT as A_CONTENT,A.MESSAGE_TYPE as A_MESSAGE_TYPE,A.STATUS as A_STATUS,A.OPERATOR as A_OPERATOR,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.REMARK as A_REMARK
+	     
+	 
+     from t_message A
+     where A.user_type in 
+       (   
+           '3' 
+        ,  
+           '9' 
+        )  
+	and not EXISTS(select * from t_user_message um where um.message_id = A.id and um.user_no='zy123');
+2016-12-19 14:08:00.609 [DubboServerHandler-172.16.2.7:20892-thread-21] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 3ms
+2016-12-19 14:08:03.894 [DubboServerHandler-172.16.2.7:20892-thread-22] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLChannelUrlFilter.findRoles:
+		select role_name as name from t_channel_role role
+		inner JOIN t_channel_role_user u on role.id=u.role_id
+		INNER JOIN t_channel_admin acc on u.account_id = acc.id
+		where acc.user_name='zy123'
+	
+2016-12-19 14:08:03.894 [DubboServerHandler-172.16.2.7:20892-thread-22] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 3ms
+2016-12-19 14:08:04.206 [DubboServerHandler-172.16.2.7:20892-thread-23] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLDataNode.findByCriteria:select
+		 
+	     
+		A.id as A_id,A.parent_node as A_parent_node,A.current_node as A_current_node,A.current_node_level as A_current_node_level,A.identity_flag as A_identity_flag,A.operator as A_operator,A.create_time as A_create_time,A.update_time as A_update_time
+	     
+	 
+		from t_data_node A
+		 
+			 WHERE (
+        
+        
+          
+                 A.parent_node  =   'QDXX20161101000001' 
+               
+            
+        
+      ) 
+		 
+		 
+			order by
+			  
+				A.current_node_level DESC
+2016-12-19 14:08:04.206 [DubboServerHandler-172.16.2.7:20892-thread-23] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 4ms
+2016-12-19 14:08:04.214 [DubboServerHandler-172.16.2.7:20892-thread-24] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLAgentBankcard.countByCriteria:select count(*) from t_agent_bankcard A
+    left join t_agent_base C on A.agent_no = C.agent_no 
+     
+       WHERE (
+        
+        
+          
+                A.agent_no  IN  
+              (
+                'HFJK20161101000021'
+              ,
+                'HFJK20161101000019'
+              ,
+                'zzzyyy'
+              ,
+                'HFJK20161101000017'
+              )
+            
+        
+      )
+2016-12-19 14:08:04.214 [DubboServerHandler-172.16.2.7:20892-thread-24] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 3ms
+2016-12-19 14:08:04.222 [DubboServerHandler-172.16.2.7:20892-thread-24] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLAgentBankcard.findByCriteria:select
+     
+	     
+		A.id as A_id,A.agent_no as A_agent_no,A.bank_code as A_bank_code,A.bank_name as A_bank_name,A.bank_card as A_bank_card,A.id_card as A_id_card,A.name as A_name,A.mobile as A_mobile,A.is_real_account as A_is_real_account,A.account_type as A_account_type,A.status as A_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2,A.temp_3 as A_temp_3,A.temp_4 as A_temp_4
+	     
+	 ,C.agent_name
+     from t_agent_bankcard A
+     left join t_agent_base C on A.agent_no = C.agent_no 
+     
+       WHERE (
+        
+        
+          
+                A.agent_no  IN  
+              (
+                'HFJK20161101000021'
+              ,
+                'HFJK20161101000019'
+              ,
+                'zzzyyy'
+              ,
+                'HFJK20161101000017'
+              )
+            
+        
+      ) 
+     
+     
+      order by
+         A.create_time DESC
+2016-12-19 14:08:04.222 [DubboServerHandler-172.16.2.7:20892-thread-24] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 7ms
+2016-12-19 14:08:04.223 [DubboServerHandler-172.16.2.7:20892-thread-25] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLDataNode.findByCriteria:select
+		 
+	     
+		A.id as A_id,A.parent_node as A_parent_node,A.current_node as A_current_node,A.current_node_level as A_current_node_level,A.identity_flag as A_identity_flag,A.operator as A_operator,A.create_time as A_create_time,A.update_time as A_update_time
+	     
+	 
+		from t_data_node A
+		 
+			 WHERE (
+        
+        
+          
+                 A.parent_node  =   'QDXX20161101000001' 
+               
+            
+        
+      ) 
+		 
+		 
+			order by
+			  
+				A.current_node_level DESC
+2016-12-19 14:08:04.224 [DubboServerHandler-172.16.2.7:20892-thread-25] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 6ms
+2016-12-19 14:08:04.232 [DubboServerHandler-172.16.2.7:20892-thread-26] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMerchantInfo.findByCriteria:select
+     
+	     
+		A.id as A_id,A.channel_no as A_channel_no,A.agent_no as A_agent_no,A.merchant_no as A_merchant_no,A.merchant_name as A_merchant_name,A.short_name as A_short_name,
+		A.platform_merchant_no as A_platform_merchant_no,A.bus_type as A_bus_type,A.name as A_name,A.id_card as A_id_card,A.idcard_img_1 as A_idcard_img_1,
+		A.idcard_img_2 as A_idcard_img_2,A.idcard_img_3 as A_idcard_img_3,A.mobile as A_mobile,A.phone as A_phone,A.email as A_email,A.address as A_address,
+		A.merchant_license as A_merchant_license,A.merchant_license_img as A_merchant_license_img,A.tax_no as A_tax_no,A.tax_img as A_tax_img,
+		A.org_no as A_org_no,A.qr_code as A_qr_code,A.credit_pay_status as A_credit_pay_status,A.authen_status as A_authen_status,A.status as A_status,A.create_time as A_create_time,
+		A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2,A.temp_3 as A_temp_3,A.temp_4 as A_temp_4
+	     
+	 ,C.channel_name as channel_name,D.agent_name
+     from t_merchant_info A
+     left join t_channel_base C on A.channel_no = C.channel_no 
+     left join t_agent_base D on A.agent_no = D.agent_no 
+     
+       WHERE (
+        
+        
+          
+                A.agent_no  IN  
+              (
+                'HFJK20161101000021'
+              ,
+                'HFJK20161101000019'
+              ,
+                'zzzyyy'
+              ,
+                'HFJK20161101000017'
+              )
+            
+        
+      
+        
+        
+          
+                AND A.status  =   '0' 
+               
+            
+        
+      )
+2016-12-19 14:08:04.233 [DubboServerHandler-172.16.2.7:20892-thread-26] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 6ms
+2016-12-19 14:08:04.242 [DubboServerHandler-172.16.2.7:20892-thread-27] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMessage.findAllByUserTypeAndUserNo:select
+     
+	     
+		A.ID as A_ID,A.CHANNEL_NO as A_CHANNEL_NO,A.USER_TYPE as A_USER_TYPE,A.TITLE as A_TITLE,A.CONTENT as A_CONTENT,A.MESSAGE_TYPE as A_MESSAGE_TYPE,A.STATUS as A_STATUS,A.OPERATOR as A_OPERATOR,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.REMARK as A_REMARK
+	     
+	 
+     from t_message A
+     where A.user_type in 
+       (   
+           '3' 
+        ,  
+           '9' 
+        )  
+	and not EXISTS(select * from t_user_message um where um.message_id = A.id and um.user_no='zy123');
+2016-12-19 14:08:04.242 [DubboServerHandler-172.16.2.7:20892-thread-27] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 2ms
+2016-12-19 14:08:06.007 [DubboServerHandler-172.16.2.7:20892-thread-28] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLAgentBankcard.findById:
+    select 
+    
+	    
+		A.id as A_id,A.agent_no as A_agent_no,A.bank_code as A_bank_code,A.bank_name as A_bank_name,A.bank_card as A_bank_card,A.id_card as A_id_card,A.name as A_name,A.mobile as A_mobile,A.is_real_account as A_is_real_account,A.account_type as A_account_type,A.status as A_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2,A.temp_3 as A_temp_3,A.temp_4 as A_temp_4
+	    
+	,B.short_name as operator_name,C.agent_name
+    from t_agent_bankcard A 
+    left join t_sys_admin B on A.operator = B.id 
+    left join t_agent_base C on A.agent_no = C.agent_no 
+    where A.id = '724137ada93b478a84f8ca8a768431f0'
+  
+2016-12-19 14:08:06.007 [DubboServerHandler-172.16.2.7:20892-thread-28] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 4ms
+2016-12-19 14:08:06.016 [DubboServerHandler-172.16.2.7:20892-thread-29] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLDataNode.findByCriteria:select
+		 
+	     
+		A.id as A_id,A.parent_node as A_parent_node,A.current_node as A_current_node,A.current_node_level as A_current_node_level,A.identity_flag as A_identity_flag,A.operator as A_operator,A.create_time as A_create_time,A.update_time as A_update_time
+	     
+	 
+		from t_data_node A
+		 
+			 WHERE (
+        
+        
+          
+                 A.parent_node  =   'QDXX20161101000001' 
+               
+            
+        
+      ) 
+		 
+		 
+			order by
+			  
+				A.current_node_level DESC
+2016-12-19 14:08:06.016 [DubboServerHandler-172.16.2.7:20892-thread-29] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 5ms
+2016-12-19 14:08:06.031 [DubboServerHandler-172.16.2.7:20892-thread-30] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLAgentBase.findByCriteria:select
+     
+	     
+		A.ID as A_ID,A.AGENT_NO as A_AGENT_NO,A.AGENT_NAME as A_AGENT_NAME,A.CHANNEL_NO as A_CHANNEL_NO,A.AGENT_PRE_CODE as A_AGENT_PRE_CODE,A.AGENT_TYPE as A_AGENT_TYPE,A.NAME as A_NAME,A.MOBILE as A_MOBILE,A.PARENT_NO as A_PARENT_NO,A.AGENT_LEVEL as A_AGENT_LEVEL,A.QR_TOTAL as A_QR_TOTAL,A.USE_TOTAL as A_USE_TOTAL,A.LESS_TOTAL as A_LESS_TOTAL,A.AGENT_FLAG as A_AGENT_FLAG,A.STATUS as A_STATUS,A.RECORD_STATUS as A_RECORD_STATUS,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.OPERATOR as A_OPERATOR,A.REMARK as A_REMARK,A.TEMP_1 as A_TEMP_1,A.TEMP_2 as A_TEMP_2,A.TEMP_3 as A_TEMP_3,A.TEMP_4 as A_TEMP_4
+	     
+	 
+     from t_agent_base A
+     
+       WHERE (
+        
+        
+          
+                A.AGENT_NO  IN  
+              (
+                'HFJK20161101000021'
+              ,
+                'HFJK20161101000019'
+              ,
+                'zzzyyy'
+              ,
+                'HFJK20161101000017'
+              )
+            
+        
+      
+        
+        
+          
+                AND A.STATUS  =   '1' 
+               
+            
+        
+      )
+2016-12-19 14:08:06.031 [DubboServerHandler-172.16.2.7:20892-thread-30] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 7ms
+2016-12-19 14:08:06.256 [DubboServerHandler-172.16.2.7:20892-thread-31] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLDataNode.findByCriteria:select
+		 
+	     
+		A.id as A_id,A.parent_node as A_parent_node,A.current_node as A_current_node,A.current_node_level as A_current_node_level,A.identity_flag as A_identity_flag,A.operator as A_operator,A.create_time as A_create_time,A.update_time as A_update_time
+	     
+	 
+		from t_data_node A
+		 
+			 WHERE (
+        
+        
+          
+                 A.parent_node  =   'QDXX20161101000001' 
+               
+            
+        
+      ) 
+		 
+		 
+			order by
+			  
+				A.current_node_level DESC
+2016-12-19 14:08:06.256 [DubboServerHandler-172.16.2.7:20892-thread-31] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 8ms
+2016-12-19 14:08:06.267 [DubboServerHandler-172.16.2.7:20892-thread-32] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMerchantInfo.findByCriteria:select
+     
+	     
+		A.id as A_id,A.channel_no as A_channel_no,A.agent_no as A_agent_no,A.merchant_no as A_merchant_no,A.merchant_name as A_merchant_name,A.short_name as A_short_name,
+		A.platform_merchant_no as A_platform_merchant_no,A.bus_type as A_bus_type,A.name as A_name,A.id_card as A_id_card,A.idcard_img_1 as A_idcard_img_1,
+		A.idcard_img_2 as A_idcard_img_2,A.idcard_img_3 as A_idcard_img_3,A.mobile as A_mobile,A.phone as A_phone,A.email as A_email,A.address as A_address,
+		A.merchant_license as A_merchant_license,A.merchant_license_img as A_merchant_license_img,A.tax_no as A_tax_no,A.tax_img as A_tax_img,
+		A.org_no as A_org_no,A.qr_code as A_qr_code,A.credit_pay_status as A_credit_pay_status,A.authen_status as A_authen_status,A.status as A_status,A.create_time as A_create_time,
+		A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2,A.temp_3 as A_temp_3,A.temp_4 as A_temp_4
+	     
+	 ,C.channel_name as channel_name,D.agent_name
+     from t_merchant_info A
+     left join t_channel_base C on A.channel_no = C.channel_no 
+     left join t_agent_base D on A.agent_no = D.agent_no 
+     
+       WHERE (
+        
+        
+          
+                A.agent_no  IN  
+              (
+                'HFJK20161101000021'
+              ,
+                'HFJK20161101000019'
+              ,
+                'zzzyyy'
+              ,
+                'HFJK20161101000017'
+              )
+            
+        
+      
+        
+        
+          
+                AND A.status  =   '0' 
+               
+            
+        
+      )
+2016-12-19 14:08:06.267 [DubboServerHandler-172.16.2.7:20892-thread-32] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 7ms
+2016-12-19 14:08:06.272 [DubboServerHandler-172.16.2.7:20892-thread-33] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMessage.findAllByUserTypeAndUserNo:select
+     
+	     
+		A.ID as A_ID,A.CHANNEL_NO as A_CHANNEL_NO,A.USER_TYPE as A_USER_TYPE,A.TITLE as A_TITLE,A.CONTENT as A_CONTENT,A.MESSAGE_TYPE as A_MESSAGE_TYPE,A.STATUS as A_STATUS,A.OPERATOR as A_OPERATOR,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.REMARK as A_REMARK
+	     
+	 
+     from t_message A
+     where A.user_type in 
+       (   
+           '3' 
+        ,  
+           '9' 
+        )  
+	and not EXISTS(select * from t_user_message um where um.message_id = A.id and um.user_no='zy123');
+2016-12-19 14:08:06.273 [DubboServerHandler-172.16.2.7:20892-thread-33] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 3ms
+2016-12-19 14:08:10.066 [DubboServerHandler-172.16.2.7:20892-thread-34] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLAgentBankcard.findByCriteria:select
+     
+	     
+		A.id as A_id,A.agent_no as A_agent_no,A.bank_code as A_bank_code,A.bank_name as A_bank_name,A.bank_card as A_bank_card,A.id_card as A_id_card,A.name as A_name,A.mobile as A_mobile,A.is_real_account as A_is_real_account,A.account_type as A_account_type,A.status as A_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2,A.temp_3 as A_temp_3,A.temp_4 as A_temp_4
+	     
+	 ,C.agent_name
+     from t_agent_bankcard A
+     left join t_agent_base C on A.agent_no = C.agent_no 
+     
+       WHERE (
+        
+        
+          
+                 A.agent_no  =   'HFJK20161101000021' 
+               
+            
+        
+      )
+2016-12-19 14:08:10.066 [DubboServerHandler-172.16.2.7:20892-thread-34] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 5ms
+2016-12-19 14:08:30.542 [DubboServerHandler-172.16.2.7:20892-thread-35] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMessage.findAllByUserTypeAndUserNo:select
+     
+	     
+		A.ID as A_ID,A.CHANNEL_NO as A_CHANNEL_NO,A.USER_TYPE as A_USER_TYPE,A.TITLE as A_TITLE,A.CONTENT as A_CONTENT,A.MESSAGE_TYPE as A_MESSAGE_TYPE,A.STATUS as A_STATUS,A.OPERATOR as A_OPERATOR,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.REMARK as A_REMARK
+	     
+	 
+     from t_message A
+     where A.user_type in 
+       (   
+           '3' 
+        ,  
+           '9' 
+        )  
+	and not EXISTS(select * from t_user_message um where um.message_id = A.id and um.user_no='zy123');
+2016-12-19 14:08:30.542 [DubboServerHandler-172.16.2.7:20892-thread-35] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 4ms
+2016-12-19 14:08:30.558 [DubboServerHandler-172.16.2.7:20892-thread-36] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLUserMessage.findByUserType:select
+     
+	     
+		A.ID as A_ID,A.MESSAGE_ID as A_MESSAGE_ID,A.USER_NO as A_USER_NO,A.READ_STATUS as A_READ_STATUS,A.RECORD_STATUS as A_RECORD_STATUS,A.OPERATOR as A_OPERATOR,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.REMARK as A_REMARK
+	     
+	 ,B.title as title,B.content as content 
+     from t_user_message A left join t_message B on A.message_id = B.id 
+      
+       WHERE (
+        
+        
+          
+                 A.USER_NO  =   'zy123' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.READ_STATUS  =   '1' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.RECORD_STATUS  =   'Y' 
+               
+            
+        
+      
+        
+        
+          
+               AND B.USER_TYPE  IN  
+              (
+                '3'
+              ,
+                '9'
+              )
+            
+        
+      )
+2016-12-19 14:08:30.559 [DubboServerHandler-172.16.2.7:20892-thread-36] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 13ms
+2016-12-19 14:08:52.381 [DubboServerHandler-172.16.2.7:20892-thread-37] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLDataNode.findByCriteria:select
+		 
+	     
+		A.id as A_id,A.parent_node as A_parent_node,A.current_node as A_current_node,A.current_node_level as A_current_node_level,A.identity_flag as A_identity_flag,A.operator as A_operator,A.create_time as A_create_time,A.update_time as A_update_time
+	     
+	 
+		from t_data_node A
+		 
+			 WHERE (
+        
+        
+          
+                 A.parent_node  =   'QDXX20161101000001' 
+               
+            
+        
+      ) 
+		 
+		 
+			order by
+			  
+				A.current_node_level DESC
+2016-12-19 14:08:52.381 [DubboServerHandler-172.16.2.7:20892-thread-37] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 5ms
+2016-12-19 14:08:52.389 [DubboServerHandler-172.16.2.7:20892-thread-38] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMerchantInfo.findByCriteria:select
+     
+	     
+		A.id as A_id,A.channel_no as A_channel_no,A.agent_no as A_agent_no,A.merchant_no as A_merchant_no,A.merchant_name as A_merchant_name,A.short_name as A_short_name,
+		A.platform_merchant_no as A_platform_merchant_no,A.bus_type as A_bus_type,A.name as A_name,A.id_card as A_id_card,A.idcard_img_1 as A_idcard_img_1,
+		A.idcard_img_2 as A_idcard_img_2,A.idcard_img_3 as A_idcard_img_3,A.mobile as A_mobile,A.phone as A_phone,A.email as A_email,A.address as A_address,
+		A.merchant_license as A_merchant_license,A.merchant_license_img as A_merchant_license_img,A.tax_no as A_tax_no,A.tax_img as A_tax_img,
+		A.org_no as A_org_no,A.qr_code as A_qr_code,A.credit_pay_status as A_credit_pay_status,A.authen_status as A_authen_status,A.status as A_status,A.create_time as A_create_time,
+		A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2,A.temp_3 as A_temp_3,A.temp_4 as A_temp_4
+	     
+	 ,C.channel_name as channel_name,D.agent_name
+     from t_merchant_info A
+     left join t_channel_base C on A.channel_no = C.channel_no 
+     left join t_agent_base D on A.agent_no = D.agent_no 
+     
+       WHERE (
+        
+        
+          
+                A.agent_no  IN  
+              (
+                'HFJK20161101000021'
+              ,
+                'HFJK20161101000019'
+              ,
+                'zzzyyy'
+              ,
+                'HFJK20161101000017'
+              )
+            
+        
+      
+        
+        
+          
+                AND A.status  =   '0' 
+               
+            
+        
+      )
+2016-12-19 14:08:52.389 [DubboServerHandler-172.16.2.7:20892-thread-38] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 5ms
+2016-12-19 14:08:52.394 [DubboServerHandler-172.16.2.7:20892-thread-39] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMessage.findAllByUserTypeAndUserNo:select
+     
+	     
+		A.ID as A_ID,A.CHANNEL_NO as A_CHANNEL_NO,A.USER_TYPE as A_USER_TYPE,A.TITLE as A_TITLE,A.CONTENT as A_CONTENT,A.MESSAGE_TYPE as A_MESSAGE_TYPE,A.STATUS as A_STATUS,A.OPERATOR as A_OPERATOR,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.REMARK as A_REMARK
+	     
+	 
+     from t_message A
+     where A.user_type in 
+       (   
+           '3' 
+        ,  
+           '9' 
+        )  
+	and not EXISTS(select * from t_user_message um where um.message_id = A.id and um.user_no='zy123');
+2016-12-19 14:08:52.394 [DubboServerHandler-172.16.2.7:20892-thread-39] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 3ms
+2016-12-19 14:08:52.476 [DubboServerHandler-172.16.2.7:20892-thread-40] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMessage.findAllByUserTypeAndUserNo:select
+     
+	     
+		A.ID as A_ID,A.CHANNEL_NO as A_CHANNEL_NO,A.USER_TYPE as A_USER_TYPE,A.TITLE as A_TITLE,A.CONTENT as A_CONTENT,A.MESSAGE_TYPE as A_MESSAGE_TYPE,A.STATUS as A_STATUS,A.OPERATOR as A_OPERATOR,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.REMARK as A_REMARK
+	     
+	 
+     from t_message A
+     where A.user_type in 
+       (   
+           '3' 
+        ,  
+           '9' 
+        )  
+	and not EXISTS(select * from t_user_message um where um.message_id = A.id and um.user_no='zy123');
+2016-12-19 14:08:52.476 [DubboServerHandler-172.16.2.7:20892-thread-40] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 3ms
+2016-12-19 14:08:52.484 [DubboServerHandler-172.16.2.7:20892-thread-41] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLUserMessage.findByUserType:select
+     
+	     
+		A.ID as A_ID,A.MESSAGE_ID as A_MESSAGE_ID,A.USER_NO as A_USER_NO,A.READ_STATUS as A_READ_STATUS,A.RECORD_STATUS as A_RECORD_STATUS,A.OPERATOR as A_OPERATOR,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.REMARK as A_REMARK
+	     
+	 ,B.title as title,B.content as content 
+     from t_user_message A left join t_message B on A.message_id = B.id 
+      
+       WHERE (
+        
+        
+          
+                 A.USER_NO  =   'zy123' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.READ_STATUS  =   '1' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.RECORD_STATUS  =   'Y' 
+               
+            
+        
+      
+        
+        
+          
+               AND B.USER_TYPE  IN  
+              (
+                '3'
+              ,
+                '9'
+              )
+            
+        
+      )
+2016-12-19 14:08:52.485 [DubboServerHandler-172.16.2.7:20892-thread-41] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 7ms
+2016-12-19 14:08:52.509 [DubboServerHandler-172.16.2.7:20892-thread-42] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLChannelUrlFilter.findRoles:
+		select role_name as name from t_channel_role role
+		inner JOIN t_channel_role_user u on role.id=u.role_id
+		INNER JOIN t_channel_admin acc on u.account_id = acc.id
+		where acc.user_name='zy123'
+	
+2016-12-19 14:08:52.509 [DubboServerHandler-172.16.2.7:20892-thread-42] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 2ms
+2016-12-19 14:08:52.614 [DubboServerHandler-172.16.2.7:20892-thread-43] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLDataNode.findByCriteria:select
+		 
+	     
+		A.id as A_id,A.parent_node as A_parent_node,A.current_node as A_current_node,A.current_node_level as A_current_node_level,A.identity_flag as A_identity_flag,A.operator as A_operator,A.create_time as A_create_time,A.update_time as A_update_time
+	     
+	 
+		from t_data_node A
+		 
+			 WHERE (
+        
+        
+          
+                 A.parent_node  =   'QDXX20161101000001' 
+               
+            
+        
+      ) 
+		 
+		 
+			order by
+			  
+				A.current_node_level DESC
+2016-12-19 14:08:52.614 [DubboServerHandler-172.16.2.7:20892-thread-43] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 8ms
+2016-12-19 14:08:52.621 [DubboServerHandler-172.16.2.7:20892-thread-44] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLAgentBankcard.countByCriteria:select count(*) from t_agent_bankcard A
+    left join t_agent_base C on A.agent_no = C.agent_no 
+     
+       WHERE (
+        
+        
+          
+                A.agent_no  IN  
+              (
+                'HFJK20161101000021'
+              ,
+                'HFJK20161101000019'
+              ,
+                'zzzyyy'
+              ,
+                'HFJK20161101000017'
+              )
+            
+        
+      )
+2016-12-19 14:08:52.621 [DubboServerHandler-172.16.2.7:20892-thread-44] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 3ms
+2016-12-19 14:08:52.627 [DubboServerHandler-172.16.2.7:20892-thread-44] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLAgentBankcard.findByCriteria:select
+     
+	     
+		A.id as A_id,A.agent_no as A_agent_no,A.bank_code as A_bank_code,A.bank_name as A_bank_name,A.bank_card as A_bank_card,A.id_card as A_id_card,A.name as A_name,A.mobile as A_mobile,A.is_real_account as A_is_real_account,A.account_type as A_account_type,A.status as A_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2,A.temp_3 as A_temp_3,A.temp_4 as A_temp_4
+	     
+	 ,C.agent_name
+     from t_agent_bankcard A
+     left join t_agent_base C on A.agent_no = C.agent_no 
+     
+       WHERE (
+        
+        
+          
+                A.agent_no  IN  
+              (
+                'HFJK20161101000021'
+              ,
+                'HFJK20161101000019'
+              ,
+                'zzzyyy'
+              ,
+                'HFJK20161101000017'
+              )
+            
+        
+      ) 
+     
+     
+      order by
+         A.create_time DESC
+2016-12-19 14:08:52.627 [DubboServerHandler-172.16.2.7:20892-thread-44] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 6ms
+2016-12-19 14:08:52.701 [DubboServerHandler-172.16.2.7:20892-thread-45] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLDataNode.findByCriteria:select
+		 
+	     
+		A.id as A_id,A.parent_node as A_parent_node,A.current_node as A_current_node,A.current_node_level as A_current_node_level,A.identity_flag as A_identity_flag,A.operator as A_operator,A.create_time as A_create_time,A.update_time as A_update_time
+	     
+	 
+		from t_data_node A
+		 
+			 WHERE (
+        
+        
+          
+                 A.parent_node  =   'QDXX20161101000001' 
+               
+            
+        
+      ) 
+		 
+		 
+			order by
+			  
+				A.current_node_level DESC
+2016-12-19 14:08:52.701 [DubboServerHandler-172.16.2.7:20892-thread-45] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 4ms
+2016-12-19 14:08:52.711 [DubboServerHandler-172.16.2.7:20892-thread-46] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMerchantInfo.findByCriteria:select
+     
+	     
+		A.id as A_id,A.channel_no as A_channel_no,A.agent_no as A_agent_no,A.merchant_no as A_merchant_no,A.merchant_name as A_merchant_name,A.short_name as A_short_name,
+		A.platform_merchant_no as A_platform_merchant_no,A.bus_type as A_bus_type,A.name as A_name,A.id_card as A_id_card,A.idcard_img_1 as A_idcard_img_1,
+		A.idcard_img_2 as A_idcard_img_2,A.idcard_img_3 as A_idcard_img_3,A.mobile as A_mobile,A.phone as A_phone,A.email as A_email,A.address as A_address,
+		A.merchant_license as A_merchant_license,A.merchant_license_img as A_merchant_license_img,A.tax_no as A_tax_no,A.tax_img as A_tax_img,
+		A.org_no as A_org_no,A.qr_code as A_qr_code,A.credit_pay_status as A_credit_pay_status,A.authen_status as A_authen_status,A.status as A_status,A.create_time as A_create_time,
+		A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2,A.temp_3 as A_temp_3,A.temp_4 as A_temp_4
+	     
+	 ,C.channel_name as channel_name,D.agent_name
+     from t_merchant_info A
+     left join t_channel_base C on A.channel_no = C.channel_no 
+     left join t_agent_base D on A.agent_no = D.agent_no 
+     
+       WHERE (
+        
+        
+          
+                A.agent_no  IN  
+              (
+                'HFJK20161101000021'
+              ,
+                'HFJK20161101000019'
+              ,
+                'zzzyyy'
+              ,
+                'HFJK20161101000017'
+              )
+            
+        
+      
+        
+        
+          
+                AND A.status  =   '0' 
+               
+            
+        
+      )
+2016-12-19 14:08:52.711 [DubboServerHandler-172.16.2.7:20892-thread-46] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 6ms
+2016-12-19 14:08:52.726 [DubboServerHandler-172.16.2.7:20892-thread-47] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMessage.findAllByUserTypeAndUserNo:select
+     
+	     
+		A.ID as A_ID,A.CHANNEL_NO as A_CHANNEL_NO,A.USER_TYPE as A_USER_TYPE,A.TITLE as A_TITLE,A.CONTENT as A_CONTENT,A.MESSAGE_TYPE as A_MESSAGE_TYPE,A.STATUS as A_STATUS,A.OPERATOR as A_OPERATOR,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.REMARK as A_REMARK
+	     
+	 
+     from t_message A
+     where A.user_type in 
+       (   
+           '3' 
+        ,  
+           '9' 
+        )  
+	and not EXISTS(select * from t_user_message um where um.message_id = A.id and um.user_no='zy123');
+2016-12-19 14:08:52.727 [DubboServerHandler-172.16.2.7:20892-thread-47] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 4ms
+2016-12-19 14:09:00.466 [DubboServerHandler-172.16.2.7:20892-thread-48] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLDataNode.findByCriteria:select
+		 
+	     
+		A.id as A_id,A.parent_node as A_parent_node,A.current_node as A_current_node,A.current_node_level as A_current_node_level,A.identity_flag as A_identity_flag,A.operator as A_operator,A.create_time as A_create_time,A.update_time as A_update_time
+	     
+	 
+		from t_data_node A
+		 
+			 WHERE (
+        
+        
+          
+                 A.parent_node  =   'QDXX20161101000001' 
+               
+            
+        
+      ) 
+		 
+		 
+			order by
+			  
+				A.current_node_level DESC
+2016-12-19 14:09:00.466 [DubboServerHandler-172.16.2.7:20892-thread-48] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 4ms
+2016-12-19 14:09:00.474 [DubboServerHandler-172.16.2.7:20892-thread-49] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMerchantInfo.findByCriteria:select
+     
+	     
+		A.id as A_id,A.channel_no as A_channel_no,A.agent_no as A_agent_no,A.merchant_no as A_merchant_no,A.merchant_name as A_merchant_name,A.short_name as A_short_name,
+		A.platform_merchant_no as A_platform_merchant_no,A.bus_type as A_bus_type,A.name as A_name,A.id_card as A_id_card,A.idcard_img_1 as A_idcard_img_1,
+		A.idcard_img_2 as A_idcard_img_2,A.idcard_img_3 as A_idcard_img_3,A.mobile as A_mobile,A.phone as A_phone,A.email as A_email,A.address as A_address,
+		A.merchant_license as A_merchant_license,A.merchant_license_img as A_merchant_license_img,A.tax_no as A_tax_no,A.tax_img as A_tax_img,
+		A.org_no as A_org_no,A.qr_code as A_qr_code,A.credit_pay_status as A_credit_pay_status,A.authen_status as A_authen_status,A.status as A_status,A.create_time as A_create_time,
+		A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2,A.temp_3 as A_temp_3,A.temp_4 as A_temp_4
+	     
+	 ,C.channel_name as channel_name,D.agent_name
+     from t_merchant_info A
+     left join t_channel_base C on A.channel_no = C.channel_no 
+     left join t_agent_base D on A.agent_no = D.agent_no 
+     
+       WHERE (
+        
+        
+          
+                A.agent_no  IN  
+              (
+                'HFJK20161101000021'
+              ,
+                'HFJK20161101000019'
+              ,
+                'zzzyyy'
+              ,
+                'HFJK20161101000017'
+              )
+            
+        
+      
+        
+        
+          
+                AND A.status  =   '0' 
+               
+            
+        
+      )
+2016-12-19 14:09:00.475 [DubboServerHandler-172.16.2.7:20892-thread-49] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 7ms
+2016-12-19 14:09:00.479 [DubboServerHandler-172.16.2.7:20892-thread-50] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMessage.findAllByUserTypeAndUserNo:select
+     
+	     
+		A.ID as A_ID,A.CHANNEL_NO as A_CHANNEL_NO,A.USER_TYPE as A_USER_TYPE,A.TITLE as A_TITLE,A.CONTENT as A_CONTENT,A.MESSAGE_TYPE as A_MESSAGE_TYPE,A.STATUS as A_STATUS,A.OPERATOR as A_OPERATOR,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.REMARK as A_REMARK
+	     
+	 
+     from t_message A
+     where A.user_type in 
+       (   
+           '3' 
+        ,  
+           '9' 
+        )  
+	and not EXISTS(select * from t_user_message um where um.message_id = A.id and um.user_no='zy123');
+2016-12-19 14:09:00.479 [DubboServerHandler-172.16.2.7:20892-thread-50] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 2ms
+2016-12-19 14:09:00.676 [DubboServerHandler-172.16.2.7:20892-thread-51] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMessage.findAllByUserTypeAndUserNo:select
+     
+	     
+		A.ID as A_ID,A.CHANNEL_NO as A_CHANNEL_NO,A.USER_TYPE as A_USER_TYPE,A.TITLE as A_TITLE,A.CONTENT as A_CONTENT,A.MESSAGE_TYPE as A_MESSAGE_TYPE,A.STATUS as A_STATUS,A.OPERATOR as A_OPERATOR,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.REMARK as A_REMARK
+	     
+	 
+     from t_message A
+     where A.user_type in 
+       (   
+           '3' 
+        ,  
+           '9' 
+        )  
+	and not EXISTS(select * from t_user_message um where um.message_id = A.id and um.user_no='zy123');
+2016-12-19 14:09:00.676 [DubboServerHandler-172.16.2.7:20892-thread-51] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 3ms
+2016-12-19 14:09:00.683 [DubboServerHandler-172.16.2.7:20892-thread-52] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLUserMessage.findByUserType:select
+     
+	     
+		A.ID as A_ID,A.MESSAGE_ID as A_MESSAGE_ID,A.USER_NO as A_USER_NO,A.READ_STATUS as A_READ_STATUS,A.RECORD_STATUS as A_RECORD_STATUS,A.OPERATOR as A_OPERATOR,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.REMARK as A_REMARK
+	     
+	 ,B.title as title,B.content as content 
+     from t_user_message A left join t_message B on A.message_id = B.id 
+      
+       WHERE (
+        
+        
+          
+                 A.USER_NO  =   'zy123' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.READ_STATUS  =   '1' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.RECORD_STATUS  =   'Y' 
+               
+            
+        
+      
+        
+        
+          
+               AND B.USER_TYPE  IN  
+              (
+                '3'
+              ,
+                '9'
+              )
+            
+        
+      )
+2016-12-19 14:09:00.683 [DubboServerHandler-172.16.2.7:20892-thread-52] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 5ms
+2016-12-19 14:09:00.829 [DubboServerHandler-172.16.2.7:20892-thread-53] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLDataNode.findByCriteria:select
+		 
+	     
+		A.id as A_id,A.parent_node as A_parent_node,A.current_node as A_current_node,A.current_node_level as A_current_node_level,A.identity_flag as A_identity_flag,A.operator as A_operator,A.create_time as A_create_time,A.update_time as A_update_time
+	     
+	 
+		from t_data_node A
+		 
+			 WHERE (
+        
+        
+          
+                 A.parent_node  =   'QDXX20161101000001' 
+               
+            
+        
+      ) 
+		 
+		 
+			order by
+			  
+				A.current_node_level DESC
+2016-12-19 14:09:00.829 [DubboServerHandler-172.16.2.7:20892-thread-53] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 4ms
+2016-12-19 14:09:00.838 [DubboServerHandler-172.16.2.7:20892-thread-54] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMerchantInfo.findByCriteria:select
+     
+	     
+		A.id as A_id,A.channel_no as A_channel_no,A.agent_no as A_agent_no,A.merchant_no as A_merchant_no,A.merchant_name as A_merchant_name,A.short_name as A_short_name,
+		A.platform_merchant_no as A_platform_merchant_no,A.bus_type as A_bus_type,A.name as A_name,A.id_card as A_id_card,A.idcard_img_1 as A_idcard_img_1,
+		A.idcard_img_2 as A_idcard_img_2,A.idcard_img_3 as A_idcard_img_3,A.mobile as A_mobile,A.phone as A_phone,A.email as A_email,A.address as A_address,
+		A.merchant_license as A_merchant_license,A.merchant_license_img as A_merchant_license_img,A.tax_no as A_tax_no,A.tax_img as A_tax_img,
+		A.org_no as A_org_no,A.qr_code as A_qr_code,A.credit_pay_status as A_credit_pay_status,A.authen_status as A_authen_status,A.status as A_status,A.create_time as A_create_time,
+		A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2,A.temp_3 as A_temp_3,A.temp_4 as A_temp_4
+	     
+	 ,C.channel_name as channel_name,D.agent_name
+     from t_merchant_info A
+     left join t_channel_base C on A.channel_no = C.channel_no 
+     left join t_agent_base D on A.agent_no = D.agent_no 
+     
+       WHERE (
+        
+        
+          
+                A.agent_no  IN  
+              (
+                'HFJK20161101000021'
+              ,
+                'HFJK20161101000019'
+              ,
+                'zzzyyy'
+              ,
+                'HFJK20161101000017'
+              )
+            
+        
+      
+        
+        
+          
+                AND A.status  =   '0' 
+               
+            
+        
+      )
+2016-12-19 14:09:00.839 [DubboServerHandler-172.16.2.7:20892-thread-54] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 7ms
+2016-12-19 14:09:00.843 [DubboServerHandler-172.16.2.7:20892-thread-55] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMessage.findAllByUserTypeAndUserNo:select
+     
+	     
+		A.ID as A_ID,A.CHANNEL_NO as A_CHANNEL_NO,A.USER_TYPE as A_USER_TYPE,A.TITLE as A_TITLE,A.CONTENT as A_CONTENT,A.MESSAGE_TYPE as A_MESSAGE_TYPE,A.STATUS as A_STATUS,A.OPERATOR as A_OPERATOR,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.REMARK as A_REMARK
+	     
+	 
+     from t_message A
+     where A.user_type in 
+       (   
+           '3' 
+        ,  
+           '9' 
+        )  
+	and not EXISTS(select * from t_user_message um where um.message_id = A.id and um.user_no='zy123');
+2016-12-19 14:09:00.844 [DubboServerHandler-172.16.2.7:20892-thread-55] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 3ms
+2016-12-19 14:09:04.072 [DubboServerHandler-172.16.2.7:20892-thread-56] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLChannelUrlFilter.findRoles:
+		select role_name as name from t_channel_role role
+		inner JOIN t_channel_role_user u on role.id=u.role_id
+		INNER JOIN t_channel_admin acc on u.account_id = acc.id
+		where acc.user_name='zy123'
+	
+2016-12-19 14:09:04.072 [DubboServerHandler-172.16.2.7:20892-thread-56] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 6ms
+2016-12-19 14:09:04.204 [DubboServerHandler-172.16.2.7:20892-thread-57] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLDataNode.findByCriteria:select
+		 
+	     
+		A.id as A_id,A.parent_node as A_parent_node,A.current_node as A_current_node,A.current_node_level as A_current_node_level,A.identity_flag as A_identity_flag,A.operator as A_operator,A.create_time as A_create_time,A.update_time as A_update_time
+	     
+	 
+		from t_data_node A
+		 
+			 WHERE (
+        
+        
+          
+                 A.parent_node  =   'QDXX20161101000001' 
+               
+            
+        
+      ) 
+		 
+		 
+			order by
+			  
+				A.current_node_level DESC
+2016-12-19 14:09:04.204 [DubboServerHandler-172.16.2.7:20892-thread-57] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 5ms
+2016-12-19 14:09:04.212 [DubboServerHandler-172.16.2.7:20892-thread-58] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLAgentBankcard.countByCriteria:select count(*) from t_agent_bankcard A
+    left join t_agent_base C on A.agent_no = C.agent_no 
+     
+       WHERE (
+        
+        
+          
+                A.agent_no  IN  
+              (
+                'HFJK20161101000021'
+              ,
+                'HFJK20161101000019'
+              ,
+                'zzzyyy'
+              ,
+                'HFJK20161101000017'
+              )
+            
+        
+      )
+2016-12-19 14:09:04.212 [DubboServerHandler-172.16.2.7:20892-thread-58] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 4ms
+2016-12-19 14:09:04.218 [DubboServerHandler-172.16.2.7:20892-thread-58] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLAgentBankcard.findByCriteria:select
+     
+	     
+		A.id as A_id,A.agent_no as A_agent_no,A.bank_code as A_bank_code,A.bank_name as A_bank_name,A.bank_card as A_bank_card,A.id_card as A_id_card,A.name as A_name,A.mobile as A_mobile,A.is_real_account as A_is_real_account,A.account_type as A_account_type,A.status as A_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2,A.temp_3 as A_temp_3,A.temp_4 as A_temp_4
+	     
+	 ,C.agent_name
+     from t_agent_bankcard A
+     left join t_agent_base C on A.agent_no = C.agent_no 
+     
+       WHERE (
+        
+        
+          
+                A.agent_no  IN  
+              (
+                'HFJK20161101000021'
+              ,
+                'HFJK20161101000019'
+              ,
+                'zzzyyy'
+              ,
+                'HFJK20161101000017'
+              )
+            
+        
+      ) 
+     
+     
+      order by
+         A.create_time DESC
+2016-12-19 14:09:04.219 [DubboServerHandler-172.16.2.7:20892-thread-58] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 6ms
+2016-12-19 14:09:04.223 [DubboServerHandler-172.16.2.7:20892-thread-59] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLDataNode.findByCriteria:select
+		 
+	     
+		A.id as A_id,A.parent_node as A_parent_node,A.current_node as A_current_node,A.current_node_level as A_current_node_level,A.identity_flag as A_identity_flag,A.operator as A_operator,A.create_time as A_create_time,A.update_time as A_update_time
+	     
+	 
+		from t_data_node A
+		 
+			 WHERE (
+        
+        
+          
+                 A.parent_node  =   'QDXX20161101000001' 
+               
+            
+        
+      ) 
+		 
+		 
+			order by
+			  
+				A.current_node_level DESC
+2016-12-19 14:09:04.224 [DubboServerHandler-172.16.2.7:20892-thread-59] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 5ms
+2016-12-19 14:09:04.235 [DubboServerHandler-172.16.2.7:20892-thread-60] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMerchantInfo.findByCriteria:select
+     
+	     
+		A.id as A_id,A.channel_no as A_channel_no,A.agent_no as A_agent_no,A.merchant_no as A_merchant_no,A.merchant_name as A_merchant_name,A.short_name as A_short_name,
+		A.platform_merchant_no as A_platform_merchant_no,A.bus_type as A_bus_type,A.name as A_name,A.id_card as A_id_card,A.idcard_img_1 as A_idcard_img_1,
+		A.idcard_img_2 as A_idcard_img_2,A.idcard_img_3 as A_idcard_img_3,A.mobile as A_mobile,A.phone as A_phone,A.email as A_email,A.address as A_address,
+		A.merchant_license as A_merchant_license,A.merchant_license_img as A_merchant_license_img,A.tax_no as A_tax_no,A.tax_img as A_tax_img,
+		A.org_no as A_org_no,A.qr_code as A_qr_code,A.credit_pay_status as A_credit_pay_status,A.authen_status as A_authen_status,A.status as A_status,A.create_time as A_create_time,
+		A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2,A.temp_3 as A_temp_3,A.temp_4 as A_temp_4
+	     
+	 ,C.channel_name as channel_name,D.agent_name
+     from t_merchant_info A
+     left join t_channel_base C on A.channel_no = C.channel_no 
+     left join t_agent_base D on A.agent_no = D.agent_no 
+     
+       WHERE (
+        
+        
+          
+                A.agent_no  IN  
+              (
+                'HFJK20161101000021'
+              ,
+                'HFJK20161101000019'
+              ,
+                'zzzyyy'
+              ,
+                'HFJK20161101000017'
+              )
+            
+        
+      
+        
+        
+          
+                AND A.status  =   '0' 
+               
+            
+        
+      )
+2016-12-19 14:09:04.235 [DubboServerHandler-172.16.2.7:20892-thread-60] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 7ms
+2016-12-19 14:09:04.243 [DubboServerHandler-172.16.2.7:20892-thread-61] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMessage.findAllByUserTypeAndUserNo:select
+     
+	     
+		A.ID as A_ID,A.CHANNEL_NO as A_CHANNEL_NO,A.USER_TYPE as A_USER_TYPE,A.TITLE as A_TITLE,A.CONTENT as A_CONTENT,A.MESSAGE_TYPE as A_MESSAGE_TYPE,A.STATUS as A_STATUS,A.OPERATOR as A_OPERATOR,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.REMARK as A_REMARK
+	     
+	 
+     from t_message A
+     where A.user_type in 
+       (   
+           '3' 
+        ,  
+           '9' 
+        )  
+	and not EXISTS(select * from t_user_message um where um.message_id = A.id and um.user_no='zy123');
+2016-12-19 14:09:04.243 [DubboServerHandler-172.16.2.7:20892-thread-61] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 2ms
+2016-12-19 14:09:06.064 [DubboServerHandler-172.16.2.7:20892-thread-62] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLAgentBankcard.findById:
+    select 
+    
+	    
+		A.id as A_id,A.agent_no as A_agent_no,A.bank_code as A_bank_code,A.bank_name as A_bank_name,A.bank_card as A_bank_card,A.id_card as A_id_card,A.name as A_name,A.mobile as A_mobile,A.is_real_account as A_is_real_account,A.account_type as A_account_type,A.status as A_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2,A.temp_3 as A_temp_3,A.temp_4 as A_temp_4
+	    
+	,B.short_name as operator_name,C.agent_name
+    from t_agent_bankcard A 
+    left join t_sys_admin B on A.operator = B.id 
+    left join t_agent_base C on A.agent_no = C.agent_no 
+    where A.id = '724137ada93b478a84f8ca8a768431f0'
+  
+2016-12-19 14:09:06.065 [DubboServerHandler-172.16.2.7:20892-thread-62] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 4ms
+2016-12-19 14:09:06.072 [DubboServerHandler-172.16.2.7:20892-thread-63] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLDataNode.findByCriteria:select
+		 
+	     
+		A.id as A_id,A.parent_node as A_parent_node,A.current_node as A_current_node,A.current_node_level as A_current_node_level,A.identity_flag as A_identity_flag,A.operator as A_operator,A.create_time as A_create_time,A.update_time as A_update_time
+	     
+	 
+		from t_data_node A
+		 
+			 WHERE (
+        
+        
+          
+                 A.parent_node  =   'QDXX20161101000001' 
+               
+            
+        
+      ) 
+		 
+		 
+			order by
+			  
+				A.current_node_level DESC
+2016-12-19 14:09:06.072 [DubboServerHandler-172.16.2.7:20892-thread-63] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 4ms
+2016-12-19 14:09:06.082 [DubboServerHandler-172.16.2.7:20892-thread-64] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLAgentBase.findByCriteria:select
+     
+	     
+		A.ID as A_ID,A.AGENT_NO as A_AGENT_NO,A.AGENT_NAME as A_AGENT_NAME,A.CHANNEL_NO as A_CHANNEL_NO,A.AGENT_PRE_CODE as A_AGENT_PRE_CODE,A.AGENT_TYPE as A_AGENT_TYPE,A.NAME as A_NAME,A.MOBILE as A_MOBILE,A.PARENT_NO as A_PARENT_NO,A.AGENT_LEVEL as A_AGENT_LEVEL,A.QR_TOTAL as A_QR_TOTAL,A.USE_TOTAL as A_USE_TOTAL,A.LESS_TOTAL as A_LESS_TOTAL,A.AGENT_FLAG as A_AGENT_FLAG,A.STATUS as A_STATUS,A.RECORD_STATUS as A_RECORD_STATUS,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.OPERATOR as A_OPERATOR,A.REMARK as A_REMARK,A.TEMP_1 as A_TEMP_1,A.TEMP_2 as A_TEMP_2,A.TEMP_3 as A_TEMP_3,A.TEMP_4 as A_TEMP_4
+	     
+	 
+     from t_agent_base A
+     
+       WHERE (
+        
+        
+          
+                A.AGENT_NO  IN  
+              (
+                'HFJK20161101000021'
+              ,
+                'HFJK20161101000019'
+              ,
+                'zzzyyy'
+              ,
+                'HFJK20161101000017'
+              )
+            
+        
+      
+        
+        
+          
+                AND A.STATUS  =   '1' 
+               
+            
+        
+      )
+2016-12-19 14:09:06.082 [DubboServerHandler-172.16.2.7:20892-thread-64] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 7ms
+2016-12-19 14:09:06.178 [DubboServerHandler-172.16.2.7:20892-thread-65] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLDataNode.findByCriteria:select
+		 
+	     
+		A.id as A_id,A.parent_node as A_parent_node,A.current_node as A_current_node,A.current_node_level as A_current_node_level,A.identity_flag as A_identity_flag,A.operator as A_operator,A.create_time as A_create_time,A.update_time as A_update_time
+	     
+	 
+		from t_data_node A
+		 
+			 WHERE (
+        
+        
+          
+                 A.parent_node  =   'QDXX20161101000001' 
+               
+            
+        
+      ) 
+		 
+		 
+			order by
+			  
+				A.current_node_level DESC
+2016-12-19 14:09:06.178 [DubboServerHandler-172.16.2.7:20892-thread-65] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 3ms
+2016-12-19 14:09:06.185 [DubboServerHandler-172.16.2.7:20892-thread-66] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMerchantInfo.findByCriteria:select
+     
+	     
+		A.id as A_id,A.channel_no as A_channel_no,A.agent_no as A_agent_no,A.merchant_no as A_merchant_no,A.merchant_name as A_merchant_name,A.short_name as A_short_name,
+		A.platform_merchant_no as A_platform_merchant_no,A.bus_type as A_bus_type,A.name as A_name,A.id_card as A_id_card,A.idcard_img_1 as A_idcard_img_1,
+		A.idcard_img_2 as A_idcard_img_2,A.idcard_img_3 as A_idcard_img_3,A.mobile as A_mobile,A.phone as A_phone,A.email as A_email,A.address as A_address,
+		A.merchant_license as A_merchant_license,A.merchant_license_img as A_merchant_license_img,A.tax_no as A_tax_no,A.tax_img as A_tax_img,
+		A.org_no as A_org_no,A.qr_code as A_qr_code,A.credit_pay_status as A_credit_pay_status,A.authen_status as A_authen_status,A.status as A_status,A.create_time as A_create_time,
+		A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2,A.temp_3 as A_temp_3,A.temp_4 as A_temp_4
+	     
+	 ,C.channel_name as channel_name,D.agent_name
+     from t_merchant_info A
+     left join t_channel_base C on A.channel_no = C.channel_no 
+     left join t_agent_base D on A.agent_no = D.agent_no 
+     
+       WHERE (
+        
+        
+          
+                A.agent_no  IN  
+              (
+                'HFJK20161101000021'
+              ,
+                'HFJK20161101000019'
+              ,
+                'zzzyyy'
+              ,
+                'HFJK20161101000017'
+              )
+            
+        
+      
+        
+        
+          
+                AND A.status  =   '0' 
+               
+            
+        
+      )
+2016-12-19 14:09:06.185 [DubboServerHandler-172.16.2.7:20892-thread-66] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 4ms
+2016-12-19 14:09:06.191 [DubboServerHandler-172.16.2.7:20892-thread-67] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMessage.findAllByUserTypeAndUserNo:select
+     
+	     
+		A.ID as A_ID,A.CHANNEL_NO as A_CHANNEL_NO,A.USER_TYPE as A_USER_TYPE,A.TITLE as A_TITLE,A.CONTENT as A_CONTENT,A.MESSAGE_TYPE as A_MESSAGE_TYPE,A.STATUS as A_STATUS,A.OPERATOR as A_OPERATOR,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.REMARK as A_REMARK
+	     
+	 
+     from t_message A
+     where A.user_type in 
+       (   
+           '3' 
+        ,  
+           '9' 
+        )  
+	and not EXISTS(select * from t_user_message um where um.message_id = A.id and um.user_no='zy123');
+2016-12-19 14:09:06.191 [DubboServerHandler-172.16.2.7:20892-thread-67] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 3ms
+2016-12-19 14:09:08.982 [DubboServerHandler-172.16.2.7:20892-thread-68] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLAgentBankcard.findByCriteria:select
+     
+	     
+		A.id as A_id,A.agent_no as A_agent_no,A.bank_code as A_bank_code,A.bank_name as A_bank_name,A.bank_card as A_bank_card,A.id_card as A_id_card,A.name as A_name,A.mobile as A_mobile,A.is_real_account as A_is_real_account,A.account_type as A_account_type,A.status as A_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2,A.temp_3 as A_temp_3,A.temp_4 as A_temp_4
+	     
+	 ,C.agent_name
+     from t_agent_bankcard A
+     left join t_agent_base C on A.agent_no = C.agent_no 
+     
+       WHERE (
+        
+        
+          
+                 A.agent_no  =   'HFJK20161101000021' 
+               
+            
+        
+      )
+2016-12-19 14:09:08.983 [DubboServerHandler-172.16.2.7:20892-thread-68] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 5ms
+2016-12-19 14:09:30.726 [DubboServerHandler-172.16.2.7:20892-thread-69] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMessage.findAllByUserTypeAndUserNo:select
+     
+	     
+		A.ID as A_ID,A.CHANNEL_NO as A_CHANNEL_NO,A.USER_TYPE as A_USER_TYPE,A.TITLE as A_TITLE,A.CONTENT as A_CONTENT,A.MESSAGE_TYPE as A_MESSAGE_TYPE,A.STATUS as A_STATUS,A.OPERATOR as A_OPERATOR,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.REMARK as A_REMARK
+	     
+	 
+     from t_message A
+     where A.user_type in 
+       (   
+           '3' 
+        ,  
+           '9' 
+        )  
+	and not EXISTS(select * from t_user_message um where um.message_id = A.id and um.user_no='zy123');
+2016-12-19 14:09:30.726 [DubboServerHandler-172.16.2.7:20892-thread-69] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 5ms
+2016-12-19 14:09:30.743 [DubboServerHandler-172.16.2.7:20892-thread-70] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLUserMessage.findByUserType:select
+     
+	     
+		A.ID as A_ID,A.MESSAGE_ID as A_MESSAGE_ID,A.USER_NO as A_USER_NO,A.READ_STATUS as A_READ_STATUS,A.RECORD_STATUS as A_RECORD_STATUS,A.OPERATOR as A_OPERATOR,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.REMARK as A_REMARK
+	     
+	 ,B.title as title,B.content as content 
+     from t_user_message A left join t_message B on A.message_id = B.id 
+      
+       WHERE (
+        
+        
+          
+                 A.USER_NO  =   'zy123' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.READ_STATUS  =   '1' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.RECORD_STATUS  =   'Y' 
+               
+            
+        
+      
+        
+        
+          
+               AND B.USER_TYPE  IN  
+              (
+                '3'
+              ,
+                '9'
+              )
+            
+        
+      )
+2016-12-19 14:09:30.744 [DubboServerHandler-172.16.2.7:20892-thread-70] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 12ms
+2016-12-19 14:09:49.707 [DubboServerHandler-172.16.2.7:20892-thread-71] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLDataNode.findByCriteria:select
+		 
+	     
+		A.id as A_id,A.parent_node as A_parent_node,A.current_node as A_current_node,A.current_node_level as A_current_node_level,A.identity_flag as A_identity_flag,A.operator as A_operator,A.create_time as A_create_time,A.update_time as A_update_time
+	     
+	 
+		from t_data_node A
+		 
+			 WHERE (
+        
+        
+          
+                 A.parent_node  =   'QDXX20161101000001' 
+               
+            
+        
+      ) 
+		 
+		 
+			order by
+			  
+				A.current_node_level DESC
+2016-12-19 14:09:49.708 [DubboServerHandler-172.16.2.7:20892-thread-71] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 6ms
+2016-12-19 14:09:49.709 [DubboServerHandler-172.16.2.7:20892-thread-72] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLDataNode.findByCriteria:select
+		 
+	     
+		A.id as A_id,A.parent_node as A_parent_node,A.current_node as A_current_node,A.current_node_level as A_current_node_level,A.identity_flag as A_identity_flag,A.operator as A_operator,A.create_time as A_create_time,A.update_time as A_update_time
+	     
+	 
+		from t_data_node A
+		 
+			 WHERE (
+        
+        
+          
+                 A.parent_node  =   'QDXX20161101000001' 
+               
+            
+        
+      ) 
+		 
+		 
+			order by
+			  
+				A.current_node_level DESC
+2016-12-19 14:09:49.709 [DubboServerHandler-172.16.2.7:20892-thread-72] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 5ms
+2016-12-19 14:09:49.713 [DubboServerHandler-172.16.2.7:20892-thread-73] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLAgentBankcard.countByCriteria:select count(*) from t_agent_bankcard A
+    left join t_agent_base C on A.agent_no = C.agent_no 
+     
+       WHERE (
+        
+        
+          
+                A.agent_no  IN  
+              (
+                'HFJK20161101000021'
+              ,
+                'HFJK20161101000019'
+              ,
+                'zzzyyy'
+              ,
+                'HFJK20161101000017'
+              )
+            
+        
+      )
+2016-12-19 14:09:49.713 [DubboServerHandler-172.16.2.7:20892-thread-73] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 3ms
+2016-12-19 14:09:49.716 [DubboServerHandler-172.16.2.7:20892-thread-74] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMerchantInfo.findByCriteria:select
+     
+	     
+		A.id as A_id,A.channel_no as A_channel_no,A.agent_no as A_agent_no,A.merchant_no as A_merchant_no,A.merchant_name as A_merchant_name,A.short_name as A_short_name,
+		A.platform_merchant_no as A_platform_merchant_no,A.bus_type as A_bus_type,A.name as A_name,A.id_card as A_id_card,A.idcard_img_1 as A_idcard_img_1,
+		A.idcard_img_2 as A_idcard_img_2,A.idcard_img_3 as A_idcard_img_3,A.mobile as A_mobile,A.phone as A_phone,A.email as A_email,A.address as A_address,
+		A.merchant_license as A_merchant_license,A.merchant_license_img as A_merchant_license_img,A.tax_no as A_tax_no,A.tax_img as A_tax_img,
+		A.org_no as A_org_no,A.qr_code as A_qr_code,A.credit_pay_status as A_credit_pay_status,A.authen_status as A_authen_status,A.status as A_status,A.create_time as A_create_time,
+		A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2,A.temp_3 as A_temp_3,A.temp_4 as A_temp_4
+	     
+	 ,C.channel_name as channel_name,D.agent_name
+     from t_merchant_info A
+     left join t_channel_base C on A.channel_no = C.channel_no 
+     left join t_agent_base D on A.agent_no = D.agent_no 
+     
+       WHERE (
+        
+        
+          
+                A.agent_no  IN  
+              (
+                'HFJK20161101000021'
+              ,
+                'HFJK20161101000019'
+              ,
+                'zzzyyy'
+              ,
+                'HFJK20161101000017'
+              )
+            
+        
+      
+        
+        
+          
+                AND A.status  =   '0' 
+               
+            
+        
+      )
+2016-12-19 14:09:49.717 [DubboServerHandler-172.16.2.7:20892-thread-74] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 6ms
+2016-12-19 14:09:49.722 [DubboServerHandler-172.16.2.7:20892-thread-73] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLAgentBankcard.findByCriteria:select
+     
+	     
+		A.id as A_id,A.agent_no as A_agent_no,A.bank_code as A_bank_code,A.bank_name as A_bank_name,A.bank_card as A_bank_card,A.id_card as A_id_card,A.name as A_name,A.mobile as A_mobile,A.is_real_account as A_is_real_account,A.account_type as A_account_type,A.status as A_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2,A.temp_3 as A_temp_3,A.temp_4 as A_temp_4
+	     
+	 ,C.agent_name
+     from t_agent_bankcard A
+     left join t_agent_base C on A.agent_no = C.agent_no 
+     
+       WHERE (
+        
+        
+          
+                A.agent_no  IN  
+              (
+                'HFJK20161101000021'
+              ,
+                'HFJK20161101000019'
+              ,
+                'zzzyyy'
+              ,
+                'HFJK20161101000017'
+              )
+            
+        
+      ) 
+     
+     
+      order by
+         A.create_time DESC
+2016-12-19 14:09:49.722 [DubboServerHandler-172.16.2.7:20892-thread-73] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 9ms
+2016-12-19 14:09:49.722 [DubboServerHandler-172.16.2.7:20892-thread-75] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMessage.findAllByUserTypeAndUserNo:select
+     
+	     
+		A.ID as A_ID,A.CHANNEL_NO as A_CHANNEL_NO,A.USER_TYPE as A_USER_TYPE,A.TITLE as A_TITLE,A.CONTENT as A_CONTENT,A.MESSAGE_TYPE as A_MESSAGE_TYPE,A.STATUS as A_STATUS,A.OPERATOR as A_OPERATOR,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.REMARK as A_REMARK
+	     
+	 
+     from t_message A
+     where A.user_type in 
+       (   
+           '3' 
+        ,  
+           '9' 
+        )  
+	and not EXISTS(select * from t_user_message um where um.message_id = A.id and um.user_no='zy123');
+2016-12-19 14:09:49.722 [DubboServerHandler-172.16.2.7:20892-thread-75] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 2ms
+2016-12-19 14:10:00.719 [DubboServerHandler-172.16.2.7:20892-thread-76] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMessage.findAllByUserTypeAndUserNo:select
+     
+	     
+		A.ID as A_ID,A.CHANNEL_NO as A_CHANNEL_NO,A.USER_TYPE as A_USER_TYPE,A.TITLE as A_TITLE,A.CONTENT as A_CONTENT,A.MESSAGE_TYPE as A_MESSAGE_TYPE,A.STATUS as A_STATUS,A.OPERATOR as A_OPERATOR,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.REMARK as A_REMARK
+	     
+	 
+     from t_message A
+     where A.user_type in 
+       (   
+           '3' 
+        ,  
+           '9' 
+        )  
+	and not EXISTS(select * from t_user_message um where um.message_id = A.id and um.user_no='zy123');
+2016-12-19 14:10:00.719 [DubboServerHandler-172.16.2.7:20892-thread-76] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 5ms
+2016-12-19 14:10:00.740 [DubboServerHandler-172.16.2.7:20892-thread-77] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLUserMessage.findByUserType:select
+     
+	     
+		A.ID as A_ID,A.MESSAGE_ID as A_MESSAGE_ID,A.USER_NO as A_USER_NO,A.READ_STATUS as A_READ_STATUS,A.RECORD_STATUS as A_RECORD_STATUS,A.OPERATOR as A_OPERATOR,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.REMARK as A_REMARK
+	     
+	 ,B.title as title,B.content as content 
+     from t_user_message A left join t_message B on A.message_id = B.id 
+      
+       WHERE (
+        
+        
+          
+                 A.USER_NO  =   'zy123' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.READ_STATUS  =   '1' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.RECORD_STATUS  =   'Y' 
+               
+            
+        
+      
+        
+        
+          
+               AND B.USER_TYPE  IN  
+              (
+                '3'
+              ,
+                '9'
+              )
+            
+        
+      )
+2016-12-19 14:10:00.741 [DubboServerHandler-172.16.2.7:20892-thread-77] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 17ms
+2016-12-19 14:10:30.726 [DubboServerHandler-172.16.2.7:20892-thread-78] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMessage.findAllByUserTypeAndUserNo:select
+     
+	     
+		A.ID as A_ID,A.CHANNEL_NO as A_CHANNEL_NO,A.USER_TYPE as A_USER_TYPE,A.TITLE as A_TITLE,A.CONTENT as A_CONTENT,A.MESSAGE_TYPE as A_MESSAGE_TYPE,A.STATUS as A_STATUS,A.OPERATOR as A_OPERATOR,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.REMARK as A_REMARK
+	     
+	 
+     from t_message A
+     where A.user_type in 
+       (   
+           '3' 
+        ,  
+           '9' 
+        )  
+	and not EXISTS(select * from t_user_message um where um.message_id = A.id and um.user_no='zy123');
+2016-12-19 14:10:30.726 [DubboServerHandler-172.16.2.7:20892-thread-78] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 6ms
+2016-12-19 14:10:30.743 [DubboServerHandler-172.16.2.7:20892-thread-79] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLUserMessage.findByUserType:select
+     
+	     
+		A.ID as A_ID,A.MESSAGE_ID as A_MESSAGE_ID,A.USER_NO as A_USER_NO,A.READ_STATUS as A_READ_STATUS,A.RECORD_STATUS as A_RECORD_STATUS,A.OPERATOR as A_OPERATOR,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.REMARK as A_REMARK
+	     
+	 ,B.title as title,B.content as content 
+     from t_user_message A left join t_message B on A.message_id = B.id 
+      
+       WHERE (
+        
+        
+          
+                 A.USER_NO  =   'zy123' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.READ_STATUS  =   '1' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.RECORD_STATUS  =   'Y' 
+               
+            
+        
+      
+        
+        
+          
+               AND B.USER_TYPE  IN  
+              (
+                '3'
+              ,
+                '9'
+              )
+            
+        
+      )
+2016-12-19 14:10:30.744 [DubboServerHandler-172.16.2.7:20892-thread-79] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 12ms
+2016-12-19 14:11:00.727 [DubboServerHandler-172.16.2.7:20892-thread-80] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMessage.findAllByUserTypeAndUserNo:select
+     
+	     
+		A.ID as A_ID,A.CHANNEL_NO as A_CHANNEL_NO,A.USER_TYPE as A_USER_TYPE,A.TITLE as A_TITLE,A.CONTENT as A_CONTENT,A.MESSAGE_TYPE as A_MESSAGE_TYPE,A.STATUS as A_STATUS,A.OPERATOR as A_OPERATOR,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.REMARK as A_REMARK
+	     
+	 
+     from t_message A
+     where A.user_type in 
+       (   
+           '3' 
+        ,  
+           '9' 
+        )  
+	and not EXISTS(select * from t_user_message um where um.message_id = A.id and um.user_no='zy123');
+2016-12-19 14:11:00.727 [DubboServerHandler-172.16.2.7:20892-thread-80] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 7ms
+2016-12-19 14:11:00.747 [DubboServerHandler-172.16.2.7:20892-thread-81] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLUserMessage.findByUserType:select
+     
+	     
+		A.ID as A_ID,A.MESSAGE_ID as A_MESSAGE_ID,A.USER_NO as A_USER_NO,A.READ_STATUS as A_READ_STATUS,A.RECORD_STATUS as A_RECORD_STATUS,A.OPERATOR as A_OPERATOR,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.REMARK as A_REMARK
+	     
+	 ,B.title as title,B.content as content 
+     from t_user_message A left join t_message B on A.message_id = B.id 
+      
+       WHERE (
+        
+        
+          
+                 A.USER_NO  =   'zy123' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.READ_STATUS  =   '1' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.RECORD_STATUS  =   'Y' 
+               
+            
+        
+      
+        
+        
+          
+               AND B.USER_TYPE  IN  
+              (
+                '3'
+              ,
+                '9'
+              )
+            
+        
+      )
+2016-12-19 14:11:00.747 [DubboServerHandler-172.16.2.7:20892-thread-81] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 13ms
+2016-12-19 14:11:30.716 [DubboServerHandler-172.16.2.7:20892-thread-82] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMessage.findAllByUserTypeAndUserNo:select
+     
+	     
+		A.ID as A_ID,A.CHANNEL_NO as A_CHANNEL_NO,A.USER_TYPE as A_USER_TYPE,A.TITLE as A_TITLE,A.CONTENT as A_CONTENT,A.MESSAGE_TYPE as A_MESSAGE_TYPE,A.STATUS as A_STATUS,A.OPERATOR as A_OPERATOR,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.REMARK as A_REMARK
+	     
+	 
+     from t_message A
+     where A.user_type in 
+       (   
+           '3' 
+        ,  
+           '9' 
+        )  
+	and not EXISTS(select * from t_user_message um where um.message_id = A.id and um.user_no='zy123');
+2016-12-19 14:11:30.716 [DubboServerHandler-172.16.2.7:20892-thread-82] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 3ms
+2016-12-19 14:11:30.726 [DubboServerHandler-172.16.2.7:20892-thread-83] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLUserMessage.findByUserType:select
+     
+	     
+		A.ID as A_ID,A.MESSAGE_ID as A_MESSAGE_ID,A.USER_NO as A_USER_NO,A.READ_STATUS as A_READ_STATUS,A.RECORD_STATUS as A_RECORD_STATUS,A.OPERATOR as A_OPERATOR,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.REMARK as A_REMARK
+	     
+	 ,B.title as title,B.content as content 
+     from t_user_message A left join t_message B on A.message_id = B.id 
+      
+       WHERE (
+        
+        
+          
+                 A.USER_NO  =   'zy123' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.READ_STATUS  =   '1' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.RECORD_STATUS  =   'Y' 
+               
+            
+        
+      
+        
+        
+          
+               AND B.USER_TYPE  IN  
+              (
+                '3'
+              ,
+                '9'
+              )
+            
+        
+      )
+2016-12-19 14:11:30.726 [DubboServerHandler-172.16.2.7:20892-thread-83] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 7ms
+2016-12-19 14:11:56.491 [DubboServerHandler-172.16.2.7:20892-thread-86] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLChannelUrlFilter.findAllUrl:
+		select m.url,GROUP_CONCAT(m.name) as name FROM(
+		select
+		res.url,ifnull(role.role_name,'superadmin') as name from (
+		select menu.url,res.role_id from t_channel_resource menu
+		left JOIN t_channel_role_resource res on menu.id =res.resource_id
+		) res LEFT JOIN
+		t_channel_role role on res.role_id = role.id) m
+		GROUP BY m.url
+	
+2016-12-19 14:11:56.491 [DubboServerHandler-172.16.2.7:20892-thread-86] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 9ms
+2016-12-19 14:12:04.691 [DubboServerHandler-172.16.2.7:20892-thread-87] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMessage.findAllByUserTypeAndUserNo:select
+     
+	     
+		A.ID as A_ID,A.CHANNEL_NO as A_CHANNEL_NO,A.USER_TYPE as A_USER_TYPE,A.TITLE as A_TITLE,A.CONTENT as A_CONTENT,A.MESSAGE_TYPE as A_MESSAGE_TYPE,A.STATUS as A_STATUS,A.OPERATOR as A_OPERATOR,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.REMARK as A_REMARK
+	     
+	 
+     from t_message A
+     where A.user_type in 
+       (   
+           '3' 
+        ,  
+           '9' 
+        )  
+	and not EXISTS(select * from t_user_message um where um.message_id = A.id and um.user_no='zy123');
+2016-12-19 14:12:04.691 [DubboServerHandler-172.16.2.7:20892-thread-87] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 3ms
+2016-12-19 14:12:04.703 [DubboServerHandler-172.16.2.7:20892-thread-88] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLUserMessage.findByUserType:select
+     
+	     
+		A.ID as A_ID,A.MESSAGE_ID as A_MESSAGE_ID,A.USER_NO as A_USER_NO,A.READ_STATUS as A_READ_STATUS,A.RECORD_STATUS as A_RECORD_STATUS,A.OPERATOR as A_OPERATOR,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.REMARK as A_REMARK
+	     
+	 ,B.title as title,B.content as content 
+     from t_user_message A left join t_message B on A.message_id = B.id 
+      
+       WHERE (
+        
+        
+          
+                 A.USER_NO  =   'zy123' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.READ_STATUS  =   '1' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.RECORD_STATUS  =   'Y' 
+               
+            
+        
+      
+        
+        
+          
+               AND B.USER_TYPE  IN  
+              (
+                '3'
+              ,
+                '9'
+              )
+            
+        
+      )
+2016-12-19 14:12:04.703 [DubboServerHandler-172.16.2.7:20892-thread-88] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 6ms
+2016-12-19 14:12:30.743 [DubboServerHandler-172.16.2.7:20892-thread-89] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMessage.findAllByUserTypeAndUserNo:select
+     
+	     
+		A.ID as A_ID,A.CHANNEL_NO as A_CHANNEL_NO,A.USER_TYPE as A_USER_TYPE,A.TITLE as A_TITLE,A.CONTENT as A_CONTENT,A.MESSAGE_TYPE as A_MESSAGE_TYPE,A.STATUS as A_STATUS,A.OPERATOR as A_OPERATOR,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.REMARK as A_REMARK
+	     
+	 
+     from t_message A
+     where A.user_type in 
+       (   
+           '3' 
+        ,  
+           '9' 
+        )  
+	and not EXISTS(select * from t_user_message um where um.message_id = A.id and um.user_no='zy123');
+2016-12-19 14:12:30.743 [DubboServerHandler-172.16.2.7:20892-thread-89] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 6ms
+2016-12-19 14:12:30.755 [DubboServerHandler-172.16.2.7:20892-thread-90] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLUserMessage.findByUserType:select
+     
+	     
+		A.ID as A_ID,A.MESSAGE_ID as A_MESSAGE_ID,A.USER_NO as A_USER_NO,A.READ_STATUS as A_READ_STATUS,A.RECORD_STATUS as A_RECORD_STATUS,A.OPERATOR as A_OPERATOR,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.REMARK as A_REMARK
+	     
+	 ,B.title as title,B.content as content 
+     from t_user_message A left join t_message B on A.message_id = B.id 
+      
+       WHERE (
+        
+        
+          
+                 A.USER_NO  =   'zy123' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.READ_STATUS  =   '1' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.RECORD_STATUS  =   'Y' 
+               
+            
+        
+      
+        
+        
+          
+               AND B.USER_TYPE  IN  
+              (
+                '3'
+              ,
+                '9'
+              )
+            
+        
+      )
+2016-12-19 14:12:30.755 [DubboServerHandler-172.16.2.7:20892-thread-90] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 8ms
+2016-12-19 14:12:43.613 [DubboServerHandler-172.16.2.7:20892-thread-91] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLDataNode.findByCriteria:select
+		 
+	     
+		A.id as A_id,A.parent_node as A_parent_node,A.current_node as A_current_node,A.current_node_level as A_current_node_level,A.identity_flag as A_identity_flag,A.operator as A_operator,A.create_time as A_create_time,A.update_time as A_update_time
+	     
+	 
+		from t_data_node A
+		 
+			 WHERE (
+        
+        
+          
+                 A.parent_node  =   'QDXX20161101000001' 
+               
+            
+        
+      ) 
+		 
+		 
+			order by
+			  
+				A.current_node_level DESC
+2016-12-19 14:12:43.613 [DubboServerHandler-172.16.2.7:20892-thread-91] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 5ms
+2016-12-19 14:12:43.622 [DubboServerHandler-172.16.2.7:20892-thread-92] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMerchantInfo.findByCriteria:select
+     
+	     
+		A.id as A_id,A.channel_no as A_channel_no,A.agent_no as A_agent_no,A.merchant_no as A_merchant_no,A.merchant_name as A_merchant_name,A.short_name as A_short_name,
+		A.platform_merchant_no as A_platform_merchant_no,A.bus_type as A_bus_type,A.name as A_name,A.id_card as A_id_card,A.idcard_img_1 as A_idcard_img_1,
+		A.idcard_img_2 as A_idcard_img_2,A.idcard_img_3 as A_idcard_img_3,A.mobile as A_mobile,A.phone as A_phone,A.email as A_email,A.address as A_address,
+		A.merchant_license as A_merchant_license,A.merchant_license_img as A_merchant_license_img,A.tax_no as A_tax_no,A.tax_img as A_tax_img,
+		A.org_no as A_org_no,A.qr_code as A_qr_code,A.credit_pay_status as A_credit_pay_status,A.authen_status as A_authen_status,A.status as A_status,A.create_time as A_create_time,
+		A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2,A.temp_3 as A_temp_3,A.temp_4 as A_temp_4
+	     
+	 ,C.channel_name as channel_name,D.agent_name
+     from t_merchant_info A
+     left join t_channel_base C on A.channel_no = C.channel_no 
+     left join t_agent_base D on A.agent_no = D.agent_no 
+     
+       WHERE (
+        
+        
+          
+                A.agent_no  IN  
+              (
+                'HFJK20161101000021'
+              ,
+                'HFJK20161101000019'
+              ,
+                'zzzyyy'
+              ,
+                'HFJK20161101000017'
+              )
+            
+        
+      
+        
+        
+          
+                AND A.status  =   '0' 
+               
+            
+        
+      )
+2016-12-19 14:12:43.622 [DubboServerHandler-172.16.2.7:20892-thread-92] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 5ms
+2016-12-19 14:12:43.628 [DubboServerHandler-172.16.2.7:20892-thread-93] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMessage.findAllByUserTypeAndUserNo:select
+     
+	     
+		A.ID as A_ID,A.CHANNEL_NO as A_CHANNEL_NO,A.USER_TYPE as A_USER_TYPE,A.TITLE as A_TITLE,A.CONTENT as A_CONTENT,A.MESSAGE_TYPE as A_MESSAGE_TYPE,A.STATUS as A_STATUS,A.OPERATOR as A_OPERATOR,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.REMARK as A_REMARK
+	     
+	 
+     from t_message A
+     where A.user_type in 
+       (   
+           '3' 
+        ,  
+           '9' 
+        )  
+	and not EXISTS(select * from t_user_message um where um.message_id = A.id and um.user_no='zy123');
+2016-12-19 14:12:43.628 [DubboServerHandler-172.16.2.7:20892-thread-93] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 2ms
+2016-12-19 14:12:43.875 [DubboServerHandler-172.16.2.7:20892-thread-94] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMessage.findAllByUserTypeAndUserNo:select
+     
+	     
+		A.ID as A_ID,A.CHANNEL_NO as A_CHANNEL_NO,A.USER_TYPE as A_USER_TYPE,A.TITLE as A_TITLE,A.CONTENT as A_CONTENT,A.MESSAGE_TYPE as A_MESSAGE_TYPE,A.STATUS as A_STATUS,A.OPERATOR as A_OPERATOR,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.REMARK as A_REMARK
+	     
+	 
+     from t_message A
+     where A.user_type in 
+       (   
+           '3' 
+        ,  
+           '9' 
+        )  
+	and not EXISTS(select * from t_user_message um where um.message_id = A.id and um.user_no='zy123');
+2016-12-19 14:12:43.875 [DubboServerHandler-172.16.2.7:20892-thread-94] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 3ms
+2016-12-19 14:12:43.882 [DubboServerHandler-172.16.2.7:20892-thread-95] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLUserMessage.findByUserType:select
+     
+	     
+		A.ID as A_ID,A.MESSAGE_ID as A_MESSAGE_ID,A.USER_NO as A_USER_NO,A.READ_STATUS as A_READ_STATUS,A.RECORD_STATUS as A_RECORD_STATUS,A.OPERATOR as A_OPERATOR,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.REMARK as A_REMARK
+	     
+	 ,B.title as title,B.content as content 
+     from t_user_message A left join t_message B on A.message_id = B.id 
+      
+       WHERE (
+        
+        
+          
+                 A.USER_NO  =   'zy123' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.READ_STATUS  =   '1' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.RECORD_STATUS  =   'Y' 
+               
+            
+        
+      
+        
+        
+          
+               AND B.USER_TYPE  IN  
+              (
+                '3'
+              ,
+                '9'
+              )
+            
+        
+      )
+2016-12-19 14:12:43.883 [DubboServerHandler-172.16.2.7:20892-thread-95] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 6ms
+2016-12-19 14:12:43.914 [DubboServerHandler-172.16.2.7:20892-thread-96] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLChannelUrlFilter.findRoles:
+		select role_name as name from t_channel_role role
+		inner JOIN t_channel_role_user u on role.id=u.role_id
+		INNER JOIN t_channel_admin acc on u.account_id = acc.id
+		where acc.user_name='zy123'
+	
+2016-12-19 14:12:43.914 [DubboServerHandler-172.16.2.7:20892-thread-96] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 3ms
+2016-12-19 14:12:44.050 [DubboServerHandler-172.16.2.7:20892-thread-97] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLDataNode.findByCriteria:select
+		 
+	     
+		A.id as A_id,A.parent_node as A_parent_node,A.current_node as A_current_node,A.current_node_level as A_current_node_level,A.identity_flag as A_identity_flag,A.operator as A_operator,A.create_time as A_create_time,A.update_time as A_update_time
+	     
+	 
+		from t_data_node A
+		 
+			 WHERE (
+        
+        
+          
+                 A.parent_node  =   'QDXX20161101000001' 
+               
+            
+        
+      ) 
+		 
+		 
+			order by
+			  
+				A.current_node_level DESC
+2016-12-19 14:12:44.050 [DubboServerHandler-172.16.2.7:20892-thread-97] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 4ms
+2016-12-19 14:12:44.057 [DubboServerHandler-172.16.2.7:20892-thread-98] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLAgentBankcard.countByCriteria:select count(*) from t_agent_bankcard A
+    left join t_agent_base C on A.agent_no = C.agent_no 
+     
+       WHERE (
+        
+        
+          
+                A.agent_no  IN  
+              (
+                'HFJK20161101000021'
+              ,
+                'HFJK20161101000019'
+              ,
+                'zzzyyy'
+              ,
+                'HFJK20161101000017'
+              )
+            
+        
+      )
+2016-12-19 14:12:44.057 [DubboServerHandler-172.16.2.7:20892-thread-98] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 4ms
+2016-12-19 14:12:44.062 [DubboServerHandler-172.16.2.7:20892-thread-98] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLAgentBankcard.findByCriteria:select
+     
+	     
+		A.id as A_id,A.agent_no as A_agent_no,A.bank_code as A_bank_code,A.bank_name as A_bank_name,A.bank_card as A_bank_card,A.id_card as A_id_card,A.name as A_name,A.mobile as A_mobile,A.is_real_account as A_is_real_account,A.account_type as A_account_type,A.status as A_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2,A.temp_3 as A_temp_3,A.temp_4 as A_temp_4
+	     
+	 ,C.agent_name
+     from t_agent_bankcard A
+     left join t_agent_base C on A.agent_no = C.agent_no 
+     
+       WHERE (
+        
+        
+          
+                A.agent_no  IN  
+              (
+                'HFJK20161101000021'
+              ,
+                'HFJK20161101000019'
+              ,
+                'zzzyyy'
+              ,
+                'HFJK20161101000017'
+              )
+            
+        
+      ) 
+     
+     
+      order by
+         A.create_time DESC
+2016-12-19 14:12:44.062 [DubboServerHandler-172.16.2.7:20892-thread-98] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 5ms
+2016-12-19 14:12:44.124 [DubboServerHandler-172.16.2.7:20892-thread-99] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLDataNode.findByCriteria:select
+		 
+	     
+		A.id as A_id,A.parent_node as A_parent_node,A.current_node as A_current_node,A.current_node_level as A_current_node_level,A.identity_flag as A_identity_flag,A.operator as A_operator,A.create_time as A_create_time,A.update_time as A_update_time
+	     
+	 
+		from t_data_node A
+		 
+			 WHERE (
+        
+        
+          
+                 A.parent_node  =   'QDXX20161101000001' 
+               
+            
+        
+      ) 
+		 
+		 
+			order by
+			  
+				A.current_node_level DESC
+2016-12-19 14:12:44.124 [DubboServerHandler-172.16.2.7:20892-thread-99] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 5ms
+2016-12-19 14:12:44.133 [DubboServerHandler-172.16.2.7:20892-thread-100] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMerchantInfo.findByCriteria:select
+     
+	     
+		A.id as A_id,A.channel_no as A_channel_no,A.agent_no as A_agent_no,A.merchant_no as A_merchant_no,A.merchant_name as A_merchant_name,A.short_name as A_short_name,
+		A.platform_merchant_no as A_platform_merchant_no,A.bus_type as A_bus_type,A.name as A_name,A.id_card as A_id_card,A.idcard_img_1 as A_idcard_img_1,
+		A.idcard_img_2 as A_idcard_img_2,A.idcard_img_3 as A_idcard_img_3,A.mobile as A_mobile,A.phone as A_phone,A.email as A_email,A.address as A_address,
+		A.merchant_license as A_merchant_license,A.merchant_license_img as A_merchant_license_img,A.tax_no as A_tax_no,A.tax_img as A_tax_img,
+		A.org_no as A_org_no,A.qr_code as A_qr_code,A.credit_pay_status as A_credit_pay_status,A.authen_status as A_authen_status,A.status as A_status,A.create_time as A_create_time,
+		A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2,A.temp_3 as A_temp_3,A.temp_4 as A_temp_4
+	     
+	 ,C.channel_name as channel_name,D.agent_name
+     from t_merchant_info A
+     left join t_channel_base C on A.channel_no = C.channel_no 
+     left join t_agent_base D on A.agent_no = D.agent_no 
+     
+       WHERE (
+        
+        
+          
+                A.agent_no  IN  
+              (
+                'HFJK20161101000021'
+              ,
+                'HFJK20161101000019'
+              ,
+                'zzzyyy'
+              ,
+                'HFJK20161101000017'
+              )
+            
+        
+      
+        
+        
+          
+                AND A.status  =   '0' 
+               
+            
+        
+      )
+2016-12-19 14:12:44.134 [DubboServerHandler-172.16.2.7:20892-thread-100] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 7ms
+2016-12-19 14:12:44.139 [DubboServerHandler-172.16.2.7:20892-thread-101] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMessage.findAllByUserTypeAndUserNo:select
+     
+	     
+		A.ID as A_ID,A.CHANNEL_NO as A_CHANNEL_NO,A.USER_TYPE as A_USER_TYPE,A.TITLE as A_TITLE,A.CONTENT as A_CONTENT,A.MESSAGE_TYPE as A_MESSAGE_TYPE,A.STATUS as A_STATUS,A.OPERATOR as A_OPERATOR,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.REMARK as A_REMARK
+	     
+	 
+     from t_message A
+     where A.user_type in 
+       (   
+           '3' 
+        ,  
+           '9' 
+        )  
+	and not EXISTS(select * from t_user_message um where um.message_id = A.id and um.user_no='zy123');
+2016-12-19 14:12:44.139 [DubboServerHandler-172.16.2.7:20892-thread-101] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 3ms
+2016-12-19 14:12:45.586 [DubboServerHandler-172.16.2.7:20892-thread-102] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLAgentBankcard.findById:
+    select 
+    
+	    
+		A.id as A_id,A.agent_no as A_agent_no,A.bank_code as A_bank_code,A.bank_name as A_bank_name,A.bank_card as A_bank_card,A.id_card as A_id_card,A.name as A_name,A.mobile as A_mobile,A.is_real_account as A_is_real_account,A.account_type as A_account_type,A.status as A_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2,A.temp_3 as A_temp_3,A.temp_4 as A_temp_4
+	    
+	,B.short_name as operator_name,C.agent_name
+    from t_agent_bankcard A 
+    left join t_sys_admin B on A.operator = B.id 
+    left join t_agent_base C on A.agent_no = C.agent_no 
+    where A.id = '724137ada93b478a84f8ca8a768431f0'
+  
+2016-12-19 14:12:45.586 [DubboServerHandler-172.16.2.7:20892-thread-102] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 5ms
+2016-12-19 14:12:45.593 [DubboServerHandler-172.16.2.7:20892-thread-103] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLDataNode.findByCriteria:select
+		 
+	     
+		A.id as A_id,A.parent_node as A_parent_node,A.current_node as A_current_node,A.current_node_level as A_current_node_level,A.identity_flag as A_identity_flag,A.operator as A_operator,A.create_time as A_create_time,A.update_time as A_update_time
+	     
+	 
+		from t_data_node A
+		 
+			 WHERE (
+        
+        
+          
+                 A.parent_node  =   'QDXX20161101000001' 
+               
+            
+        
+      ) 
+		 
+		 
+			order by
+			  
+				A.current_node_level DESC
+2016-12-19 14:12:45.594 [DubboServerHandler-172.16.2.7:20892-thread-103] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 4ms
+2016-12-19 14:12:45.603 [DubboServerHandler-172.16.2.7:20892-thread-104] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLAgentBase.findByCriteria:select
+     
+	     
+		A.ID as A_ID,A.AGENT_NO as A_AGENT_NO,A.AGENT_NAME as A_AGENT_NAME,A.CHANNEL_NO as A_CHANNEL_NO,A.AGENT_PRE_CODE as A_AGENT_PRE_CODE,A.AGENT_TYPE as A_AGENT_TYPE,A.NAME as A_NAME,A.MOBILE as A_MOBILE,A.PARENT_NO as A_PARENT_NO,A.AGENT_LEVEL as A_AGENT_LEVEL,A.QR_TOTAL as A_QR_TOTAL,A.USE_TOTAL as A_USE_TOTAL,A.LESS_TOTAL as A_LESS_TOTAL,A.AGENT_FLAG as A_AGENT_FLAG,A.STATUS as A_STATUS,A.RECORD_STATUS as A_RECORD_STATUS,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.OPERATOR as A_OPERATOR,A.REMARK as A_REMARK,A.TEMP_1 as A_TEMP_1,A.TEMP_2 as A_TEMP_2,A.TEMP_3 as A_TEMP_3,A.TEMP_4 as A_TEMP_4
+	     
+	 
+     from t_agent_base A
+     
+       WHERE (
+        
+        
+          
+                A.AGENT_NO  IN  
+              (
+                'HFJK20161101000021'
+              ,
+                'HFJK20161101000019'
+              ,
+                'zzzyyy'
+              ,
+                'HFJK20161101000017'
+              )
+            
+        
+      
+        
+        
+          
+                AND A.STATUS  =   '1' 
+               
+            
+        
+      )
+2016-12-19 14:12:45.603 [DubboServerHandler-172.16.2.7:20892-thread-104] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 5ms
+2016-12-19 14:12:45.896 [DubboServerHandler-172.16.2.7:20892-thread-105] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLDataNode.findByCriteria:select
+		 
+	     
+		A.id as A_id,A.parent_node as A_parent_node,A.current_node as A_current_node,A.current_node_level as A_current_node_level,A.identity_flag as A_identity_flag,A.operator as A_operator,A.create_time as A_create_time,A.update_time as A_update_time
+	     
+	 
+		from t_data_node A
+		 
+			 WHERE (
+        
+        
+          
+                 A.parent_node  =   'QDXX20161101000001' 
+               
+            
+        
+      ) 
+		 
+		 
+			order by
+			  
+				A.current_node_level DESC
+2016-12-19 14:12:45.896 [DubboServerHandler-172.16.2.7:20892-thread-105] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 4ms
+2016-12-19 14:12:45.903 [DubboServerHandler-172.16.2.7:20892-thread-106] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMerchantInfo.findByCriteria:select
+     
+	     
+		A.id as A_id,A.channel_no as A_channel_no,A.agent_no as A_agent_no,A.merchant_no as A_merchant_no,A.merchant_name as A_merchant_name,A.short_name as A_short_name,
+		A.platform_merchant_no as A_platform_merchant_no,A.bus_type as A_bus_type,A.name as A_name,A.id_card as A_id_card,A.idcard_img_1 as A_idcard_img_1,
+		A.idcard_img_2 as A_idcard_img_2,A.idcard_img_3 as A_idcard_img_3,A.mobile as A_mobile,A.phone as A_phone,A.email as A_email,A.address as A_address,
+		A.merchant_license as A_merchant_license,A.merchant_license_img as A_merchant_license_img,A.tax_no as A_tax_no,A.tax_img as A_tax_img,
+		A.org_no as A_org_no,A.qr_code as A_qr_code,A.credit_pay_status as A_credit_pay_status,A.authen_status as A_authen_status,A.status as A_status,A.create_time as A_create_time,
+		A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2,A.temp_3 as A_temp_3,A.temp_4 as A_temp_4
+	     
+	 ,C.channel_name as channel_name,D.agent_name
+     from t_merchant_info A
+     left join t_channel_base C on A.channel_no = C.channel_no 
+     left join t_agent_base D on A.agent_no = D.agent_no 
+     
+       WHERE (
+        
+        
+          
+                A.agent_no  IN  
+              (
+                'HFJK20161101000021'
+              ,
+                'HFJK20161101000019'
+              ,
+                'zzzyyy'
+              ,
+                'HFJK20161101000017'
+              )
+            
+        
+      
+        
+        
+          
+                AND A.status  =   '0' 
+               
+            
+        
+      )
+2016-12-19 14:12:45.903 [DubboServerHandler-172.16.2.7:20892-thread-106] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 5ms
+2016-12-19 14:12:45.910 [DubboServerHandler-172.16.2.7:20892-thread-107] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMessage.findAllByUserTypeAndUserNo:select
+     
+	     
+		A.ID as A_ID,A.CHANNEL_NO as A_CHANNEL_NO,A.USER_TYPE as A_USER_TYPE,A.TITLE as A_TITLE,A.CONTENT as A_CONTENT,A.MESSAGE_TYPE as A_MESSAGE_TYPE,A.STATUS as A_STATUS,A.OPERATOR as A_OPERATOR,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.REMARK as A_REMARK
+	     
+	 
+     from t_message A
+     where A.user_type in 
+       (   
+           '3' 
+        ,  
+           '9' 
+        )  
+	and not EXISTS(select * from t_user_message um where um.message_id = A.id and um.user_no='zy123');
+2016-12-19 14:12:45.910 [DubboServerHandler-172.16.2.7:20892-thread-107] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 3ms
+2016-12-19 14:12:48.840 [DubboServerHandler-172.16.2.7:20892-thread-108] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLAgentBankcard.findByCriteria:select
+     
+	     
+		A.id as A_id,A.agent_no as A_agent_no,A.bank_code as A_bank_code,A.bank_name as A_bank_name,A.bank_card as A_bank_card,A.id_card as A_id_card,A.name as A_name,A.mobile as A_mobile,A.is_real_account as A_is_real_account,A.account_type as A_account_type,A.status as A_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2,A.temp_3 as A_temp_3,A.temp_4 as A_temp_4
+	     
+	 ,C.agent_name
+     from t_agent_bankcard A
+     left join t_agent_base C on A.agent_no = C.agent_no 
+     
+       WHERE (
+        
+        
+          
+                 A.agent_no  =   'HFJK20161101000021' 
+               
+            
+        
+      )
+2016-12-19 14:12:48.840 [DubboServerHandler-172.16.2.7:20892-thread-108] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 5ms
+2016-12-19 14:13:13.909 [DubboServerHandler-172.16.2.7:20892-thread-109] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMessage.findAllByUserTypeAndUserNo:select
+     
+	     
+		A.ID as A_ID,A.CHANNEL_NO as A_CHANNEL_NO,A.USER_TYPE as A_USER_TYPE,A.TITLE as A_TITLE,A.CONTENT as A_CONTENT,A.MESSAGE_TYPE as A_MESSAGE_TYPE,A.STATUS as A_STATUS,A.OPERATOR as A_OPERATOR,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.REMARK as A_REMARK
+	     
+	 
+     from t_message A
+     where A.user_type in 
+       (   
+           '3' 
+        ,  
+           '9' 
+        )  
+	and not EXISTS(select * from t_user_message um where um.message_id = A.id and um.user_no='zy123');
+2016-12-19 14:13:13.909 [DubboServerHandler-172.16.2.7:20892-thread-109] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 3ms
+2016-12-19 14:13:13.916 [DubboServerHandler-172.16.2.7:20892-thread-110] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLUserMessage.findByUserType:select
+     
+	     
+		A.ID as A_ID,A.MESSAGE_ID as A_MESSAGE_ID,A.USER_NO as A_USER_NO,A.READ_STATUS as A_READ_STATUS,A.RECORD_STATUS as A_RECORD_STATUS,A.OPERATOR as A_OPERATOR,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.REMARK as A_REMARK
+	     
+	 ,B.title as title,B.content as content 
+     from t_user_message A left join t_message B on A.message_id = B.id 
+      
+       WHERE (
+        
+        
+          
+                 A.USER_NO  =   'zy123' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.READ_STATUS  =   '1' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.RECORD_STATUS  =   'Y' 
+               
+            
+        
+      
+        
+        
+          
+               AND B.USER_TYPE  IN  
+              (
+                '3'
+              ,
+                '9'
+              )
+            
+        
+      )
+2016-12-19 14:13:13.917 [DubboServerHandler-172.16.2.7:20892-thread-110] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 6ms
+2016-12-19 14:13:43.929 [DubboServerHandler-172.16.2.7:20892-thread-111] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLMessage.findAllByUserTypeAndUserNo:select
+     
+	     
+		A.ID as A_ID,A.CHANNEL_NO as A_CHANNEL_NO,A.USER_TYPE as A_USER_TYPE,A.TITLE as A_TITLE,A.CONTENT as A_CONTENT,A.MESSAGE_TYPE as A_MESSAGE_TYPE,A.STATUS as A_STATUS,A.OPERATOR as A_OPERATOR,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.REMARK as A_REMARK
+	     
+	 
+     from t_message A
+     where A.user_type in 
+       (   
+           '3' 
+        ,  
+           '9' 
+        )  
+	and not EXISTS(select * from t_user_message um where um.message_id = A.id and um.user_no='zy123');
+2016-12-19 14:13:43.930 [DubboServerHandler-172.16.2.7:20892-thread-111] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 6ms
+2016-12-19 14:13:43.949 [DubboServerHandler-172.16.2.7:20892-thread-112] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLUserMessage.findByUserType:select
+     
+	     
+		A.ID as A_ID,A.MESSAGE_ID as A_MESSAGE_ID,A.USER_NO as A_USER_NO,A.READ_STATUS as A_READ_STATUS,A.RECORD_STATUS as A_RECORD_STATUS,A.OPERATOR as A_OPERATOR,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.REMARK as A_REMARK
+	     
+	 ,B.title as title,B.content as content 
+     from t_user_message A left join t_message B on A.message_id = B.id 
+      
+       WHERE (
+        
+        
+          
+                 A.USER_NO  =   'zy123' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.READ_STATUS  =   '1' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.RECORD_STATUS  =   'Y' 
+               
+            
+        
+      
+        
+        
+          
+               AND B.USER_TYPE  IN  
+              (
+                '3'
+              ,
+                '9'
+              )
+            
+        
+      )
+2016-12-19 14:13:43.949 [DubboServerHandler-172.16.2.7:20892-thread-112] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 12ms

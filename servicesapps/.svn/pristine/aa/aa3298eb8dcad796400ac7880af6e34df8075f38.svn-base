@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd 
+    http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd"
+	default-lazy-init="true">
+
+	<description>服务配置 </description>
+    <dubbo:application name="hfepay-super-serviceapp"  />
+   	<dubbo:provider filter="InvocationRpcFilter"></dubbo:provider>
+    <dubbo:consumer timeout="15000"/>
+    <dubbo:registry address="zookeeper://${zookeeper.addr}" />
+    <dubbo:protocol name="dubbo" port="${hfepay.dubbo.port}" register="${service.register}"/>
+	<!-- <dubbo:monitor protocol="registry"/> -->
+    <!-- =================================================================================== -->
+    <!-- 对外的服务接口-->
+    <!-- =================================================================================== --> 
+    <bean id="adminServiceImpl" class="com.hfepay.scancode.service.operator.impl.AdminServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.service.operator.AdminService" ref="adminServiceImpl" />
+	 
+	<bean id="pageServiceImpl" class="com.hfepay.scancode.service.operator.impl.PageServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.service.operator.PageService" ref="pageServiceImpl" />
+
+	<bean id="sysResourceServiceImpl" class="com.hfepay.scancode.service.operator.impl.SysResourceServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.service.operator.SysResourceService" ref="sysResourceServiceImpl" />
+	
+	<bean id="sysRoleServiceImpl" class="com.hfepay.scancode.service.operator.impl.SysRoleServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.service.operator.SysRoleService" ref="sysRoleServiceImpl" />
+	
+	<bean id="sysRoleUserServiceImpl" class="com.hfepay.scancode.service.operator.impl.SysRoleUserServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.service.operator.SysRoleUserService" ref="sysRoleUserServiceImpl" />
+	
+	<bean id="urlFilterServiceImpl" class="com.hfepay.scancode.service.operator.impl.UrlFilterServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.service.operator.UrlFilterService" ref="urlFilterServiceImpl" />
+	
+	<bean id="sysConfigServiceImpl" class="com.hfepay.scancode.service.operator.impl.SysConfigServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.service.operator.SysConfigService" ref="sysConfigServiceImpl" />
+	
+	<bean id="orderPaymentServiceImpl" class="com.hfepay.scancode.service.order.impl.OrderPaymentServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.service.order.OrderPaymentService" ref="orderPaymentServiceImpl" />
+	<!-- 账户信息变更记录 -->
+	<bean id="changeLogServiceImpl" class="com.hfepay.scancode.service.operator.impl.ChangeLogServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.service.operator.ChangeLogService" ref="changeLogServiceImpl" />
+	<!-- 数据字典 -->
+	<bean id="mappingDicionServiceImpl" class="com.hfepay.scancode.service.operator.impl.MappingDicionServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.service.operator.MappingDicionService" ref="mappingDicionServiceImpl" />
+	<!-- 平台管理 -->
+	<bean id="hfepayPaywayServiceImpl" class="com.hfepay.scancode.service.operator.impl.HfepayPaywayServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.service.operator.HfepayPaywayService" ref="hfepayPaywayServiceImpl" />
+	<!-- 渠道信息 -->
+	<bean id="ChannelInfoServiceImpl" class="com.hfepay.scancode.service.operator.impl.ChannelInfoServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.service.operator.ChannelInfoService" ref="ChannelInfoServiceImpl" />
+	<bean id="channelBaseServiceImpl" class="com.hfepay.scancode.service.operator.impl.ChannelBaseServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.service.operator.ChannelBaseService" ref="channelBaseServiceImpl" />
+	<bean id="channelExpandServiceImpl" class="com.hfepay.scancode.service.operator.impl.ChannelExpandServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.service.operator.ChannelExpandService" ref="channelExpandServiceImpl" />
+	<bean id="channelBankcardServiceImpl" class="com.hfepay.scancode.service.operator.impl.ChannelBankcardServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.service.operator.ChannelBankcardService" ref="channelBankcardServiceImpl" />
+	<bean id="channelPaywayServiceImpl" class="com.hfepay.scancode.service.operator.impl.ChannelPaywayServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.service.operator.ChannelPaywayService" ref="channelPaywayServiceImpl" />
+	
+	<!-- 商户信息 -->
+	<bean id="merchantInfoServiceImpl" class="com.hfepay.scancode.service.operator.impl.MerchantInfoServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.service.operator.MerchantInfoService" ref="merchantInfoServiceImpl" />
+	<!--秘钥信息 -->
+
+	<bean id="platformSecretKeyServiceImpl" class="com.hfepay.scancode.service.operator.impl.PlatformSecretKeyServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.service.operator.PlatformSecretKeyService" ref="platformSecretKeyServiceImpl" />
+	<!-- 渠道登录权限相关 -->
+	<bean id="channelAdminServiceImpl" class="com.hfepay.scancode.service.channel.impl.ChannelAdminServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.service.channel.ChannelAdminService" ref="channelAdminServiceImpl" />
+
+	<bean id="channelResourceServiceImpl" class="com.hfepay.scancode.service.channel.impl.ChannelResourceServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.service.channel.ChannelResourceService" ref="channelResourceServiceImpl" />
+	
+	<bean id="channelRoleServiceImpl" class="com.hfepay.scancode.service.channel.impl.ChannelRoleServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.service.channel.ChannelRoleService" ref="channelRoleServiceImpl" />
+	
+	<bean id="channelRoleUserServiceImpl" class="com.hfepay.scancode.service.channel.impl.ChannelRoleUserServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.service.channel.ChannelRoleUserService" ref="channelRoleUserServiceImpl" />
+	
+	<bean id="channelUrlFilterServiceImpl" class="com.hfepay.scancode.service.channel.impl.ChannelUrlFilterServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.service.channel.ChannelUrlFilterService" ref="channelUrlFilterServiceImpl" />
+	
+	<bean id="qrcodeAssignedLogServiceImpl" class="com.hfepay.scancode.service.operator.impl.QrcodeAssignedLogServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.service.operator.QrcodeAssignedLogService" ref="qrcodeAssignedLogServiceImpl" />
+	
+	<bean id="channelInfoServiceImpl" class="com.hfepay.scancode.service.operator.impl.ChannelInfoServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.service.operator.ChannelInfoService" ref="channelInfoServiceImpl" />
+	<!-- 二维码信息 -->
+	<bean id="platformQrcodeServiceImpl" class="com.hfepay.scancode.service.operator.impl.PlatformQrcodeServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.service.operator.PlatformQrcodeService" ref="platformQrcodeServiceImpl" />
+	<!-- 代理商信息 -->
+	<bean id="agentBaseServiceImpl" class="com.hfepay.scancode.service.operator.impl.AgentBaseServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.service.operator.AgentBaseService" ref="agentBaseServiceImpl" />
+	<!-- 商户银行卡信息 -->
+	<bean id="merchantBankcardServiceImpl" class="com.hfepay.scancode.service.operator.impl.MerchantBankcardServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.service.operator.MerchantBankcardService" ref="merchantBankcardServiceImpl" />
+	<!-- 商户费率信息-->
+	<bean id="merchantPaywayServiceImpl" class="com.hfepay.scancode.service.operator.impl.MerchantPaywayServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.service.operator.MerchantPaywayService" ref="merchantPaywayServiceImpl" />
+	<!-- 代理商费率信息-->
+	<bean id="agentPaywayServiceImpl" class="com.hfepay.scancode.service.operator.impl.AgentPaywayServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.service.operator.AgentPaywayService" ref="agentPaywayServiceImpl" />
+	<!-- 商户余额信息-->
+	<bean id="merchantWalletServiceImpl" class="com.hfepay.scancode.service.operator.impl.MerchantWalletServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.service.operator.MerchantWalletService" ref="merchantWalletServiceImpl" />
+	<!-- 商户审核记录表信息-->
+	<bean id="auditLogServiceImpl" class="com.hfepay.scancode.service.operator.impl.AuditLogServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.service.operator.AuditLogService" ref="auditLogServiceImpl" />
+	<!-- 递归子节点 -->
+	<bean id="dataNodeServiceImpl" class="com.hfepay.scancode.service.channel.impl.DataNodeServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.service.channel.DataNodeService" ref="dataNodeServiceImpl" />
+	
+	<!-- 商户门店信息 -->
+	<bean id="MerchantStoreServiceImpl" class="com.hfepay.scancode.service.operator.impl.MerchantStoreServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.service.operator.MerchantStoreService" ref="MerchantStoreServiceImpl" />
+	
+	<!-- 商户子二维码信息 -->
+	<bean id="MerchantQrcodeServiceImpl" class="com.hfepay.scancode.service.operator.impl.MerchantQrcodeServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.service.operator.MerchantQrcodeService" ref="MerchantQrcodeServiceImpl" />
+
+	<!-- 扫码支付 -->
+	<bean id="scanCodeServiceImpl" class="com.hfepay.scancode.service.payway.impl.ScanCodeServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.service.payway.ScanCodeService" ref="scanCodeServiceImpl" />
+	<!-- 自增序列 -->
+	<bean id="idCreateServiceImpl" class="com.hfepay.scancode.service.operator.impl.IdCreateServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.service.operator.IdCreateService" ref="idCreateServiceImpl" />
+
+	<bean id="orderPayServiceImpl" class="com.hfepay.scancode.service.order.impl.OrderPayServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.service.order.OrderPayService" ref="orderPayServiceImpl" />
+	
+	<bean id="merchantAccountsServiceImpl" class="com.hfepay.scancode.service.operator.impl.MerchantAccountsServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.service.operator.MerchantAccountsService" ref="merchantAccountsServiceImpl" />
+
+</beans>

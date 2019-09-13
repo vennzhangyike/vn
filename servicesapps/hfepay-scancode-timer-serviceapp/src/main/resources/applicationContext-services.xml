@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd 
+    http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd"
+	default-lazy-init="true">
+
+	<description>服务配置 </description>
+    <dubbo:application name="hfepay-pay-serviceapp"  />
+   	<dubbo:provider filter="InvocationRpcFilter"></dubbo:provider>
+    <dubbo:consumer timeout="15000"/>
+    <dubbo:registry address="zookeeper://${zookeeper.addr}" />
+    <dubbo:protocol name="dubbo" port="${hfepay.dubbo.port}" register="${service.register}"/>
+
+	<!-- 对外的服务接口-->
+    <!-- =================================================================================== --> 
+    <!-- 各层级结算对账单（日总金额结算） -->
+	<!-- <bean id="hierarchicalSettlementTotalService" class="com.hfepay.timer.service.impl.HierarchicalSettlementTotalServiceImpl" />
+	<dubbo:service interface="com.hfepay.timer.service.HierarchicalSettlementTotalService" ref="hierarchicalSettlementTotalService" />
+	
+	<bean id="merchantPaywayTmpServiceImpl" class="com.hfepay.timer.service.impl.MerchantPaywayTmpServiceImpl" />
+	<dubbo:service interface="com.hfepay.timer.service.MerchantPaywayTmpService" ref="merchantPaywayTmpServiceImpl" />
+	
+	消息推送规则 
+	<bean id="messagePushRuleService" class="com.hfepay.timer.service.impl.MessagePushRuleServiceImpl" />
+	<dubbo:service interface="com.hfepay.timer.service.MessagePushRuleService" ref="messagePushRuleService" />
+	
+	节点关系表
+	<bean id="nodeRelationService" class="com.hfepay.timer.service.impl.NodeRelationServiceImpl" />
+	<dubbo:service interface="com.hfepay.timer.service.NodeRelationService" ref="nodeRelationService" />
+	
+	<bean id="profitServiceImpl" class="com.hfepay.timer.service.impl.ProfitServiceImpl" />
+	<dubbo:service interface="com.hfepay.timer.service.ProfitService" ref="profitServiceImpl" />
+	
+	用户短信记录
+	<bean id="userSmsServiceImpl" class="com.hfepay.timer.service.impl.UserSmsServiceImpl" />
+	<dubbo:service interface="com.hfepay.timer.service.UserSmsService" ref="userSmsServiceImpl" />
+	<bean id="tradeQueryServiceImpl" class="com.hfepay.timer.service.impl.TradeQueryServiceImpl" />
+	<dubbo:service interface="com.hfepay.timer.service.TradeQueryService" ref="tradeQueryServiceImpl" />
+	
+	<bean id="withdrawlsQueryServiceImpl" class="com.hfepay.timer.service.impl.WithdrawlsQueryServiceImpl" />
+	<dubbo:service interface="com.hfepay.timer.service.WithdrawlsQueryService" ref="withdrawlsQueryServiceImpl" />
+	
+	<bean id="callBackServiceImpl" class="com.hfepay.timer.service.impl.CallBackServiceImpl" />
+	<dubbo:service interface="com.hfepay.timer.service.CallBackService" ref="callBackServiceImpl" /> -->
+	
+	<!-- API对外接口 -->
+	<dubbo:reference id="merchantBusinessService" interface="com.hfepay.scancode.api.service.MerchantBusinessService" check="false"/>
+	<dubbo:reference id="apiChannelWxParamsService" interface="com.hfepay.scancode.api.service.ApiChannelWxParamsService" check="false"/>
+	
+	<dubbo:reference id="payCallBackService" interface="com.hfepay.pay.service.PayCallBackService" check="false"/>
+	
+	<dubbo:reference id="payService"  interface="com.hfepay.pay.service.PayService" check="false" retries="0" />
+	<dubbo:reference id="withdrawService"  interface="com.hfepay.pay.service.WithdrawService" check="false" retries="0" />
+	
+	
+</beans>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd 
+    http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd"
+	default-lazy-init="true">
+
+	<description>服务配置 </description>
+    <dubbo:application name="hfepay-super-serviceapp"  />
+   	<dubbo:provider filter="InvocationRpcFilter"></dubbo:provider>
+    <dubbo:consumer timeout="15000"/>
+    <dubbo:registry address="zookeeper://${zookeeper.addr}" />
+    <dubbo:protocol name="dubbo" port="${hfepay.dubbo.port}" register="${service.register}"/>
+	<!-- <dubbo:monitor protocol="registry"/> -->
+    <!-- =================================================================================== -->
+    <!-- 对外的服务接口-->
+    <!-- =================================================================================== --> 
+    <bean id="adminServiceImpl" class="com.hfepay.scancode.service.impl.AdminServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.service.AdminService" ref="adminServiceImpl" />
+	 
+	<bean id="pageServiceImpl" class="com.hfepay.scancode.service.impl.PageServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.service.PageService" ref="pageServiceImpl" />
+
+	<bean id="sysResourceServiceImpl" class="com.hfepay.scancode.service.impl.SysResourceServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.service.SysResourceService" ref="sysResourceServiceImpl" />
+	
+	<bean id="sysRoleServiceImpl" class="com.hfepay.scancode.service.impl.SysRoleServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.service.SysRoleService" ref="sysRoleServiceImpl" />
+	
+	<bean id="sysRoleUserServiceImpl" class="com.hfepay.scancode.service.impl.SysRoleUserServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.service.SysRoleUserService" ref="sysRoleUserServiceImpl" />
+	
+	<bean id="urlFilterServiceImpl" class="com.hfepay.scancode.service.impl.UrlFilterServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.service.UrlFilterService" ref="urlFilterServiceImpl" />
+	
+	<bean id="sysConfigServiceImpl" class="com.hfepay.scancode.service.impl.SysConfigServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.service.SysConfigService" ref="sysConfigServiceImpl" />
+	
+	<!-- 渠道信息 -->
+	<bean id="ChannelInfoServiceImpl" class="com.hfepay.scancode.service.impl.ChannelInfoServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.service.ChannelInfoService" ref="ChannelInfoServiceImpl" />
+	
+	<!--秘钥信息 -->
+	<bean id="platformSecretKeyServiceImpl" class="com.hfepay.scancode.service.impl.PlatformSecretKeyServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.service.PlatformSecretKeyService" ref="platformSecretKeyServiceImpl" />
+	
+</beans>

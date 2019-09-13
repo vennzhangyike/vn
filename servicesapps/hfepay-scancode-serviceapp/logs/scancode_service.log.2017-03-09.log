@@ -1,0 +1,1262 @@
+2017-03-09 11:15:02.300 [main] INFO  o.s.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+2017-03-09 11:15:03.313 [main] INFO  o.s.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-services.xml]
+2017-03-09 11:15:03.465 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'adminServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.AdminServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\AdminServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.AdminServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 11:15:03.473 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'pageServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.PageServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\PageServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.PageServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 11:15:03.486 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'sysConfigServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.SysConfigServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\SysConfigServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.SysConfigServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 11:15:03.519 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'channelAdminServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.channel.impl.ChannelAdminServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\channel\impl\ChannelAdminServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.channel.impl.ChannelAdminServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 11:15:03.571 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'idCreateServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.IdCreateServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\IdCreateServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.IdCreateServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 11:15:03.616 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'hierarchicalSettlementTotalService' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.HierarchicalSettlementTotalServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\HierarchicalSettlementTotalServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.HierarchicalSettlementTotalServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 11:15:03.617 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'organWalletService' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.OrganWalletServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\OrganWalletServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.OrganWalletServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 11:15:03.618 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'organWithdrawalsService' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.OrganWithdrawalsServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\OrganWithdrawalsServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.OrganWithdrawalsServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 11:15:03.619 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'wechatUserService' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.WechatUserServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\WechatUserServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.WechatUserServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 11:15:03.620 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'adviertisementInfoService' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.AdviertisementInfoServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\AdviertisementInfoServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.AdviertisementInfoServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 11:15:03.621 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'profitDetailService' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.order.impl.ProfitDetailServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\order\impl\ProfitDetailServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.order.impl.ProfitDetailServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 11:15:03.622 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'organLimitService' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.OrganLimitServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\OrganLimitServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.OrganLimitServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 11:15:03.623 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'cityService' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.CityServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\CityServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.CityServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 11:15:03.624 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'provinceService' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.ProvinceServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\ProvinceServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.ProvinceServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 11:15:03.625 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'merchantActivityService' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.MerchantActivityServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\MerchantActivityServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.MerchantActivityServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 11:15:03.627 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'merchantActivityDiscountService' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.MerchantActivityDiscountServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\MerchantActivityDiscountServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.MerchantActivityDiscountServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 11:15:03.628 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'nodeRelationService' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.NodeRelationServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\NodeRelationServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.NodeRelationServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 11:15:03.629 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'messagePushRuleService' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.MessagePushRuleServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\MessagePushRuleServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.MessagePushRuleServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 11:15:03.631 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'messagePushLogService' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.MessagePushLogServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\MessagePushLogServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.MessagePushLogServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 11:15:03.633 [main] INFO  o.s.context.support.GenericXmlApplicationContext - Refreshing org.springframework.context.support.GenericXmlApplicationContext@53895c4c: startup date [Thu Mar 09 11:15:03 CST 2017]; root of context hierarchy
+2017-03-09 11:15:04.454 [main] INFO  c.h.c.configuration.PropertyPlaceholderConfigurer - file:/E:/
+2017-03-09 11:15:04.455 [main] INFO  c.h.c.configuration.PropertyPlaceholderConfigurer - Loading properties file from URL [file:/E:/workspaces/xiaoermaidan/servicesapps/hfepay-scancode-serviceapp/target/classes/application-hfepay.properties]
+2017-03-09 11:15:04.455 [main] INFO  c.h.c.configuration.PropertyPlaceholderConfigurer - Loading properties file from URL [file:d:/application-hfepay.properties]
+2017-03-09 11:15:04.455 [main] WARN  c.h.c.configuration.PropertyPlaceholderConfigurer - Could not load properties from URL [file:d:/application-hfepay.properties]: d:\application-hfepay.properties (系统找不到指定的文件。)
+2017-03-09 11:15:04.455 [main] INFO  c.h.c.configuration.PropertyPlaceholderConfigurer - Loading properties file from URL [file:./conf/application-hfepay.properties]
+2017-03-09 11:15:04.455 [main] WARN  c.h.c.configuration.PropertyPlaceholderConfigurer - Could not load properties from URL [file:./conf/application-hfepay.properties]: .\conf\application-hfepay.properties (系统找不到指定的路径。)
+2017-03-09 11:15:04.521 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0' of type [class org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-03-09 11:15:10.697 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:zookeeper.version=3.4.7-1713338, built on 11/09/2015 04:32 GMT
+2017-03-09 11:15:10.698 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:host.name=windows10.microdone.cn
+2017-03-09 11:15:10.698 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.version=1.7.0_51
+2017-03-09 11:15:10.698 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.vendor=Oracle Corporation
+2017-03-09 11:15:10.698 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.home=E:\jdk1.7.0_51\jre
+2017-03-09 11:15:10.698 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.class.path=E:\workspaces\xiaoermaidan\servicesapps\hfepay-scancode-serviceapp\target\classes;E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes;E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service\target\classes;E:\workspaces\xiaoermaidan\services\hfepay-scancode-commons\trunk\hfepay-scancode-commons\hfepay-scancode-commons-entity\target\classes;C:\Users\Administrator\.m2\repository\org\apache\shiro\shiro-core\1.2.2\shiro-core-1.2.2.jar;C:\Users\Administrator\.m2\repository\org\apache\shiro\shiro-web\1.2.2\shiro-web-1.2.2.jar;C:\Users\Administrator\.m2\repository\org\apache\shiro\shiro-ehcache\1.2.2\shiro-ehcache-1.2.2.jar;C:\Users\Administrator\.m2\repository\net\sf\ehcache\ehcache-core\2.5.0\ehcache-core-2.5.0.jar;C:\Users\Administrator\.m2\repository\org\apache\shiro\shiro-spring\1.2.2\shiro-spring-1.2.2.jar;E:\workspaces\xiaoermaidan\commons\hfepay-commons-cache\trunk\hfepay-commons-cache\target\classes;C:\Users\Administrator\.m2\repository\redis\clients\jedis\2.8.1\jedis-2.8.1.jar;E:\workspaces\xiaoermaidan\services\hfepay-sacncode-pay\trunk\hfepay-scancode-pay\hfepay-scancode-pay-service-impl\target\classes;E:\workspaces\xiaoermaidan\services\hfepay-sacncode-pay\trunk\hfepay-scancode-pay\hfepay-scancode-pay-service\target\classes;E:\workspaces\xiaoermaidan\services\hfepay-scancode-commons\trunk\hfepay-scancode-commons\hfepay-scancode-commons-dao-impl\target\classes;E:\workspaces\xiaoermaidan\services\hfepay-scancode-commons\trunk\hfepay-scancode-commons\hfepay-scancode-commons-dao\target\classes;C:\Users\Administrator\.m2\repository\com\alibaba\fastjson\1.1.32\fastjson-1.1.32.jar;E:\workspaces\xiaoermaidan\commons\hfepay-commons-excelutils\trunk\hfepay-commons-excelutils\target\classes;C:\Users\Administrator\.m2\repository\net\sf\jxls\jxls-core\1.0.5\jxls-core-1.0.5.jar;C:\Users\Administrator\.m2\repository\commons-collections\commons-collections\3.2.1\commons-collections-3.2.1.jar;C:\Users\Administrator\.m2\repository\commons-digester\commons-digester\2.0\commons-digester-2.0.jar;C:\Users\Administrator\.m2\repository\org\apache\commons\commons-jexl\2.0.1\commons-jexl-2.0.1.jar;C:\Users\Administrator\.m2\repository\org\apache\poi\poi\3.9\poi-3.9.jar;C:\Users\Administrator\.m2\repository\org\apache\poi\poi-ooxml\3.9\poi-ooxml-3.9.jar;C:\Users\Administrator\.m2\repository\org\apache\poi\poi-ooxml-schemas\3.9\poi-ooxml-schemas-3.9.jar;C:\Users\Administrator\.m2\repository\org\apache\xmlbeans\xmlbeans\2.3.0\xmlbeans-2.3.0.jar;C:\Users\Administrator\.m2\repository\dom4j\dom4j\1.6.1\dom4j-1.6.1.jar;E:\workspaces\xiaoermaidan\commons\hfepay-commons-sms\trunk\hfepay-commons-sms\target\classes;C:\Users\Administrator\.m2\repository\com\xiehe\sms\xiehe_smsclient\1.1.1\xiehe_smsclient-1.1.1.jar;C:\Users\Administrator\.m2\repository\javax\mail\javax.mail-api\1.5.5\javax.mail-api-1.5.5.jar;C:\Users\Administrator\.m2\repository\org\apache\commons\commons-email\1.4\commons-email-1.4.jar;C:\Users\Administrator\.m2\repository\com\sun\mail\javax.mail\1.5.2\javax.mail-1.5.2.jar;C:\Users\Administrator\.m2\repository\javax\activation\activation\1.1.1\activation-1.1.1.jar;E:\workspaces\xiaoermaidan\commons\hfepay-commons-timer\target\classes;C:\Users\Administrator\.m2\repository\org\quartz-scheduler\quartz\2.1.5\quartz-2.1.5.jar;C:\Users\Administrator\.m2\repository\c3p0\c3p0\0.9.1.1\c3p0-0.9.1.1.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-context-support\4.2.5.RELEASE\spring-context-support-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\aspectj\aspectjrt\1.7.0\aspectjrt-1.7.0.jar;C:\Users\Administrator\.m2\repository\org\aspectj\aspectjweaver\1.7.4\aspectjweaver-1.7.4.jar;C:\Users\Administrator\.m2\repository\cglib\cglib\2.2.2\cglib-2.2.2.jar;C:\Users\Administrator\.m2\repository\asm\asm\3.3.1\asm-3.3.1.jar;C:\Users\Administrator\.m2\repository\org\jsoup\jsoup\1.7.3\jsoup-1.7.3.jar;C:\Users\Administrator\.m2\repository\com\google\zxing\core\3.1.0\core-3.1.0.jar;C:\Users\Administrator\.m2\repository\commons-codec\commons-codec\1.8\commons-codec-1.8.jar;E:\workspaces\xiaoermaidan\services\hfepay-scancode-api\trunk\hfepay-scancode-api\hfepay-scancode-api-service\target\classes;E:\workspaces\xiaoermaidan\services\hfepay-scancode-api\trunk\hfepay-scancode-api\hfepay-scancode-api-entity\target\classes;E:\workspaces\xiaoermaidan\commons\hfepay-commons-dao\trunk\hfepay-commons-dao\target\classes;E:\workspaces\xiaoermaidan\commons\hfepay-commons-base\trunk\hfepay-commons-base\target\classes;C:\Users\Administrator\.m2\repository\org\apache\commons\commons-lang3\3.2.1\commons-lang3-3.2.1.jar;C:\Users\Administrator\.m2\repository\commons-beanutils\commons-beanutils\1.9.1\commons-beanutils-1.9.1.jar;C:\Users\Administrator\.m2\repository\org\apache\httpcomponents\httpclient\4.3.5\httpclient-4.3.5.jar;C:\Users\Administrator\.m2\repository\org\apache\httpcomponents\httpcore\4.3.2\httpcore-4.3.2.jar;C:\Users\Administrator\.m2\repository\joda-time\joda-time\2.3\joda-time-2.3.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-jdbc\4.2.5.RELEASE\spring-jdbc-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-tx\4.2.5.RELEASE\spring-tx-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-test\4.2.5.RELEASE\spring-test-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\mybatis\mybatis\3.2.4\mybatis-3.2.4.jar;C:\Users\Administrator\.m2\repository\org\mybatis\mybatis-spring\1.2.1\mybatis-spring-1.2.1.jar;C:\Users\Administrator\.m2\repository\xerces\xercesImpl\2.9.1\xercesImpl-2.9.1.jar;C:\Users\Administrator\.m2\repository\xml-apis\xml-apis\1.3.04\xml-apis-1.3.04.jar;C:\Users\Administrator\.m2\repository\com\alibaba\druid\0.2.8\druid-0.2.8.jar;C:\Users\Administrator\.m2\repository\javax\persistence\toplink-essentials\1.0\toplink-essentials-1.0.jar;C:\Users\Administrator\.m2\repository\javax\persistence\persistence-api\1.0\persistence-api-1.0.jar;C:\Users\Administrator\.m2\repository\org\json\org.json\chargebee-1.0\org.json-chargebee-1.0.jar;C:\Users\Administrator\.m2\repository\com\chinaums\XmClient\1.0\XmClient-1.0.jar;C:\Users\Administrator\.m2\repository\org\quartz-scheduler\quartz-jobs\2.2.1\quartz-jobs-2.2.1.jar;C:\Users\Administrator\.m2\repository\net\sf\json-lib\json-lib\2.4\json-lib-2.4-jdk15.jar;C:\Users\Administrator\.m2\repository\commons-lang\commons-lang\2.5\commons-lang-2.5.jar;C:\Users\Administrator\.m2\repository\net\sf\ezmorph\ezmorph\1.0.6\ezmorph-1.0.6.jar;C:\Users\Administrator\.m2\repository\org\springframework\session\spring-session-data-redis\1.2.0.RELEASE\spring-session-data-redis-1.2.0.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\apache\commons\commons-pool2\2.4.2\commons-pool2-2.4.2.jar;C:\Users\Administrator\.m2\repository\org\springframework\data\spring-data-redis\1.7.1.RELEASE\spring-data-redis-1.7.1.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\data\spring-data-keyvalue\1.1.1.RELEASE\spring-data-keyvalue-1.1.1.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\data\spring-data-commons\1.12.1.RELEASE\spring-data-commons-1.12.1.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-oxm\4.2.5.RELEASE\spring-oxm-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\session\spring-session\1.2.0.RELEASE\spring-session-1.2.0.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\apache\zookeeper\zookeeper\3.4.7\zookeeper-3.4.7.jar;C:\Users\Administrator\.m2\repository\jline\jline\0.9.94\jline-0.9.94.jar;C:\Users\Administrator\.m2\repository\io\netty\netty\3.7.0.Final\netty-3.7.0.Final.jar;C:\Users\Administrator\.m2\repository\com\alibaba\dubbo\2.5.3\dubbo-2.5.3.jar;C:\Users\Administrator\.m2\repository\org\javassist\javassist\3.15.0-GA\javassist-3.15.0-GA.jar;C:\Users\Administrator\.m2\repository\org\jboss\netty\netty\3.2.5.Final\netty-3.2.5.Final.jar;C:\Users\Administrator\.m2\repository\org\apache\hadoop\hadoop-core\1.2.1\hadoop-core-1.2.1.jar;C:\Users\Administrator\.m2\repository\commons-cli\commons-cli\1.2\commons-cli-1.2.jar;C:\Users\Administrator\.m2\repository\xmlenc\xmlenc\0.52\xmlenc-0.52.jar;C:\Users\Administrator\.m2\repository\com\sun\jersey\jersey-core\1.8\jersey-core-1.8.jar;C:\Users\Administrator\.m2\repository\com\sun\jersey\jersey-json\1.8\jersey-json-1.8.jar;C:\Users\Administrator\.m2\repository\org\codehaus\jettison\jettison\1.1\jettison-1.1.jar;C:\Users\Administrator\.m2\repository\stax\stax-api\1.0.1\stax-api-1.0.1.jar;C:\Users\Administrator\.m2\repository\com\sun\xml\bind\jaxb-impl\2.2.3-1\jaxb-impl-2.2.3-1.jar;C:\Users\Administrator\.m2\repository\javax\xml\bind\jaxb-api\2.2.2\jaxb-api-2.2.2.jar;C:\Users\Administrator\.m2\repository\javax\xml\stream\stax-api\1.0-2\stax-api-1.0-2.jar;C:\Users\Administrator\.m2\repository\org\codehaus\jackson\jackson-core-asl\1.7.1\jackson-core-asl-1.7.1.jar;C:\Users\Administrator\.m2\repository\org\codehaus\jackson\jackson-jaxrs\1.7.1\jackson-jaxrs-1.7.1.jar;C:\Users\Administrator\.m2\repository\org\codehaus\jackson\jackson-xc\1.7.1\jackson-xc-1.7.1.jar;C:\Users\Administrator\.m2\repository\com\sun\jersey\jersey-server\1.8\jersey-server-1.8.jar;C:\Users\Administrator\.m2\repository\commons-io\commons-io\2.1\commons-io-2.1.jar;C:\Users\Administrator\.m2\repository\commons-httpclient\commons-httpclient\3.0.1\commons-httpclient-3.0.1.jar;C:\Users\Administrator\.m2\repository\org\apache\commons\commons-math\2.1\commons-math-2.1.jar;C:\Users\Administrator\.m2\repository\commons-net\commons-net\1.4.1\commons-net-1.4.1.jar;C:\Users\Administrator\.m2\repository\org\mortbay\jetty\jetty\6.1.26\jetty-6.1.26.jar;C:\Users\Administrator\.m2\repository\org\mortbay\jetty\servlet-api\2.5-20081211\servlet-api-2.5-20081211.jar;C:\Users\Administrator\.m2\repository\org\mortbay\jetty\jetty-util\6.1.26\jetty-util-6.1.26.jar;C:\Users\Administrator\.m2\repository\tomcat\jasper-runtime\5.5.12\jasper-runtime-5.5.12.jar;C:\Users\Administrator\.m2\repository\tomcat\jasper-compiler\5.5.12\jasper-compiler-5.5.12.jar;C:\Users\Administrator\.m2\repository\org\mortbay\jetty\jsp-api-2.1\6.1.14\jsp-api-2.1-6.1.14.jar;C:\Users\Administrator\.m2\repository\org\mortbay\jetty\servlet-api-2.5\6.1.14\servlet-api-2.5-6.1.14.jar;C:\Users\Administrator\.m2\repository\org\mortbay\jetty\jsp-2.1\6.1.14\jsp-2.1-6.1.14.jar;C:\Users\Administrator\.m2\repository\ant\ant\1.6.5\ant-1.6.5.jar;C:\Users\Administrator\.m2\repository\commons-el\commons-el\1.0\commons-el-1.0.jar;C:\Users\Administrator\.m2\repository\net\java\dev\jets3t\jets3t\0.6.1\jets3t-0.6.1.jar;C:\Users\Administrator\.m2\repository\hsqldb\hsqldb\1.8.0.10\hsqldb-1.8.0.10.jar;C:\Users\Administrator\.m2\repository\oro\oro\2.0.8\oro-2.0.8.jar;C:\Users\Administrator\.m2\repository\org\eclipse\jdt\core\3.1.1\core-3.1.1.jar;C:\Users\Administrator\.m2\repository\org\codehaus\jackson\jackson-mapper-asl\1.8.8\jackson-mapper-asl-1.8.8.jar;C:\Users\Administrator\.m2\repository\commons-configuration\commons-configuration\1.9\commons-configuration-1.9.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-core\4.2.5.RELEASE\spring-core-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\commons-logging\commons-logging\1.1.3\commons-logging-1.1.3.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-context\4.2.5.RELEASE\spring-context-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-aop\4.2.5.RELEASE\spring-aop-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\aopalliance\aopalliance\1.0\aopalliance-1.0.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-beans\4.2.5.RELEASE\spring-beans-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-expression\4.2.5.RELEASE\spring-expression-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\mysql\mysql-connector-java\5.1.27\mysql-connector-java-5.1.27.jar;C:\Users\Administrator\.m2\repository\org\hibernate\hibernate-validator\5.0.1.Final\hibernate-validator-5.0.1.Final.jar;C:\Users\Administrator\.m2\repository\javax\validation\validation-api\1.1.0.Final\validation-api-1.1.0.Final.jar;C:\Users\Administrator\.m2\repository\org\jboss\logging\jboss-logging\3.1.1.GA\jboss-logging-3.1.1.GA.jar;C:\Users\Administrator\.m2\repository\com\fasterxml\classmate\0.8.0\classmate-0.8.0.jar;C:\Users\Administrator\.m2\repository\com\101tec\zkclient\0.2\zkclient-0.2.jar;C:\Users\Administrator\.m2\repository\log4j\log4j\1.2.14\log4j-1.2.14.jar;C:\Users\Administrator\.m2\repository\ch\qos\logback\logback-core\1.0.13\logback-core-1.0.13.jar;C:\Users\Administrator\.m2\repository\org\slf4j\slf4j-api\1.7.5\slf4j-api-1.7.5.jar;C:\Users\Administrator\.m2\repository\org\slf4j\jcl-over-slf4j\1.7.5\jcl-over-slf4j-1.7.5.jar;C:\Users\Administrator\.m2\repository\ch\qos\logback\logback-classic\1.0.13\logback-classic-1.0.13.jar
+2017-03-09 11:15:10.702 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.library.path=E:\jdk1.7.0_51\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;E:/jdk1.7.0_51/bin/../jre/bin/server;E:/jdk1.7.0_51/bin/../jre/bin;E:/jdk1.7.0_51/bin/../jre/lib/amd64;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\Program Files\TortoiseSVN\bin;E:\jdk1.7.0_51\bin;E:\jdk1.7.0_51\jre\bin;;E:\eclipse;;.
+2017-03-09 11:15:10.702 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.io.tmpdir=C:\Users\ADMINI~1\AppData\Local\Temp\
+2017-03-09 11:15:10.702 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.compiler=<NA>
+2017-03-09 11:15:10.702 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:os.name=Windows 7
+2017-03-09 11:15:10.702 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:os.arch=amd64
+2017-03-09 11:15:10.702 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:os.version=6.1
+2017-03-09 11:15:10.702 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:user.name=Administrator
+2017-03-09 11:15:10.702 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:user.home=C:\Users\Administrator
+2017-03-09 11:15:10.703 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:user.dir=E:\workspaces\xiaoermaidan\servicesapps\hfepay-scancode-serviceapp
+2017-03-09 11:15:10.704 [main] INFO  org.apache.zookeeper.ZooKeeper - Initiating client connection, connectString=127.0.0.1:2181 sessionTimeout=30000 watcher=org.I0Itec.zkclient.ZkClient@48b844a8
+2017-03-09 11:15:10.734 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn - Opening socket connection to server 127.0.0.1/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+2017-03-09 11:15:10.735 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn - Socket connection established to 127.0.0.1/127.0.0.1:2181, initiating session
+2017-03-09 11:15:10.754 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn - Session establishment complete on server 127.0.0.1/127.0.0.1:2181, sessionid = 0x15a8e952fa20041, negotiated timeout = 30000
+2017-03-09 13:44:57.527 [main-SendThread(127.0.0.1:2181)] WARN  org.apache.zookeeper.ClientCnxn - Client session timed out, have not heard from server in 2375089ms for sessionid 0x15a8e952fa20041
+2017-03-09 13:44:57.528 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn - Client session timed out, have not heard from server in 2375089ms for sessionid 0x15a8e952fa20041, closing socket connection and attempting reconnect
+2017-03-09 13:45:04.751 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn - Opening socket connection to server 127.0.0.1/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+2017-03-09 13:45:06.059 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn - Socket connection established to 127.0.0.1/127.0.0.1:2181, initiating session
+2017-03-09 13:45:14.594 [main-SendThread(127.0.0.1:2181)] WARN  org.apache.zookeeper.ClientCnxn - Unable to reconnect to ZooKeeper service, session 0x15a8e952fa20041 has expired
+2017-03-09 13:45:14.594 [main-EventThread] INFO  org.apache.zookeeper.ZooKeeper - Initiating client connection, connectString=127.0.0.1:2181 sessionTimeout=30000 watcher=org.I0Itec.zkclient.ZkClient@48b844a8
+2017-03-09 13:45:14.594 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn - Unable to reconnect to ZooKeeper service, session 0x15a8e952fa20041 has expired, closing socket connection
+2017-03-09 13:45:14.597 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn - Opening socket connection to server 127.0.0.1/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+2017-03-09 13:45:14.598 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn - Socket connection established to 127.0.0.1/127.0.0.1:2181, initiating session
+2017-03-09 13:45:14.599 [main-EventThread] INFO  org.apache.zookeeper.ClientCnxn - EventThread shut down for session: 0x15a8e952fa20041
+2017-03-09 13:45:15.091 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn - Session establishment complete on server 127.0.0.1/127.0.0.1:2181, sessionid = 0x15a8e952fa20043, negotiated timeout = 30000
+2017-03-09 14:55:07.030 [main] INFO  o.s.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+2017-03-09 14:55:12.282 [main] INFO  o.s.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-services.xml]
+2017-03-09 14:55:12.499 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'adminServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.AdminServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\AdminServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.AdminServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 14:55:12.505 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'pageServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.PageServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\PageServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.PageServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 14:55:12.513 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'sysConfigServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.SysConfigServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\SysConfigServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.SysConfigServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 14:55:12.531 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'channelAdminServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.channel.impl.ChannelAdminServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\channel\impl\ChannelAdminServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.channel.impl.ChannelAdminServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 14:55:12.548 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'idCreateServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.IdCreateServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\IdCreateServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.IdCreateServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 14:55:12.565 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'hierarchicalSettlementTotalService' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.HierarchicalSettlementTotalServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\HierarchicalSettlementTotalServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.HierarchicalSettlementTotalServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 14:55:12.566 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'organWalletService' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.OrganWalletServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\OrganWalletServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.OrganWalletServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 14:55:12.567 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'organWithdrawalsService' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.OrganWithdrawalsServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\OrganWithdrawalsServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.OrganWithdrawalsServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 14:55:12.572 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'wechatUserService' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.WechatUserServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\WechatUserServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.WechatUserServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 14:55:12.579 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'adviertisementInfoService' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.AdviertisementInfoServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\AdviertisementInfoServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.AdviertisementInfoServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 14:55:12.580 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'profitDetailService' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.order.impl.ProfitDetailServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\order\impl\ProfitDetailServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.order.impl.ProfitDetailServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 14:55:12.581 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'organLimitService' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.OrganLimitServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\OrganLimitServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.OrganLimitServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 14:55:12.582 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'cityService' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.CityServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\CityServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.CityServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 14:55:12.583 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'provinceService' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.ProvinceServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\ProvinceServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.ProvinceServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 14:55:12.584 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'merchantActivityService' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.MerchantActivityServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\MerchantActivityServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.MerchantActivityServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 14:55:12.585 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'merchantActivityDiscountService' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.MerchantActivityDiscountServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\MerchantActivityDiscountServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.MerchantActivityDiscountServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 14:55:12.587 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'nodeRelationService' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.NodeRelationServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\NodeRelationServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.NodeRelationServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 14:55:12.588 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'messagePushRuleService' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.MessagePushRuleServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\MessagePushRuleServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.MessagePushRuleServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 14:55:12.589 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'messagePushLogService' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.MessagePushLogServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\MessagePushLogServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.MessagePushLogServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 14:55:12.590 [main] INFO  o.s.context.support.GenericXmlApplicationContext - Refreshing org.springframework.context.support.GenericXmlApplicationContext@53895c4c: startup date [Thu Mar 09 14:55:12 CST 2017]; root of context hierarchy
+2017-03-09 14:55:13.491 [main] INFO  c.h.c.configuration.PropertyPlaceholderConfigurer - file:/E:/
+2017-03-09 14:55:13.492 [main] INFO  c.h.c.configuration.PropertyPlaceholderConfigurer - Loading properties file from URL [file:/E:/workspaces/xiaoermaidan/servicesapps/hfepay-scancode-serviceapp/target/classes/application-hfepay.properties]
+2017-03-09 14:55:13.509 [main] INFO  c.h.c.configuration.PropertyPlaceholderConfigurer - Loading properties file from URL [file:d:/application-hfepay.properties]
+2017-03-09 14:55:13.509 [main] WARN  c.h.c.configuration.PropertyPlaceholderConfigurer - Could not load properties from URL [file:d:/application-hfepay.properties]: d:\application-hfepay.properties (系统找不到指定的文件。)
+2017-03-09 14:55:13.509 [main] INFO  c.h.c.configuration.PropertyPlaceholderConfigurer - Loading properties file from URL [file:./conf/application-hfepay.properties]
+2017-03-09 14:55:13.510 [main] WARN  c.h.c.configuration.PropertyPlaceholderConfigurer - Could not load properties from URL [file:./conf/application-hfepay.properties]: .\conf\application-hfepay.properties (系统找不到指定的路径。)
+2017-03-09 14:55:13.604 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0' of type [class org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-03-09 14:55:20.852 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:zookeeper.version=3.4.7-1713338, built on 11/09/2015 04:32 GMT
+2017-03-09 14:55:20.852 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:host.name=windows10.microdone.cn
+2017-03-09 14:55:20.853 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.version=1.7.0_51
+2017-03-09 14:55:20.853 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.vendor=Oracle Corporation
+2017-03-09 14:55:20.853 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.home=E:\jdk1.7.0_51\jre
+2017-03-09 14:55:20.853 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.class.path=E:\workspaces\xiaoermaidan\servicesapps\hfepay-scancode-serviceapp\target\classes;E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes;E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service\target\classes;E:\workspaces\xiaoermaidan\services\hfepay-scancode-commons\trunk\hfepay-scancode-commons\hfepay-scancode-commons-entity\target\classes;C:\Users\Administrator\.m2\repository\org\apache\shiro\shiro-core\1.2.2\shiro-core-1.2.2.jar;C:\Users\Administrator\.m2\repository\org\apache\shiro\shiro-web\1.2.2\shiro-web-1.2.2.jar;C:\Users\Administrator\.m2\repository\org\apache\shiro\shiro-ehcache\1.2.2\shiro-ehcache-1.2.2.jar;C:\Users\Administrator\.m2\repository\net\sf\ehcache\ehcache-core\2.5.0\ehcache-core-2.5.0.jar;C:\Users\Administrator\.m2\repository\org\apache\shiro\shiro-spring\1.2.2\shiro-spring-1.2.2.jar;E:\workspaces\xiaoermaidan\commons\hfepay-commons-cache\trunk\hfepay-commons-cache\target\classes;C:\Users\Administrator\.m2\repository\redis\clients\jedis\2.8.1\jedis-2.8.1.jar;E:\workspaces\xiaoermaidan\services\hfepay-sacncode-pay\trunk\hfepay-scancode-pay\hfepay-scancode-pay-service-impl\target\classes;E:\workspaces\xiaoermaidan\services\hfepay-sacncode-pay\trunk\hfepay-scancode-pay\hfepay-scancode-pay-service\target\classes;E:\workspaces\xiaoermaidan\services\hfepay-scancode-commons\trunk\hfepay-scancode-commons\hfepay-scancode-commons-dao-impl\target\classes;E:\workspaces\xiaoermaidan\services\hfepay-scancode-commons\trunk\hfepay-scancode-commons\hfepay-scancode-commons-dao\target\classes;C:\Users\Administrator\.m2\repository\com\alibaba\fastjson\1.1.32\fastjson-1.1.32.jar;E:\workspaces\xiaoermaidan\commons\hfepay-commons-excelutils\trunk\hfepay-commons-excelutils\target\classes;C:\Users\Administrator\.m2\repository\net\sf\jxls\jxls-core\1.0.5\jxls-core-1.0.5.jar;C:\Users\Administrator\.m2\repository\commons-collections\commons-collections\3.2.1\commons-collections-3.2.1.jar;C:\Users\Administrator\.m2\repository\commons-digester\commons-digester\2.0\commons-digester-2.0.jar;C:\Users\Administrator\.m2\repository\org\apache\commons\commons-jexl\2.0.1\commons-jexl-2.0.1.jar;C:\Users\Administrator\.m2\repository\org\apache\poi\poi\3.9\poi-3.9.jar;C:\Users\Administrator\.m2\repository\org\apache\poi\poi-ooxml\3.9\poi-ooxml-3.9.jar;C:\Users\Administrator\.m2\repository\org\apache\poi\poi-ooxml-schemas\3.9\poi-ooxml-schemas-3.9.jar;C:\Users\Administrator\.m2\repository\org\apache\xmlbeans\xmlbeans\2.3.0\xmlbeans-2.3.0.jar;C:\Users\Administrator\.m2\repository\dom4j\dom4j\1.6.1\dom4j-1.6.1.jar;E:\workspaces\xiaoermaidan\commons\hfepay-commons-sms\trunk\hfepay-commons-sms\target\classes;C:\Users\Administrator\.m2\repository\com\xiehe\sms\xiehe_smsclient\1.1.1\xiehe_smsclient-1.1.1.jar;C:\Users\Administrator\.m2\repository\javax\mail\javax.mail-api\1.5.5\javax.mail-api-1.5.5.jar;C:\Users\Administrator\.m2\repository\org\apache\commons\commons-email\1.4\commons-email-1.4.jar;C:\Users\Administrator\.m2\repository\com\sun\mail\javax.mail\1.5.2\javax.mail-1.5.2.jar;C:\Users\Administrator\.m2\repository\javax\activation\activation\1.1.1\activation-1.1.1.jar;E:\workspaces\xiaoermaidan\commons\hfepay-commons-timer\target\classes;C:\Users\Administrator\.m2\repository\org\quartz-scheduler\quartz\2.1.5\quartz-2.1.5.jar;C:\Users\Administrator\.m2\repository\c3p0\c3p0\0.9.1.1\c3p0-0.9.1.1.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-context-support\4.2.5.RELEASE\spring-context-support-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\aspectj\aspectjrt\1.7.0\aspectjrt-1.7.0.jar;C:\Users\Administrator\.m2\repository\org\aspectj\aspectjweaver\1.7.4\aspectjweaver-1.7.4.jar;C:\Users\Administrator\.m2\repository\cglib\cglib\2.2.2\cglib-2.2.2.jar;C:\Users\Administrator\.m2\repository\asm\asm\3.3.1\asm-3.3.1.jar;C:\Users\Administrator\.m2\repository\org\jsoup\jsoup\1.7.3\jsoup-1.7.3.jar;C:\Users\Administrator\.m2\repository\com\google\zxing\core\3.1.0\core-3.1.0.jar;C:\Users\Administrator\.m2\repository\commons-codec\commons-codec\1.8\commons-codec-1.8.jar;E:\workspaces\xiaoermaidan\services\hfepay-scancode-api\trunk\hfepay-scancode-api\hfepay-scancode-api-service\target\classes;E:\workspaces\xiaoermaidan\services\hfepay-scancode-api\trunk\hfepay-scancode-api\hfepay-scancode-api-entity\target\classes;E:\workspaces\xiaoermaidan\commons\hfepay-commons-dao\trunk\hfepay-commons-dao\target\classes;E:\workspaces\xiaoermaidan\commons\hfepay-commons-base\trunk\hfepay-commons-base\target\classes;C:\Users\Administrator\.m2\repository\org\apache\commons\commons-lang3\3.2.1\commons-lang3-3.2.1.jar;C:\Users\Administrator\.m2\repository\commons-beanutils\commons-beanutils\1.9.1\commons-beanutils-1.9.1.jar;C:\Users\Administrator\.m2\repository\org\apache\httpcomponents\httpclient\4.3.5\httpclient-4.3.5.jar;C:\Users\Administrator\.m2\repository\org\apache\httpcomponents\httpcore\4.3.2\httpcore-4.3.2.jar;C:\Users\Administrator\.m2\repository\joda-time\joda-time\2.3\joda-time-2.3.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-jdbc\4.2.5.RELEASE\spring-jdbc-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-tx\4.2.5.RELEASE\spring-tx-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-test\4.2.5.RELEASE\spring-test-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\mybatis\mybatis\3.2.4\mybatis-3.2.4.jar;C:\Users\Administrator\.m2\repository\org\mybatis\mybatis-spring\1.2.1\mybatis-spring-1.2.1.jar;C:\Users\Administrator\.m2\repository\xerces\xercesImpl\2.9.1\xercesImpl-2.9.1.jar;C:\Users\Administrator\.m2\repository\xml-apis\xml-apis\1.3.04\xml-apis-1.3.04.jar;C:\Users\Administrator\.m2\repository\com\alibaba\druid\0.2.8\druid-0.2.8.jar;C:\Users\Administrator\.m2\repository\javax\persistence\toplink-essentials\1.0\toplink-essentials-1.0.jar;C:\Users\Administrator\.m2\repository\javax\persistence\persistence-api\1.0\persistence-api-1.0.jar;C:\Users\Administrator\.m2\repository\org\json\org.json\chargebee-1.0\org.json-chargebee-1.0.jar;C:\Users\Administrator\.m2\repository\com\chinaums\XmClient\1.0\XmClient-1.0.jar;C:\Users\Administrator\.m2\repository\org\quartz-scheduler\quartz-jobs\2.2.1\quartz-jobs-2.2.1.jar;C:\Users\Administrator\.m2\repository\net\sf\json-lib\json-lib\2.4\json-lib-2.4-jdk15.jar;C:\Users\Administrator\.m2\repository\commons-lang\commons-lang\2.5\commons-lang-2.5.jar;C:\Users\Administrator\.m2\repository\net\sf\ezmorph\ezmorph\1.0.6\ezmorph-1.0.6.jar;C:\Users\Administrator\.m2\repository\org\springframework\session\spring-session-data-redis\1.2.0.RELEASE\spring-session-data-redis-1.2.0.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\apache\commons\commons-pool2\2.4.2\commons-pool2-2.4.2.jar;C:\Users\Administrator\.m2\repository\org\springframework\data\spring-data-redis\1.7.1.RELEASE\spring-data-redis-1.7.1.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\data\spring-data-keyvalue\1.1.1.RELEASE\spring-data-keyvalue-1.1.1.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\data\spring-data-commons\1.12.1.RELEASE\spring-data-commons-1.12.1.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-oxm\4.2.5.RELEASE\spring-oxm-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\session\spring-session\1.2.0.RELEASE\spring-session-1.2.0.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\apache\zookeeper\zookeeper\3.4.7\zookeeper-3.4.7.jar;C:\Users\Administrator\.m2\repository\jline\jline\0.9.94\jline-0.9.94.jar;C:\Users\Administrator\.m2\repository\io\netty\netty\3.7.0.Final\netty-3.7.0.Final.jar;C:\Users\Administrator\.m2\repository\com\alibaba\dubbo\2.5.3\dubbo-2.5.3.jar;C:\Users\Administrator\.m2\repository\org\javassist\javassist\3.15.0-GA\javassist-3.15.0-GA.jar;C:\Users\Administrator\.m2\repository\org\jboss\netty\netty\3.2.5.Final\netty-3.2.5.Final.jar;C:\Users\Administrator\.m2\repository\org\apache\hadoop\hadoop-core\1.2.1\hadoop-core-1.2.1.jar;C:\Users\Administrator\.m2\repository\commons-cli\commons-cli\1.2\commons-cli-1.2.jar;C:\Users\Administrator\.m2\repository\xmlenc\xmlenc\0.52\xmlenc-0.52.jar;C:\Users\Administrator\.m2\repository\com\sun\jersey\jersey-core\1.8\jersey-core-1.8.jar;C:\Users\Administrator\.m2\repository\com\sun\jersey\jersey-json\1.8\jersey-json-1.8.jar;C:\Users\Administrator\.m2\repository\org\codehaus\jettison\jettison\1.1\jettison-1.1.jar;C:\Users\Administrator\.m2\repository\stax\stax-api\1.0.1\stax-api-1.0.1.jar;C:\Users\Administrator\.m2\repository\com\sun\xml\bind\jaxb-impl\2.2.3-1\jaxb-impl-2.2.3-1.jar;C:\Users\Administrator\.m2\repository\javax\xml\bind\jaxb-api\2.2.2\jaxb-api-2.2.2.jar;C:\Users\Administrator\.m2\repository\javax\xml\stream\stax-api\1.0-2\stax-api-1.0-2.jar;C:\Users\Administrator\.m2\repository\org\codehaus\jackson\jackson-core-asl\1.7.1\jackson-core-asl-1.7.1.jar;C:\Users\Administrator\.m2\repository\org\codehaus\jackson\jackson-jaxrs\1.7.1\jackson-jaxrs-1.7.1.jar;C:\Users\Administrator\.m2\repository\org\codehaus\jackson\jackson-xc\1.7.1\jackson-xc-1.7.1.jar;C:\Users\Administrator\.m2\repository\com\sun\jersey\jersey-server\1.8\jersey-server-1.8.jar;C:\Users\Administrator\.m2\repository\commons-io\commons-io\2.1\commons-io-2.1.jar;C:\Users\Administrator\.m2\repository\commons-httpclient\commons-httpclient\3.0.1\commons-httpclient-3.0.1.jar;C:\Users\Administrator\.m2\repository\org\apache\commons\commons-math\2.1\commons-math-2.1.jar;C:\Users\Administrator\.m2\repository\commons-net\commons-net\1.4.1\commons-net-1.4.1.jar;C:\Users\Administrator\.m2\repository\org\mortbay\jetty\jetty\6.1.26\jetty-6.1.26.jar;C:\Users\Administrator\.m2\repository\org\mortbay\jetty\servlet-api\2.5-20081211\servlet-api-2.5-20081211.jar;C:\Users\Administrator\.m2\repository\org\mortbay\jetty\jetty-util\6.1.26\jetty-util-6.1.26.jar;C:\Users\Administrator\.m2\repository\tomcat\jasper-runtime\5.5.12\jasper-runtime-5.5.12.jar;C:\Users\Administrator\.m2\repository\tomcat\jasper-compiler\5.5.12\jasper-compiler-5.5.12.jar;C:\Users\Administrator\.m2\repository\org\mortbay\jetty\jsp-api-2.1\6.1.14\jsp-api-2.1-6.1.14.jar;C:\Users\Administrator\.m2\repository\org\mortbay\jetty\servlet-api-2.5\6.1.14\servlet-api-2.5-6.1.14.jar;C:\Users\Administrator\.m2\repository\org\mortbay\jetty\jsp-2.1\6.1.14\jsp-2.1-6.1.14.jar;C:\Users\Administrator\.m2\repository\ant\ant\1.6.5\ant-1.6.5.jar;C:\Users\Administrator\.m2\repository\commons-el\commons-el\1.0\commons-el-1.0.jar;C:\Users\Administrator\.m2\repository\net\java\dev\jets3t\jets3t\0.6.1\jets3t-0.6.1.jar;C:\Users\Administrator\.m2\repository\hsqldb\hsqldb\1.8.0.10\hsqldb-1.8.0.10.jar;C:\Users\Administrator\.m2\repository\oro\oro\2.0.8\oro-2.0.8.jar;C:\Users\Administrator\.m2\repository\org\eclipse\jdt\core\3.1.1\core-3.1.1.jar;C:\Users\Administrator\.m2\repository\org\codehaus\jackson\jackson-mapper-asl\1.8.8\jackson-mapper-asl-1.8.8.jar;C:\Users\Administrator\.m2\repository\commons-configuration\commons-configuration\1.9\commons-configuration-1.9.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-core\4.2.5.RELEASE\spring-core-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\commons-logging\commons-logging\1.1.3\commons-logging-1.1.3.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-context\4.2.5.RELEASE\spring-context-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-aop\4.2.5.RELEASE\spring-aop-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\aopalliance\aopalliance\1.0\aopalliance-1.0.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-beans\4.2.5.RELEASE\spring-beans-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-expression\4.2.5.RELEASE\spring-expression-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\mysql\mysql-connector-java\5.1.27\mysql-connector-java-5.1.27.jar;C:\Users\Administrator\.m2\repository\org\hibernate\hibernate-validator\5.0.1.Final\hibernate-validator-5.0.1.Final.jar;C:\Users\Administrator\.m2\repository\javax\validation\validation-api\1.1.0.Final\validation-api-1.1.0.Final.jar;C:\Users\Administrator\.m2\repository\org\jboss\logging\jboss-logging\3.1.1.GA\jboss-logging-3.1.1.GA.jar;C:\Users\Administrator\.m2\repository\com\fasterxml\classmate\0.8.0\classmate-0.8.0.jar;C:\Users\Administrator\.m2\repository\com\101tec\zkclient\0.2\zkclient-0.2.jar;C:\Users\Administrator\.m2\repository\log4j\log4j\1.2.14\log4j-1.2.14.jar;C:\Users\Administrator\.m2\repository\ch\qos\logback\logback-core\1.0.13\logback-core-1.0.13.jar;C:\Users\Administrator\.m2\repository\org\slf4j\slf4j-api\1.7.5\slf4j-api-1.7.5.jar;C:\Users\Administrator\.m2\repository\org\slf4j\jcl-over-slf4j\1.7.5\jcl-over-slf4j-1.7.5.jar;C:\Users\Administrator\.m2\repository\ch\qos\logback\logback-classic\1.0.13\logback-classic-1.0.13.jar
+2017-03-09 14:55:20.854 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.library.path=E:\jdk1.7.0_51\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;E:/jdk1.7.0_51/bin/../jre/bin/server;E:/jdk1.7.0_51/bin/../jre/bin;E:/jdk1.7.0_51/bin/../jre/lib/amd64;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\Program Files\TortoiseSVN\bin;E:\jdk1.7.0_51\bin;E:\jdk1.7.0_51\jre\bin;;E:\eclipse;;.
+2017-03-09 14:55:20.854 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.io.tmpdir=C:\Users\ADMINI~1\AppData\Local\Temp\
+2017-03-09 14:55:20.854 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.compiler=<NA>
+2017-03-09 14:55:20.854 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:os.name=Windows 7
+2017-03-09 14:55:20.854 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:os.arch=amd64
+2017-03-09 14:55:20.854 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:os.version=6.1
+2017-03-09 14:55:20.854 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:user.name=Administrator
+2017-03-09 14:55:20.854 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:user.home=C:\Users\Administrator
+2017-03-09 14:55:20.854 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:user.dir=E:\workspaces\xiaoermaidan\servicesapps\hfepay-scancode-serviceapp
+2017-03-09 14:55:20.855 [main] INFO  org.apache.zookeeper.ZooKeeper - Initiating client connection, connectString=127.0.0.1:2181 sessionTimeout=30000 watcher=org.I0Itec.zkclient.ZkClient@6efc0734
+2017-03-09 14:55:20.883 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn - Opening socket connection to server 127.0.0.1/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+2017-03-09 14:55:20.885 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn - Socket connection established to 127.0.0.1/127.0.0.1:2181, initiating session
+2017-03-09 14:55:20.971 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn - Session establishment complete on server 127.0.0.1/127.0.0.1:2181, sessionid = 0x15a8e952fa20047, negotiated timeout = 30000
+2017-03-09 16:33:10.143 [DubboServerHandler-172.16.2.7:20896-thread-5] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLChannelExpand.findByCriteria:select
+     
+	     
+		A.id as A_id,A.channel_no as A_channel_no,A.channel_code as A_channel_code,A.channel_pre_code as A_channel_pre_code,A.nick_name as A_nick_name,A.index_top_img as A_index_top_img,A.index_bottom_img as A_index_bottom_img,A.index_wx_img as A_index_wx_img,A.address as A_address,A.phone as A_phone,A.technical_support_email as A_technical_support_email,A.qq_group as A_qq_group,A.custom_service_qq as A_custom_service_qq,A.business_cooperation_qq as A_business_cooperation_qq,A.business_cooperation_email as A_business_cooperation_email,A.microblog_url as A_microblog_url,A.contact_address_img as A_contact_address_img,A.login_background_img as A_login_background_img,A.center_head_img as A_center_head_img,A.company_name as A_company_name,A.pre_code as A_pre_code,A.record_number as A_record_number,A.icon as A_icon,A.title as A_title,A.key_words as A_key_words,A.description as A_description,A.domain_name as A_domain_name,A.telephone as A_telephone,A.about_us as A_about_us,A.help_info as A_help_info,A.is_active as A_is_active,A.status as A_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	     
+	 ,C.channel_name
+     from t_channel_expand A
+    left join t_channel_base C on A.channel_no = C.channel_no
+     
+       WHERE (
+        
+        
+          
+                 A.channel_no  =   'QDXX20170307000001' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.status  =   '1' 
+               
+            
+        
+      )
+2017-03-09 16:33:10.143 [DubboServerHandler-172.16.2.7:20896-thread-5] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 211ms
+2017-03-09 16:33:13.011 [DubboServerHandler-172.16.2.7:20896-thread-6] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLAgentBase.findByCriteria:select
+     
+	     
+		A.ID as A_ID,A.AGENT_NO as A_AGENT_NO,A.AGENT_NAME as A_AGENT_NAME,A.CHANNEL_NO as A_CHANNEL_NO,A.AGENT_PRE_CODE as A_AGENT_PRE_CODE,A.AGENT_TYPE as A_AGENT_TYPE,A.NAME as A_NAME,A.MOBILE as A_MOBILE,A.PARENT_NO as A_PARENT_NO,A.AGENT_LEVEL as A_AGENT_LEVEL,A.QR_TOTAL as A_QR_TOTAL,A.USE_TOTAL as A_USE_TOTAL,A.LESS_TOTAL as A_LESS_TOTAL,A.AGENT_FLAG as A_AGENT_FLAG,A.STATUS as A_STATUS,A.RECORD_STATUS as A_RECORD_STATUS,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.OPERATOR as A_OPERATOR,A.REMARK as A_REMARK,A.TEMP_1 as A_TEMP_1,A.TEMP_2 as A_TEMP_2,A.TEMP_3 as A_TEMP_3,A.TEMP_4 as A_TEMP_4
+	     
+	 
+     from t_agent_base A
+     
+       WHERE (
+        
+        
+          
+                 A.AGENT_NO  =   'QDXX20170307000001' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.STATUS  =   '1' 
+               
+            
+        
+      )
+2017-03-09 16:33:13.011 [DubboServerHandler-172.16.2.7:20896-thread-6] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 6ms
+2017-03-09 16:33:21.240 [DubboServerHandler-172.16.2.7:20896-thread-7] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLChannelExpand.findByCriteria:select
+     
+	     
+		A.id as A_id,A.channel_no as A_channel_no,A.channel_code as A_channel_code,A.channel_pre_code as A_channel_pre_code,A.nick_name as A_nick_name,A.index_top_img as A_index_top_img,A.index_bottom_img as A_index_bottom_img,A.index_wx_img as A_index_wx_img,A.address as A_address,A.phone as A_phone,A.technical_support_email as A_technical_support_email,A.qq_group as A_qq_group,A.custom_service_qq as A_custom_service_qq,A.business_cooperation_qq as A_business_cooperation_qq,A.business_cooperation_email as A_business_cooperation_email,A.microblog_url as A_microblog_url,A.contact_address_img as A_contact_address_img,A.login_background_img as A_login_background_img,A.center_head_img as A_center_head_img,A.company_name as A_company_name,A.pre_code as A_pre_code,A.record_number as A_record_number,A.icon as A_icon,A.title as A_title,A.key_words as A_key_words,A.description as A_description,A.domain_name as A_domain_name,A.telephone as A_telephone,A.about_us as A_about_us,A.help_info as A_help_info,A.is_active as A_is_active,A.status as A_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	     
+	 ,C.channel_name
+     from t_channel_expand A
+    left join t_channel_base C on A.channel_no = C.channel_no
+     
+       WHERE (
+        
+        
+          
+                 A.channel_no  =   'QDXX20170307000001' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.status  =   '1' 
+               
+            
+        
+      )
+2017-03-09 16:33:21.240 [DubboServerHandler-172.16.2.7:20896-thread-7] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 13ms
+2017-03-09 16:33:21.251 [DubboServerHandler-172.16.2.7:20896-thread-8] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLAgentBase.findByCriteria:select
+     
+	     
+		A.ID as A_ID,A.AGENT_NO as A_AGENT_NO,A.AGENT_NAME as A_AGENT_NAME,A.CHANNEL_NO as A_CHANNEL_NO,A.AGENT_PRE_CODE as A_AGENT_PRE_CODE,A.AGENT_TYPE as A_AGENT_TYPE,A.NAME as A_NAME,A.MOBILE as A_MOBILE,A.PARENT_NO as A_PARENT_NO,A.AGENT_LEVEL as A_AGENT_LEVEL,A.QR_TOTAL as A_QR_TOTAL,A.USE_TOTAL as A_USE_TOTAL,A.LESS_TOTAL as A_LESS_TOTAL,A.AGENT_FLAG as A_AGENT_FLAG,A.STATUS as A_STATUS,A.RECORD_STATUS as A_RECORD_STATUS,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.OPERATOR as A_OPERATOR,A.REMARK as A_REMARK,A.TEMP_1 as A_TEMP_1,A.TEMP_2 as A_TEMP_2,A.TEMP_3 as A_TEMP_3,A.TEMP_4 as A_TEMP_4
+	     
+	 
+     from t_agent_base A
+     
+       WHERE (
+        
+        
+          
+                 A.AGENT_NO  =   'QDXX20170307000001' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.STATUS  =   '1' 
+               
+            
+        
+      )
+2017-03-09 16:33:21.251 [DubboServerHandler-172.16.2.7:20896-thread-8] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 6ms
+2017-03-09 16:34:55.848 [DubboServerHandler-172.16.2.7:20896-thread-9] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLChannelExpand.findByCriteria:select
+     
+	     
+		A.id as A_id,A.channel_no as A_channel_no,A.channel_code as A_channel_code,A.channel_pre_code as A_channel_pre_code,A.nick_name as A_nick_name,A.index_top_img as A_index_top_img,A.index_bottom_img as A_index_bottom_img,A.index_wx_img as A_index_wx_img,A.address as A_address,A.phone as A_phone,A.technical_support_email as A_technical_support_email,A.qq_group as A_qq_group,A.custom_service_qq as A_custom_service_qq,A.business_cooperation_qq as A_business_cooperation_qq,A.business_cooperation_email as A_business_cooperation_email,A.microblog_url as A_microblog_url,A.contact_address_img as A_contact_address_img,A.login_background_img as A_login_background_img,A.center_head_img as A_center_head_img,A.company_name as A_company_name,A.pre_code as A_pre_code,A.record_number as A_record_number,A.icon as A_icon,A.title as A_title,A.key_words as A_key_words,A.description as A_description,A.domain_name as A_domain_name,A.telephone as A_telephone,A.about_us as A_about_us,A.help_info as A_help_info,A.is_active as A_is_active,A.status as A_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	     
+	 ,C.channel_name
+     from t_channel_expand A
+    left join t_channel_base C on A.channel_no = C.channel_no
+     
+       WHERE (
+        
+        
+          
+                 A.channel_no  =   'QDXX20170307000001' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.status  =   '1' 
+               
+            
+        
+      )
+2017-03-09 16:34:55.848 [DubboServerHandler-172.16.2.7:20896-thread-9] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 15ms
+2017-03-09 16:36:26.669 [DubboServerHandler-172.16.2.7:20896-thread-10] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLAgentBase.findByCriteria:select
+     
+	     
+		A.ID as A_ID,A.AGENT_NO as A_AGENT_NO,A.AGENT_NAME as A_AGENT_NAME,A.CHANNEL_NO as A_CHANNEL_NO,A.AGENT_PRE_CODE as A_AGENT_PRE_CODE,A.AGENT_TYPE as A_AGENT_TYPE,A.NAME as A_NAME,A.MOBILE as A_MOBILE,A.PARENT_NO as A_PARENT_NO,A.AGENT_LEVEL as A_AGENT_LEVEL,A.QR_TOTAL as A_QR_TOTAL,A.USE_TOTAL as A_USE_TOTAL,A.LESS_TOTAL as A_LESS_TOTAL,A.AGENT_FLAG as A_AGENT_FLAG,A.STATUS as A_STATUS,A.RECORD_STATUS as A_RECORD_STATUS,A.CREATE_TIME as A_CREATE_TIME,A.UPDATE_TIME as A_UPDATE_TIME,A.OPERATOR as A_OPERATOR,A.REMARK as A_REMARK,A.TEMP_1 as A_TEMP_1,A.TEMP_2 as A_TEMP_2,A.TEMP_3 as A_TEMP_3,A.TEMP_4 as A_TEMP_4
+	     
+	 
+     from t_agent_base A
+     
+       WHERE (
+        
+        
+          
+                 A.AGENT_NO  =   'QDXX20170307000001' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.STATUS  =   '1' 
+               
+            
+        
+      )
+2017-03-09 16:36:26.670 [DubboServerHandler-172.16.2.7:20896-thread-10] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 10ms
+2017-03-09 16:44:02.330 [main] INFO  o.s.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+2017-03-09 16:44:05.754 [main] INFO  o.s.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-services.xml]
+2017-03-09 16:44:06.004 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'adminServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.AdminServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\AdminServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.AdminServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 16:44:06.009 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'pageServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.PageServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\PageServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.PageServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 16:44:06.013 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'sysConfigServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.SysConfigServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\SysConfigServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.SysConfigServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 16:44:06.025 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'channelAdminServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.channel.impl.ChannelAdminServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\channel\impl\ChannelAdminServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.channel.impl.ChannelAdminServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 16:44:06.039 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'idCreateServiceImpl' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.IdCreateServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\IdCreateServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.IdCreateServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 16:44:06.058 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'hierarchicalSettlementTotalService' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.HierarchicalSettlementTotalServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\HierarchicalSettlementTotalServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.HierarchicalSettlementTotalServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 16:44:06.059 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'organWalletService' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.OrganWalletServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\OrganWalletServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.OrganWalletServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 16:44:06.060 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'organWithdrawalsService' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.OrganWithdrawalsServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\OrganWithdrawalsServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.OrganWithdrawalsServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 16:44:06.061 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'wechatUserService' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.WechatUserServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\WechatUserServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.WechatUserServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 16:44:06.061 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'adviertisementInfoService' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.AdviertisementInfoServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\AdviertisementInfoServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.AdviertisementInfoServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 16:44:06.062 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'profitDetailService' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.order.impl.ProfitDetailServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\order\impl\ProfitDetailServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.order.impl.ProfitDetailServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 16:44:06.064 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'organLimitService' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.OrganLimitServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\OrganLimitServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.OrganLimitServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 16:44:06.064 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'cityService' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.CityServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\CityServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.CityServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 16:44:06.065 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'provinceService' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.ProvinceServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\ProvinceServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.ProvinceServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 16:44:06.067 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'merchantActivityService' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.MerchantActivityServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\MerchantActivityServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.MerchantActivityServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 16:44:06.068 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'merchantActivityDiscountService' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.MerchantActivityDiscountServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\MerchantActivityDiscountServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.MerchantActivityDiscountServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 16:44:06.069 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'nodeRelationService' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.NodeRelationServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\NodeRelationServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.NodeRelationServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 16:44:06.070 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'messagePushRuleService' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.MessagePushRuleServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\MessagePushRuleServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.MessagePushRuleServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 16:44:06.071 [main] INFO  o.s.b.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'messagePushLogService' with a different definition: replacing [Generic bean: class [com.hfepay.scancode.service.operator.impl.MessagePushLogServiceImpl]; scope=singleton; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes\com\hfepay\scancode\service\operator\impl\MessagePushLogServiceImpl.class]] with [Generic bean: class [com.hfepay.scancode.service.operator.impl.MessagePushLogServiceImpl]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-services.xml]]
+2017-03-09 16:44:06.072 [main] INFO  o.s.context.support.GenericXmlApplicationContext - Refreshing org.springframework.context.support.GenericXmlApplicationContext@53895c4c: startup date [Thu Mar 09 16:44:06 CST 2017]; root of context hierarchy
+2017-03-09 16:44:07.056 [main] INFO  c.h.c.configuration.PropertyPlaceholderConfigurer - file:/E:/
+2017-03-09 16:44:07.056 [main] INFO  c.h.c.configuration.PropertyPlaceholderConfigurer - Loading properties file from URL [file:/E:/workspaces/xiaoermaidan/servicesapps/hfepay-scancode-serviceapp/target/classes/application-hfepay.properties]
+2017-03-09 16:44:07.057 [main] INFO  c.h.c.configuration.PropertyPlaceholderConfigurer - Loading properties file from URL [file:d:/application-hfepay.properties]
+2017-03-09 16:44:07.057 [main] WARN  c.h.c.configuration.PropertyPlaceholderConfigurer - Could not load properties from URL [file:d:/application-hfepay.properties]: d:\application-hfepay.properties (系统找不到指定的文件。)
+2017-03-09 16:44:07.057 [main] INFO  c.h.c.configuration.PropertyPlaceholderConfigurer - Loading properties file from URL [file:./conf/application-hfepay.properties]
+2017-03-09 16:44:07.057 [main] WARN  c.h.c.configuration.PropertyPlaceholderConfigurer - Could not load properties from URL [file:./conf/application-hfepay.properties]: .\conf\application-hfepay.properties (系统找不到指定的路径。)
+2017-03-09 16:44:07.136 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0' of type [class org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-03-09 16:44:14.251 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:zookeeper.version=3.4.7-1713338, built on 11/09/2015 04:32 GMT
+2017-03-09 16:44:14.251 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:host.name=windows10.microdone.cn
+2017-03-09 16:44:14.251 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.version=1.7.0_51
+2017-03-09 16:44:14.251 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.vendor=Oracle Corporation
+2017-03-09 16:44:14.251 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.home=E:\jdk1.7.0_51\jre
+2017-03-09 16:44:14.251 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.class.path=E:\workspaces\xiaoermaidan\servicesapps\hfepay-scancode-serviceapp\target\classes;E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service-impl\target\classes;E:\workspaces\xiaoermaidan\services\hfepay-scancode\trunk\hfepay-scancode\hfepay-scancode-service\target\classes;E:\workspaces\xiaoermaidan\services\hfepay-scancode-commons\trunk\hfepay-scancode-commons\hfepay-scancode-commons-entity\target\classes;C:\Users\Administrator\.m2\repository\org\apache\shiro\shiro-core\1.2.2\shiro-core-1.2.2.jar;C:\Users\Administrator\.m2\repository\org\apache\shiro\shiro-web\1.2.2\shiro-web-1.2.2.jar;C:\Users\Administrator\.m2\repository\org\apache\shiro\shiro-ehcache\1.2.2\shiro-ehcache-1.2.2.jar;C:\Users\Administrator\.m2\repository\net\sf\ehcache\ehcache-core\2.5.0\ehcache-core-2.5.0.jar;C:\Users\Administrator\.m2\repository\org\apache\shiro\shiro-spring\1.2.2\shiro-spring-1.2.2.jar;E:\workspaces\xiaoermaidan\commons\hfepay-commons-cache\trunk\hfepay-commons-cache\target\classes;C:\Users\Administrator\.m2\repository\redis\clients\jedis\2.8.1\jedis-2.8.1.jar;E:\workspaces\xiaoermaidan\services\hfepay-sacncode-pay\trunk\hfepay-scancode-pay\hfepay-scancode-pay-service-impl\target\classes;E:\workspaces\xiaoermaidan\services\hfepay-sacncode-pay\trunk\hfepay-scancode-pay\hfepay-scancode-pay-service\target\classes;E:\workspaces\xiaoermaidan\services\hfepay-scancode-commons\trunk\hfepay-scancode-commons\hfepay-scancode-commons-dao-impl\target\classes;E:\workspaces\xiaoermaidan\services\hfepay-scancode-commons\trunk\hfepay-scancode-commons\hfepay-scancode-commons-dao\target\classes;C:\Users\Administrator\.m2\repository\com\alibaba\fastjson\1.1.32\fastjson-1.1.32.jar;E:\workspaces\xiaoermaidan\commons\hfepay-commons-excelutils\trunk\hfepay-commons-excelutils\target\classes;C:\Users\Administrator\.m2\repository\net\sf\jxls\jxls-core\1.0.5\jxls-core-1.0.5.jar;C:\Users\Administrator\.m2\repository\commons-collections\commons-collections\3.2.1\commons-collections-3.2.1.jar;C:\Users\Administrator\.m2\repository\commons-digester\commons-digester\2.0\commons-digester-2.0.jar;C:\Users\Administrator\.m2\repository\org\apache\commons\commons-jexl\2.0.1\commons-jexl-2.0.1.jar;C:\Users\Administrator\.m2\repository\org\apache\poi\poi\3.9\poi-3.9.jar;C:\Users\Administrator\.m2\repository\org\apache\poi\poi-ooxml\3.9\poi-ooxml-3.9.jar;C:\Users\Administrator\.m2\repository\org\apache\poi\poi-ooxml-schemas\3.9\poi-ooxml-schemas-3.9.jar;C:\Users\Administrator\.m2\repository\org\apache\xmlbeans\xmlbeans\2.3.0\xmlbeans-2.3.0.jar;C:\Users\Administrator\.m2\repository\dom4j\dom4j\1.6.1\dom4j-1.6.1.jar;E:\workspaces\xiaoermaidan\commons\hfepay-commons-sms\trunk\hfepay-commons-sms\target\classes;C:\Users\Administrator\.m2\repository\com\xiehe\sms\xiehe_smsclient\1.1.1\xiehe_smsclient-1.1.1.jar;C:\Users\Administrator\.m2\repository\javax\mail\javax.mail-api\1.5.5\javax.mail-api-1.5.5.jar;C:\Users\Administrator\.m2\repository\org\apache\commons\commons-email\1.4\commons-email-1.4.jar;C:\Users\Administrator\.m2\repository\com\sun\mail\javax.mail\1.5.2\javax.mail-1.5.2.jar;C:\Users\Administrator\.m2\repository\javax\activation\activation\1.1.1\activation-1.1.1.jar;E:\workspaces\xiaoermaidan\commons\hfepay-commons-timer\target\classes;C:\Users\Administrator\.m2\repository\org\quartz-scheduler\quartz\2.1.5\quartz-2.1.5.jar;C:\Users\Administrator\.m2\repository\c3p0\c3p0\0.9.1.1\c3p0-0.9.1.1.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-context-support\4.2.5.RELEASE\spring-context-support-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\aspectj\aspectjrt\1.7.0\aspectjrt-1.7.0.jar;C:\Users\Administrator\.m2\repository\org\aspectj\aspectjweaver\1.7.4\aspectjweaver-1.7.4.jar;C:\Users\Administrator\.m2\repository\cglib\cglib\2.2.2\cglib-2.2.2.jar;C:\Users\Administrator\.m2\repository\asm\asm\3.3.1\asm-3.3.1.jar;C:\Users\Administrator\.m2\repository\org\jsoup\jsoup\1.7.3\jsoup-1.7.3.jar;C:\Users\Administrator\.m2\repository\com\google\zxing\core\3.1.0\core-3.1.0.jar;C:\Users\Administrator\.m2\repository\commons-codec\commons-codec\1.8\commons-codec-1.8.jar;E:\workspaces\xiaoermaidan\services\hfepay-scancode-api\trunk\hfepay-scancode-api\hfepay-scancode-api-service\target\classes;E:\workspaces\xiaoermaidan\services\hfepay-scancode-api\trunk\hfepay-scancode-api\hfepay-scancode-api-entity\target\classes;E:\workspaces\xiaoermaidan\commons\hfepay-commons-dao\trunk\hfepay-commons-dao\target\classes;E:\workspaces\xiaoermaidan\commons\hfepay-commons-base\trunk\hfepay-commons-base\target\classes;C:\Users\Administrator\.m2\repository\org\apache\commons\commons-lang3\3.2.1\commons-lang3-3.2.1.jar;C:\Users\Administrator\.m2\repository\commons-beanutils\commons-beanutils\1.9.1\commons-beanutils-1.9.1.jar;C:\Users\Administrator\.m2\repository\org\apache\httpcomponents\httpclient\4.3.5\httpclient-4.3.5.jar;C:\Users\Administrator\.m2\repository\org\apache\httpcomponents\httpcore\4.3.2\httpcore-4.3.2.jar;C:\Users\Administrator\.m2\repository\joda-time\joda-time\2.3\joda-time-2.3.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-jdbc\4.2.5.RELEASE\spring-jdbc-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-tx\4.2.5.RELEASE\spring-tx-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-test\4.2.5.RELEASE\spring-test-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\mybatis\mybatis\3.2.4\mybatis-3.2.4.jar;C:\Users\Administrator\.m2\repository\org\mybatis\mybatis-spring\1.2.1\mybatis-spring-1.2.1.jar;C:\Users\Administrator\.m2\repository\xerces\xercesImpl\2.9.1\xercesImpl-2.9.1.jar;C:\Users\Administrator\.m2\repository\xml-apis\xml-apis\1.3.04\xml-apis-1.3.04.jar;C:\Users\Administrator\.m2\repository\com\alibaba\druid\0.2.8\druid-0.2.8.jar;C:\Users\Administrator\.m2\repository\javax\persistence\toplink-essentials\1.0\toplink-essentials-1.0.jar;C:\Users\Administrator\.m2\repository\javax\persistence\persistence-api\1.0\persistence-api-1.0.jar;C:\Users\Administrator\.m2\repository\org\json\org.json\chargebee-1.0\org.json-chargebee-1.0.jar;C:\Users\Administrator\.m2\repository\com\chinaums\XmClient\1.0\XmClient-1.0.jar;C:\Users\Administrator\.m2\repository\org\quartz-scheduler\quartz-jobs\2.2.1\quartz-jobs-2.2.1.jar;C:\Users\Administrator\.m2\repository\net\sf\json-lib\json-lib\2.4\json-lib-2.4-jdk15.jar;C:\Users\Administrator\.m2\repository\commons-lang\commons-lang\2.5\commons-lang-2.5.jar;C:\Users\Administrator\.m2\repository\net\sf\ezmorph\ezmorph\1.0.6\ezmorph-1.0.6.jar;C:\Users\Administrator\.m2\repository\org\springframework\session\spring-session-data-redis\1.2.0.RELEASE\spring-session-data-redis-1.2.0.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\apache\commons\commons-pool2\2.4.2\commons-pool2-2.4.2.jar;C:\Users\Administrator\.m2\repository\org\springframework\data\spring-data-redis\1.7.1.RELEASE\spring-data-redis-1.7.1.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\data\spring-data-keyvalue\1.1.1.RELEASE\spring-data-keyvalue-1.1.1.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\data\spring-data-commons\1.12.1.RELEASE\spring-data-commons-1.12.1.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-oxm\4.2.5.RELEASE\spring-oxm-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\session\spring-session\1.2.0.RELEASE\spring-session-1.2.0.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\apache\zookeeper\zookeeper\3.4.7\zookeeper-3.4.7.jar;C:\Users\Administrator\.m2\repository\jline\jline\0.9.94\jline-0.9.94.jar;C:\Users\Administrator\.m2\repository\io\netty\netty\3.7.0.Final\netty-3.7.0.Final.jar;C:\Users\Administrator\.m2\repository\com\alibaba\dubbo\2.5.3\dubbo-2.5.3.jar;C:\Users\Administrator\.m2\repository\org\javassist\javassist\3.15.0-GA\javassist-3.15.0-GA.jar;C:\Users\Administrator\.m2\repository\org\jboss\netty\netty\3.2.5.Final\netty-3.2.5.Final.jar;C:\Users\Administrator\.m2\repository\org\apache\hadoop\hadoop-core\1.2.1\hadoop-core-1.2.1.jar;C:\Users\Administrator\.m2\repository\commons-cli\commons-cli\1.2\commons-cli-1.2.jar;C:\Users\Administrator\.m2\repository\xmlenc\xmlenc\0.52\xmlenc-0.52.jar;C:\Users\Administrator\.m2\repository\com\sun\jersey\jersey-core\1.8\jersey-core-1.8.jar;C:\Users\Administrator\.m2\repository\com\sun\jersey\jersey-json\1.8\jersey-json-1.8.jar;C:\Users\Administrator\.m2\repository\org\codehaus\jettison\jettison\1.1\jettison-1.1.jar;C:\Users\Administrator\.m2\repository\stax\stax-api\1.0.1\stax-api-1.0.1.jar;C:\Users\Administrator\.m2\repository\com\sun\xml\bind\jaxb-impl\2.2.3-1\jaxb-impl-2.2.3-1.jar;C:\Users\Administrator\.m2\repository\javax\xml\bind\jaxb-api\2.2.2\jaxb-api-2.2.2.jar;C:\Users\Administrator\.m2\repository\javax\xml\stream\stax-api\1.0-2\stax-api-1.0-2.jar;C:\Users\Administrator\.m2\repository\org\codehaus\jackson\jackson-core-asl\1.7.1\jackson-core-asl-1.7.1.jar;C:\Users\Administrator\.m2\repository\org\codehaus\jackson\jackson-jaxrs\1.7.1\jackson-jaxrs-1.7.1.jar;C:\Users\Administrator\.m2\repository\org\codehaus\jackson\jackson-xc\1.7.1\jackson-xc-1.7.1.jar;C:\Users\Administrator\.m2\repository\com\sun\jersey\jersey-server\1.8\jersey-server-1.8.jar;C:\Users\Administrator\.m2\repository\commons-io\commons-io\2.1\commons-io-2.1.jar;C:\Users\Administrator\.m2\repository\commons-httpclient\commons-httpclient\3.0.1\commons-httpclient-3.0.1.jar;C:\Users\Administrator\.m2\repository\org\apache\commons\commons-math\2.1\commons-math-2.1.jar;C:\Users\Administrator\.m2\repository\commons-net\commons-net\1.4.1\commons-net-1.4.1.jar;C:\Users\Administrator\.m2\repository\org\mortbay\jetty\jetty\6.1.26\jetty-6.1.26.jar;C:\Users\Administrator\.m2\repository\org\mortbay\jetty\servlet-api\2.5-20081211\servlet-api-2.5-20081211.jar;C:\Users\Administrator\.m2\repository\org\mortbay\jetty\jetty-util\6.1.26\jetty-util-6.1.26.jar;C:\Users\Administrator\.m2\repository\tomcat\jasper-runtime\5.5.12\jasper-runtime-5.5.12.jar;C:\Users\Administrator\.m2\repository\tomcat\jasper-compiler\5.5.12\jasper-compiler-5.5.12.jar;C:\Users\Administrator\.m2\repository\org\mortbay\jetty\jsp-api-2.1\6.1.14\jsp-api-2.1-6.1.14.jar;C:\Users\Administrator\.m2\repository\org\mortbay\jetty\servlet-api-2.5\6.1.14\servlet-api-2.5-6.1.14.jar;C:\Users\Administrator\.m2\repository\org\mortbay\jetty\jsp-2.1\6.1.14\jsp-2.1-6.1.14.jar;C:\Users\Administrator\.m2\repository\ant\ant\1.6.5\ant-1.6.5.jar;C:\Users\Administrator\.m2\repository\commons-el\commons-el\1.0\commons-el-1.0.jar;C:\Users\Administrator\.m2\repository\net\java\dev\jets3t\jets3t\0.6.1\jets3t-0.6.1.jar;C:\Users\Administrator\.m2\repository\hsqldb\hsqldb\1.8.0.10\hsqldb-1.8.0.10.jar;C:\Users\Administrator\.m2\repository\oro\oro\2.0.8\oro-2.0.8.jar;C:\Users\Administrator\.m2\repository\org\eclipse\jdt\core\3.1.1\core-3.1.1.jar;C:\Users\Administrator\.m2\repository\org\codehaus\jackson\jackson-mapper-asl\1.8.8\jackson-mapper-asl-1.8.8.jar;C:\Users\Administrator\.m2\repository\commons-configuration\commons-configuration\1.9\commons-configuration-1.9.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-core\4.2.5.RELEASE\spring-core-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\commons-logging\commons-logging\1.1.3\commons-logging-1.1.3.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-context\4.2.5.RELEASE\spring-context-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-aop\4.2.5.RELEASE\spring-aop-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\aopalliance\aopalliance\1.0\aopalliance-1.0.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-beans\4.2.5.RELEASE\spring-beans-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\org\springframework\spring-expression\4.2.5.RELEASE\spring-expression-4.2.5.RELEASE.jar;C:\Users\Administrator\.m2\repository\mysql\mysql-connector-java\5.1.27\mysql-connector-java-5.1.27.jar;C:\Users\Administrator\.m2\repository\org\hibernate\hibernate-validator\5.0.1.Final\hibernate-validator-5.0.1.Final.jar;C:\Users\Administrator\.m2\repository\javax\validation\validation-api\1.1.0.Final\validation-api-1.1.0.Final.jar;C:\Users\Administrator\.m2\repository\org\jboss\logging\jboss-logging\3.1.1.GA\jboss-logging-3.1.1.GA.jar;C:\Users\Administrator\.m2\repository\com\fasterxml\classmate\0.8.0\classmate-0.8.0.jar;C:\Users\Administrator\.m2\repository\com\101tec\zkclient\0.2\zkclient-0.2.jar;C:\Users\Administrator\.m2\repository\log4j\log4j\1.2.14\log4j-1.2.14.jar;C:\Users\Administrator\.m2\repository\ch\qos\logback\logback-core\1.0.13\logback-core-1.0.13.jar;C:\Users\Administrator\.m2\repository\org\slf4j\slf4j-api\1.7.5\slf4j-api-1.7.5.jar;C:\Users\Administrator\.m2\repository\org\slf4j\jcl-over-slf4j\1.7.5\jcl-over-slf4j-1.7.5.jar;C:\Users\Administrator\.m2\repository\ch\qos\logback\logback-classic\1.0.13\logback-classic-1.0.13.jar
+2017-03-09 16:44:14.252 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.library.path=E:\jdk1.7.0_51\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;E:/jdk1.7.0_51/bin/../jre/bin/server;E:/jdk1.7.0_51/bin/../jre/bin;E:/jdk1.7.0_51/bin/../jre/lib/amd64;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\Program Files\TortoiseSVN\bin;E:\jdk1.7.0_51\bin;E:\jdk1.7.0_51\jre\bin;;E:\eclipse;;.
+2017-03-09 16:44:14.252 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.io.tmpdir=C:\Users\ADMINI~1\AppData\Local\Temp\
+2017-03-09 16:44:14.252 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.compiler=<NA>
+2017-03-09 16:44:14.252 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:os.name=Windows 7
+2017-03-09 16:44:14.252 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:os.arch=amd64
+2017-03-09 16:44:14.252 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:os.version=6.1
+2017-03-09 16:44:14.252 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:user.name=Administrator
+2017-03-09 16:44:14.252 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:user.home=C:\Users\Administrator
+2017-03-09 16:44:14.252 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:user.dir=E:\workspaces\xiaoermaidan\servicesapps\hfepay-scancode-serviceapp
+2017-03-09 16:44:14.253 [main] INFO  org.apache.zookeeper.ZooKeeper - Initiating client connection, connectString=127.0.0.1:2181 sessionTimeout=30000 watcher=org.I0Itec.zkclient.ZkClient@755c69fe
+2017-03-09 16:44:14.281 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn - Opening socket connection to server 127.0.0.1/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+2017-03-09 16:44:14.282 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn - Socket connection established to 127.0.0.1/127.0.0.1:2181, initiating session
+2017-03-09 16:44:14.330 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn - Session establishment complete on server 127.0.0.1/127.0.0.1:2181, sessionid = 0x15a8e952fa2004c, negotiated timeout = 30000
+2017-03-09 16:46:07.537 [DubboServerHandler-172.16.2.7:20896-thread-2] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLChannelExpand.findByCriteria:select
+     
+	     
+		A.id as A_id,A.channel_no as A_channel_no,A.channel_code as A_channel_code,A.channel_pre_code as A_channel_pre_code,A.nick_name as A_nick_name,A.index_top_img as A_index_top_img,A.index_bottom_img as A_index_bottom_img,A.index_wx_img as A_index_wx_img,A.address as A_address,A.phone as A_phone,A.technical_support_email as A_technical_support_email,A.qq_group as A_qq_group,A.custom_service_qq as A_custom_service_qq,A.business_cooperation_qq as A_business_cooperation_qq,A.business_cooperation_email as A_business_cooperation_email,A.microblog_url as A_microblog_url,A.contact_address_img as A_contact_address_img,A.login_background_img as A_login_background_img,A.center_head_img as A_center_head_img,A.company_name as A_company_name,A.pre_code as A_pre_code,A.record_number as A_record_number,A.icon as A_icon,A.title as A_title,A.key_words as A_key_words,A.description as A_description,A.domain_name as A_domain_name,A.telephone as A_telephone,A.about_us as A_about_us,A.help_info as A_help_info,A.is_active as A_is_active,A.status as A_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	     
+	 ,C.channel_name
+     from t_channel_expand A
+    left join t_channel_base C on A.channel_no = C.channel_no
+     
+       WHERE (
+        
+        
+          
+                 A.channel_no  =   'QDXX20170307000001' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.status  =   '1' 
+               
+            
+        
+      )
+2017-03-09 16:46:07.537 [DubboServerHandler-172.16.2.7:20896-thread-2] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 120ms
+2017-03-09 16:46:12.471 [DubboServerHandler-172.16.2.7:20896-thread-3] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLParamsInfo.findByCriteria:select
+     
+	     
+		A.id as A_id,A.params_key as A_params_key,A.params_type as A_params_type,A.params_value as A_params_value,A.params_status as A_params_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	     
+	 
+     from t_params_info A
+     
+       WHERE (
+        
+        
+          
+                 A.params_key  =   'QDXX20170307000001' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.params_type  =   '2' 
+               
+            
+        
+      )
+2017-03-09 16:46:12.472 [DubboServerHandler-172.16.2.7:20896-thread-3] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 11ms
+2017-03-09 16:46:12.481 [DubboServerHandler-172.16.2.7:20896-thread-3] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLParamsInfo.findByCriteria:select
+     
+	     
+		A.id as A_id,A.params_key as A_params_key,A.params_type as A_params_type,A.params_value as A_params_value,A.params_status as A_params_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	     
+	 
+     from t_params_info A
+     
+       WHERE (
+        
+        
+          
+                 A.params_key  =   'system' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.params_type  =   '2' 
+               
+            
+        
+      )
+2017-03-09 16:46:12.481 [DubboServerHandler-172.16.2.7:20896-thread-3] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 8ms
+2017-03-09 16:48:00.997 [DubboServerHandler-172.16.2.7:20896-thread-4] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLChannelExpand.findByCriteria:select
+     
+	     
+		A.id as A_id,A.channel_no as A_channel_no,A.channel_code as A_channel_code,A.channel_pre_code as A_channel_pre_code,A.nick_name as A_nick_name,A.index_top_img as A_index_top_img,A.index_bottom_img as A_index_bottom_img,A.index_wx_img as A_index_wx_img,A.address as A_address,A.phone as A_phone,A.technical_support_email as A_technical_support_email,A.qq_group as A_qq_group,A.custom_service_qq as A_custom_service_qq,A.business_cooperation_qq as A_business_cooperation_qq,A.business_cooperation_email as A_business_cooperation_email,A.microblog_url as A_microblog_url,A.contact_address_img as A_contact_address_img,A.login_background_img as A_login_background_img,A.center_head_img as A_center_head_img,A.company_name as A_company_name,A.pre_code as A_pre_code,A.record_number as A_record_number,A.icon as A_icon,A.title as A_title,A.key_words as A_key_words,A.description as A_description,A.domain_name as A_domain_name,A.telephone as A_telephone,A.about_us as A_about_us,A.help_info as A_help_info,A.is_active as A_is_active,A.status as A_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	     
+	 ,C.channel_name
+     from t_channel_expand A
+    left join t_channel_base C on A.channel_no = C.channel_no
+     
+       WHERE (
+        
+        
+          
+                 A.channel_no  =   'QDXX20170307000001' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.status  =   '1' 
+               
+            
+        
+      )
+2017-03-09 16:48:00.997 [DubboServerHandler-172.16.2.7:20896-thread-4] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 16ms
+2017-03-09 16:48:01.006 [DubboServerHandler-172.16.2.7:20896-thread-5] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLParamsInfo.findByCriteria:select
+     
+	     
+		A.id as A_id,A.params_key as A_params_key,A.params_type as A_params_type,A.params_value as A_params_value,A.params_status as A_params_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	     
+	 
+     from t_params_info A
+     
+       WHERE (
+        
+        
+          
+                 A.params_key  =   'QDXX20170307000001' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.params_type  =   '2' 
+               
+            
+        
+      )
+2017-03-09 16:48:01.007 [DubboServerHandler-172.16.2.7:20896-thread-5] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 6ms
+2017-03-09 16:48:01.014 [DubboServerHandler-172.16.2.7:20896-thread-5] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLParamsInfo.findByCriteria:select
+     
+	     
+		A.id as A_id,A.params_key as A_params_key,A.params_type as A_params_type,A.params_value as A_params_value,A.params_status as A_params_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	     
+	 
+     from t_params_info A
+     
+       WHERE (
+        
+        
+          
+                 A.params_key  =   'system' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.params_type  =   '2' 
+               
+            
+        
+      )
+2017-03-09 16:48:01.014 [DubboServerHandler-172.16.2.7:20896-thread-5] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 7ms
+2017-03-09 16:49:24.701 [DubboServerHandler-172.16.2.7:20896-thread-6] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLChannelExpand.findByCriteria:select
+     
+	     
+		A.id as A_id,A.channel_no as A_channel_no,A.channel_code as A_channel_code,A.channel_pre_code as A_channel_pre_code,A.nick_name as A_nick_name,A.index_top_img as A_index_top_img,A.index_bottom_img as A_index_bottom_img,A.index_wx_img as A_index_wx_img,A.address as A_address,A.phone as A_phone,A.technical_support_email as A_technical_support_email,A.qq_group as A_qq_group,A.custom_service_qq as A_custom_service_qq,A.business_cooperation_qq as A_business_cooperation_qq,A.business_cooperation_email as A_business_cooperation_email,A.microblog_url as A_microblog_url,A.contact_address_img as A_contact_address_img,A.login_background_img as A_login_background_img,A.center_head_img as A_center_head_img,A.company_name as A_company_name,A.pre_code as A_pre_code,A.record_number as A_record_number,A.icon as A_icon,A.title as A_title,A.key_words as A_key_words,A.description as A_description,A.domain_name as A_domain_name,A.telephone as A_telephone,A.about_us as A_about_us,A.help_info as A_help_info,A.is_active as A_is_active,A.status as A_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	     
+	 ,C.channel_name
+     from t_channel_expand A
+    left join t_channel_base C on A.channel_no = C.channel_no
+     
+       WHERE (
+        
+        
+          
+                 A.channel_no  =   'QDXX20170307000001' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.status  =   '1' 
+               
+            
+        
+      )
+2017-03-09 16:49:24.701 [DubboServerHandler-172.16.2.7:20896-thread-6] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 13ms
+2017-03-09 16:49:24.711 [DubboServerHandler-172.16.2.7:20896-thread-7] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLParamsInfo.findByCriteria:select
+     
+	     
+		A.id as A_id,A.params_key as A_params_key,A.params_type as A_params_type,A.params_value as A_params_value,A.params_status as A_params_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	     
+	 
+     from t_params_info A
+     
+       WHERE (
+        
+        
+          
+                 A.params_key  =   'QDXX20170307000001' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.params_type  =   '2' 
+               
+            
+        
+      )
+2017-03-09 16:49:24.711 [DubboServerHandler-172.16.2.7:20896-thread-7] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 6ms
+2017-03-09 16:49:24.718 [DubboServerHandler-172.16.2.7:20896-thread-7] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLParamsInfo.findByCriteria:select
+     
+	     
+		A.id as A_id,A.params_key as A_params_key,A.params_type as A_params_type,A.params_value as A_params_value,A.params_status as A_params_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	     
+	 
+     from t_params_info A
+     
+       WHERE (
+        
+        
+          
+                 A.params_key  =   'system' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.params_type  =   '2' 
+               
+            
+        
+      )
+2017-03-09 16:49:24.718 [DubboServerHandler-172.16.2.7:20896-thread-7] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 6ms
+2017-03-09 16:50:20.106 [DubboServerHandler-172.16.2.7:20896-thread-8] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLChannelExpand.findByCriteria:select
+     
+	     
+		A.id as A_id,A.channel_no as A_channel_no,A.channel_code as A_channel_code,A.channel_pre_code as A_channel_pre_code,A.nick_name as A_nick_name,A.index_top_img as A_index_top_img,A.index_bottom_img as A_index_bottom_img,A.index_wx_img as A_index_wx_img,A.address as A_address,A.phone as A_phone,A.technical_support_email as A_technical_support_email,A.qq_group as A_qq_group,A.custom_service_qq as A_custom_service_qq,A.business_cooperation_qq as A_business_cooperation_qq,A.business_cooperation_email as A_business_cooperation_email,A.microblog_url as A_microblog_url,A.contact_address_img as A_contact_address_img,A.login_background_img as A_login_background_img,A.center_head_img as A_center_head_img,A.company_name as A_company_name,A.pre_code as A_pre_code,A.record_number as A_record_number,A.icon as A_icon,A.title as A_title,A.key_words as A_key_words,A.description as A_description,A.domain_name as A_domain_name,A.telephone as A_telephone,A.about_us as A_about_us,A.help_info as A_help_info,A.is_active as A_is_active,A.status as A_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	     
+	 ,C.channel_name
+     from t_channel_expand A
+    left join t_channel_base C on A.channel_no = C.channel_no
+     
+       WHERE (
+        
+        
+          
+                 A.channel_no  =   'QDXX20170307000001' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.status  =   '1' 
+               
+            
+        
+      )
+2017-03-09 16:50:20.106 [DubboServerHandler-172.16.2.7:20896-thread-8] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 13ms
+2017-03-09 16:50:20.118 [DubboServerHandler-172.16.2.7:20896-thread-9] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLParamsInfo.findByCriteria:select
+     
+	     
+		A.id as A_id,A.params_key as A_params_key,A.params_type as A_params_type,A.params_value as A_params_value,A.params_status as A_params_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	     
+	 
+     from t_params_info A
+     
+       WHERE (
+        
+        
+          
+                 A.params_key  =   'QDXX20170307000001' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.params_type  =   '2' 
+               
+            
+        
+      )
+2017-03-09 16:50:20.118 [DubboServerHandler-172.16.2.7:20896-thread-9] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 7ms
+2017-03-09 16:50:20.127 [DubboServerHandler-172.16.2.7:20896-thread-9] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLParamsInfo.findByCriteria:select
+     
+	     
+		A.id as A_id,A.params_key as A_params_key,A.params_type as A_params_type,A.params_value as A_params_value,A.params_status as A_params_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	     
+	 
+     from t_params_info A
+     
+       WHERE (
+        
+        
+          
+                 A.params_key  =   'system' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.params_type  =   '2' 
+               
+            
+        
+      )
+2017-03-09 16:50:20.128 [DubboServerHandler-172.16.2.7:20896-thread-9] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 9ms
+2017-03-09 16:51:59.636 [DubboServerHandler-172.16.2.7:20896-thread-10] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLChannelExpand.findByCriteria:select
+     
+	     
+		A.id as A_id,A.channel_no as A_channel_no,A.channel_code as A_channel_code,A.channel_pre_code as A_channel_pre_code,A.nick_name as A_nick_name,A.index_top_img as A_index_top_img,A.index_bottom_img as A_index_bottom_img,A.index_wx_img as A_index_wx_img,A.address as A_address,A.phone as A_phone,A.technical_support_email as A_technical_support_email,A.qq_group as A_qq_group,A.custom_service_qq as A_custom_service_qq,A.business_cooperation_qq as A_business_cooperation_qq,A.business_cooperation_email as A_business_cooperation_email,A.microblog_url as A_microblog_url,A.contact_address_img as A_contact_address_img,A.login_background_img as A_login_background_img,A.center_head_img as A_center_head_img,A.company_name as A_company_name,A.pre_code as A_pre_code,A.record_number as A_record_number,A.icon as A_icon,A.title as A_title,A.key_words as A_key_words,A.description as A_description,A.domain_name as A_domain_name,A.telephone as A_telephone,A.about_us as A_about_us,A.help_info as A_help_info,A.is_active as A_is_active,A.status as A_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	     
+	 ,C.channel_name
+     from t_channel_expand A
+    left join t_channel_base C on A.channel_no = C.channel_no
+     
+       WHERE (
+        
+        
+          
+                 A.channel_no  =   'QDXX20170307000001' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.status  =   '1' 
+               
+            
+        
+      )
+2017-03-09 16:51:59.637 [DubboServerHandler-172.16.2.7:20896-thread-10] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 16ms
+2017-03-09 16:51:59.645 [DubboServerHandler-172.16.2.7:20896-thread-11] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLParamsInfo.findByCriteria:select
+     
+	     
+		A.id as A_id,A.params_key as A_params_key,A.params_type as A_params_type,A.params_value as A_params_value,A.params_status as A_params_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	     
+	 
+     from t_params_info A
+     
+       WHERE (
+        
+        
+          
+                 A.params_key  =   'QDXX20170307000001' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.params_type  =   '2' 
+               
+            
+        
+      )
+2017-03-09 16:51:59.645 [DubboServerHandler-172.16.2.7:20896-thread-11] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 4ms
+2017-03-09 16:51:59.651 [DubboServerHandler-172.16.2.7:20896-thread-11] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLParamsInfo.findByCriteria:select
+     
+	     
+		A.id as A_id,A.params_key as A_params_key,A.params_type as A_params_type,A.params_value as A_params_value,A.params_status as A_params_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	     
+	 
+     from t_params_info A
+     
+       WHERE (
+        
+        
+          
+                 A.params_key  =   'system' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.params_type  =   '2' 
+               
+            
+        
+      )
+2017-03-09 16:51:59.651 [DubboServerHandler-172.16.2.7:20896-thread-11] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 5ms
+2017-03-09 16:56:33.094 [DubboServerHandler-172.16.2.7:20896-thread-12] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLChannelExpand.findByCriteria:select
+     
+	     
+		A.id as A_id,A.channel_no as A_channel_no,A.channel_code as A_channel_code,A.channel_pre_code as A_channel_pre_code,A.nick_name as A_nick_name,A.index_top_img as A_index_top_img,A.index_bottom_img as A_index_bottom_img,A.index_wx_img as A_index_wx_img,A.address as A_address,A.phone as A_phone,A.technical_support_email as A_technical_support_email,A.qq_group as A_qq_group,A.custom_service_qq as A_custom_service_qq,A.business_cooperation_qq as A_business_cooperation_qq,A.business_cooperation_email as A_business_cooperation_email,A.microblog_url as A_microblog_url,A.contact_address_img as A_contact_address_img,A.login_background_img as A_login_background_img,A.center_head_img as A_center_head_img,A.company_name as A_company_name,A.pre_code as A_pre_code,A.record_number as A_record_number,A.icon as A_icon,A.title as A_title,A.key_words as A_key_words,A.description as A_description,A.domain_name as A_domain_name,A.telephone as A_telephone,A.about_us as A_about_us,A.help_info as A_help_info,A.is_active as A_is_active,A.status as A_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	     
+	 ,C.channel_name
+     from t_channel_expand A
+    left join t_channel_base C on A.channel_no = C.channel_no
+     
+       WHERE (
+        
+        
+          
+                 A.channel_no  =   'QDXX20170307000001' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.status  =   '1' 
+               
+            
+        
+      )
+2017-03-09 16:56:33.095 [DubboServerHandler-172.16.2.7:20896-thread-12] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 14ms
+2017-03-09 16:56:36.419 [DubboServerHandler-172.16.2.7:20896-thread-13] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLParamsInfo.findByCriteria:select
+     
+	     
+		A.id as A_id,A.params_key as A_params_key,A.params_type as A_params_type,A.params_value as A_params_value,A.params_status as A_params_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	     
+	 
+     from t_params_info A
+     
+       WHERE (
+        
+        
+          
+                 A.params_key  =   'QDXX20170307000001' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.params_type  =   '2' 
+               
+            
+        
+      )
+2017-03-09 16:56:36.420 [DubboServerHandler-172.16.2.7:20896-thread-13] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 9ms
+2017-03-09 16:56:36.430 [DubboServerHandler-172.16.2.7:20896-thread-13] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLParamsInfo.findByCriteria:select
+     
+	     
+		A.id as A_id,A.params_key as A_params_key,A.params_type as A_params_type,A.params_value as A_params_value,A.params_status as A_params_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	     
+	 
+     from t_params_info A
+     
+       WHERE (
+        
+        
+          
+                 A.params_key  =   'system' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.params_type  =   '2' 
+               
+            
+        
+      )
+2017-03-09 16:56:36.430 [DubboServerHandler-172.16.2.7:20896-thread-13] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 9ms
+2017-03-09 16:57:18.661 [DubboServerHandler-172.16.2.7:20896-thread-14] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLChannelExpand.findByCriteria:select
+     
+	     
+		A.id as A_id,A.channel_no as A_channel_no,A.channel_code as A_channel_code,A.channel_pre_code as A_channel_pre_code,A.nick_name as A_nick_name,A.index_top_img as A_index_top_img,A.index_bottom_img as A_index_bottom_img,A.index_wx_img as A_index_wx_img,A.address as A_address,A.phone as A_phone,A.technical_support_email as A_technical_support_email,A.qq_group as A_qq_group,A.custom_service_qq as A_custom_service_qq,A.business_cooperation_qq as A_business_cooperation_qq,A.business_cooperation_email as A_business_cooperation_email,A.microblog_url as A_microblog_url,A.contact_address_img as A_contact_address_img,A.login_background_img as A_login_background_img,A.center_head_img as A_center_head_img,A.company_name as A_company_name,A.pre_code as A_pre_code,A.record_number as A_record_number,A.icon as A_icon,A.title as A_title,A.key_words as A_key_words,A.description as A_description,A.domain_name as A_domain_name,A.telephone as A_telephone,A.about_us as A_about_us,A.help_info as A_help_info,A.is_active as A_is_active,A.status as A_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	     
+	 ,C.channel_name
+     from t_channel_expand A
+    left join t_channel_base C on A.channel_no = C.channel_no
+     
+       WHERE (
+        
+        
+          
+                 A.channel_no  =   'QDXX20170307000001' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.status  =   '1' 
+               
+            
+        
+      )
+2017-03-09 16:57:18.662 [DubboServerHandler-172.16.2.7:20896-thread-14] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 12ms
+2017-03-09 16:57:23.011 [DubboServerHandler-172.16.2.7:20896-thread-15] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLParamsInfo.findByCriteria:select
+     
+	     
+		A.id as A_id,A.params_key as A_params_key,A.params_type as A_params_type,A.params_value as A_params_value,A.params_status as A_params_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	     
+	 
+     from t_params_info A
+     
+       WHERE (
+        
+        
+          
+                 A.params_key  =   'QDXX20170307000001' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.params_type  =   '2' 
+               
+            
+        
+      )
+2017-03-09 16:57:23.011 [DubboServerHandler-172.16.2.7:20896-thread-15] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 29ms
+2017-03-09 16:57:46.318 [DubboServerHandler-172.16.2.7:20896-thread-15] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLParamsInfo.findByCriteria:select
+     
+	     
+		A.id as A_id,A.params_key as A_params_key,A.params_type as A_params_type,A.params_value as A_params_value,A.params_status as A_params_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	     
+	 
+     from t_params_info A
+     
+       WHERE (
+        
+        
+          
+                 A.params_key  =   'system' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.params_type  =   '2' 
+               
+            
+        
+      )
+2017-03-09 16:57:46.319 [DubboServerHandler-172.16.2.7:20896-thread-15] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 9ms
+2017-03-09 17:02:55.881 [DubboServerHandler-172.16.2.7:20896-thread-16] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLChannelExpand.findByCriteria:select
+     
+	     
+		A.id as A_id,A.channel_no as A_channel_no,A.channel_code as A_channel_code,A.channel_pre_code as A_channel_pre_code,A.nick_name as A_nick_name,A.index_top_img as A_index_top_img,A.index_bottom_img as A_index_bottom_img,A.index_wx_img as A_index_wx_img,A.address as A_address,A.phone as A_phone,A.technical_support_email as A_technical_support_email,A.qq_group as A_qq_group,A.custom_service_qq as A_custom_service_qq,A.business_cooperation_qq as A_business_cooperation_qq,A.business_cooperation_email as A_business_cooperation_email,A.microblog_url as A_microblog_url,A.contact_address_img as A_contact_address_img,A.login_background_img as A_login_background_img,A.center_head_img as A_center_head_img,A.company_name as A_company_name,A.pre_code as A_pre_code,A.record_number as A_record_number,A.icon as A_icon,A.title as A_title,A.key_words as A_key_words,A.description as A_description,A.domain_name as A_domain_name,A.telephone as A_telephone,A.about_us as A_about_us,A.help_info as A_help_info,A.is_active as A_is_active,A.status as A_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	     
+	 ,C.channel_name
+     from t_channel_expand A
+    left join t_channel_base C on A.channel_no = C.channel_no
+     
+       WHERE (
+        
+        
+          
+                 A.channel_no  =   'QDXX20170307000001' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.status  =   '1' 
+               
+            
+        
+      )
+2017-03-09 17:02:55.882 [DubboServerHandler-172.16.2.7:20896-thread-16] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 15ms
+2017-03-09 17:02:55.895 [DubboServerHandler-172.16.2.7:20896-thread-17] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLParamsInfo.findByCriteria:select
+     
+	     
+		A.id as A_id,A.params_key as A_params_key,A.params_type as A_params_type,A.params_value as A_params_value,A.params_status as A_params_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	     
+	 
+     from t_params_info A
+     
+       WHERE (
+        
+        
+          
+                 A.params_key  =   'QDXX20170307000001' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.params_type  =   '2' 
+               
+            
+        
+      )
+2017-03-09 17:02:55.896 [DubboServerHandler-172.16.2.7:20896-thread-17] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 5ms
+2017-03-09 17:03:29.400 [DubboServerHandler-172.16.2.7:20896-thread-18] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLChannelExpand.findByCriteria:select
+     
+	     
+		A.id as A_id,A.channel_no as A_channel_no,A.channel_code as A_channel_code,A.channel_pre_code as A_channel_pre_code,A.nick_name as A_nick_name,A.index_top_img as A_index_top_img,A.index_bottom_img as A_index_bottom_img,A.index_wx_img as A_index_wx_img,A.address as A_address,A.phone as A_phone,A.technical_support_email as A_technical_support_email,A.qq_group as A_qq_group,A.custom_service_qq as A_custom_service_qq,A.business_cooperation_qq as A_business_cooperation_qq,A.business_cooperation_email as A_business_cooperation_email,A.microblog_url as A_microblog_url,A.contact_address_img as A_contact_address_img,A.login_background_img as A_login_background_img,A.center_head_img as A_center_head_img,A.company_name as A_company_name,A.pre_code as A_pre_code,A.record_number as A_record_number,A.icon as A_icon,A.title as A_title,A.key_words as A_key_words,A.description as A_description,A.domain_name as A_domain_name,A.telephone as A_telephone,A.about_us as A_about_us,A.help_info as A_help_info,A.is_active as A_is_active,A.status as A_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	     
+	 ,C.channel_name
+     from t_channel_expand A
+    left join t_channel_base C on A.channel_no = C.channel_no
+     
+       WHERE (
+        
+        
+          
+                 A.channel_no  =   'QDXX20170307000001' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.status  =   '1' 
+               
+            
+        
+      )
+2017-03-09 17:03:29.400 [DubboServerHandler-172.16.2.7:20896-thread-18] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 13ms
+2017-03-09 17:03:29.410 [DubboServerHandler-172.16.2.7:20896-thread-19] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLParamsInfo.findByCriteria:select
+     
+	     
+		A.id as A_id,A.params_key as A_params_key,A.params_type as A_params_type,A.params_value as A_params_value,A.params_status as A_params_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	     
+	 
+     from t_params_info A
+     
+       WHERE (
+        
+        
+          
+                 A.params_key  =   'QDXX20170307000001' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.params_type  =   '2' 
+               
+            
+        
+      )
+2017-03-09 17:03:29.411 [DubboServerHandler-172.16.2.7:20896-thread-19] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 7ms
+2017-03-09 17:09:03.575 [DubboServerHandler-172.16.2.7:20896-thread-24] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLChannelExpand.findByCriteria:select
+     
+	     
+		A.id as A_id,A.channel_no as A_channel_no,A.channel_code as A_channel_code,A.channel_pre_code as A_channel_pre_code,A.nick_name as A_nick_name,A.index_top_img as A_index_top_img,A.index_bottom_img as A_index_bottom_img,A.index_wx_img as A_index_wx_img,A.address as A_address,A.phone as A_phone,A.technical_support_email as A_technical_support_email,A.qq_group as A_qq_group,A.custom_service_qq as A_custom_service_qq,A.business_cooperation_qq as A_business_cooperation_qq,A.business_cooperation_email as A_business_cooperation_email,A.microblog_url as A_microblog_url,A.contact_address_img as A_contact_address_img,A.login_background_img as A_login_background_img,A.center_head_img as A_center_head_img,A.company_name as A_company_name,A.pre_code as A_pre_code,A.record_number as A_record_number,A.icon as A_icon,A.title as A_title,A.key_words as A_key_words,A.description as A_description,A.domain_name as A_domain_name,A.telephone as A_telephone,A.about_us as A_about_us,A.help_info as A_help_info,A.is_active as A_is_active,A.status as A_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	     
+	 ,C.channel_name
+     from t_channel_expand A
+    left join t_channel_base C on A.channel_no = C.channel_no
+     
+       WHERE (
+        
+        
+          
+                 A.channel_no  =   'QDXX20170307000001' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.status  =   '1' 
+               
+            
+        
+      )
+2017-03-09 17:09:03.575 [DubboServerHandler-172.16.2.7:20896-thread-24] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 7ms
+2017-03-09 17:09:03.582 [DubboServerHandler-172.16.2.7:20896-thread-25] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLParamsInfo.findByCriteria:select
+     
+	     
+		A.id as A_id,A.params_key as A_params_key,A.params_type as A_params_type,A.params_value as A_params_value,A.params_status as A_params_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	     
+	 
+     from t_params_info A
+     
+       WHERE (
+        
+        
+          
+                 A.params_key  =   'QDXX20170307000001' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.params_type  =   '2' 
+               
+            
+        
+      )
+2017-03-09 17:09:03.582 [DubboServerHandler-172.16.2.7:20896-thread-25] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 4ms
+2017-03-09 17:09:45.153 [DubboServerHandler-172.16.2.7:20896-thread-26] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLChannelExpand.findByCriteria:select
+     
+	     
+		A.id as A_id,A.channel_no as A_channel_no,A.channel_code as A_channel_code,A.channel_pre_code as A_channel_pre_code,A.nick_name as A_nick_name,A.index_top_img as A_index_top_img,A.index_bottom_img as A_index_bottom_img,A.index_wx_img as A_index_wx_img,A.address as A_address,A.phone as A_phone,A.technical_support_email as A_technical_support_email,A.qq_group as A_qq_group,A.custom_service_qq as A_custom_service_qq,A.business_cooperation_qq as A_business_cooperation_qq,A.business_cooperation_email as A_business_cooperation_email,A.microblog_url as A_microblog_url,A.contact_address_img as A_contact_address_img,A.login_background_img as A_login_background_img,A.center_head_img as A_center_head_img,A.company_name as A_company_name,A.pre_code as A_pre_code,A.record_number as A_record_number,A.icon as A_icon,A.title as A_title,A.key_words as A_key_words,A.description as A_description,A.domain_name as A_domain_name,A.telephone as A_telephone,A.about_us as A_about_us,A.help_info as A_help_info,A.is_active as A_is_active,A.status as A_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	     
+	 ,C.channel_name
+     from t_channel_expand A
+    left join t_channel_base C on A.channel_no = C.channel_no
+     
+       WHERE (
+        
+        
+          
+                 A.channel_no  =   'QDXX20170307000001' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.status  =   '1' 
+               
+            
+        
+      )
+2017-03-09 17:09:45.153 [DubboServerHandler-172.16.2.7:20896-thread-26] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 10ms
+2017-03-09 17:09:45.164 [DubboServerHandler-172.16.2.7:20896-thread-27] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLParamsInfo.findByCriteria:select
+     
+	     
+		A.id as A_id,A.params_key as A_params_key,A.params_type as A_params_type,A.params_value as A_params_value,A.params_status as A_params_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	     
+	 
+     from t_params_info A
+     
+       WHERE (
+        
+        
+          
+                 A.params_key  =   'QDXX20170307000001' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.params_type  =   '2' 
+               
+            
+        
+      )
+2017-03-09 17:09:45.164 [DubboServerHandler-172.16.2.7:20896-thread-27] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 7ms
+2017-03-09 17:12:08.764 [DubboServerHandler-172.16.2.7:20896-thread-28] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLChannelExpand.findByCriteria:select
+     
+	     
+		A.id as A_id,A.channel_no as A_channel_no,A.channel_code as A_channel_code,A.channel_pre_code as A_channel_pre_code,A.nick_name as A_nick_name,A.index_top_img as A_index_top_img,A.index_bottom_img as A_index_bottom_img,A.index_wx_img as A_index_wx_img,A.address as A_address,A.phone as A_phone,A.technical_support_email as A_technical_support_email,A.qq_group as A_qq_group,A.custom_service_qq as A_custom_service_qq,A.business_cooperation_qq as A_business_cooperation_qq,A.business_cooperation_email as A_business_cooperation_email,A.microblog_url as A_microblog_url,A.contact_address_img as A_contact_address_img,A.login_background_img as A_login_background_img,A.center_head_img as A_center_head_img,A.company_name as A_company_name,A.pre_code as A_pre_code,A.record_number as A_record_number,A.icon as A_icon,A.title as A_title,A.key_words as A_key_words,A.description as A_description,A.domain_name as A_domain_name,A.telephone as A_telephone,A.about_us as A_about_us,A.help_info as A_help_info,A.is_active as A_is_active,A.status as A_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	     
+	 ,C.channel_name
+     from t_channel_expand A
+    left join t_channel_base C on A.channel_no = C.channel_no
+     
+       WHERE (
+        
+        
+          
+                 A.channel_no  =   'QDXX20170307000001' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.status  =   '1' 
+               
+            
+        
+      )
+2017-03-09 17:12:08.764 [DubboServerHandler-172.16.2.7:20896-thread-28] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 10ms
+2017-03-09 17:12:08.772 [DubboServerHandler-172.16.2.7:20896-thread-29] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLParamsInfo.findByCriteria:select
+     
+	     
+		A.id as A_id,A.params_key as A_params_key,A.params_type as A_params_type,A.params_value as A_params_value,A.params_status as A_params_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	     
+	 
+     from t_params_info A
+     
+       WHERE (
+        
+        
+          
+                 A.params_key  =   'QDXX20170307000001' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.params_type  =   '2' 
+               
+            
+        
+      )
+2017-03-09 17:12:08.772 [DubboServerHandler-172.16.2.7:20896-thread-29] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 4ms
+2017-03-09 17:12:19.146 [DubboServerHandler-172.16.2.7:20896-thread-30] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLChannelExpand.findByCriteria:select
+     
+	     
+		A.id as A_id,A.channel_no as A_channel_no,A.channel_code as A_channel_code,A.channel_pre_code as A_channel_pre_code,A.nick_name as A_nick_name,A.index_top_img as A_index_top_img,A.index_bottom_img as A_index_bottom_img,A.index_wx_img as A_index_wx_img,A.address as A_address,A.phone as A_phone,A.technical_support_email as A_technical_support_email,A.qq_group as A_qq_group,A.custom_service_qq as A_custom_service_qq,A.business_cooperation_qq as A_business_cooperation_qq,A.business_cooperation_email as A_business_cooperation_email,A.microblog_url as A_microblog_url,A.contact_address_img as A_contact_address_img,A.login_background_img as A_login_background_img,A.center_head_img as A_center_head_img,A.company_name as A_company_name,A.pre_code as A_pre_code,A.record_number as A_record_number,A.icon as A_icon,A.title as A_title,A.key_words as A_key_words,A.description as A_description,A.domain_name as A_domain_name,A.telephone as A_telephone,A.about_us as A_about_us,A.help_info as A_help_info,A.is_active as A_is_active,A.status as A_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	     
+	 ,C.channel_name
+     from t_channel_expand A
+    left join t_channel_base C on A.channel_no = C.channel_no
+     
+       WHERE (
+        
+        
+          
+                 A.channel_no  =   'QDXX20170307000001' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.status  =   '1' 
+               
+            
+        
+      )
+2017-03-09 17:12:19.147 [DubboServerHandler-172.16.2.7:20896-thread-30] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 10ms
+2017-03-09 17:12:19.159 [DubboServerHandler-172.16.2.7:20896-thread-31] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLParamsInfo.findByCriteria:select
+     
+	     
+		A.id as A_id,A.params_key as A_params_key,A.params_type as A_params_type,A.params_value as A_params_value,A.params_status as A_params_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	     
+	 
+     from t_params_info A
+     
+       WHERE (
+        
+        
+          
+                 A.params_key  =   'QDXX20170307000001' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.params_type  =   '2' 
+               
+            
+        
+      )
+2017-03-09 17:12:19.159 [DubboServerHandler-172.16.2.7:20896-thread-31] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 7ms
+2017-03-10 09:24:15.506 [main-SendThread(127.0.0.1:2181)] WARN  org.apache.zookeeper.ClientCnxn - Client session timed out, have not heard from server in 50409564ms for sessionid 0x15a8e952fa2004c
+2017-03-10 09:24:15.506 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn - Client session timed out, have not heard from server in 50409564ms for sessionid 0x15a8e952fa2004c, closing socket connection and attempting reconnect
+2017-03-10 09:24:16.810 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn - Opening socket connection to server 127.0.0.1/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+2017-03-10 09:24:21.603 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn - Socket connection established to 127.0.0.1/127.0.0.1:2181, initiating session
+2017-03-10 09:24:25.303 [main-SendThread(127.0.0.1:2181)] WARN  org.apache.zookeeper.ClientCnxn - Unable to reconnect to ZooKeeper service, session 0x15a8e952fa2004c has expired
+2017-03-10 09:24:25.303 [main-EventThread] INFO  org.apache.zookeeper.ZooKeeper - Initiating client connection, connectString=127.0.0.1:2181 sessionTimeout=30000 watcher=org.I0Itec.zkclient.ZkClient@755c69fe
+2017-03-10 09:24:25.303 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn - Unable to reconnect to ZooKeeper service, session 0x15a8e952fa2004c has expired, closing socket connection
+2017-03-10 09:24:25.306 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn - Opening socket connection to server 127.0.0.1/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+2017-03-10 09:24:25.306 [main-EventThread] INFO  org.apache.zookeeper.ClientCnxn - EventThread shut down for session: 0x15a8e952fa2004c
+2017-03-10 09:24:25.758 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn - Socket connection established to 127.0.0.1/127.0.0.1:2181, initiating session
+2017-03-10 09:24:36.511 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn - Session establishment complete on server 127.0.0.1/127.0.0.1:2181, sessionid = 0x15a8e952fa20056, negotiated timeout = 30000
+2017-03-10 10:47:12.471 [DubboServerHandler-172.16.2.7:20896-thread-43] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - 
+当前运行的SQLParamsInfo.findByCriteria:select
+     
+	     
+		A.id as A_id,A.params_key as A_params_key,A.params_type as A_params_type,A.params_value as A_params_value,A.params_status as A_params_status,A.create_time as A_create_time,A.update_time as A_update_time,A.operator as A_operator,A.remark as A_remark,A.temp_1 as A_temp_1,A.temp_2 as A_temp_2
+	     
+	 
+     from t_params_info A
+     
+       WHERE (
+        
+        
+          
+                 A.params_key  =   'QDXX20170307000001' 
+               
+            
+        
+      
+        
+        
+          
+                AND A.params_type  =   '2' 
+               
+            
+        
+      )
+2017-03-10 10:47:12.471 [DubboServerHandler-172.16.2.7:20896-thread-43] INFO  c.h.c.mybatis.interceptor.SqlMonitorInterceptor - Runing time: 128ms

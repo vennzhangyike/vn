@@ -1,0 +1,41 @@
+# zookeeper 配置信息
+zookeeper.addr=127.0.0.1:2181 
+hfepay.dubbo.port=20892
+service.register=true
+
+# 账务数据库链接信息
+hfepay.jdbc.driver=com.mysql.jdbc.Driver
+hfepay.jdbc.url=jdbc:mysql://172.16.2.208:3306/hfepay_scancode_platform?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
+hfepay.jdbc.username=root
+hfepay.jdbc.password=Biyu5YzU+6sxDRbmWEa3B2uUcImzDo0BuXjTlL505+/pTb+/0Oqd3ou1R6J8+9Fy3CYrM18nBDqf6wAaPgUGOg==
+
+hfepay.pool.minIdle=5
+hfepay.pool.maxActive=50
+
+#redis配置
+redis.hostName=172.16.2.201
+redis.port=6379
+redis.maxTotal=2000
+redis.maxIdle=20
+redis.maxWaitMillis=1000
+redis.testOnBorrow=false
+
+#商户入驻地址
+merchant.settled.url=www.baidu.com
+
+#common 中 redis 集群配置
+hfepay.jedis.pool.ip=172.16.2.201
+hfepay.jedis.pool.port=6379
+hfepay.jedis.pool.maxTotal=2000
+hfepay.jedis.pool.maxIdle=20
+hfepay.jedis.pool.maxWaitMillis=1000
+hfepay.jedis.pool.testOnBorrow=false
+
+hfepay.fileupload.root=D:/files
+hfepay.filepath.root=http://localhost:8080/
+hfepay.qrcodePath.root=http://wx.hfepay.cn/hfepay-scancode-gateway-webapp/scan/operate
+hfepay.viralPath.root=data/files/qr
+hfepay.qrPath.root=qr
+
+#代理商推广码地址
+#hfepay.agent.qrPath=http://wap.test.huaepay.com/agentScan/operate

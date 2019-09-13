@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd 
+    http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd"
+	default-lazy-init="true">
+
+	<description>服务配置 </description>
+    <dubbo:application name="hfepay-pay-serviceapp"  />
+   	<dubbo:provider filter="InvocationRpcFilter"></dubbo:provider>
+    <dubbo:consumer timeout="15000"/>
+    <dubbo:registry address="zookeeper://${zookeeper.addr}" />
+    <dubbo:protocol name="dubbo" port="${hfepay.dubbo.port}" register="${service.register}"/>
+
+	<bean id="payOrderPaymentServiceImpl" class="com.hfepay.pay.service.impl.PayOrderPaymentServiceImpl" />
+	<dubbo:service interface="com.hfepay.pay.service.PayOrderPaymentService" ref="payOrderPaymentServiceImpl" />
+	
+	<bean id="payScanCodeServiceImpl" class="com.hfepay.pay.service.impl.PayScanCodeServiceImpl" />
+	<dubbo:service interface="com.hfepay.pay.service.PayScanCodeService" ref="payScanCodeServiceImpl" />
+	
+	<bean id="payCallBackOperatorServiceImpl" class="com.hfepay.pay.service.impl.PayCallBackOperatorServiceImpl" />
+	<dubbo:service interface="com.hfepay.pay.service.PayCallBackOperatorService" ref="payCallBackOperatorServiceImpl" />
+	 
+	<bean id="payCallBackServiceImpl" class="com.hfepay.pay.service.impl.PayCallBackServiceImpl" />
+	<dubbo:service interface="com.hfepay.pay.service.PayCallBackService" ref="payCallBackServiceImpl" />
+	 
+	 <bean id="payScanPayServiceImpl" class="com.hfepay.pay.service.impl.PayScanPayServiceImpl" />
+	<dubbo:service interface="com.hfepay.pay.service.PayScanPayService" ref="payScanPayServiceImpl" />
+	 
+	<dubbo:reference id="merchantBusinessService" interface="com.hfepay.scancode.api.service.MerchantBusinessService" check="false"/>
+	<dubbo:reference id="apiLogService" interface="com.hfepay.scancode.api.service.ApiLogService"  check="false"  retries="0"/>
+
+	  
+</beans>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd 
+    http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd"
+	default-lazy-init="true">
+
+	<description>服务配置 </description>
+    <dubbo:application name="hfepay-scancode-api-serviceapp"  />
+   	<dubbo:provider filter="InvocationRpcFilter"></dubbo:provider>
+    <dubbo:consumer timeout="15000"/>
+    <dubbo:registry address="zookeeper://${zookeeper.addr}" />
+    <dubbo:protocol name="dubbo" port="${hfepay.dubbo.port}" register="${service.register}"/>
+<!-- 	<dubbo:monitor protocol="registry"/> -->
+    <!-- =================================================================================== -->
+    <!-- 对外的服务接口-->
+    <bean id="merchantBusinessServiceImpl" class="com.hfepay.scancode.api.service.impl.MerchantBusinessServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.api.service.MerchantBusinessService" ref="merchantBusinessServiceImpl" retries="0"/>
+	
+	<bean id="apiLogServiceImpl" class="com.hfepay.scancode.api.service.impl.ApiLogServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.api.service.ApiLogService" ref="apiLogServiceImpl" retries="0"/>
+	
+	<bean id="apiChannelWxParamsServiceImpl" class="com.hfepay.scancode.api.service.impl.ApiChannelWxParamsServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.api.service.ApiChannelWxParamsService" ref="apiChannelWxParamsServiceImpl" retries="0"/>
+	
+	<bean id="apiMappingDicionServiceImpl" class="com.hfepay.scancode.api.service.impl.ApiMappingDicionServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.api.service.ApiMappingDicionService" ref="apiMappingDicionServiceImpl" retries="0"/>
+    
+    <bean id="apiLogApiServiceImpl" class="com.hfepay.scancode.api.service.impl.ApiLogServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.api.service.ApiLogService" ref="apiLogApiServiceImpl" retries="0"/>
+	
+	<bean id="weBankMerchantBusinessServiceImpl" class="com.hfepay.scancode.api.webank.service.impl.WeBankMerchantBusinessServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.api.webank.service.WeBankMerchantBusinessService" ref="weBankMerchantBusinessServiceImpl" retries="0"/>
+    
+    <bean id="webankOrderServiceImpl" class="com.hfepay.scancode.api.service.impl.WebankOrderServiceImpl" />
+	<dubbo:service interface="com.hfepay.scancode.api.service.WebankOrderService" ref="webankOrderServiceImpl" retries="0"/>
+    
+    <!-- =================================================================================== --> 
+	<!-- =================================================================================== -->
+    <!-- 引用外部服务接口-->
+    <!-- =================================================================================== --> 
+	</beans>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd 
+    http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd"
+	default-lazy-init="true">
+
+	<description>服务配置 </description>
+    <dubbo:application name="hfepay-market-serviceapp"  />
+
+   	<dubbo:provider filter="InvocationRpcFilter"></dubbo:provider>
+    <dubbo:consumer timeout="15000"/>
+    <dubbo:registry address="zookeeper://127.0.0.1:2181" />
+<!--     <dubbo:registry address="zookeeper://172.168.8.204:2181?backup=172.168.8.205:2181,172.168.8.206:2181" /> -->
+
+    <dubbo:protocol name="dubbo" port="20880" register="true"/>
+	<dubbo:monitor protocol="registry"/>
+    <!-- =================================================================================== -->
+    <!-- 对外的服务接口-->
+    <!-- =================================================================================== --> 
+	<!-- 递归子节点 -->
+	<dubbo:reference id="orderPaymentService" interface="com.hfepay.pay.service.OrderPaymentService"  check="false"/>
+  
+  	<dubbo:reference id="scanCodeService" interface="com.hfepay.pay.service.ScanCodeService"   check="false" />
+	
+	<dubbo:reference id="callBackOperatorService" interface="com.hfepay.pay.service.CallBackOperatorService"   check="false" />
+  
+</beans>

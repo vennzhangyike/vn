@@ -1,0 +1,11 @@
+package com.test;
+
+public class Test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String date="20160504";
+		System.out.println(date.substring(0, 4));
+	}
+
+}

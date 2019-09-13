@@ -1,0 +1,44 @@
+package com.test;
+
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import com.hfepay.commons.base.lang.Strings;
+import com.hfepay.scancode.condition.DataNodeCondition;
+import com.hfepay.scancode.service.channel.DataNodeService;
+import com.hfepay.scancode.service.operator.AgentBaseService;
+import com.hfepay.scancode.service.operator.MerchantInfoService;
+
+@RunWith(SpringJUnit4ClassRunner.class) // 整合 
+@ContextConfiguration(locations="classpath:applicationContext*.xml") // 加载配置
+public class DubboTest {
+	@Autowired
+	private DataNodeService dataNodeService;
+	@Autowired
+	private AgentBaseService agentBaseService;
+	@Autowired
+	private MerchantInfoService merchantInfoService;
+	
+	@Test
+	public void insertChannel(){
+		//保存渠道，存放一条关联信息到节点表。只有一条
+		DataNodeCondition dCondition = new DataNodeCondition();
+		dCondition.setIdentityFlag("3");//1渠道2代理商3商户：必需参数
+		dCondition.setId(Strings.getUUID());
+		dCondition.setParentNode("agent211");
+		dCondition.setCurrentNode("merchant2111");//当前节点id//必须参数
+		//dCondition.setCurrentNodeLevel("0");//当前节点级别：渠道是0级别
+		dCondition.setOperator("admin");//操作人
+		
+		dataNodeService.doSaveNodeRelations(dCondition);
+		//保存代理商，找到上级代理商或者渠道并保存，有多条
+		
+		//商户找到顶级并保存，有多条。
+		//dataNodeService.deleteByCurrentNode(dCondition);
+		//修改商户或者代理商的关系，删除节点表数据
+	}
+}

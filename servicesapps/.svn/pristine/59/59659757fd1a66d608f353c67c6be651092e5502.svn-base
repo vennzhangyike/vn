@@ -1,0 +1,115 @@
+package com.test;
+
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import com.hfepay.commons.base.lang.Strings;
+import com.hfepay.scancode.api.condition.ApiChannelWxParamsCondition;
+import com.hfepay.scancode.api.condition.ApiMappingDicionCondition;
+import com.hfepay.scancode.api.entity.ApiChannelWxParams;
+import com.hfepay.scancode.api.entity.ApiMappingDicion;
+import com.hfepay.scancode.api.service.ApiChannelWxParamsService;
+import com.hfepay.scancode.api.service.ApiMappingDicionService;
+import com.hfepay.scancode.api.service.config.HfepayConfig;
+import com.hfepay.scancode.condition.ChannelExpandCondition;
+import com.hfepay.scancode.condition.DataNodeCondition;
+import com.hfepay.scancode.condition.MerchantBankcardCondition;
+import com.hfepay.scancode.entity.ChannelExpand;
+import com.hfepay.scancode.service.channel.DataNodeService;
+import com.hfepay.scancode.service.operator.AgentBaseService;
+import com.hfepay.scancode.service.operator.ChannelExpandService;
+import com.hfepay.scancode.service.operator.MerchantBankcardService;
+import com.hfepay.scancode.service.operator.MerchantInfoService;
+
+import net.sf.json.JSONObject;
+
+@RunWith(SpringJUnit4ClassRunner.class) // 整合 
+@ContextConfiguration(locations="classpath:applicationContext*.xml") // 加载配置
+public class DubboTest {
+	@Autowired
+	private DataNodeService dataNodeService;
+	@Autowired
+	private AgentBaseService agentBaseService;
+	@Autowired
+	private MerchantInfoService merchantInfoService;
+	@Autowired
+	private MerchantBankcardService merchantBankcardService;
+	@Autowired
+	private ChannelExpandService channelExpandService;
+	//@Autowired
+	//private PropertyPlaceholderConfigurer propConfigurer = Springs.getBean("propConfigurer");
+	
+	@Test
+	public void insertChannel(){
+		//保存渠道，存放一条关联信息到节点表。只有一条
+		DataNodeCondition dCondition = new DataNodeCondition();
+		dCondition.setIdentityFlag("3");//1渠道2代理商3商户：必需参数
+		dCondition.setId(Strings.getUUID());
+		dCondition.setParentNode("agent211");
+		dCondition.setCurrentNode("merchant2111");//当前节点id//必须参数
+		//dCondition.setCurrentNodeLevel("0");//当前节点级别：渠道是0级别
+		dCondition.setOperator("admin");//操作人
+		
+		dataNodeService.doSaveNodeRelations(dCondition);
+		//保存代理商，找到上级代理商或者渠道并保存，有多条
+		
+		//商户找到顶级并保存，有多条。
+		//dataNodeService.deleteByCurrentNode(dCondition);
+		//修改商户或者代理商的关系，删除节点表数据
+	}
+	
+	@Test
+	public void testMinus(){
+		agentBaseService.updateUsedTimes("1001");
+	}
+	
+	@Test
+	public void testStep3(){
+		//"bankName":bankName,"bankCard":bankCard,"mobile":phone,"validateCode":validateCode,"agree":agree,"bankCode":clearBankChannelNo
+		MerchantBankcardCondition condition = new MerchantBankcardCondition();
+		condition.setBankCard("6226097808098184");
+		condition.setBankName("招商银行");
+		condition.setMobile("18725984020");
+		condition.setBankCode("200124587");
+		condition.setMerchantNo("MC20161020135249");
+		merchantBankcardService.applyStoreStep3(condition);
+	}
+	
+	/*@Test
+	public void testGet(){
+		System.out.println(propConfigurer.getContextProperty("notify.url"));
+	}*/
+	
+	@Autowired
+	private ApiChannelWxParamsService apiChannelWxParamsService;
+	@Autowired
+	private ApiMappingDicionService apiMappingDicionService;
+	@Test 
+	public void testSayHello() throws Exception {
+		ApiChannelWxParamsCondition channelWxParamsCondition = new ApiChannelWxParamsCondition();
+		channelWxParamsCondition.setChannelNo("QDXX20161108000001");
+		ApiChannelWxParams param = apiChannelWxParamsService.getFromRedis(channelWxParamsCondition);
+		System.out.println(param.getWxParams());
+		JSONObject js = JSONObject.fromObject(param.getWxParams());
+		System.out.println(js.getString("appid"));
+	}
+	
+	@Test 
+	public void testSayHelloFrom() throws Exception {
+		ApiMappingDicionCondition channelWxParamsCondition = new ApiMappingDicionCondition();
+		channelWxParamsCondition.setKeyNo(HfepayConfig.WAUTHOR_KEY);
+		ApiMappingDicion param = apiMappingDicionService.getFromRedis(channelWxParamsCondition);
+		System.out.println(param.getParaVal());
+	}
+	@Test
+	public void testChannel(){
+		ChannelExpandCondition channelExpandCondition = new ChannelExpandCondition();
+		channelExpandCondition.setDomainName("wx.hfepay.cn");
+		ChannelExpand ex = channelExpandService.findByCondition(channelExpandCondition);
+		System.out.println(ex.getChannelCode());
+	}
+}

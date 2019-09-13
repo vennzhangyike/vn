@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd 
+    http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd"
+	default-lazy-init="true">
+
+	<description>服务配置 </description>
+    <dubbo:application name="hfepay-epay-api-serviceapp"  />
+   	<dubbo:provider filter="InvocationRpcFilter"></dubbo:provider>
+    <dubbo:consumer timeout="15000"/>
+    <dubbo:registry address="zookeeper://${zookeeper.addr}" />
+    <dubbo:protocol name="dubbo" port="${hfepay.dubbo.port}" register="${service.register}"/>
+	<dubbo:monitor protocol="registry"/>
+    <!-- =================================================================================== -->
+    <!-- 对外的服务接口-->
+    <!-- =================================================================================== --> 
+    <bean id="gatewayPaymentServiceImpl" class="com.hfepay.epay.api.service.impl.GatewayPaymentServiceImpl" />
+	<dubbo:service interface="com.hfepay.epay.api.service.IGatewayPaymentService" ref="gatewayPaymentServiceImpl" timeout="10000" loadbalance="random"/>
+	<!-- 退款服务接口-->
+	<bean id="refundPaymentServiceImpl" class="com.hfepay.epay.api.service.impl.RefundPaymentServiceImpl" />
+	<dubbo:service interface="com.hfepay.epay.api.service.IRefundPaymentService" ref="refundPaymentServiceImpl" timeout="10000" loadbalance="random"/>
+	
+	
+	<bean id="merchantBusinessServiceImpl" class="com.hfepay.epay.api.service.impl.MerchantBusinessServiceImpl" />
+	<dubbo:service interface="com.hfepay.epay.api.service.MerchantBusinessService" ref="merchantBusinessServiceImpl" timeout="10000" loadbalance="random"/>
+	<!-- =================================================================================== -->
+    <!-- 引用外部服务接口-->
+    <!-- =================================================================================== --> 
+   
+    <dubbo:reference id="orderRefundService" interface="com.hfepay.order.service.OrderRefundService"/>
+    <dubbo:reference id="orderPaymentService" interface="com.hfepay.order.service.OrderPaymentService"/>
+    <dubbo:reference id="orderPayService" interface="com.hfepay.order.service.OrderPayService"/>
+	<dubbo:reference id="merchantAppInfoService" interface="com.hfepay.merchant.service.MerchantAppInfoService"/>
+	<dubbo:reference id="paywaySettingService" interface="com.hfepay.scancode.service.MerchantQrcodePaywaySettingService"/>
+	<dubbo:reference id="orderRefundCallBackService" interface="com.hfepay.order.service.OrderRefundCallBackService"/>
+	<dubbo:reference id="paySettingService" interface="com.hfepay.system.service.PaySettingService" />
+	</beans>
