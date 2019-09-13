@@ -59,6 +59,5 @@ public class CallbackConfig implements Serializable{
 		this.scanPayNotifyUrl = scanPayNotifyUrl;
 	}
 	
-	
 
 }
